@@ -23,6 +23,10 @@ Mui 用药助手
 * Chrome 浏览器
 * PWA (Progressive Web Application)
 
+### 潜在问题
+
+* 存储使用 LocalStorage，容量有限（5MB）
+
 
 环境配置
 -------
