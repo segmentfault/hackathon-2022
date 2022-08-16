@@ -18,8 +18,31 @@ Mui 用药助手
 * TypeScript
 * PWA
 
+### Google 技术
+
+* Chrome 浏览器
+* PWA (Progressive Web Application)
+
+
+环境配置
+-------
+
+1. Clone this repo to `/path/to/good-patient`
+2. Install dependencies via `pnpm i`
+3. For development, run `pnpm run dev`, and open browser to `http://localhost:5173`
+4. For production, run `pnpm run build`, then serve `dist` directory as a static web server
+
 
 团队成员
 --------
 
 * [Meathill](https://blog.meathill.com/)
+    * [邮箱](mailto:meathill@gmail.com)
+    * [GitHub](https://github.com/meathill)
+    * [微博](https://weibo.com/meathill)
+
+
+LICENSE
+-------
+
+[MIT](https://opensource.org/licenses/MIT)
