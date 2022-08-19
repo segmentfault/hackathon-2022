@@ -16,7 +16,7 @@ function getLocal<T>(key: string, defaultValue: T): T {
 
 export const useMedicineStore = defineStore('medicine', () => {
   const data = getLocal<Record<string, Medicine>>(MEDICINE_KEY, {});
-  const lastId = getLocal<number>(LAST_MEDICINE_ID, 0);
+  const lastId = getLocal<number>(LAST_MEDICINE_ID, 1);
   const medicines = ref<Record<string, Medicine>>(data);
 
   const save = (data: Medicine, id?: number) => {

@@ -19,9 +19,9 @@ export default {
     :to="{name: 'add'}"
   ) 添加药物
 
-  button.w-44.h-12.bg-green-500.text-white.rounded.mb-3(
+  router-link.w-44.h-12.leading-12.bg-green-500.text-white.rounded.mb-3.text-center(
     class="hover:bg-green-600"
-    type="button"
+    :to="{name: 'list'}"
   ) 药物列表
 
   button.w-44.h-12.bg-purple-500.text-white.rounded(

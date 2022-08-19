@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '@/pages/home.vue';
-import AddMedicine from '@/pages/add.vue';
+import EditMedicine from '@/pages/edit.vue';
+import MedicineList from '@/pages/medicine-list.vue';
 
 export const routes = [
   {
@@ -11,7 +12,17 @@ export const routes = [
   {
     path: '/add',
     name: 'add',
-    component: AddMedicine,
+    component: EditMedicine,
+  },
+  {
+    path: '/medicines',
+    name: 'list',
+    component: MedicineList,
+  },
+  {
+    path: '/medicines/:id',
+    name: 'edit',
+    component: EditMedicine,
   },
 ];
 

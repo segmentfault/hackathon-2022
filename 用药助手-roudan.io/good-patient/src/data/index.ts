@@ -10,3 +10,17 @@ export const DosageUnitLabel = {
   [DosageUnit.ml]: '毫升',
   [DosageUnit.g]: '克',
 }
+
+export function createNewMedicine() {
+  return {
+    name: '',
+    type: '',
+    dosage: '',
+    dosageUnit: DosageUnit.pill,
+    frequency: '',
+    startDate: '',
+    endDate: '',
+    note: '',
+    meals: [],
+  };
+}

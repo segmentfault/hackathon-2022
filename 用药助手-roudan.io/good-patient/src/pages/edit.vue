@@ -1,27 +1,21 @@
 <script lang="ts" setup>
 import {reactive, ref} from "vue";
-import {useRoute} from "vue-router";
-import {MedicineTypeLabel, DosageUnitLabel} from "@/data";
+import {useRoute, useRouter} from "vue-router";
+import AppHeader from '@/components/header.vue';
+import {MedicineTypeLabel, DosageUnitLabel, createNewMedicine} from "@/data";
 import type {Medicine} from "@/types";
-import {DosageUnit, MedicineType} from '@/types';
+import {MedicineType} from '@/types';
 import {useMedicineStore} from "@/store";
 
 const route = useRoute();
+const router = useRouter();
 const medicineStore = useMedicineStore();
 const MEALS = ['早餐', '午餐', '晚餐', '加餐'];
 
 const message = ref<string>();
-const medicine = reactive<Medicine>({
-  name: '',
-  type: '',
-  dosage: '',
-  dosageUnit: DosageUnit.pill,
-  frequency: '',
-  startDate: '',
-  endDate: '',
-  note: '',
-  meals: [],
-});
+const medicine = reactive<Medicine>(route.params.id
+    ? medicineStore.medicines[route.params.id]
+    : createNewMedicine());
 
 function doSubmit(event: Event) {
   if ((event.target as HTMLFormElement).matches(':invalid')) {
@@ -31,7 +25,11 @@ function doSubmit(event: Event) {
   message.value = '';
   medicineStore.save(medicine, route.params.id ? Number(route.params.id) : undefined);
   message.value = '保存成功';
-  // TODO 跳转到列表页
+  setTimeout(() => {
+    router.push({
+      name: 'list',
+    }).catch(console.log);
+  }, 1500);
 }
 function onTypeChange() {
   if (medicine.type === MedicineType.AfterMeal && medicine.meals?.length === 0) {
@@ -41,15 +39,14 @@ function onTypeChange() {
 const mealsStatus = ref<boolean[]>(MEALS.map(() => true));
 </script>
 
-<template lang="pug">
-header.flex.border-b.items-center.justify-between.px-4.py-2.bg-gray-100.shadow-md
-  img.w-9.h-9.mr-2(src="../assets/logo.png")
-  h2.text-lg 添加药物
-  router-link.ml-auto.text-blue-500.text-sm(
-    class="hover:text-blue-600"
-    :to="{name: 'home'}"
-  ) 返回首页
+<script lang="ts">
+export default {
+  name: 'EditMedicine',
+}
+</script>
 
+<template lang="pug">
+app-header(title="添加药物")
 form.mx-10.mt-8(
   @submit.prevent="doSubmit"
 )
@@ -113,7 +110,7 @@ form.mx-10.mt-8(
   .w-full.leading-6.mb-2.bg-green-500.text-white.px-2.py-1.rounded(
     v-if="message"
   ) {{message}}
-  button.btn.bg-blue-600.text-white.text-lg.rounded.w-full.h-12(
+  button.bg-blue-600.text-white.text-lg.rounded.w-full.h-12(
     class="hover:bg-blue-500"
     type="submit"
   ) 保存

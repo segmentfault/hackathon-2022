@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@vitejs/plugin-vue': ^2.3.4
   autoprefixer: ^10.4.8
+  bootstrap-icons: ^1.9.1
   pinia: ^2.0.18
   postcss: ^8.4.16
   pug: ^3.0.2
@@ -15,6 +16,7 @@ specifiers:
   vue-tsc: ^0.40.1
 
 dependencies:
+  bootstrap-icons: 1.9.1
   pinia: 2.0.18_j6bzmzd4ujpabbp5objtwxyjp4
   tailwindcss: 3.1.8
   vue: 3.2.37
@@ -281,6 +283,10 @@ packages:
   /binary-extensions/2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
     engines: {node: '>=8'}
+    dev: false
+
+  /bootstrap-icons/1.9.1:
+    resolution: {integrity: sha512-d4ZkO30MIkAhQ2nNRJqKXJVEQorALGbLWTuRxyCTJF96lRIV6imcgMehWGJUiJMJhglN0o2tqLIeDnMdiQEE9g==}
     dev: false
 
   /brace-expansion/1.1.11:
