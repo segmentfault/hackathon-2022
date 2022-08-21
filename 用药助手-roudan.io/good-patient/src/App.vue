@@ -3,5 +3,6 @@
 </script>
 
 <template lang="pug">
-router-view
+.container.mx-auto.min-h-full
+  router-view
 </template>

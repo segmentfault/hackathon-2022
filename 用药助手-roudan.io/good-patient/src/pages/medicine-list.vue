@@ -33,5 +33,7 @@ app-header(title="药物列表")
   router-link.block.bg-blue-600.text-white.text-lg.rounded.w-full.h-12.leading-12.text-center(
     class="hover:bg-blue-500"
     :to="{name: 'add'}"
-  ) 保存
+  )
+    i.bi.bi-plus-lg.mr-1
+    | 添加药物
 </template>
