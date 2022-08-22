@@ -6,25 +6,32 @@ import {MedicineTypeLabel, DosageUnitLabel, createNewMedicine} from "@/data";
 import type {Medicine} from "@/types";
 import {MedicineType} from '@/types';
 import {useMedicineStore} from "@/store";
+import ToggleSwitch from "@/components/toggle.vue";
+
+function initMedicine(): Medicine {
+  if (!route.params.id) return createNewMedicine();
+  const medicine = medicineStore.medicines[route.params.id];
+  mealsStatus.value = medicine.meals.map((meal: string) => !!meal);
+  return medicine;
+}
 
 const route = useRoute();
 const router = useRouter();
 const medicineStore = useMedicineStore();
 const MEALS = ['早餐', '午餐', '晚餐', '加餐'];
+const mealsStatus = ref<boolean[]>(MEALS.map(() => true));
 
-const message = ref<string>();
-const medicine = reactive<Medicine>(route.params.id
-    ? medicineStore.medicines[route.params.id]
-    : createNewMedicine());
+const status = ref<boolean | null>(null);
+const medicine = reactive<Medicine>(initMedicine());
 
 function doSubmit(event: Event) {
   if ((event.target as HTMLFormElement).matches(':invalid')) {
     return;
   }
 
-  message.value = '';
+  status.value = null;
   medicineStore.save(medicine, route.params.id ? Number(route.params.id) : undefined);
-  message.value = '保存成功';
+  status.value = true;
   setTimeout(() => {
     router.push({
       name: 'list',
@@ -36,7 +43,6 @@ function onTypeChange() {
     medicine.meals = ['09:00', '13:00', '20:00'];
   }
 }
-const mealsStatus = ref<boolean[]>(MEALS.map(() => true));
 </script>
 
 <script lang="ts">
@@ -47,7 +53,7 @@ export default {
 
 <template lang="pug">
 app-header(title="添加药物")
-form.mx-10.mt-8(
+form#form.mx-10.mt-8(
   @submit.prevent="doSubmit"
 )
   .form-group.mb-4
@@ -55,6 +61,7 @@ form.mx-10.mt-8(
     input#name.border.rounded.w-full.outline-blue-400.leading-8.px-2(
       v-model="medicine.name"
       required
+      placeholder="药物名称"
     )
 
   .form-group.mb-4
@@ -107,11 +114,28 @@ form.mx-10.mt-8(
       )
         option(v-for="(label, key) in DosageUnitLabel" :value="key" :key="key") {{label}}
 
-  .w-full.leading-6.mb-2.bg-green-500.text-white.px-2.py-1.rounded(
-    v-if="message"
-  ) {{message}}
-  button.bg-blue-600.text-white.text-lg.rounded.w-full.h-12(
-    class="hover:bg-blue-500"
+  .form-group.mb-4
+    label.block.mb-2(for="note") 备注
+    textarea#note.border.rounded.outline-blue-400.leading-8.px-2.w-full(
+      v-model="medicine.note"
+      rows="2"
+      placeholder="备注"
+    )
+
+footer.sticky.bg-white.px-10.py-3.bottom-0.border-t.border-solid.border-gray-300
+  .form-group.mb-2.flex.items-center
+    toggle-switch(
+      v-model="medicine.enabled"
+      label="启用"
+      toggle-id="enabled"
+    )
+    label.ml-2(for="enabled") 开始用药提醒
+  button.text-white.text-lg.rounded.w-full.h-12(
+    :class="status ? 'bg-green-700' : 'bg-blue-600 hover:bg-blue-500'"
     type="submit"
-  ) 保存
+    form="form"
+    :disabled="status !== null"
+  ) {{status ? '保存成功' : '保存'}}
+
+p.text-sm.mx-10.text-gray-500.mt-2 （这里可能有一些说明）
 </template>

@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import {ref} from "vue";
+import {computed, ref} from "vue";
 import {Medicine} from "@/types";
 
 const MEDICINE_KEY = 'mui-medicine';
@@ -24,6 +24,14 @@ export const useMedicineStore = defineStore('medicine', () => {
     medicines.value[id] = data;
     localStorage.setItem(MEDICINE_KEY, JSON.stringify(medicines.value));
   }
+  const remove = (id: string) => {
+    delete medicines.value[id];
+    localStorage.setItem(MEDICINE_KEY, JSON.stringify(medicines.value));
+  }
 
-  return { medicines, save };
+  const total = computed<number>(() => {
+    return Object.values(medicines.value).length;
+  })
+
+  return { medicines, total, save, remove };
 });

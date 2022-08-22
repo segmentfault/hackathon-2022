@@ -9,7 +9,7 @@ export default defineConfig(({ command }) => {
   return {
     plugins: [
       vue(),
-      !isDev && VitePWA({
+      VitePWA({
         registerType: 'autoUpdate',
         manifest: {
           name: '姆伊用药助手',

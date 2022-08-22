@@ -1,10 +1,17 @@
 <script lang="ts" setup>
 import {MedicineType} from '@/types';
+import type {Medicine} from '@/types';
 import AppHeader from '@/components/header.vue';
 import {useMedicineStore} from "@/store";
 
 const medicineStore = useMedicineStore();
 
+function doRemove(item: Medicine, id: string) {
+  if (!confirm(`您确定要删除 ${item.name} 吗？`)) {
+    return;
+  }
+  medicineStore.remove(id);
+}
 </script>
 
 <template lang="pug">
@@ -15,9 +22,14 @@ app-header(title="药物列表")
     v-for="(item, id) in medicineStore.medicines"
    :key="id"
   )
-    header.flex.justify-between
+    header.flex
       h3.text-lg.font-bold.mb-2 {{item.name}}
-      router-link.block.w-8.h-8.leading-8.rounded.text-center(
+      button.w-8.h-8.p-0.rounded.ml-auto(
+        type="button"
+        @click="doRemove(item, id)"
+      )
+        i.bi.bi-trash
+      router-link.block.w-8.h-8.leading-8.rounded.text-center.ml-2(
         class="hover:bg-gray-100 -mr-2"
         :to="{name: 'edit', params: {id: id}}"
       )

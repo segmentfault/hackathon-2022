@@ -14,9 +14,9 @@ export interface Medicine {
   dosageUnit: DosageUnit,
   delay?: string;
   frequency: string;
-  lastNotification?: string;
   startDate: string;
   endDate: string;
   meals?: string[],
   note: string;
+  enabled?: boolean;
 }

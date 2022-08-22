@@ -1,4 +1,4 @@
-import {DosageUnit, MedicineType} from "@/types";
+import {DosageUnit, Medicine, MedicineType} from "@/types";
 
 export const MedicineTypeLabel = {
   [MedicineType.AfterMeal]: '餐后',
@@ -11,7 +11,7 @@ export const DosageUnitLabel = {
   [DosageUnit.g]: '克',
 }
 
-export function createNewMedicine() {
+export function createNewMedicine(): Medicine {
   return {
     name: '',
     type: '',
@@ -21,6 +21,17 @@ export function createNewMedicine() {
     startDate: '',
     endDate: '',
     note: '',
-    meals: [],
+    meals: ['', '', '', ''],
+    enabled: true,
   };
+}
+
+let _counter = 0;
+export const counter = {
+  get() {
+    return _counter;
+  },
+  next() {
+    return _counter++;
+  },
 }
