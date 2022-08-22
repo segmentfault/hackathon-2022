@@ -37,13 +37,20 @@ Mui 用药助手
 4. For production, run `pnpm run build`, then serve `dist` directory as a static web server
 
 
-团队成员
+团队
 --------
 
+团队名称：roudan.io
+
+### 团队成员
+
 * [Meathill](https://blog.meathill.com/)
+    * 微信 wakabanga 
     * [邮箱](mailto:meathill@gmail.com)
     * [GitHub](https://github.com/meathill)
     * [微博](https://weibo.com/meathill)
+* Eggeast
+  * 
 
 
 LICENSE
