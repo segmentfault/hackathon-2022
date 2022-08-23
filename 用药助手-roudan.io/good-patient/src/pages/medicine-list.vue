@@ -17,7 +17,7 @@ function doRemove(item: Medicine, id: string) {
 <template lang="pug">
 app-header(title="药物列表")
 
-.medicine-list.p-4
+.medicine-list.p-4(v-if="medicineStore.medicines.length")
   .medicine-item.border.border-solid.border-gray-200.rounded.py-2.px-4.mb-4.font-light(
     v-for="(item, id) in medicineStore.medicines"
    :key="id"
@@ -42,10 +42,14 @@ app-header(title="药物列表")
       .flex.justify-between
         span(v-for="meal in item.meals", :key="meal") {{meal}}
 
-  router-link.block.bg-blue-600.text-white.text-lg.rounded.w-full.h-12.leading-12.text-center(
-    class="hover:bg-blue-500"
-    :to="{name: 'add'}"
-  )
-    i.bi.bi-plus-lg.mr-1
-    | 添加药物
+.h-40.flex.justify-center.items-center.flex-col.text-gray-400
+  i.text-6xl.bi.bi-inbox
+  span.text-xs 尚未添加药物
+
+router-link.block.bg-blue-600.text-white.text-lg.rounded.h-12.leading-12.text-center.mx-4(
+  class="hover:bg-blue-500"
+  :to="{name: 'add'}"
+)
+  i.bi.bi-plus-lg.mr-1
+  | 添加药物
 </template>
