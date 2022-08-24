@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>公司资质生成</title>
+    <link rel="stylesheet" type="text/css" href="../easyui/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../easyui/icon.css">
+    <link rel="stylesheet" type="text/css" href="../easyui/custom.css">
+    <script type="text/javascript" src="../easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../easyui/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/globaldata.js"></script>
+    <script type="text/javascript" src="../js/util.js"></script>
+    <script type="text/javascript" src="../js/ribbon.js"></script>
+</head>
+<body style="margin: 10px;">
+    <div class="label-title ">XToolPlugin For 彩蛋</div>
+    <div class="label-content">*永远相信美好的事儿即将发生！</div>
+    <div class="label-content" >
+    <div style="margin-top: 20px;">
+        <Label style="margin-top: 20px; margin-right: 10px;" >当前步数:</Label>
+        <span style="margin-left: 13px;"></span>
+        <Label style="margin-right: 10px;" id="stepinfo" >请开始吧！</Label>
+    </div>  
+    <div style="margin-top: 20px;">
+        <Label style="margin-top: 20px; margin-right: 10px;" >简单模式:</Label>
+        <span style="margin-left: 13px;"></span>
+        <input id="IsEasy" class="easyui-switchbutton" checked style="width:80px;height:30px;" >
+    </div>
+    <div style="margin-top: 20px;margin-bottom: 15px;">
+        <button type="button" class="btn btn-success" onclick="PlayGame(0)">开始游戏</button>
+        <span style="margin-left: 10px;"></span>
+        <button type="button" class="btn btn-success" onclick="PlayGame(1)">重新开始</button>
+    </div>
+    </div>
+    
+    <div id="sucess" style="margin-top: 10px; display: none;"><img id="img1" src="../images/1.gif"></img></div>
+	
+    <div style="margin-top: 20px;text-align: center;color: gray;"> Copyright © 2022 Peter.</div>
+
+	<script type="text/javascript">
+        var url="../data/certificate.json";
+        var gamejson;
+        var badperson=2;//坏人当前坐标
+        var goodperson=5;//好人当前坐标
+        var mode=1;//0代表该坏人走；1代表该好人走。
+        var yellow=65535;//黄色
+        var red=255;//红色
+        var blue=13998939;//蓝色
+        var gamejson=[{"0":[0,0]},{ "1":[2,3,5]}, {"2":[1,3,6]},{ "3":[1,2,4]},{ "4":[3,5]},{ "5":[1,4,6]},{ "6":[5,2]}];//各个坐标允许走的坐标
+        var tsId = wps.PluginStorage.getItem(TaskPanelData.Surprise.Name);
+        var says=["幸好我跑得快，不然就被抓住了！","加油哦，不然你就永远抓不到我了！","你是不是没吃饭啊，这样都抓不住我！","你有风火轮，我有筋斗云，拜拜！"];
+        var gameover=false;//游戏是否结束了
+        var iseasy=true;//是否是简单模式
+        var step=0;//步数
+        $(document).ready(function(){
+            IsShowBookMark(false);//不显示书签标记
+            wps.ApiEvent.AddApiEventListener("WindowSelectionChange",WindowSelectionChange);
+            wps.ApiEvent.AddApiEventListener("WindowBeforeRightClick",WindowBeforeRightClick);
+             
+            $('#IsEasy').switchbutton({
+                checked: true,
+                onChange: function(checked){
+                    iseasy=checked;
+                }
+            });
+        });
+
+        //通过光标改变事件来实现抓小偷
+        function WindowSelectionChange(Sel)
+        {
+            if(!wps.GetTaskPane(tsId).Visible)
+            {
+                return;
+            }
+            var name=OfficeObject.Selection.ShapeRange.Name;
+            if(name!=null&&mode==1&&!gameover)
+            {
+                var isok=PersonGo(parseInt(name) );
+                if(isok)
+                {
+                    RobotGo();
+                }
+            }
+        }
+
+        //屏蔽右键菜单
+        function WindowBeforeRightClick(Sel)
+        {
+            if(!wps.GetTaskPane(tsId).Visible)
+            {
+                return;
+            }
+            wps.ApiEvent.Cancel=true;
+        }
+
+        function PlayGame(mode)
+        {
+            if(mode==0)//打开文档并重置数据
+            {
+                OpenTemplateFile("彩蛋.docx");
+                PlayGame(1);
+            }else if(mode==1)//重置数据
+            {
+                $("#stepinfo").html("请开始吧！")
+                $("#sucess").css("display","none");
+                SetMsg("小偷跑了，快去抓住他！");
+                SetColor(0,"1","2");
+                SetColor(1,"1","5");
+                SetColor(0,"3","2");
+                SetColor(0,"4","2");
+                SetColor(0,"6","2");
+                badperson=2;
+                goodperson=5;
+                mode=1;
+                gameover=false;
+                step=0;
+            }
+        }
+
+        //用户处理逻辑
+        function PersonGo(personpos)
+        {
+            //根据当前坐标，获取人可以走的坐标
+            var allowpos=gamejson[goodperson][goodperson];
+            //过滤出用户要走的坐标是否在可以走的坐标里面
+            var pos=allowpos.filter(function (item) {
+                return item==personpos;
+            }); 
+            if(pos.length==1)
+            {
+                //符合规则，则改变要走的坐标的颜色，并将旧坐标的颜色还原为蓝色
+                SetColor(mode,goodperson+"",personpos+"");
+                step++;
+                var index=getRand(0,says.length-1);
+                $("#stepinfo").html("第 {0} 步".format(step))
+                if(personpos==badperson)
+                {
+                    SetSucess();
+                    return  false;
+                }else{
+                    SetMsg(says[index]);
+                }
+                mode=0;
+                goodperson=personpos;
+                return true;
+            }else
+            {  
+                //不符合规则
+                SetMsg("只允许走相邻的坐标哦！");
+                return false;
+            }
+        }
+
+        //机器人处理逻辑
+        function RobotGo()
+        {
+            sleep(300);
+            //坏人当前坐标能走的坐标
+            var a=gamejson[badperson][badperson];
+            //好人当前坐标能走的坐标
+            var b=gamejson[goodperson][goodperson];
+            
+            var difference;
+            if(iseasy&&step>3) //3步之后，允许进入简单模式
+            {
+                difference=a.filter(v => a.includes(v));
+            }else{
+                //坏人能走的坐标和好人能走的坐标的集合的差集
+                difference = a.concat(b).filter(v => a.includes(v) && !b.includes(v));
+                //过滤出差集中坏人能走的坐标
+                var c=difference.filter(v=>a.includes(v));
+                if(c.length>=0)
+                {
+                    difference=c;
+                }
+            }
+            //移除当前好人在的坐标
+            difference.remove(goodperson);
+            var post=0;
+            if(difference.length>=1)//如果有多个则随便走一个
+            {
+                
+                var index=getRand(0,difference.length-1);
+                post=difference[index];
+            }else //如果一个都没有，那就随便走一个坏人能走的坐标
+            {
+                post=a[0];
+            }
+            //处理坏人旧的坐标和新的坐标的颜色
+            SetColor(mode,badperson+"",post+"");
+            mode=1;
+            badperson=post;
+        }
+
+        //处理成功抓住小偷相关事宜
+        function SetSucess()
+        {
+            SetMsg("替天下百姓谢谢你，小偷被你抓住了,好人一生平安！");
+            $("#sucess").css("display","");
+            gameover=true;
+        }
+
+        //设置坐标的颜色
+        function SetColor(mode,oldpos,newpos)
+        {
+            SetReadOnly(false,GlobalData.PassWord);
+            OfficeObject.ActiveDocument.Shapes.Item(oldpos).Fill.ForeColor.RGB=blue;
+            if(mode==0)
+            {
+                OfficeObject.ActiveDocument.Shapes.Item(newpos).Fill.ForeColor.RGB=yellow;
+            }else{
+                OfficeObject.ActiveDocument.Shapes.Item(newpos).Fill.ForeColor.RGB=red;
+            }
+            SetReadOnly(true,GlobalData.PassWord);
+        }
+
+        //设置提示信息
+        function SetMsg(msg)
+        {
+            SetReadOnly(false,GlobalData.PassWord);
+            SetBookMarkValue("info",msg);
+            SetReadOnly(true,GlobalData.PassWord);
+        }
+
+        //在指定范围中产生一个随机数
+        function getRand(min,max)
+        {
+            var range = max - min;
+            var rand = Math.random();
+            var num = min + Math.round(rand * range);
+            return num;
+        }
+        
+       
+     
+       
+    </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,38 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui" onLoad="OnAddinLoad">
+    <ribbon startFromScratch="false">
+        <tabs>
+            <tab id="XToolAddinTab" label="我的加载项">
+				<group id="grpCreateDoc" label="CreateDoc" label="生成文档">
+                    <button id="btnCreateCFA" label="生成授权书" onAction="OnAction" getEnabled="OnGetEnabled"  getImage="GetImage" visible="true" size="large"/>
+                    <button id="btnCreateSLC" label="生成服务承诺函" onAction="OnAction" enabled="true"  getImage="GetImage" visible="true" size="large"/>
+                    <button id="btnCreateCertification" label="生成水印资质" onAction="OnAction" enabled="true"  getImage="GetImage" visible="true" size="large"/>
+                    <button id="btnCreateContract" label="生成产品合同" onAction="OnAction" enabled="true"  getImage="GetImage" visible="true" size="large"/>
+                    <separator id="sepCreateDoc"/>
+				</group>
+                <group id="grpTools" label="常用功能" getVisible="OnGetVisible">
+                    <button id="btnIsShowBookMark" label="显示书签符" onAction="OnAction" getLabel="OnGetLabel"  enabled="true"  getImage="GetImage" visible="true" size="large"/>
+                    <menu id="menuRevisions" itemSize="normal"  onAction="OnAction"   getImage="GetImage"  label="修订功能" size="large">
+                           
+                            <toggleButton id="btnEnterTrackRevisions" label="开启强制留痕" onAction="OnAction" getPressed="GetPressed" getImage="GetImage" />
+                            <toggleButton id="btnCloseTrackRevisions" label="关闭强制留痕" onAction="OnAction" getPressed="GetPressed" getImage="GetImage"/>
+                            <button id="btnAcceptAllRevisions" label="接受所有修订" onAction="OnAction"  getImage="GetImage"/>
+                            <button id="btnRejectAllRevisions" label="拒绝所有修订" onAction="OnAction" getImage="GetImage"/>
+                    </menu>
+                    <button id="btnShowBrowser" label="浏  览" onAction="OnAction" enabled="true"  getImage="GetImage" visible="false" size="large"/>
+                    <button id="btnShowSetting" label="数据维护" onAction="OnAction" enabled="true"  getImage="GetImage" visible="true" size="large"/>
+                 
+                  
+                </group>
+                <group id="grpSurprise" label="彩蛋" >
+                    <button id="btnSurprise" label="彩  蛋"  onAction="OnAction" enabled="true"   getImage="GetImage"  visible="true"  size="large"/>
+                    <separator id="sepSurprise"/>
+                </group>
+                 <group id="grpAbout" label="关于" >
+                    <button id="btnAbout" label="关  于"  onAction="OnAction" enabled="true"   getImage="GetImage"  visible="true"  size="large"/>
+                    <separator id="sepAbout"/>
+                </group>
+               
+            </tab>
+        </tabs>
+    </ribbon>
+</customUI>

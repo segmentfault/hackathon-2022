@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>浏览器</title>
+    <link rel="stylesheet" type="text/css" href="../easyui/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../easyui/icon.css">
+    <link rel="stylesheet" type="text/css" href="../easyui/custom.css">
+    <link rel="stylesheet" type="text/css" href="../easyui/jsoneditor.css">
+    <script type="text/javascript" src="../easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../easyui/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/globaldata.js"></script>
+    <script type="text/javascript" src="../js/util.js"></script>
+    <script type="text/javascript" src="../js/ribbon.js"></script>
+    <script type="text/javascript" src="../easyui/jsoneditor.js"></script>
+    
+    <style type="text/css">
+        body {
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden;
+            background-color: #3c763d;
+        }
+    </style>
+<script type="text/javascript">
+     $(document).ready(function(){
+         var mode=wps.PluginStorage.getItem("jsoneditormode");
+        if(mode!=null&&mode!="")
+        {
+            editor.setMode(mode);
+            wps.PluginStorage.setItem("jsoneditormode","");
+        }
+     });
+    function ReSet(type)
+    {
+        if(type==1)
+        {
+            $.messager.confirm('请确认','此操作将会把数据还原为出厂默认数据，是否继续？',function(r){
+                if(r)
+                {
+                    GlobalData.Version="1.0";
+                    SaveGlobalData();
+                    wps.PluginStorage.setItem("jsoneditormode", editor.getMode());
+                    window.location.reload();
+                 
+                }
+            });
+           
+        }else if(type==0)
+        {
+            $.messager.confirm('请确认','此操作将会把数据重置为最近一次保存的的数据，是否继续？',function(r){
+                if(r)
+                {
+                    editor.set(GlobalData);
+                }
+            });
+            
+        }
+        
+    }
+
+    function Save()
+    {
+        GlobalData=editor.get() ;
+        SaveGlobalData();
+        for(task in TaskPanelData)
+        {
+            let tsId=wps.PluginStorage.getItem(TaskPanelData[task].Name);
+            if(tsId)
+            {
+                let tskpane = wps.GetTaskPane(tsId);
+                tskpane.Navigate(GetUrlPath().replace("/ui",TaskPanelData[task].Url));
+            }
+        }
+
+    }
+
+    function SetStatusBar(msg)
+       {
+            $("#statusbar").html(new Date().format("yyyy-MM-dd hh:mm:ss").concat("&nbsp;&nbsp;&nbsp;",msg));
+
+       }
+    </script>
+</head>
+
+<body style="background-color: #dff0d8;">
+    <div id="nav">
+        <div style="padding: 0px;">
+           <span style=" color: #3c763d;float: left;margin-left: 15px;margin-top: 15px;;">*请勿修改颜色为蓝色的内容</span>
+           <button type="button" class="btn btn-success2"  onclick="Save()">保 存</button>
+           <button type="button" class="btn btn-success2"  onclick="ReSet(0)">重 置</button>
+           <button type="button" class="btn btn-success2"  onclick="ReSet(1)">还 原</button>
+        </div>
+        
+     </div>
+     <div id="jsoneditorbody" >
+        <div id="jsoneditorborder">
+            <div id="jsoneditor" >
+            </div>
+        </div>
+    </div>
+   
+    <script>
+        const container = document.getElementById("jsoneditor");
+        const options = {
+            schema: schema,
+            schemaRefs: {"CFA": CFA,"SLC": SLC,"Contract": Contract,"Certfication": Certfication,"Product": Product},
+            mode:"tree",
+            statusBar:false,
+            modes: ['tree', 'code', 'view'],
+            name:"数据汇总",
+            templates: templates,
+            onCreateMenu: function (items, node) {
+                const path = node.path
+                if(path.length==3&&path[0]=="Product")
+                {
+                    var items1 = items.filter(function (item) {
+                        return item.text=="插入";
+                    });
+                    var items2 = items1[0].submenu.filter(function (item) {
+                        return item.type !== 'separator'&&item.text.indexOf(path[1])>-1;
+                    });
+                    items = items.filter(function (item) {
+                        return item.text=="复制"||item.text=="移除"
+                    });
+                    return items.concat(items2);
+                }else
+                {
+                    SetStatusBar( "仅[产品分类]/[产品版本]/[产品授权]/[产品语言]/[产品价格]/[产品数量]的子节点支持菜单操作");
+                    return [];
+                }
+            },
+            onEvent: function(node, event) {
+                if(event.type=="click")
+                {
+                    var title=$(event.toElement).attr('title');
+                    if(title!=undefined)
+                    {
+                        SetStatusBar(title)
+                    }else
+                    {11
+                        SetStatusBar($(event.toElement).html())
+                    }
+                }
+            },
+            onEditable: function (node) {
+                var path=node.path;
+                switch (node.field) {
+                case 'Version':
+                case 'JsonName':
+                    return false
+                default:
+                    return {
+                        field: false,
+                        value: true
+                    }
+                }
+            },
+            onError: function (err) {  
+                alert(err.toString());
+            },
+            onValidationError :function(err)
+            {
+                if(err.length>0)
+                {
+                    console.log(err);
+                    var msgs=err[0].message.split("<br>");
+                    SetStatusBar(msgs[0].concat(msgs[1],"...",msgs[3]));
+                }else{
+                    SetStatusBar("");
+                }
+            }
+        }
+        const editor = new JSONEditor(container, options)
+        editor.set(GlobalData)
+    </script>
+ 
+</body>
+
+</html>

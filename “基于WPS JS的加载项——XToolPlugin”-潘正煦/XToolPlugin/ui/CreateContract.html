@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>合同生成</title>
+    <link rel="stylesheet" type="text/css" href="../easyui/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../easyui/icon.css">
+    <link rel="stylesheet" type="text/css" href="../easyui/custom.css">
+    <script type="text/javascript" src="../easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../easyui/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/globaldata.js"></script>
+    <script type="text/javascript" src="../js/util.js"></script>
+    <script type="text/javascript" src="../js/ribbon.js"></script>
+
+</head>
+<body style="margin: 10px;">
+    <div class="label-title ">XToolPlugin For 合同生成工具</div>
+    <div class="label-content">*此工具可自动生成产品销售合同。</div>
+    <div class="label-content" >
+        <div style="margin-top: 10px;">
+            <input class="easyui-checkbox" name="IsClearBeforeCreate"  id="IsClearBeforeCreate"   label="生成前清空文档:" labelWidth="130px"  >
+        </div>
+        <div style="margin-top: 15px;">
+            <input class="easyui-checkbox" name="IsCreateNewContract"  id="IsCreateNewContract"   label="是否创建新文档:" labelWidth="130px"  >
+        </div>
+        <div style="margin-top: 15px;">
+            <input class="easyui-checkbox" name="IsTrackRevisions"  id="IsTrackRevisions"   label="是否开启强留痕:" labelWidth="130px" checked >
+        </div>
+        <div style="margin-top:15px">
+            <input class="easyui-textbox" id="saveDir" class="easyui-textbox" prompt="请选择保存目录" required="true" buttonText='&nbsp浏览&nbsp' label="合同的保存目录:"  labelWidth="130px" style="width:98%" >
+        </div>
+        <div style="margin-top: 15px;">
+            <input name="ContractJiaF"  id="ContractJiaF" class="easyui-textbox" required="true" label="合同的甲方名称:" labelWidth="130px" style="width:98%" value="贵公司单位名称">
+        </div>
+        <div style="margin-top: 15px;">
+            <button type="button" class="btn btn-success" onclick="CreateDocument(0)">生成选中项</button>
+            <button type="button" class="btn btn-success" onclick="CreateDocument(1)">生成所有项</button>
+            <button type="button" class="btn btn-success" onclick="ImportTestData()" id="ImportTestDataBtn">导入测试数据</button>
+        </div>
+    </div>
+	<table id="projectstab" title="购买产品列表" class="easyui-datagrid" style="width:100%;height:350px;"
+			toolbar="#toolbar" pagination="true" nowrap="true"
+			rownumbers="true" fitColumns="true" singleSelect="true" >
+		<thead>
+			<tr>
+                <th field="ProductName" width="100" data-options="formatter:formatCellTooltip">产品名称</th>
+                <th field="ProductVersion" width="100" data-options="formatter:formatCellTooltip">产品版本</th>
+				<th field="ProductLisense" width="100" data-options="formatter:formatCellTooltip">产品授权</th>
+                <th field="ProductLanguage" width="100" data-options="formatter:formatCellTooltip">语言</th>
+                <th field="ProductCount" width="50" data-options="formatter:formatCellTooltip">数量</th>
+                <th field="ProductPrice" width="80" data-options="formatter:formatCellTooltip">单价</th>
+                <th field="ProductUser" width="100" data-options="formatter:formatCellTooltip">授权用户</th>
+                <th field="ProductNameDescrible" hidden="true">功能描述</th>
+                <th field="ProductVersionDescrible" hidden="true">版本描述</th>
+                <th field="ProductLisenseDescrible" hidden="true">授权描述</th>
+			</tr>
+		</thead>
+	</table>
+    <div style="margin-top: 20px;text-align: center;color: gray;"> Copyright © 2022 Peter.</div>
+	<div id="toolbar">
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="NewProject()">添加产品</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="EditProject()">编辑产品</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="DestroyProject()">删除产品</a>
+    </div>
+	
+	<div id="dlg" class="easyui-dialog" style="width:100%" data-options="closed:true,modal:true,border:'thin',buttons:'#dlg-buttons'">
+		<form id="fm" method="post" novalidate style="margin:0;padding:20px 50px">
+			<div style="margin-bottom:10px">
+				<input name="ProductName"  id="ProductName" class="easyui-combobox" prompt="请选择产品名称" required="true" label="产品名称:" labelWidth="80px" style="width:100%"
+                data-options="valueField: '产品名称',textField: '产品名称',panelHeight:'auto'">
+            </div>
+            <div style="margin-bottom:15px">
+				<input name="ProductVersion"  id="ProductVersion" class="easyui-combobox" prompt="请选择产品版本" required="true" label="产品版本:" labelWidth="80px" style="width:100%"
+                data-options="valueField: '版本名称',textField: '版本名称',panelHeight:'auto'">
+               
+            </div>
+			<div style="margin-bottom:15px">
+				<input name="ProductLisense"  id="ProductLisense" class="easyui-combobox" prompt="请选择产品授权" required="true" label="产品授权:" labelWidth="80px" style="width:100%"
+                data-options="valueField: '授权名称',textField: '授权名称',panelHeight:'auto'">
+            </div>
+            <div style="margin-bottom:15px">
+				<input name="ProductLanguage"   id="ProductLanguage"  class="easyui-combobox" prompt="请选择产品语言" required="true" label="产品语言:" labelWidth="80px" style="width:100%"
+                data-options="valueField: '语言名称',textField: '语言名称',panelHeight:'auto'">
+            </div>
+			<div style="margin-bottom:15px">
+				<input name="ProductCount"  id="ProductCount" class="easyui-combobox" prompt="请输入产品数量" required="true" label="产品数量:" labelWidth="80px" style="width:100%"
+                data-options="valueField: '数量',textField: '数量',panelHeight:'auto'">
+			</div>
+            <div style="margin-bottom:15px">
+				<input name="ProductPrice" id="ProductPrice" class="easyui-combobox" prompt="请输入产品单价" required="true" label="产品单价:" labelWidth="80px" style="width:100%"
+                data-options="valueField: '价格',textField: '价格',panelHeight:'auto'">
+			</div>
+            <div style="margin-bottom:15px">
+				<input name="ProductUser"  id="ProductUser" class="easyui-textbox" prompt="请输入授权用户" required="true" label="授权用户:" labelWidth="80px" style="width:100%"
+                data-options="valueField: '授权名称',textField: '授权名称',panelHeight:'auto'">
+            </div>
+          
+            </form>
+	</div>
+	<div id="dlg-buttons">
+		<a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="SaveProject()" style="width:90px">确定</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">取消</a>
+	</div>
+    
+	<script type="text/javascript">
+        var type="new";//标记是新建还是编辑
+        var tsId = wps.PluginStorage.getItem(TaskPanelData.Contract.Name);
+        var strlisense="";//记录已经添加到合同模板中的授权名称
+        var strversion="";//记录已经添加到合同模板中的版本名称
+        var totalprice=0;//记录已经添加到合同模板中的总价格
+
+        $(document).ready(function(){
+            IsShowBookMark(true);
+            //控制导入测试数据按钮是否显示
+            $('#ImportTestDataBtn').attr("style",GlobalData.IsShowImportTestDataBtn?"display:''":"display:none")
+          
+            //以下处理表单中相关元素的赋值以及改变后自动保存数据
+            $('#saveDir').textbox("setValue",GlobalData.Contract.SavePath);
+            $("#saveDir").textbox({onClickButton:function(){
+                var dir=SelectSaveDir();
+                if(dir!=null)
+                {
+                    GlobalData.Contract.SavePath=dir;
+                    SaveGlobalData();
+                }
+            }});
+            
+            $("#ProductName").combobox({
+                onSelect: function(data){ 
+                    OnProductChange(data);
+                }
+            });
+
+            $('#IsClearBeforeCreate').checkbox(GlobalData.Contract.IsClearBeforeCreate?"check":"uncheck");
+            $('#IsClearBeforeCreate').checkbox({
+                onChange:function(checked){
+                    GlobalData.Contract.IsClearBeforeCreate=checked;
+                    SaveGlobalData();
+                }
+            });
+
+            $('#IsCreateNewContract').checkbox(GlobalData.Contract.IsCreateNewContract?"check":"uncheck");
+            $('#IsCreateNewContract').checkbox({
+                onChange:function(checked){
+                    GlobalData.Contract.IsCreateNewContract=checked;
+                    SaveGlobalData();
+                }
+            });
+
+            $('#IsTrackRevisions').checkbox(GlobalData.Contract.IsTrackRevisions?"check":"uncheck");
+            $('#IsTrackRevisions').checkbox({
+                onChange:function(checked){
+                    GlobalData.Contract.IsTrackRevisions=checked;
+                    SaveGlobalData();
+                }
+            });
+
+            $("#ProductName").combobox("loadData", GlobalData.Product["产品分类"]);
+         
+            
+        });
+
+        //数据联动，根据选择的产品，初始化产品对应的授权、语言、版本、数量、价格等
+        function OnProductChange(data)
+        {
+            var versiondata =  GlobalData.Product["产品版本"].filter((p) => {
+                return p.版本ID == data.版本ID;
+            });
+            $("#ProductVersion").combobox('loadData', versiondata);
+            if (versiondata.length > 0){ 
+                $("#ProductVersion").combobox('select', versiondata[0].版本名称); 
+            }
+
+            var lisencedata =  GlobalData.Product["产品授权"].filter((p) => {
+                return p.授权ID == data.授权ID;
+            });
+            $("#ProductLisense").combobox('loadData', lisencedata);
+            if (lisencedata.length > 0){ 
+                $("#ProductLisense").combobox('select', lisencedata[0].授权名称); 
+            }
+
+            var languagedata =  GlobalData.Product["产品语言"].filter((p) => {
+                return p.语言ID == data.语言ID;
+            });
+            $("#ProductLanguage").combobox('loadData', languagedata);
+            if (languagedata.length > 0){ 
+                $("#ProductLanguage").combobox('select', languagedata[0].语言名称); 
+            }
+
+            var countdata =  GlobalData.Product["产品数量"];
+            $("#ProductCount").combobox('loadData', countdata);
+            if (countdata.length > 0){ 
+                $("#ProductCount").combobox('select', countdata[0].数量); 
+            }
+
+            var pricedata =  GlobalData.Product["产品价格"].filter((p) => {
+                return p.价格ID == data.价格ID;
+            });
+            $("#ProductPrice").combobox('loadData', pricedata);
+            if (pricedata.length > 0){ 
+                $("#ProductPrice").combobox('select', pricedata[0].价格); 
+            }
+        }
+
+        //处理创建文档
+        function CreateDocument(mode)
+        {
+            //检查是否有数据
+            if(mode==0)
+            {
+                var row = $('#projectstab').datagrid('getSelected');
+                if (!row){
+                    ShowMessage("请先选中要生成的数据");
+                    return;
+                }
+            }else if(mode==1)
+            {
+                var rows = $("#projectstab").datagrid("getRows");
+                if(rows.length==0)
+                {
+                    ShowMessage("请先添加授权信息！");
+                    return;
+                }
+            }
+           
+            //是否新建文档
+            if($("#IsCreateNewContract").checkbox("options").checked)
+            {
+                strlisense="";
+                strversion="";
+                totalprice=0;
+                OpenTemplateFile("合同模板.doc")
+            }else{
+                 //是否清空文档
+                if($("#IsClearBeforeCreate").checkbox("options").checked)
+                {
+                    if(!ClearDocument())
+                    {
+                        return;
+                    }
+                }
+                if(!CheckContractBookMarks())
+                {
+                    strlisense="";
+                    strversion="";
+                    totalprice=0;
+                    CombineFile(GetTemplateFileUrl().concat("合同模板.doc"));
+                }
+            }
+            //开始给模板相关数据赋值、创建表格等
+            var bianhao=GetContractBianHao();
+            SetBookMarkValue(ContractName_Enum.bianhao,bianhao);
+            SetBookMarkValue(ContractName_Enum.jiafang,$("#ContractJiaF").textbox("getText"));
+            SetBookMarkValue(ContractName_Enum.jiafang2,$("#ContractJiaF").textbox("getText"));
+            if(mode==0)
+            {
+                var rows=[$('#projectstab').datagrid('getSelected')];
+                CreateContract(rows);
+            }else if(mode==1)
+            {
+                var rows = $("#projectstab").datagrid("getRows");
+                CreateContract(rows);
+            }
+            if($("#IsTrackRevisions").checkbox("options").checked)
+            {
+                EnterTrackRevisions(true,GlobalData.PassWord);
+            }
+            
+            var savedir=$('#saveDir').textbox("getText");
+            if(!wps.FileSystem.Exists(savedir))
+            {
+                wps.FileSystem.Mkdir(savedir);
+            }
+            var format=OfficeObject.ActiveDocument.SaveFormat==0?".doc":".docx"; 
+            var savepath=savedir+$('#ContractJiaF').textbox("getText")+bianhao+format;
+            OfficeObject.ActiveDocument.SaveAs2(savepath);
+            
+        }
+
+        //生成产品授权、产品功能描述、产品数量与价格等
+        function CreateContract(rows)
+        {
+            SetContractLisense(rows);
+            SetContractVersion(rows);
+            SetContractProduct(rows);
+            SetContractMoney(rows);
+        }
+
+        //处理产品价格
+        function SetContractMoney(rows)
+        {
+            var table=OfficeObject.ActiveDocument.Bookmarks.Item(ContractName_Enum.ntkoproduct).Range.Tables.Item(1);
+            for (var i = 0; i < rows.length; i++)
+            {
+                var row=rows[i];
+                totalprice+= parseInt(row.ProductPrice)*parseInt(row.ProductCount);
+            }
+            SetBookMarkValue(ContractName_Enum.heji,totalprice+".00");
+            SetBookMarkValue(ContractName_Enum.heji2,NumToChinese(totalprice)+"元整");
+        }
+
+        //处理产品表格
+        function SetContractProduct(rows)
+        {
+            var table=OfficeObject.ActiveDocument.Bookmarks.Item(ContractName_Enum.ntkoproduct).Range.Tables.Item(1);
+            for (var i = 0; i < rows.length; i++)
+            {
+                var row=rows[i];
+                var oldcount=table.Rows.Count;
+                table.Rows.Item(oldcount-1).Select();
+                OfficeObject.Selection.InsertRowsBelow();
+                SetCellVlue(table,oldcount,1,row.ProductName,0);
+                SetCellVlue(table,oldcount,2,row.ProductVersion+"\r\n"+row.ProductLanguage,0);
+                SetCellVlue(table,oldcount,3,row.ProductLisense,0);
+                SetCellVlue(table,oldcount,4,row.ProductPrice,0);
+                SetCellVlue(table,oldcount,5,row.ProductCount,0);
+                SetCellVlue(table,oldcount,6,row.ProductUser,0);
+            }
+        }
+
+        //处理产品授权描述表格
+        function SetContractLisense(rows)
+        {
+            var table=OfficeObject.ActiveDocument.Bookmarks.Item(ContractName_Enum.ntkolisense).Range.Tables.Item(1);
+            for (var i = 0; i < rows.length; i++)
+            {
+                var row=rows[i];
+                if (strlisense.indexOf(row.ProductLisense) == -1 && trim(row.ProductLisenseDescrible)!= "")
+                {
+                    table.Rows.Last.Select();
+                    OfficeObject.Selection.InsertRowsBelow();
+                    SetCellVlue(table,table.Rows.Last.Index,1,row.ProductLisense,0);
+                    SetCellVlue(table,table.Rows.Last.Index,2,row.ProductLisenseDescrible,0);
+                    SetCellVlue(table,table.Rows.Last.Index,3,"是",0);
+                    strlisense += row.ProductLisense+"-";
+                }
+            }
+        }
+
+        //处理产品版本描述表格
+        function SetContractVersion(rows)
+        {
+            var table=OfficeObject.ActiveDocument.Bookmarks.Item(ContractName_Enum.ntkoversion).Range.Tables.Item(1);
+            for (var i = 0; i < rows.length; i++)
+            {
+                var row=rows[i];
+                if (strlisense.indexOf(row.ProductVersion) == -1 && trim(row.ProductVersionDescrible)!= "")
+                {
+                    table.Rows.Last.Select();
+                    OfficeObject.Selection.InsertRowsBelow();
+                    SetCellVlue(table,table.Rows.Last.Index,1,row.ProductName.concat("\r\n",row.ProductVersion),0);
+                    SetCellVlue(table,table.Rows.Last.Index,2,row.ProductVersionDescrible,0);
+                    SetCellVlue(table,table.Rows.Last.Index,3,"是",0);
+                    strversion += row.ProductVersion+"-";
+                }
+            }
+        }
+
+        //新建
+		function NewProject(){
+            type="new";
+            $('#dlg').dialog('open').dialog('center').dialog('setTitle','新建销售产品');
+            var types = $("#ProductName").combobox('getData');
+            if (types.length > 0){ 
+                setTimeout(function(){
+                    $("#ProductName").combobox('select', types[0].产品名称); 
+                    OnProductChange(types[0]);
+                    $("#ProductUser").textbox("setValue",$("#ContractJiaF").textbox("getText"))
+                },100);
+            }
+		}
+
+        //编辑
+		function EditProject(){
+            type="edit";
+            var row = $('#projectstab').datagrid('getSelected');
+			if (row){
+				$('#dlg').dialog('open').dialog('center').dialog('setTitle','编辑销售产品');
+				$('#fm').form('load',row);
+				
+			}else{
+                ShowMessage("请先选中要修改的数据");
+            }
+		}
+
+        //删除
+        function DestroyProject(){
+			var row = $('#projectstab').datagrid('getSelected');
+			if (row){
+				$.messager.confirm('请确认','是否确定要删除该数据？',function(r){
+                    if(r)
+                    {
+                        var index = $('#projectstab').datagrid('getRowIndex',row);
+					    $('#projectstab').datagrid('deleteRow',index); //通过行号移除该行
+                    }
+				});
+			}else{
+                ShowMessage("请先选中要删除的数据");
+            }
+        }
+
+        //保存
+		function SaveProject(){
+           if( $('#fm').form('validate')){
+                var index=0;
+                var row=GetFormJson();
+                if(type=="new")
+                {
+                    var rows = $("#projectstab").datagrid("getRows");  
+                    index=rows.length+1;
+                    $('#projectstab').datagrid('appendRow', row);
+                }else if(type=="edit")
+                {
+                    var rows = $('#projectstab').datagrid('getSelected');
+                    index = $('#projectstab').datagrid('getRowIndex',rows);
+                    $('#projectstab').datagrid('updateRow', 
+                    {
+                        index: index,
+                        row: row
+                    }); 
+                }
+                $('#dlg').dialog('close');		// close the dialog
+           }else{
+               ShowMessage("请检查所有输入项是否都合法！");
+           }
+           
+        }
+        
+        //表单转json对象
+        function GetFormJson()
+        {
+            var product= GlobalData.Product["产品分类"].filter((p) => {return p.产品名称 == $('#fm #ProductName').combobox("getText");})[0];
+            var row={
+                    ProductName :$('#fm #ProductName').combobox("getText"),
+                    ProductVersion : $('#fm #ProductVersion').combobox("getText"),
+                    ProductLisense : $('#fm #ProductLisense').combobox("getText"),
+                    ProductLanguage : $('#fm #ProductLanguage').combobox("getText"),
+                    ProductCount:$('#fm #ProductCount').combobox("getText"),
+                    ProductPrice :$('#fm #ProductPrice').combobox("getText"),
+                    ProductUser : $('#fm #ProductUser').combobox("getText"),
+                    ProductNameDescrible: product.功能描述,
+                    ProductVersionDescrible:  GlobalData.Product["产品版本"].filter((p) => {return p.版本名称 == $('#fm #ProductVersion').combobox("getText")&&p.版本ID==product.版本ID;})[0].版本描述,
+                    ProductLisenseDescrible:  GlobalData.Product["产品授权"].filter((p) => {return p.授权名称 == $('#fm #ProductLisense').combobox("getText")&&p.授权ID==product.授权ID;})[0].授权描述
+                };
+            return row;
+        }
+
+        //测试数据
+        var TestData = [
+        {
+            ProductName : '煦航论文自动排版软件V1.0',
+            ProductVersion : '专业版',
+            ProductLisense : '单套授权',
+            ProductLanguage : '简体中文',
+            ProductCount:'1',
+            ProductPrice : '5000',
+            ProductUser : '中国电子工业标准化技术协会信息技术应用创新工作委员会',
+            ProductNameDescrible : '可以自动生成符合格式要求的论文，支持自动生成中文封面页、英文封面页、中文摘要页、英文摘要页、严正申明页、目录页、论文正文、感谢页、参考文献页等。',
+            ProductVersionDescrible : '专业版包含32位控件和64位控件，运行环境要求： 32位控件：32位浏览器IE8-11、chrome28-54、Firefox28-45；32位完整版MS OFFICE2003-2016；32位环境下的专业版WPS2007-2016； 64位控件：64位浏览器IE8-11， 64位完整版MS OFFICE2003-2016；',
+            ProductLisenseDescrible : '授权甲方给一个最终用户单位内部或者直接授权一个最终用户单位内部系统中使用此“产品”，并不授权其他任何第三方单位使用。产品本身不能单独对外销售。'
+        },{
+            ProductName : '煦航OFD阅读软件V1.0',
+            ProductVersion : '信创版',
+            ProductLisense : '客户端授权',
+            ProductLanguage : 'English',
+            ProductCount:'100',
+            ProductPrice : '1000',
+            ProductUser : 'XXX省委组织部',
+            ProductNameDescrible : '支持OFD/PDF电子文件的阅读浏览、文档操作、图文注释等通用版式处理功能，还根据公务办公特点，提供原笔迹签批、电子印章、语义应用、修订标记等公务应用扩展功能。阅读器体积小巧、高效稳定，支持各类自主可控软硬件环境，为用户提供卓越的电子文件阅读与处理体验。',
+            ProductVersionDescrible : '持在中标麒麟、银河麒麟、中科方德、Uos等国产化操作系统中打开OFD文档。',
+            ProductLisenseDescrible : '权甲方在一个终端设备上使用本产品。'
+        },{
+            ProductName : '煦航WPS加载项软件V1.0',
+            ProductVersion : 'Windows版',
+            ProductLisense : '网站授权',
+            ProductLanguage : '繁体中文',
+            ProductCount:'2',
+            ProductPrice : '10000',
+            ProductUser : 'XXX省委组织部',
+            ProductNameDescrible : 'WPS 加载项是一套基于 Web 技术用来扩展 WPS 应用程序的解决方案。每个 WPS 加载项都对应打开了一个网页，并通过调用网页中 JavaScript 方法来完成其功能逻辑。 WPS 加载项打开的网页可以直接与 WPS 应用程序进行交互，同时一个 WPS 加载项中的多个网页形成了一个整体， 相互之间可以进行数据共享。',
+            ProductVersionDescrible : '支持在xp、win7、win8、win10、win11等国产化操作系统中生成授权书、服务承诺函等文档。',
+            ProductLisenseDescrible : '授权甲方在一个网站上使用此“产品”，并不授权其他任何第三方网站使用。产品本身不能单独对外销售。'
+        }
+        ];
+
+        //导入测试数据
+        function ImportTestData()
+        {
+            var data=TestData.filter(v => TestData.includes(v));//创建新数据，避免原始测试数据被修改或删除
+            $('#projectstab').datagrid("loadData",data);
+        }
+
+
+     
+    
+    </script>
+    
+  
+</body>
+</html>
