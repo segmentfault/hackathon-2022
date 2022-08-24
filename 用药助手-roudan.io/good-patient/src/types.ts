@@ -20,3 +20,14 @@ export interface Medicine {
   note: string;
   enabled?: boolean;
 }
+
+export type Menu = {
+  label: string;
+  command: string | number;
+  params?: unknown;
+}
+
+export enum MenuCommand {
+  Import,
+  Export,
+}

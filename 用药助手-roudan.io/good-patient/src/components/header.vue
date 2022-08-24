@@ -1,17 +1,20 @@
 <script lang="ts" setup>
 import {onBeforeUnmount, ref, toRefs} from "vue";
+import type {Menu} from "@/types";
 
 interface Props {
-  hasMenu: boolean;
+  menu?: Menu[];
   title: string;
 }
 const props = withDefaults(defineProps<Props>(), {
-  hasMenu: false,
   title: '姆伊用药助手',
 });
-const { hasMenu, title } = toRefs(props);
+const { title, menu } = toRefs(props);
+const emit = defineEmits<{
+  (e:'click-menu', command:string | number):void;
+}>();
 const isOpen = ref<boolean>(false);
-const menu = ref<HTMLDivElement>();
+const menuEl = ref<HTMLDivElement>();
 
 window.addEventListener('click', onBodyCLick);
 
@@ -19,9 +22,13 @@ onBeforeUnmount(() => {
   window.removeEventListener('click', onBodyCLick);
 });
 
-function onBodyCLick(event: MouseEvent) {
+function onBodyCLick(event: MouseEvent): void {
   const target = event.target as HTMLElement;
-  if (menu.value?.contains(target)) return;
+  if (menuEl.value?.contains(target)) return;
+  isOpen.value = false;
+}
+function doClickMenu(item: Menu): void {
+  emit('click-menu', item.command);
   isOpen.value = false;
 }
 </script>
@@ -33,7 +40,7 @@ export default {
 </script>
 
 <template lang="pug">
-header.flex.border-b.items-center.px-4.py-2.bg-gray-100.shadow-md.sticky.w-full.top-0
+header.flex.border-b.items-center.px-4.py-2.bg-gray-100.shadow-md.sticky.w-full.top-0.z-10
   router-link.text-blue-500.text-sm.w-8(
     class="hover:text-blue-600"
     :to="{name: 'home'}"
@@ -46,7 +53,7 @@ header.flex.border-b.items-center.px-4.py-2.bg-gray-100.shadow-md.sticky.w-full.
 
   .w-8
     button.p-0.w-8.h-8.text-blue-500(
-      v-if="hasMenu"
+      v-if="menu"
       type="button"
       class="active:text-blue-600"
       :class="{'bg-gray-100': isOpen}"
@@ -54,9 +61,9 @@ header.flex.border-b.items-center.px-4.py-2.bg-gray-100.shadow-md.sticky.w-full.
     )
       i.bi.bi-plus-circle
 
-  .origin-top-right.absolute.right-4.top-10.w-56.rounded-md.shadow-lg.bg-white.ring-1.ring-black.ring-opacity-5(
+  .origin-top-right.absolute.right-4.top-10.w-48.rounded-md.shadow-lg.bg-white.ring-1.ring-black.ring-opacity-5(
     v-if="isOpen"
-    ref="menu"
+    ref="menuEl"
     role="menu"
     aria-orientation="vertical"
     aria-labelledby="menu-button"
@@ -65,19 +72,11 @@ header.flex.border-b.items-center.px-4.py-2.bg-gray-100.shadow-md.sticky.w-full.
   )
     .py-1
       slot
-        a.text-gray-700.block.px-4.py-2.text-sm(
-          href="#"
+        button.text-gray-700.block.px-4.py-2.text-sm.w-full.text-left(
+          v-for="item in menu"
+          type="button"
           role="menuitem"
           tabindex="-1"
-        ) Account settings
-        a.text-gray-700.block.px-4.py-2.text-sm(
-          href="#"
-          role="menuitem"
-          tabindex="-1"
-        ) Support
-        a.text-gray-700.block.px-4.py-2.text-sm(
-          href="#"
-          role="menuitem"
-          tabindex="-1"
-        ) License
+          @click="doClickMenu(item)"
+        ) {{item.label}}
 </template>

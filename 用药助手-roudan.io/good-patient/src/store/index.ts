@@ -1,37 +1,99 @@
-import { defineStore } from 'pinia';
+import {defineStore} from 'pinia';
 import {computed, ref} from "vue";
+import find from 'lodash/find';
 import {Medicine} from "@/types";
+import type {LocalStore} from "@/store/types";
+import {version} from '../../package.json';
+import {diffMinutes} from "@/utils";
 
-const MEDICINE_KEY = 'mui-medicine';
-const LAST_MEDICINE_ID = 'mui-last-medicine-id';
+const STORE_KEY = 'mui-medicine';
 
-function getLocal<T>(key: string, defaultValue: T): T {
-  const local = localStorage.getItem(key);
-  if (local) {
-    return JSON.parse(local);
-  } else {
-    return defaultValue;
-  }
+let store: LocalStore;
+const local = localStorage.getItem(STORE_KEY);
+if (local) {
+  store = JSON.parse(local);
+  // TODO 将来要处理不同版本的存储数据结构
+  store.version = version;
+} else {
+  store = {
+    version,
+    medicines: {},
+    config: {},
+    lastId: 1,
+  };
 }
 
 export const useMedicineStore = defineStore('medicine', () => {
-  const data = getLocal<Record<string, Medicine>>(MEDICINE_KEY, {});
-  const lastId = getLocal<number>(LAST_MEDICINE_ID, 1);
+  const data = store.medicines;
+  const lastId = store.lastId;
   const medicines = ref<Record<string, Medicine>>(data);
+
+  const total = computed<number>(() => {
+    return Object.values(medicines.value).length;
+  });
 
   const save = (data: Medicine, id?: number) => {
     id = id || lastId;
     medicines.value[id] = data;
-    localStorage.setItem(MEDICINE_KEY, JSON.stringify(medicines.value));
+    store.medicines[id] = data;
+    localStorage.setItem(STORE_KEY, JSON.stringify(store));
   }
   const remove = (id: string) => {
     delete medicines.value[id];
-    localStorage.setItem(MEDICINE_KEY, JSON.stringify(medicines.value));
+    delete store.medicines[id];
+    localStorage.setItem(STORE_KEY, JSON.stringify(store));
+  }
+  const exportData = (): void => {
+    const blob = new Blob([JSON.stringify(store)], {type: 'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'mui-medicines.json';
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+  const importData = (): void => {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'application/json';
+    input.onchange = () => {
+      const file = (input.files as FileList)[0];
+      if (!file) {
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const result: string = reader.result as string;
+        medicines.value = JSON.parse(result).medicines;
+        localStorage.setItem(STORE_KEY, result);
+      }
+      reader.readAsText(file);
+    }
+    input.click();
+  }
+  const getCurrentMedicine = (): Medicine | undefined => {
+    const now = new Date();
+    const hour = now.getHours();
+    const minute = now.getMinutes();
+    return find(medicines.value, (medicine: Medicine) => {
+      const {meals} = medicine;
+      if (!meals) {
+        return false;
+      }
+      // 找出1.5小时内最后提醒的药
+      return !!meals.find((meal) => {
+        return diffMinutes(hour, minute, meal) < 90;
+      });
+    });
   }
 
-  const total = computed<number>(() => {
-    return Object.values(medicines.value).length;
-  })
-
-  return { medicines, total, save, remove };
+  return {
+    medicines,
+    total,
+    save,
+    remove,
+    exportData,
+    importData,
+    getCurrentMedicine,
+  };
 });

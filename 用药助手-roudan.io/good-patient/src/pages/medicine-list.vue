@@ -1,10 +1,21 @@
 <script lang="ts" setup>
-import {MedicineType} from '@/types';
-import type {Medicine} from '@/types';
+import type {Medicine, Menu} from '@/types';
+import {MedicineType, MenuCommand} from '@/types';
 import AppHeader from '@/components/header.vue';
 import {useMedicineStore} from "@/store";
 
 const medicineStore = useMedicineStore();
+
+const menu: Menu[] = [
+  {
+    label: '导出数据',
+    command: MenuCommand.Export,
+  },
+  {
+    label: '导入数据',
+    command: MenuCommand.Import,
+  },
+];
 
 function doRemove(item: Medicine, id: string) {
   if (!confirm(`您确定要删除 ${item.name} 吗？`)) {
@@ -12,12 +23,27 @@ function doRemove(item: Medicine, id: string) {
   }
   medicineStore.remove(id);
 }
+function onClickMenu(command: string | number) {
+  switch (command) {
+    case MenuCommand.Import:
+      medicineStore.importData();
+      break;
+
+    case MenuCommand.Export:
+      medicineStore.exportData();
+      break;
+  }
+}
 </script>
 
 <template lang="pug">
-app-header(title="药物列表")
+app-header(
+  title="药物列表"
+  :menu="menu"
+  @click-menu="onClickMenu"
+)
 
-.medicine-list.p-4(v-if="medicineStore.medicines.length")
+.medicine-list.p-4.pb-0(v-if="medicineStore.total")
   .medicine-item.border.border-solid.border-gray-200.rounded.py-2.px-4.mb-4.font-light(
     v-for="(item, id) in medicineStore.medicines"
    :key="id"
@@ -42,7 +68,7 @@ app-header(title="药物列表")
       .flex.justify-between
         span(v-for="meal in item.meals", :key="meal") {{meal}}
 
-.h-40.flex.justify-center.items-center.flex-col.text-gray-400
+.h-40.flex.justify-center.items-center.flex-col.text-gray-400(v-else)
   i.text-6xl.bi.bi-inbox
   span.text-xs 尚未添加药物
 
