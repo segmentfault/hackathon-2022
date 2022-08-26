@@ -15,7 +15,7 @@ async function doCountDown() {
   if (!(await checkPermission())) {
     alert('请允许通知权限');
   }
-  sendMessageAfter(1, 'hello', 'world');
+  sendMessageAfter(10, 'hello', 'world');
 }
 </script>
 
