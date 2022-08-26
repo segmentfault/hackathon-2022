@@ -75,6 +75,7 @@ export const useMedicineStore = defineStore('medicine', () => {
     const now = new Date();
     const hour = now.getHours();
     const minute = now.getMinutes();
+    return medicines.value[1];
     return find(medicines.value, (medicine: Medicine) => {
       const {meals} = medicine;
       if (!meals) {

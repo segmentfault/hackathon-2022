@@ -24,11 +24,13 @@ export default {
     :to="{name: 'add'}"
   ) 💊 添加药物
 
-  router-link.w-44.h-12.leading-12.bg-green-500.text-white.rounded.mb-3.text-center(
+  router-link.w-44.h-12.leading-12.bg-green-500.text-white.rounded.mb-3.flex.justify-center.items-center(
     class="hover:bg-green-600"
     :to="{name: 'list'}"
-  ) 药物列表
-    span.ml-1(v-if="store.total") x{{store.total}}
+  )
+    .mr-1.bg-white.rounded-sm.w-4.h-4.text-green-500.text-xs.text-center.font-bold(v-if="store.total") {{store.total}}
+    | 正在用药
+
 
   button.w-44.h-12.bg-purple-500.text-white.rounded(
     class="hover:bg-purple-600"

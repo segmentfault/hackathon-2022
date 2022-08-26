@@ -7,7 +7,7 @@ import CurrentMedicine from "@/components/current-medicine.vue";
 
 const medicineStore = useMedicineStore();
 
-const currentMedicine = ref<Medicine>();
+const currentMedicine = ref<Medicine>(medicineStore.medicines['1']);
 
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'visible') {

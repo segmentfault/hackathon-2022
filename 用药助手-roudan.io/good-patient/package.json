@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "dev": "vite",
+    "dev:vite": "vite",
+    "dev:sw": "tsc --watch --project tsconfig.sw.json",
     "build": "vite build",
     "preview": "vite preview"
   },

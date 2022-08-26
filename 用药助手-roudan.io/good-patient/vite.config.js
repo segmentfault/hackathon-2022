@@ -16,8 +16,7 @@ export default defineConfig(({ command }) => {
           short_name: 'mudicine',
           description: '更科学的用药助手',
           theme_color: '#FFFFFF',
-
-        }
+        },
       }),
     ],
     resolve: {
