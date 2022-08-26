@@ -15,7 +15,7 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.removeSystemTransparent(context);
     ///预缓存背景图片
-    precacheImage(const AssetImage(R.assetsImagesLoginBackground), context);
+    // precacheImage(const AssetImage(R.assetsImagesLoginBackground), context);
     return const Scaffold(
       backgroundColor: Colors.white,
       body: SplashAnimWidget()

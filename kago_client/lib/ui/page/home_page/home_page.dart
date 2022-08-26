@@ -11,24 +11,39 @@ class HomePage extends GetSaveView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      backgroundColor: Colors.white,
-      body: SafeArea(
-        top: true,
-        child: ListView.builder(
+    return Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          title: const Text(
+            "KAGo",
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+        ),
+        body: SafeArea(
+          top: true,
+          child: ListView.builder(
             padding: EdgeInsets.zero,
             shrinkWrap: true,
             itemCount: 10,
             itemBuilder: (BuildContext context, int index) {
               return Card(
-                margin: const EdgeInsets.all(10),
+                margin: const EdgeInsets.all(12),
                 child: Container(
-                  height: 100,
-                  child: Text("打开群 $index"),
+                  padding: const EdgeInsets.all(10),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 88,
+                        width: 88,
+                        color: Colors.blue,
+                      ),
+                      Text("打卡群 $index"),
+                    ],
+                  ),
                 ),
               );
             },
           ),
-      ));
+        ));
   }
 }

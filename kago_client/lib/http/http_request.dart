@@ -103,7 +103,8 @@ Map<String, dynamic>? _headerToken(){
     return null;
   }
   Map<String, dynamic> httpHeaders = {
-    'Cookie': 'loginUserName=${info.username};loginUserPassword=${info.password}',
+    'Authorization':  "Bearer ${info.token}" ,
+    // 'Cookie': 'loginUserName=${info.username};loginUserPassword=${info.password}',
   };
   return httpHeaders;
 }

@@ -30,18 +30,11 @@ class HomeController extends BaseGetController {
 
   /// 更新用户信息，每次进入时更新
   void notifyUserInfo() {
-    request.getUserInfo(success: (data) {
-      userInfo = data;
-      SpUtil.notifyUserInfo(userInfo);
-      update();
-    });
-  }
-
-  /// 刷新分享的文章数据
-  void notifyShareArticle() {
-    request.requestShareArticleList(1 , length: (size) {
-      share.value = size;
-    });
+    // request.getUserInfo(success: (data) {
+    //   userInfo = data;
+    //   SpUtil.notifyUserInfo(userInfo);
+    //   update();
+    // });
   }
 
   ///更新历史记录长度
