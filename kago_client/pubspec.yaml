@@ -45,6 +45,34 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
+  #GetX状态管理框架 https://pub.flutter-io.cn/packages/get
+  get: 4.3.7
+  # rxdart https://pub.flutter-io.cn/packages/rxdart
+  rxdart: ^0.27.1
+  #toast https://pub.flutter-io.cn/packages/fluttertoast
+  fluttertoast: ^8.0.8
+  # 网络请求库 https://github.com/flutterchina/dio
+  dio: 4.0.0
+  # 网络检测 https://pub.flutter-io.cn/packages/connectivity
+  connectivity: 3.0.6
+  # 加载SVG图片 https://pub.flutter-io.cn/packages/flutter_svg
+  flutter_svg: 0.22.0
+  # lottie动画 https://pub.flutter-io.cn/packages/flutter_lottie
+  lottie: ^1.1.0
+  # SP键值对存储 https://pub.flutter-io.cn/packages/shared_preferences
+  shared_preferences: ^2.0.6
+  #读取相册
+  image_picker: 0.8.3+3
+  # https://github.com/flutter/plugins/tree/master/packages/url_launcher
+  url_launcher: ^6.0.9
+  #文件路径管理工具类
+  path_provider: ^2.0.2
+  #上拉刷新、下拉加载
+  pull_to_refresh: ^2.0.0
+  #圖片保存到本地 https://pub.flutter-io.cn/packages/image_gallery_saver
+  image_gallery_saver: ^1.7.1
+  #权限申请框架 https://pub.flutter-io.cn/packages/permission_handler
+  permission_handler: ^8.1.6
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
