@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:kago_client/base/get/get_save_state_view.dart';
 import 'package:kago_client/ui/page/template_page/template_controller.dart';
+import 'package:get/get.dart';
+
+import 'create_room_page.dart';
 
 class TemplatePage extends GetSaveView<TemplateController> {
-  
   const TemplatePage({Key? key}) : super(key: key);
 
   @override
@@ -23,7 +25,12 @@ class TemplatePage extends GetSaveView<TemplateController> {
                   text: "选择场景",
                   desc: "多种打卡场景，快速开始吧",
                 ),
-                GridGetView(),
+                GridGetView(
+                  onTap: () {
+                    print("CrateRoomPage>>");
+                    Get.to(CrateRoomPage());
+                  },
+                ),
               ],
             ),
           )),
@@ -31,15 +38,13 @@ class TemplatePage extends GetSaveView<TemplateController> {
   }
 }
 
-class GridGetView extends StatelessWidget {
-  List listData = [
-    {"title": "标题1", "author": "内容1", "image": "https://www.itying.com/images/flutter/1.png"},
-    {"title": "标题2", "author": "内容2", "image": "https://www.itying.com/images/flutter/2.png"},
-    {"title": "标题3", "author": "内容3", "image": "https://www.itying.com/images/flutter/3.png"},
-    {"title": "标题4", "author": "内容4", "image": "https://www.itying.com/images/flutter/4.png"},
-    {"title": "标题5", "author": "内容5", "image": "https://www.itying.com/images/flutter/5.png"},
-    {"title": "标题6", "author": "内容6", "image": "https://www.itying.com/images/flutter/6.png"},
-  ];
+class GridGetView extends GetSaveView<TemplateController> {
+  final VoidCallback? onTap;
+
+  const GridGetView({
+    Key? key,
+    this.onTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -54,12 +59,16 @@ class GridGetView extends StatelessWidget {
       ),
       physics: const NeverScrollableScrollPhysics(),
       scrollDirection: Axis.vertical,
-      itemCount: listData.length,
+      itemCount: controller.templateList.length,
       shrinkWrap: true,
       itemBuilder: (context, index) {
-        return Image.network(
-          listData[index]["image"],
-          fit: BoxFit.cover,
+        return GestureDetector(
+          onTap: onTap,
+          // child: Image.network(
+          //   controller.templateList[index]["image"],
+          //   fit: BoxFit.cover,
+          // ),
+          child: Container(color:Colors.redAccent),
         );
       },
     );
@@ -84,13 +93,15 @@ class TitleSection extends StatelessWidget {
             style: const TextStyle(
                 fontSize: 26, fontWeight: FontWeight.bold, color: Colors.blueAccent),
           ),
-          const SizedBox(height: 6,),
+          const SizedBox(
+            height: 6,
+          ),
           Text(
             desc,
             style: const TextStyle(
                 fontSize: 14, fontWeight: FontWeight.normal, color: Colors.blueAccent),
           ),
-           const SizedBox(
+          const SizedBox(
             height: 15,
           ),
         ],
