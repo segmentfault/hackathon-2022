@@ -1,7 +1,9 @@
 import 'package:kago_client/base/get/get_save_state_view.dart';
+import 'package:kago_client/routes/routes.dart';
 import 'package:kago_client/ui/dialog/dialog_common_style.dart';
 import 'package:kago_client/ui/page/home_page/home_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 /// @class : HomePage
 /// @date : 2022/08/26
@@ -22,19 +24,20 @@ class HomePage extends GetSaveView<HomeController> {
             actions: [
               IconButton(
                   onPressed: () {
-                    showBottomSheet(
+                    Get.toNamed(Routes.roomTemplatePage);
+                    // showBottomSheet(
 
-                        context: context,
-                        backgroundColor: Colors.redAccent,
-                        builder: (
-                          context,
-                        ) {
-                          return Container(
-                        height: 88,
-                        width: 88,
-                        color: Colors.blue,
-                      );
-                        });
+                    //     context: context,
+                    //     backgroundColor: Colors.redAccent,
+                    //     builder: (
+                    //       context,
+                    //     ) {
+                    //       return Container(
+                    //     height: 88,
+                    //     width: 88,
+                    //     color: Colors.blue,
+                    //   );
+                    //     });
                   },
                   icon: const Icon(
                     Icons.more_horiz,
