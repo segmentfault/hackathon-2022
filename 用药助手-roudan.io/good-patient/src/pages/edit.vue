@@ -7,11 +7,12 @@ import type {Medicine} from "@/types";
 import {MedicineType} from '@/types';
 import {useMedicineStore} from "@/store";
 import ToggleSwitch from "@/components/toggle.vue";
+import {checkPermission} from "@/service/notification";
 
 function initMedicine(): Medicine {
   if (!route.params.id) return createNewMedicine();
-  const medicine = medicineStore.medicines[route.params.id];
-  mealsStatus.value = medicine.meals.map((meal: string) => !!meal);
+  const medicine = medicineStore.medicines[route.params.id.toString()];
+  mealsStatus.value = (medicine.meals || []).map((meal: string) => !!meal);
   return medicine;
 }
 
@@ -24,7 +25,12 @@ const mealsStatus = ref<boolean[]>(MEALS.map(() => true));
 const status = ref<boolean | null>(null);
 const medicine = reactive<Medicine>(initMedicine());
 
-function doSubmit(event: Event) {
+async function doSubmit(event: Event) {
+  if (!(await checkPermission())) {
+    alert('您必须开启通知权限才能使用此软件。');
+    return;
+  }
+
   if ((event.target as HTMLFormElement).matches(':invalid')) {
     return;
   }
@@ -39,8 +45,11 @@ function doSubmit(event: Event) {
   }, 1500);
 }
 function onTypeChange() {
-  if (medicine.type === MedicineType.AfterMeal && medicine.meals?.length === 0) {
-    medicine.meals = ['09:00', '13:00', '20:00'];
+  if (medicine.type === MedicineType.AfterMeal) {
+    if (!medicine.meals || medicine.meals.length === 0 || medicine.meals.every(meal => !meal)) {
+      medicine.meals = ['09:00', '13:00', '20:00', ''];
+    }
+    medicine.delay = medicine.delay || '30';
   }
 }
 </script>

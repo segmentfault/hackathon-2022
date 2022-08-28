@@ -28,7 +28,7 @@ export default {
     class="hover:bg-green-600"
     :to="{name: 'list'}"
   )
-    .mr-1.bg-white.rounded-sm.w-4.h-4.text-green-500.text-xs.text-center.font-bold(v-if="store.total") {{store.total}}
+    .mr-1.bg-white.rounded-sm.w-4.h-4.text-green-500.text-xs.text-center.font-bold {{store.total}}
     | 正在用药
 
 

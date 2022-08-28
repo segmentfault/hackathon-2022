@@ -66,7 +66,7 @@ app-header(
         | 分钟
       h4.font-normal 最后提醒时间
       .flex.justify-between
-        span(v-for="meal in item.meals", :key="meal") {{meal}}
+        span.font-mono(v-for="meal in item.meals", :key="meal") {{meal}}
 
 .h-40.flex.justify-center.items-center.flex-col.text-gray-400(v-else)
   i.text-6xl.bi.bi-inbox

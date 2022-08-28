@@ -75,7 +75,6 @@ export const useMedicineStore = defineStore('medicine', () => {
     const now = new Date();
     const hour = now.getHours();
     const minute = now.getMinutes();
-    return medicines.value[1];
     return find(medicines.value, (medicine: Medicine) => {
       const {meals} = medicine;
       if (!meals) {
@@ -83,7 +82,8 @@ export const useMedicineStore = defineStore('medicine', () => {
       }
       // 找出1.5小时内最后提醒的药
       return !!meals.find((meal) => {
-        return diffMinutes(hour, minute, meal) < 90;
+        const diff = diffMinutes(hour, minute, meal);
+        return diff > 0 && diff < 90;
       });
     });
   }
