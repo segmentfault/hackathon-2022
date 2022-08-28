@@ -56,7 +56,7 @@ class HomeTabOptionsState extends State<MainPage>
       backgroundColor: ColorStyle.color_F8F9FC,
       body: TabBarView(
         controller: tabController,
-        children: const [HomePage(), SquarePage(), MyPage()],
+        children:  const [HomePage(), SquarePage(), MyPage()],
       ),
       bottomNavigationBar: Container(
         // height: 50,

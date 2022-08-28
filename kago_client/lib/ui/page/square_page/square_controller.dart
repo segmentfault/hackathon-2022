@@ -1,5 +1,6 @@
 
 import 'package:kago_client/base/get/controller/base_page_controller.dart';
+import 'package:kago_client/base/get/getx_controller_inject.dart';
 import 'package:kago_client/util/ext/refresher_extension.dart';
 import 'package:kago_client/widget/pull_smart_refresher.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -8,7 +9,7 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 /// @date : 2021/09/09
 /// @name : liaoyp
 /// @description :广场 控制器层
-class SquareController extends BaseGetPageController {
+class SquareController extends BaseGetController {
   List projectData = [];
 
   ///请求积分明细

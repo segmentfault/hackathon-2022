@@ -1,7 +1,7 @@
 
 import 'package:kago_client/ui/page/home_page/home_controller.dart';
-import 'package:kago_client/ui/page/home_page/home_page.dart';
 import 'package:kago_client/ui/page/my_page/my_controller.dart';
+import 'package:kago_client/ui/page/square_page/square_controller.dart';
 import 'package:get/get.dart';
 
 
@@ -14,6 +14,6 @@ class MainBinding extends Bindings {
   void dependencies() {
     Get.lazyPut(() => HomeController());
     Get.lazyPut(() => MyController());
-    // Get.lazyPut(() => SquareController());
+    Get.lazyPut(() => SquareController());
   }
 }
