@@ -2,6 +2,8 @@ import 'package:kago_client/ui/page/home_page/home_binding.dart';
 import 'package:kago_client/ui/page/home_page/home_page.dart';
 import 'package:kago_client/ui/page/login_page/login_binding.dart';
 import 'package:kago_client/ui/page/login_page/login_page.dart';
+import 'package:kago_client/ui/page/main_page/main_binding.dart';
+import 'package:kago_client/ui/page/main_page/main_page.dart';
 import 'package:kago_client/ui/page/register_page/register_binding.dart';
 import 'package:kago_client/ui/page/register_page/register_page.dart';
 import 'package:kago_client/ui/page/splash_page/splash_binding.dart';
@@ -45,8 +47,8 @@ abstract class Routes {
         binding: RegisterBinding()),
     GetPage(
         name: homePage,
-        page: () => const HomePage(),
-        binding: HomeBinding()),
+        page: () => const MainPage(),
+        binding: MainBinding()),
     GetPage(
         name: loginPage,
         page: () => const LoginPage(),
