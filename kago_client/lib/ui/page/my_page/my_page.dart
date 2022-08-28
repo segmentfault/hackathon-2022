@@ -101,13 +101,14 @@ class LogoutButton extends StatelessWidget {
 
 class GridGetView extends StatelessWidget {
   List listData = [
-    {"title": "标题1", "author": "内容1", "image": "https://www.itying.com/images/flutter/1.png"},
-    {"title": "标题2", "author": "内容2", "image": "https://www.itying.com/images/flutter/2.png"},
-    {"title": "标题3", "author": "内容3", "image": "https://www.itying.com/images/flutter/3.png"},
-    {"title": "标题4", "author": "内容4", "image": "https://www.itying.com/images/flutter/4.png"},
-    {"title": "标题5", "author": "内容5", "image": "https://www.itying.com/images/flutter/5.png"},
-    {"title": "标题6", "author": "内容6", "image": "https://www.itying.com/images/flutter/6.png"},
+    {"title": "标题1", "author": "内容1", "image": "assets/images/Group 2029.png"},
+    {"title": "标题2", "author": "内容2", "image": "assets/images/Group 2032.png"},
+    {"title": "标题3", "author": "内容3", "image": "assets/images/Group 2037.png"},
+    {"title": "标题4", "author": "内容4", "image": "assets/images/Group 2038.png"},
+    {"title": "标题5", "author": "内容5", "image": "assets/images/Group 2039.png"},
+    {"title": "标题6", "author": "内容6", "image": "assets/images/Group 2040.png"},
   ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -125,9 +126,12 @@ class GridGetView extends StatelessWidget {
       itemCount: listData.length,
       shrinkWrap: true,
       itemBuilder: (context, index) {
-        return Image.network(
-          listData[index]["image"],
-          fit: BoxFit.cover,
+        return Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Image.asset(
+            listData[index]["image"],
+            fit: BoxFit.contain,
+          ),
         );
       },
     );

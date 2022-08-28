@@ -30,9 +30,10 @@ class HeadCircleWidget extends StatelessWidget{
         width: width,
         height: height,
         color: Colors.white,
-        child:  SvgPicture.asset(
-          R.assetsImagesDefaultHeader,
-        ) ,
+        // child:SvgPicture.asset(
+        //   R.assetsImagesDefaultHeader,
+        // ) ,
+         child: Image.asset('assets/images/image 23.png')
       ) ,
     );
   }

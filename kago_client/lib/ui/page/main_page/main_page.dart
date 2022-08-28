@@ -39,7 +39,6 @@ class HomeTabOptionsState extends State<MainPage>
     ///监听TabBar切换事件
     tabController?.addListener(() {
       var index = tabController?.index;
-
     });
   }
 
@@ -56,7 +55,7 @@ class HomeTabOptionsState extends State<MainPage>
       backgroundColor: ColorStyle.color_F8F9FC,
       body: TabBarView(
         controller: tabController,
-        children:  const [HomePage(), SquarePage(), MyPage()],
+        children: const [HomePage(), SquarePage(), MyPage()],
       ),
       bottomNavigationBar: Container(
         // height: 50,
@@ -68,18 +67,31 @@ class HomeTabOptionsState extends State<MainPage>
           unselectedLabelColor: ColorStyle.color_B8C0D4,
           controller: tabController,
           tabs: [
-            TabTitleIcon(
-              title: StringStyles.homeComplex.tr,
-              icon: Icons.turned_in,
+            Image.asset(
+              "assets/images/Group 1968.png",
+              height: 44,
             ),
-            TabTitleIcon(
-              title: StringStyles.homeProject.tr,
-              icon: Icons.square,
+            Image.asset(
+              "assets/images/Group 1970.png",
+              height: 44,
             ),
-            TabTitleIcon(
-              title: StringStyles.homeMy.tr,
-              icon: Icons.person,
+            Image.asset(
+              "assets/images/Group 1972.png",
+              height: 44,
             ),
+
+            // TabTitleIcon(
+            //   title: StringStyles.homeComplex.tr,
+            //   icon: Icons.turned_in,
+            // ),
+            // TabTitleIcon(
+            //   title: StringStyles.homeProject.tr,
+            //   icon: Icons.square,
+            // ),
+            // TabTitleIcon(
+            //   title: StringStyles.homeMy.tr,
+            //   icon: Icons.person,
+            // ),
           ],
         ),
       ),

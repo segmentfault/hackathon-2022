@@ -79,8 +79,8 @@ class GridGetView extends StatelessWidget {
       itemCount: listData.length,
       shrinkWrap: true,
       itemBuilder: (context, index) {
-        return Image.network(
-          listData[index]["image"],
+        return Image.asset(
+          "assets/images/Frame ${277+index}.png",
           fit: BoxFit.cover,
         );
       },

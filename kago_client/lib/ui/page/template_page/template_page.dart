@@ -64,11 +64,11 @@ class GridGetView extends GetSaveView<TemplateController> {
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: onTap,
-          // child: Image.network(
-          //   controller.templateList[index]["image"],
-          //   fit: BoxFit.cover,
-          // ),
-          child: Container(color:Colors.redAccent),
+          child: Image.asset(
+            controller.templateList[index]["image"],
+            fit: BoxFit.contain,
+          ),
+          // child: Container(color:Colors.redAccent),
         );
       },
     );
