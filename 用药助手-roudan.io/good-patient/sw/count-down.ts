@@ -4,7 +4,7 @@
 
 const sw = self as ServiceWorkerGlobalScope & typeof globalThis
 
-addEventListener('message', event => {
+sw.addEventListener('message', event => {
   console.log('worker received:', event.data);
 
   event.source.postMessage('hello');

@@ -25,7 +25,6 @@ if (local) {
 
 export const useMedicineStore = defineStore('medicine', () => {
   const data = store.medicines;
-  const lastId = store.lastId;
   const medicines = ref<Record<string, Medicine>>(data);
 
   const total = computed<number>(() => {
@@ -33,7 +32,10 @@ export const useMedicineStore = defineStore('medicine', () => {
   });
 
   const save = (data: Medicine, id?: number) => {
-    id = id || lastId;
+    if (!id) {
+      id = store.lastId;
+      store.lastId += 1;
+    }
     medicines.value[id] = data;
     store.medicines[id] = data;
     localStorage.setItem(STORE_KEY, JSON.stringify(store));

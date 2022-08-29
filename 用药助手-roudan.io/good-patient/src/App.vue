@@ -7,7 +7,7 @@ import CurrentMedicine from "@/components/current-medicine.vue";
 
 const medicineStore = useMedicineStore();
 
-const currentMedicine = ref<Medicine | undefined>(medicineStore.medicines['1']);
+const currentMedicine = ref<Medicine | undefined>();
 
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'visible') {
@@ -26,6 +26,7 @@ setInterval(() => {
 current-medicine(
   v-if="currentMedicine"
   :medicine="currentMedicine"
+  @dismiss="currentMedicine = null"
 )
 reload-prompt
 </template>

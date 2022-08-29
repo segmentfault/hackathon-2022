@@ -19,7 +19,7 @@ export interface Medicine {
   // 剂量单位
   dosageUnit: DosageUnit,
   // 延迟时间，比如餐后
-  delay?: string;
+  delay?: number;
   // 频率
   frequency: string;
   // 开始吃的时间

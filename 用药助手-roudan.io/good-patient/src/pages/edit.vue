@@ -36,7 +36,12 @@ async function doSubmit(event: Event) {
   }
 
   status.value = null;
-  medicineStore.save(medicine, route.params.id ? Number(route.params.id) : undefined);
+  const { meals } = medicine;
+  const data: Medicine = {
+    ...medicine,
+    meals: meals && meals.map((meal, index) => mealsStatus.value[index] ? meal : '')
+  };
+  medicineStore.save(data, route.params.id ? Number(route.params.id) : undefined);
   status.value = true;
   setTimeout(() => {
     router.push({
@@ -49,7 +54,7 @@ function onTypeChange() {
     if (!medicine.meals || medicine.meals.length === 0 || medicine.meals.every(meal => !meal)) {
       medicine.meals = ['09:00', '13:00', '20:00', ''];
     }
-    medicine.delay = medicine.delay || '30';
+    medicine.delay = medicine.delay || 30;
   }
 }
 </script>
@@ -85,7 +90,7 @@ form#form.mx-10.mt-8(
         option(v-for="(label, key) in MedicineTypeLabel" :value="key" :key="key") {{label}}
 
       input.border.rounded.outline-blue-400.leading-8.flex-1.h-8.px-2.w-40(
-        v-model="medicine.delay"
+        v-model.number="medicine.delay"
         type="number"
         required
       )
@@ -113,7 +118,7 @@ form#form.mx-10.mt-8(
     label.block.mb-2(for="dosage") 剂量
     .flex.items-center
       input#dosage.border.rounded.outline-blue-400.leading-8.px-2(
-        v-model="medicine.dosage"
+        v-model.number="medicine.dosage"
         type="number"
         required
       )

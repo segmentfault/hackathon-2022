@@ -25,17 +25,15 @@ export async function registerServiceWorker(): Promise<void> {
 }
 
 export async function sendMessageAfter(seconds: number, title: string, content: string): Promise<void> {
-  console.log('xxxs');
-  setTimeout(async () => {
-    console.log('ooo', title, content, !!registration);
-    try {
-      const registration = await navigator.serviceWorker.ready;
-      await registration.showNotification(title, {
-        body: content,
-      });
-      console.log('done');
-    } catch (e) {
-      console.error(e);
-    }
-  }, seconds * 1000);
+  try {
+    const registration = await navigator.serviceWorker.ready;
+    console.log('note at:', new Date(Date.now() + seconds * 1000))
+    await registration.showNotification(title, {
+      body: content,
+      timestamp: Date.now() + seconds * 1000,
+    });
+    console.log('done');
+  } catch (e) {
+    console.error(e);
+  }
 }
