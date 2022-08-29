@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>JSONEditor | Synchronize two editors</title>
+
+  <link href="jsoneditor.css" rel="stylesheet" type="text/css">
+  <script src="jsoneditor.js"></script>
+
+  <style type="text/css">
+    body {
+      font-family: sans-serif;
+    }
+
+    #jsoneditor1,
+    #jsoneditor2 {
+      width: 500px;
+      height: 500px;
+      margin-right: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<p>
+  Keep two editors synchronized using <code>onChangeText</code> and <code>updateText</code>.
+</p>
+<p>
+  This can be done too with <code>onChangeJSON</code> and <code>update</code>, which can only be used in
+  modes <code>tree</code>, <code>form</code> (and <code>view</code>).
+</p>
+
+<div id="jsoneditor1"></div>
+<div id="jsoneditor2"></div>
+
+<script>
+  // create editor 1
+  const  editor1 = new JSONEditor(document.getElementById('jsoneditor1'), {
+    onChangeText: function (jsonString) {
+      editor2.updateText(jsonString)
+    }
+  })
+
+  // create editor 2
+  const  editor2 = new JSONEditor(document.getElementById('jsoneditor2'), {
+    mode:"tree",
+    onChangeText: function (jsonString) {
+      editor1.updateText(jsonString)
+    },
+    onCreateMenu: function (items, node) {
+    const path = node.path
+    console.log(items);
+    console.log(path);
+      return items;
+    }
+  })
+
+  // set initial data in both editors
+  const  json = {
+    'array': [1, 2, 3],
+    'boolean': true,
+    'null': null,
+    'number': 123,
+    'object': {'a': 'b', 'c': 'd'},
+    'string': 'Hello World'
+  }
+const json2={
+    PassWord:"112233",
+    JsonName:"GlobalData.json",
+    Version:"1.0.1",//用于判断是否替换本地数据
+    CFA:{
+        SavePath:"22".concat("/","授权书/"),
+        IsClearBeforeCreate:true,
+        IsCreateNewContract:false,
+        IsAddSign:false,
+        TableData:{},
+        DefaultData:{}
+    },
+    SLC:{
+        SavePath:"22".concat("/","服务承诺函/"),
+        IsClearBeforeCreate:true,
+        IsCreateNewContract:false,
+        IsAddSign:false,
+        TableData:{},
+        DefaultData:{}
+        
+    },
+    Contract:{
+        SavePath:"22".concat("/","合同/"),
+        IsClearBeforeCreate:true,
+        IsCreateNewContract:false,
+        IsTrackRevisions:true,
+        LastDate:"",
+        Count:0
+    },
+    Certfication:{
+        SavePath:"22".concat("/","资质/"),
+        IsClearBeforeCreate:true,
+        IsCreateNewContract:false,
+        IsBold:true,
+        FontSize:16,
+        FontName:"宋体",
+        Left:50,
+        Top:400,
+        Width:400,
+        Height:150,
+        Data:[
+                {CertificationName:"公司资质",CertificationFileName:"公司资质.docx",CertificationInfo:"营业执照、IOS认证、软件企业认定证书",FilePath:"22"},
+                {CertificationName:"产品资质",CertificationFileName:"产品资质.docx",CertificationInfo:"国密检测报告、涉密信息系统检测证书、某某产品著作权、某某某某产品著作权",FilePath:"22"}
+            ]
+    },
+    Product:{
+        "产品分类": [
+        { "产品名称":"煦航论文自动排版软件V1.0","版本ID":1,"授权ID":1,"语言ID":1,"价格ID":1,"数量ID":1,"功能描述":"可以自动生成符合格式要求的论文，支持自动生成中文封面页、英文封面页、中文摘要页、英文摘要页、严正申明页、目录页、论文正文、感谢页、参考文献页等。" },
+        { "产品名称":"煦航OFD阅读软件V1.0","版本ID":2,"授权ID":2,"语言ID":2,"价格ID":2,"数量ID":2,"功能描述":"支持OFD/PDF电子文件的阅读浏览、文档操作、图文注释等通用版式处理功能，还根据公务办公特点，提供原笔迹签批、电子印章、语义应用、修订标记等公务应用扩展功能。阅读器体积小巧、高效稳定，支持各类自主可控软硬件环境，为用户提供卓越的电子文件阅读与处理体验。" },
+        { "产品名称":"煦航WPS加载项软件V1.0","版本ID":3,"授权ID":3,"语言ID":3,"价格ID":3,"数量ID":3,"功能描述":"WPS 加载项是一套基于 Web 技术用来扩展 WPS 应用程序的解决方案。每个 WPS 加载项都对应打开了一个网页，并通过调用网页中 JavaScript 方法来完成其功能逻辑。 WPS 加载项打开的网页可以直接与 WPS 应用程序进行交互，同时一个 WPS 加载项中的多个网页形成了一个整体， 相互之间可以进行数据共享。" }
+        ],
+        "产品版本": [
+        { "版本名称":"标准版","版本ID":1,"版本描述":"标准版运行环境要求：32位浏览器IE8-11；32位完整版MS OFFICE2003-2016；32位环境下的专业版WPS2007-2016；" },
+        { "版本名称":"专业版","版本ID":1,"版本描述":"专业版包含32位控件和64位控件，运行环境要求： 32位控件：32位浏览器IE8-11、chrome28-54、Firefox28-45；32位完整版MS OFFICE2003-2016；32位环境下的专业版WPS2007-2016； 64位控件：64位浏览器IE8-11， 64位完整版MS OFFICE2003-2016；" },
+        { "版本名称":"信创版","版本ID":2,"版本描述":"支持在中标麒麟、银河麒麟、中科方德、Uos等国产化操作系统中打开OFD文档。" },
+        { "版本名称":"移动版","版本ID":2,"版本描述":"支持在Android6.0以上版本，IOS8.0以上版本中打开OFD文档" },
+        { "版本名称":"Windows版","版本ID":2,"版本描述":"支持在xp、win7、win8、win10、win11等windows操作系统中打开OFD文档。" },
+        { "版本名称":"Windows版","版本ID":3,"版本描述":"支持在xp、win7、win8、win10、win11等国产化操作系统中生成授权书、服务承诺函等文档。" },
+        { "版本名称":"新创版","版本ID":3,"版本描述":"支持在中标麒麟、银河麒麟、中科方德、Uos等国产化操作系统中生成授权书、服务承诺函等文档" }
+        ],
+        "产品授权": [
+        { "授权名称":"单套授权","授权ID":1,"授权描述":"授权甲方给一个最终用户单位内部或者直接授权一个最终用户单位内部系统中使用此“产品”，并不授权其他任何第三方单位使用。产品本身不能单独对外销售。" },
+        { "授权名称":"网站授权","授权ID":1,"授权描述":"授权甲方在一个网站上使用此“产品”，并不授权其他任何第三方网站使用。产品本身不能单独对外销售。" },
+        { "授权名称":"客户端授权","授权ID":2,"授权描述":"授权甲方在一个终端设备上使用本产品。" },
+        { "授权名称":"单套授权","授权ID":2,"授权描述":"授权甲方给一个最终用户单位内部或者直接授权一个最终用户单位内部系统中使用此“产品”，并不授权其他任何第三方单位使用。产品本身不能单独对外销售。" },
+        { "授权名称":"网站授权","授权ID":2,"授权描述":"授权甲方在一个网站上使用此“产品”，并不授权其他任何第三方网站使用。产品本身不能单独对外销售。" },
+        { "授权名称":"单套授权","授权ID":3,"授权描述":"授权甲方给一个最终用户单位内部或者直接授权一个最终用户单位内部系统中使用此“产品”，并不授权其他任何第三方单位使用。产品本身不能单独对外销售。" },
+        { "授权名称":"网站授权","授权ID":3,"授权描述":"授权甲方在一个网站上使用此“产品”，并不授权其他任何第三方网站使用。产品本身不能单独对外销售。" }
+        ],
+        "产品语言": [
+        { "语言名称":"简体中文","语言ID":2 },
+        { "语言名称":"繁体中文","语言ID":1 },
+        { "语言名称":"简体中文","语言ID":2 },
+        { "语言名称":"繁体中文","语言ID":2 },
+        { "语言名称":"English","语言ID":2 },
+        { "语言名称":"简体中文","语言ID":3 },
+        { "语言名称":"繁体中文","语言ID":3 }
+        ],
+        "产品价格": [
+        { "价格ID":1,"价格":5000},
+        { "价格ID":1,"价格":8000},
+        { "价格ID":1,"价格":10000},
+        { "价格ID":1,"价格":20000},
+        { "价格ID":2,"价格":50000},
+        { "价格ID":2,"价格":80000},
+        { "价格ID":2,"价格":90000},
+        { "价格ID":2,"价格":10000},
+        { "价格ID":2,"价格":1000},
+        { "价格ID":3,"价格":5000},
+        { "价格ID":3,"价格":6000},
+        { "价格ID":3,"价格":7000},
+        { "价格ID":3,"价格":8000},
+        { "价格ID":3,"价格":10000 }
+        ],
+        "产品数量":[
+        { "数量ID":1,"数量":1},
+        { "数量ID":2,"数量":2},
+        { "数量ID":3,"数量":3},
+        { "数量ID":4,"数量":4},
+        { "数量ID":5,"数量":5},
+        { "数量ID":6,"数量":100},
+        { "数量ID":7,"数量":200}
+        ]
+        
+    }
+}
+  editor1.set(json)
+  editor2.set(json2)
+</script>
+</body>
+</html>

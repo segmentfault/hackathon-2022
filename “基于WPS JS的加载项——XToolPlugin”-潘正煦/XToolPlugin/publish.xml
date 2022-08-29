@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jsplugins>
+    <jsplugin name="XToolPlugin" enable="enable_dev" version="1.0.0" type="wps" url="https://www.xuhangnet.cn/wps/XToolPlugin.7z"/>
+</jsplugins>

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>授权书生成</title>
+    <link rel="stylesheet" type="text/css" href="../easyui/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../easyui/icon.css">
+    <link rel="stylesheet" type="text/css" href="../easyui/custom.css">
+    <script type="text/javascript" src="../easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../easyui/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/globaldata.js"></script>
+    <script type="text/javascript" src="../js/util.js"></script>
+    <script type="text/javascript" src="../js/ribbon.js"></script>
+</head>
+<body style="margin: 10px;">
+    <div class="label-title ">XToolPlugin For 授权书生成工具</div>
+    <div class="label-content">*此工具可自动、批量生成投标用的厂商授权书。</div>
+    <div class="label-content" >
+       
+        <div style="margin-top: 10px;">
+            <input class="easyui-checkbox" name="IsClearBeforeCreate"  id="IsClearBeforeCreate"   label="生成前清空文档:" labelWidth="130px" checked >
+        </div>
+        <div style="margin-top: 15px;">
+            <input class="easyui-checkbox" name="IsCreateNewContract"  id="IsCreateNewContract"   label="是否创建新文档:" labelWidth="130px"  >
+        </div>
+        <div style="margin-top: 15px;">
+            <input class="easyui-checkbox" name="IsAddSign" id="IsAddSign"  label="是否插入签名图:" labelWidth="130px" >
+        </div>
+        <div style="margin-top:15px">
+            <input name="saveDir"  id="saveDir" class="easyui-textbox" prompt="请选择保存目录" required="true" buttonText='&nbsp浏览&nbsp' label="文档的保存目录:" labelWidth="130px" style="width: 350px" value="">
+        </div>
+        
+        <div style="margin-top: 15px;">
+            <span style="margin-right: 0px;">授权书厂商汇总：</span>
+            <select class="easyui-combobox" id="comboProject" style="width:220px;" data-options="valueField:'bookmarkName',textField:'bookmarkValue',panelHeight:'auto'"></select>
+            <button type="button" class="btn btn-success" onclick="OnClickComboProject(0)">更新</button>
+            <button type="button" class="btn btn-success" onclick="OnClickComboProject(1)">定位</button>
+            <button type="button" class="btn btn-success" onclick="OnClickComboProject(2)">删除</button>
+        </div>
+   
+    </div>
+   
+    <div style="margin-top: 15px;">
+        <button type="button" class="btn btn-success" onclick="CreateDocument(0)">生成选中项</button>
+        <button type="button" class="btn btn-success" onclick="CreateDocument(1)">生成所有项</button>
+        <button type="button" class="btn btn-success" onclick="ExportData(0)">分别提取数据到文尾</button>
+        <button type="button" class="btn btn-success" onclick="ExportData(1)">数据汇总到文尾</button>
+        <button type="button" class="btn btn-success" onclick="ImportTestData()" id="ImportTestDataBtn">导入测试数据</button>
+    </div>
+	<table id="projectstab" title="授权信息列表" class="easyui-datagrid" style="width:100%;height:350px;"
+			toolbar="#toolbar" pagination="true" nowrap="true"
+			rownumbers="true" fitColumns="true" singleSelect="true" >
+		<thead>
+			<tr>
+                <th field="ToOrganization" width="100" data-options="formatter:formatCellTooltip">招标单位</th>
+                <th field="ProjectName" width="100" data-options="formatter:formatCellTooltip">项目名称</th>
+				<th field="FromOrganization" width="100" data-options="formatter:formatCellTooltip">授权厂商</th>
+                <th field="From2Organization" width="100" data-options="formatter:formatCellTooltip">投标单位</th>
+                <th field="From2Address" width="100" data-options="formatter:formatCellTooltip">投标单位地址</th>
+                <th field="FromAddress" width="100" data-options="formatter:formatCellTooltip">授权厂商地址</th>
+                <th field="FromDate" width="100" data-options="formatter:formatCellTooltip">有效期开始</th>
+                <th field="ToDate" width="100" data-options="formatter:formatCellTooltip">有效期截止</th>
+                <th field="SignDate" width="100" data-options="formatter:formatCellTooltip">签署日期</th>
+			</tr>
+		</thead>
+	</table>
+    <div style="margin-top: 20px;text-align: center;color: gray;"> Copyright © 2022 Peter.</div>
+	<div id="toolbar">
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="NewProject()">新建授权</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="EditProject()">编辑授权</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="DestroyProject()">删除授权</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="SaveToLocal()">保存到本地</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-large-smartart" plain="true" onclick="ImportFromLocal()">从本地导入</a>
+	</div>
+	
+	<div id="dlg" class="easyui-dialog" style="width:100%" data-options="closed:true,modal:true,border:'thin',buttons:'#dlg-buttons'">
+		<form id="fm" method="post" novalidate style="margin:0;padding:20px 50px">
+			<div style="margin-bottom:10px">
+				<input name="ToOrganization"  id="ToOrganization" class="easyui-textbox" prompt="请输入招标单位" required="true" label="招标单位名称:" labelWidth="100px" style="width:100%">
+            </div>
+            <div style="margin-bottom:15px">
+				<input name="ProjectName"  id="ProjectName" class="easyui-textbox" prompt="请输入项目名称" required="true" label="招标项目名称:" labelWidth="100px" style="width:100%">
+            </div>
+			<div style="margin-bottom:15px">
+				<input name="FromOrganization"  id="FromOrganization" class="easyui-textbox" prompt="请输入授权厂商" required="true" label="授权厂商名称:" labelWidth="100px" style="width:100%">
+            </div>
+            <div style="margin-bottom:15px">
+				<input name="FromAddress"   id="FromAddress"  class="easyui-textbox" prompt="请输入授权厂商地址" required="true" label="授权厂商地址:" labelWidth="100px" style="width:100%">
+            </div>
+			<div style="margin-bottom:15px">
+				<input name="From2Organization"  id="From2Organization" class="easyui-textbox" prompt="请输入投标单位名称" required="true" label="投标单位名称:" labelWidth="100px" style="width:100%">
+			</div>
+            <div style="margin-bottom:15px">
+				<input name="From2Address" id="From2Address" class="easyui-textbox" prompt="请输入投标单位地址" required="true" label="投标单位地址:" labelWidth="100px" style="width:100%">
+			</div>
+            <div style="margin-bottom:15px">
+				<input name="FromDate"  id="FromDate" class="easyui-datebox" prompt="请选择开始日期" required="true" label="授权开始日期:" labelWidth="100px" style="width:100%">
+            </div>
+            <div style="margin-bottom:15px">
+				<input name="ToDate"  id="ToDate" class="easyui-datebox" prompt="请选择截止日期" required="true" label="授权截止日期:" labelWidth="100px" style="width:100%">
+            </div>
+            <div style="margin-bottom:15px">
+				<input name="SignDate"  id="SignDate" class="easyui-datebox" prompt="请选择签署日期" required="true" label="授权签署日期:" labelWidth="100px" style="width:100%">
+            </div>
+          
+		</form>
+	</div>
+	<div id="dlg-buttons">
+        <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-save" onclick="SaveDefaultToLocal()" style="width:120px">保存为默认值</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-large-smartart" onclick="SetDefaultFromLocal()" style="width:120px">载入默认值</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="SaveProject()" style="width:90px">确定</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">取消</a>
+	</div>
+    
+	<script type="text/javascript">
+
+        var type="new";//标记是新建还是编辑
+
+        var tsId = wps.PluginStorage.getItem(TaskPanelData.CFA.Name);
+      
+        $(document).ready(function(){
+            //监听WindowSelectionChange事件
+            wps.ApiEvent.AddApiEventListener("WindowSelectionChange",WindowSelectionChange);
+
+            IsShowBookMark(GlobalData.CFA.IsShowBookMark);
+             //控制导入测试数据按钮是否显示
+            $('#ImportTestDataBtn').attr("style",GlobalData.IsShowImportTestDataBtn?"display:''":"display:none");
+
+             //以下处理表单中相关元素的赋值以及改变后自动保存数据
+            $('#saveDir').textbox("setValue",GlobalData.CFA.SavePath);
+            $("#saveDir").textbox({onClickButton:function(){
+                var dir=SelectSaveDir();
+                if(dir!=null)
+                {
+                    GlobalData.CFA.SavePath=dir;
+                    SaveGlobalData();
+                }
+            }});
+
+            $('#IsClearBeforeCreate').checkbox(GlobalData.CFA.IsClearBeforeCreate?"check":"uncheck");
+            $('#IsClearBeforeCreate').checkbox({
+                onChange:function(checked){
+                    GlobalData.CFA.IsClearBeforeCreate=checked;
+                    SaveGlobalData();
+                }
+            });
+
+            $('#IsCreateNewContract').checkbox(GlobalData.CFA.IsCreateNewContract?"check":"uncheck");
+            $('#IsCreateNewContract').checkbox({
+                onChange:function(checked){
+                    GlobalData.CFA.IsCreateNewContract=checked;
+                    SaveGlobalData();
+                }
+            });
+
+            $('#IsAddSign').checkbox(GlobalData.CFA.IsAddSign?"check":"uncheck");
+            $('#IsAddSign').checkbox({
+                onChange:function(checked){
+                    GlobalData.CFA.IsAddSign=checked;
+                    SaveGlobalData();
+                }
+            });
+
+        });
+        //WindowSelectionChange触发后要执行的操作
+        //word光标改变，combox联动，选中对应的授权书
+        function WindowSelectionChange(Sel){
+            if(!wps.GetTaskPane(tsId).Visible)
+            {
+                return;
+            }
+           if(Sel.Bookmarks.Count>0)
+           {
+                for (var key in BookMarkName_Enum) {
+                    if(Sel.Bookmarks.Item(1).Name.indexOf(BookMarkName_Enum[key])>-1)
+                    {
+                        var index=parseInt(Sel.Bookmarks.Item(1).Name.replace(BookMarkName_Enum[key],""));
+                        $("#comboProject").combobox("select",BookMarkName_Enum.From2Organization+index);
+                    }
+                }
+           }
+        }
+         //处理创建文档
+        function CreateDocument(mode)
+        {
+            //检查是否有数据
+            if(mode==0)
+            {
+                var row = $('#projectstab').datagrid('getSelected');
+                if (!row){
+                    ShowMessage("请先选中要生成的数据");
+                    return;
+                }
+            }else if(mode==1)
+            {
+                var rows = $("#projectstab").datagrid("getRows");
+                if(rows.length==0)
+                {
+                    ShowMessage("请先添加授权信息！");
+                    return;
+                }
+            }
+
+            
+           //是否新建文档
+            if($("#IsCreateNewContract").checkbox("options").checked)
+            {
+                OfficeObject.Documents.Add();
+            }else{
+                //是否清空文档
+                if($("#IsClearBeforeCreate").checkbox("options").checked)
+                {
+                    if(!ClearDocument())
+                    {
+                        return;
+                    }
+                }
+            }
+
+            if(mode==0)
+            {
+                var row = $('#projectstab').datagrid('getSelected');
+                CreateDocumentByRow(row,false);
+                UpdateComboProject();//更新汇总表combox
+            }else if(mode==1){
+                var rows = $("#projectstab").datagrid("getRows");
+                for(var i=0;i<rows.length;i++)
+                {
+                    var row =rows[i];
+                    CreateDocumentByRow(row,i==0?false:true);
+                }
+                UpdateComboProject();//更新汇总表combox
+            }
+
+            //处理保存文档
+            var savedir=$('#saveDir').textbox("getText");
+            if(!wps.FileSystem.Exists(savedir))
+            {
+                wps.FileSystem.Mkdir(savedir);
+            }
+            var format=OfficeObject.ActiveDocument.SaveFormat==0?".doc":".docx"; 
+            var savepath=savedir+"授权书_"+From2Organization+new Date().format("yyyyMMdd")+format;
+            OfficeObject.ActiveDocument.SaveAs2(savepath);
+        }
+
+        //按行创建文档
+        function CreateDocumentByRow(row,isInsertBreak)
+        {
+            if (row){
+                ToOrganization=row.ToOrganization;
+                FromAddress=row.FromAddress;
+                FromOrganization=row.FromOrganization;
+                From2Address=row.From2Address;
+                From2Organization=row.From2Organization;
+                ProjectName=row.ProjectName;
+                FromDate=DateToChinesStr(row.FromDate);
+                ToDate=DateToChinesStr(row.ToDate);
+                SignDate=DateToChinesStr(row.SignDate);
+                if(isInsertBreak)//是否插入换页符
+                {
+                    InsertBreak();
+                }
+                CreateCFA($("#IsAddSign").checkbox("options").checked );
+                
+            }
+        }
+
+        //新建
+		function NewProject(){
+            type="new";
+            $('#dlg').dialog('open').dialog('center').dialog('setTitle','新建厂商授权书');
+            if(!$('#fm #FromDate').datebox("getText"))
+            {
+                $('#fm #FromDate').datebox('setValue', new Date().format("yyyy-MM-dd"));
+            }
+            var date=new Date();
+            date.setMonth(date.getMonth()+3); //有效期，默认3个月
+            date.setDate(date.getDate()-1);
+            if(!$('#fm #ToDate').textbox("getText"))
+            {
+                $('#fm #ToDate').datebox('setValue', date.format("yyyy-MM-dd"));
+            }
+
+            if(!$('#fm #SignDate').textbox("getText"))
+            {
+                $('#fm #SignDate').datebox('setValue', new Date().format("yyyy-MM-dd"));
+            }
+		}
+
+        //编辑
+		function EditProject(){
+            type="edit";
+            var row = $('#projectstab').datagrid('getSelected');
+			if (row){
+				$('#dlg').dialog('open').dialog('center').dialog('setTitle','编辑厂商授权书');
+				$('#fm').form('load',row);
+				
+			}else{
+                ShowMessage("请先选中要修改的数据");
+            }
+		}
+
+        //删除
+		function DestroyProject(){
+			var row = $('#projectstab').datagrid('getSelected');
+			if (row){
+				$.messager.confirm('请确认','是否确定要删除该数据？',function(r){
+                    if(r)
+                    {
+                        var index = $('#projectstab').datagrid('getRowIndex',row);
+					    $('#projectstab').datagrid('deleteRow',index); //通过行号移除该行
+                    }
+				});
+                
+			}else{
+                ShowMessage("请先选中要删除的数据");
+            }
+        }
+
+         //保存
+		function SaveProject(){
+           if( $('#fm').form('validate')){
+                var index=0;
+                var row=GetFormJson();
+                if(type=="new")
+                {
+                    var rows = $("#projectstab").datagrid("getRows");  
+                    index=rows.length+1;
+                    $('#projectstab').datagrid('appendRow', row);
+                }else if(type=="edit")
+                {
+                    var rows = $('#projectstab').datagrid('getSelected');
+                    index = $('#projectstab').datagrid('getRowIndex',rows);
+                    $('#projectstab').datagrid('updateRow', 
+                    {
+                        index: index,
+                        row: row
+                    }); 
+                }
+                $('#dlg').dialog('close');		 
+           }else{
+               ShowMessage("请检查所有输入项是否都合法！");
+           }
+           
+        }
+        
+        //表单转json对象
+        function GetFormJson()
+        {
+            var row={
+                    ToOrganization :$('#fm #ToOrganization').textbox("getText"),
+                    FromOrganization : $('#fm #FromOrganization').textbox("getText"),
+                    From2Organization : $('#fm #From2Organization').textbox("getText"),
+                    ProjectName : $('#fm #ProjectName').textbox("getText"),
+                    FromDate:$('#fm #FromDate').textbox("getText"),
+                    ToDate :$('#fm #ToDate').textbox("getText"),
+                    SignDate : $('#fm #SignDate').textbox("getText"),
+                    FromAddress : $('#fm #FromAddress').textbox("getText"),
+                    From2Address : $('#fm #From2Address').textbox("getText")
+                };
+            return row;
+        }
+
+        //测试数据
+        var TestData = [
+        {
+            ToOrganization : '中国电子工业标准化技术协会信息技术应用创新工作委员会',
+            FromOrganization : '上海煦航网络科技有限公司',
+            From2Organization : '上海XX网络科技有限公司',
+            ProjectName : '全省组织系统综合管理信息化平台建设项目',
+            FromDate:'2022-8-15',
+            ToDate : '2022-12-31',
+            SignDate : '2022-8-15',
+            FromAddress : '上海市浦东新区江南大道7号西南经协大厦16层',
+            From2Address : '上海市浦东新区新环西路1000弄西南经协大厦16层'
+           
+        },{
+            ToOrganization : '中国电子工业标准化技术协会信息技术应用创新工作委员会',
+            FromOrganization : '上海煦航网络科技有限公司',
+            From2Organization : '江苏XX网络科技有限公司',
+            ProjectName : '全省组织系统综合管理信息化平台建设项目',
+            FromDate:'2022-8-15',
+            ToDate : '2022-12-31',
+            SignDate : '2022-8-15',
+            FromAddress : '上海市浦东新区江南大道7号西南经协大厦16层',
+            From2Address : '江苏省南京市江南大道7号西南经协大厦16层'
+           
+        }
+        ];
+
+         //导入测试数据
+        function ImportTestData()
+        {
+            var data=TestData.filter(v => TestData.includes(v));//创建新数据，避免原始测试数据被修改或删除
+            $('#projectstab').datagrid("loadData",data);
+        }
+
+        //导出数据到文尾
+        function ExportData(mod)
+        {
+            var Bookmarks=GetProjectBookMarks();
+            var count=Bookmarks.length;
+            if(count==0)
+            {
+                ShowMessage("数据不存在！");
+                return;
+            }
+            var Sel=OfficeObject.Selection;
+            Sel.EndKey(6);
+            InsertBreak();
+            var start=Sel.Start;
+            Sel.TypeText("   ");
+            var end = Sel.End;
+            OfficeObject.ActiveDocument.Bookmarks.Add(GetBookMarkName("ProjectTable"),OfficeObject.ActiveDocument.Range(start,end));
+            Sel.MoveLeft();
+            if(mod==0)
+            {
+                for(var i=0;i<count;i++)
+                {
+                    var table=AddTable(3,9,true);
+                    CombinTableCells(table,1,1,1,9);
+                    SetCellVlue(table,1,1,"授权书 "+parseInt(i+1),1);
+                    SetProjectTableTitle(table,2);
+                    SetProjectTableValue(table,Bookmarks[i],3)
+                    table.Select();
+                    Sel.MoveRight();
+                    TypeParagraph(Sel,2);
+                }
+                
+            }else if(mod==1){
+                var table=AddTable(count+2,9,true);
+                CombinTableCells(table,1,1,1,9);
+                SetCellVlue(table,1,1,"授权书汇总表",1);
+                SetProjectTableTitle(table,2);
+                for(var i=0;i<count;i++)
+                {
+                    SetProjectTableValue(table,Bookmarks[i],i+3)
+                }
+            }
+            
+        }
+
+        //设置表格标题
+        function SetProjectTableTitle(table,row)
+        {
+            SetCellVlue(table,row,1,$('#fm #ToOrganization').attr('label').replace(':',""));
+            SetCellVlue(table,row,2,$('#fm #ProjectName').attr('label').replace(':',""));
+            SetCellVlue(table,row,3,$('#fm #FromOrganization').attr('label').replace(':',""));
+            SetCellVlue(table,row,4,$('#fm #FromAddress').attr('label').replace(':',""));
+            SetCellVlue(table,row,5,$('#fm #From2Organization').attr('label').replace(':',""));
+            SetCellVlue(table,row,6,$('#fm #From2Address').attr('label').replace(':',""));
+            SetCellVlue(table,row,7,$('#fm #FromDate').attr('label').replace(':',""));
+            SetCellVlue(table,row,8,$('#fm #ToDate').attr('label').replace(':',""));
+            SetCellVlue(table,row,9,$('#fm #SignDate').attr('label').replace(':',""));
+        }
+
+        //设置单元格内容
+        function SetProjectTableValue(table,project,row,index)
+        {
+            for(key in project)
+            {
+                if(key.indexOf(BookMarkName_Enum.ToOrganization)>-1)
+                {
+                    SetCellVlue(table,row,1,project[key]);
+                }else if(key.indexOf(BookMarkName_Enum.ProjectName)>-1)
+                {
+                    SetCellVlue(table,row,2,project[key]);
+                }else if(key.indexOf(BookMarkName_Enum.FromOrganization)>-1)
+                {
+                    SetCellVlue(table,row,3,project[key]);
+                }else if(key.indexOf(BookMarkName_Enum.FromAddress)>-1)
+                {
+                    SetCellVlue(table,row,4,project[key]);
+                }else if(key.indexOf(BookMarkName_Enum.From2Organization)>-1)
+                {
+                    SetCellVlue(table,row,5,project[key]);
+                }else if(key.indexOf(BookMarkName_Enum.From2Address)>-1)
+                {
+                    SetCellVlue(table,row,6,project[key]);
+                }else if(key.indexOf(BookMarkName_Enum.FromDate)>-1)
+                {
+                    SetCellVlue(table,row,7,project[key]);
+                }else if(key.indexOf(BookMarkName_Enum.ToDate)>-1)
+                {
+                    SetCellVlue(table,row,8,project[key]);
+                }
+                else if(key.indexOf(BookMarkName_Enum.SignDate)>-1)
+                {
+                    SetCellVlue(table,row,9,project[key]);
+                }
+            }
+           
+        }
+
+        //保存授权表数据到本地
+       function SaveToLocal()
+       {
+            GlobalData.CFA.TableData=$("#projectstab").datagrid("getRows");
+            SaveGlobalData(true);
+       }
+
+       //从本地导入授权表数据
+       function ImportFromLocal()
+       {
+            $('#projectstab').datagrid({
+                data: GlobalData.CFA.TableData
+            });
+       }
+
+       //保存表单数据到本地
+       function SaveDefaultToLocal()
+       {
+            GlobalData.CFA.DefaultData=GetFormJson();
+            SaveGlobalData(true);
+       }
+
+       //从本地导入表单数据
+       function SetDefaultFromLocal()
+       {
+            $('#fm').form("load",GlobalData.CFA.DefaultData);
+       }
+
+       //更新授权汇总combox
+       function UpdateComboProject()
+       {
+            var data=GetProjectBookMarksForName();
+            if(data.length>=1)
+            {
+                $("#comboProject").combobox("loadData", data);
+                $("#comboProject").combobox("select",data[0].bookmarkName);
+                
+            }else
+            {
+                $('#comboProject').combobox('clear');
+                $("#comboProject").combobox("loadData", {});
+            }
+            
+       }
+       //汇总表combox相关按钮触发的操作
+       function OnClickComboProject(mode)
+       {
+            if(mode==0)//更新
+            {
+                UpdateComboProject();
+            }else if(mode==1)//定位
+            {
+                var sel=$('#comboProject').combobox('getValue');
+                if(sel=="")   return;
+                if(OfficeObject.ActiveDocument.Bookmarks.Exists(sel))
+                {
+                    var page=OfficeObject.ActiveDocument.Bookmarks.Item(sel).Range.Information(3);
+                    OfficeObject.Selection.GoTo(1,1,page);
+                }else{
+                    ShowMessage("指定书签 【{0}】 不存在！".format(sel));
+                }
+            }else if(mode==2)//删除
+            {
+                var sel=$('#comboProject').combobox('getValue');
+                if(sel=="")   return;
+                if(OfficeObject.ActiveDocument.Bookmarks.Exists(sel))
+                {
+                    var page=OfficeObject.ActiveDocument.Bookmarks.Item(sel).Range.Information(3);
+                    var pagecount=OfficeObject.Selection.Information(4);
+                    var start,end;
+                    OfficeObject.Selection.GoTo(1,1,page);
+                    start=OfficeObject.Selection.End;
+                    if(pagecount>page)
+                    {
+                        OfficeObject.Selection.GoTo(1,1,page+1);
+                    }else
+                    {
+                        OfficeObject.Selection.EndKey(6);
+                    }
+                    end=OfficeObject.Selection.Start;
+                    var rg=OfficeObject.ActiveDocument.Range(start==0?0:start-1,end);
+                    rg.Select();
+                    OfficeObject.Selection.TypeBackspace();//删除当前页
+                    UpdateComboProject();
+                    
+                }else{
+                    ShowMessage("指定书签 【{0}】 不存在！".format(sel));
+                }
+            }
+       }
+    </script>
+    
+  
+</body>
+</html>

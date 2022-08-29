@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>公司资质生成</title>
+    <link rel="stylesheet" type="text/css" href="../easyui/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../easyui/icon.css">
+    <link rel="stylesheet" type="text/css" href="../easyui/custom.css">
+    <script type="text/javascript" src="../easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../easyui/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/globaldata.js"></script>
+    <script type="text/javascript" src="../js/util.js"></script>
+    <script type="text/javascript" src="../js/ribbon.js"></script>
+</head>
+<body style="margin: 10px;">
+    <div class="label-title ">XToolPlugin For 公司资质水印工具</div>
+    <div class="label-content">*此工具可自动、批量给公司资质添加水印。</div>
+    <div class="label-content" >
+    
+        <div style="margin-top: 10px;">
+            <input class="easyui-checkbox" name="IsClearBeforeCreate"  id="IsClearBeforeCreate"   label="生成前清空文档:" labelWidth="130px" checked>
+            <span style="margin-left: 30px;"></span>
+            <input name="WaterMarkLeft"  id="WaterMarkLeft" class="easyui-numberbox" required="true"  label="水印Left:" labelWidth="80px" style="width:150px" value="50">
+            <span style="margin-left: 30px;"></span>
+            <input name="WaterMarkTop"  id="WaterMarkTop" class="easyui-numberbox" required="true" label="水印Top:" labelWidth="80px" style="width:150px" value="400">
+        </div>
+        <div style="margin-top: 15px;">
+            <input class="easyui-checkbox" name="IsCreateNewContract"  id="IsCreateNewContract"   label="是否创建新文档:" labelWidth="130px"  >
+            <span style="margin-left: 30px;"></span>
+            <input name="WaterMarkWidth"  id="WaterMarkWidth" class="easyui-numberbox" required="true" label="水印宽度:" labelWidth="80px" style="width:150px" value="400">
+            <span style="margin-left: 30px;"></span>
+            <input name="WaterMarkHeight"  id="WaterMarkHeight" class="easyui-numberbox" required="true" label="水印高度:" labelWidth="80px" style="width:150px" value="150">
+        </div>
+        <div style="margin-top: 15px;">
+            <input class="easyui-checkbox" name="IsBold" id="IsBold"   label="水印是否要加粗:" labelWidth="130px" checked> 
+            <span style="margin-left: 30px;margin-right: 10px;" >字体大小:</span>
+            <select class="easyui-combobox" id="FontSize" name="FontSize" style="width:70px;" data-options="panelHeight:'auto'">
+                <option value="16">16</option>
+                <option value="18">18</option>
+                <option value="20">20</option>
+            </select>
+            <span style="margin-left: 30px;margin-right: 10px;" >字体名称:</span>
+            <select class="easyui-combobox" id="FontName" name="FontName" style="width:70px;" data-options="panelHeight:'auto'">
+                <option value="宋体">宋体</option>
+                <option value="黑体">黑体</option>
+                <option value="楷体">楷体</option>
+            </select> 
+        </div>
+
+        <div style="margin-top: 15px;">
+            <form id="fm" method="post" novalidate style="margin:0px;">
+                <div style="margin-bottom:10px">
+                    <input name="saveDir"  id="saveDir" class="easyui-textbox" prompt="请选择保存目录" required="true" buttonText='&nbsp浏览&nbsp' label="PDF的保存目录:" labelWidth="130px" style="width:98%;" value="">
+                </div>
+                <div style="margin-bottom:15px">
+                    <input name="WaterMark1"  id="WaterMark1" class="easyui-textbox" prompt="请输入水印的第一部分"  required="true" label="水印的第一部分:" labelWidth="130px" style="width:98%" value="仅授权">
+                </div>
+                <div style="margin-bottom:15px">
+                    <input name="WaterMark2"  id="WaterMark2" class="easyui-textbox" prompt="请输入水印的第二部分" required="true" label="水印的第二部分:" labelWidth="130px" style="width:98%" value="江苏XX网络科技有限公司">
+                </div>
+                <div style="margin-bottom:15px">
+                    <input name="WaterMark3"  id="WaterMark3" class="easyui-textbox" prompt="请输入水印的第三部分" required="true" label="水印的第三部分:" labelWidth="130px" style="width:98%" value="在全省组织系统综合管理信息化平台建设项目投标">
+                </div>
+                <div style="margin-bottom:15px">
+                    <input name="WaterMark4"   id="WaterMark4"  class="easyui-textbox" prompt="请输入水印的第四部分" required="true" label="水印的第四部分:" labelWidth="130px" style="width:98%"value="使用,再次复印无效">
+                </div>
+            </form>
+        </div>
+    </div>
+   
+    <div style="margin-top: 15px;">
+        <button type="button" class="btn btn-success" onclick="CreateDocument(0)">添加选中资质</button>
+        <button type="button" class="btn btn-success" onclick="CreateDocument(1)">添加所有资质</button>
+        <button type="button" class="btn btn-success" onclick="CreateDocument(2)">添加水印</button>
+        <button type="button" class="btn btn-success" onclick="CreateDocument(4)">删除水印</button>
+        <button type="button" class="btn btn-success" onclick="CreateDocument(3,true)">保存为PDF</button>
+       
+    </div>
+	<table id="projectstab" title="资质类型列表" class="easyui-datagrid" style="width:100%;height: 300px;;"
+        toolbar="#toolbar"  pagination="true" rownumbers="true" fitColumns="true" singleSelect="true" nowrap="false">
+		<thead>
+			<tr>
+                <th field="CertificationName"  data-options="formatter:formatCellTooltip,width:20">资质类型</th>
+                <th field="CertificationFileName"  data-options="formatter:formatCellTooltip,width:20">文件名称</th>
+				<th field="CertificationInfo"  data-options="formatter:formatCellTooltip,width:60">文件说明</th>
+                <th field="FilePath"  data-options="formatter:formatCellTooltip,hidden:true">文件路径</th>
+			</tr>
+		</thead>
+	</table>
+	<div id="toolbar">
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="NewProject()">添加资质</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="EditProject()">编辑资质</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="DestroyProject()">删除资质</a>
+    </div>
+
+    <div id="dlg" class="easyui-dialog" style="width:100%" data-options="closed:true,modal:true,border:'thin',buttons:'#dlg-buttons'">
+		<form id="fm" method="post" novalidate style="margin:0;padding:20px 50px">
+            <div style="margin-bottom:10px">
+                <input name="FilePath"  id="FilePath" class="easyui-textbox" prompt="请选择文件"  required="true" buttonText='&nbsp浏览&nbsp' label="文件路径:" labelWidth="80px" style="width: 100%" value="">
+            </div>
+			<div style="margin-bottom:10px">
+				<input name="CertificationName"  id="CertificationName" class="easyui-textbox" prompt="请输入资质类型" required="true" label="资质类型:" labelWidth="80px" style="width:100%">
+            </div>
+            <div style="margin-bottom:10px">
+				<input name="CertificationFileName"  id="CertificationFileName" class="easyui-textbox" prompt="请输入文件名称" required="true" label="文件名称:" labelWidth="80px" style="width:100%">
+            </div>
+			<div style="margin-bottom:10px">
+				<input name="CertificationInfo"  id="CertificationInfo" class="easyui-textbox" required="true" prompt="请输入文件说明"  label="文件说明:" labelWidth="80px" style="width:100%">
+            </div>
+            </form>
+	</div>
+	<div id="dlg-buttons">
+		<a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="SaveProject()" style="width:90px">确定</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">取消</a>
+	</div>
+    
+    <div style="margin-top: 20px;text-align: center;color: gray;"> Copyright © 2022 Peter.</div>
+	<script type="text/javascript">
+        
+        $(document).ready(function(){
+
+            //以下处理表单中相关元素的赋值以及改变后自动保存数据
+            $("#FilePath").textbox({onClickButton:function(){
+                var path=SelectFilePath();
+                if(path!=null)
+                {
+                    $('#CertificationFileName').textbox("setValue",path.substring(path.lastIndexOf("/")+1));
+                    $('#FilePath').textbox("setValue",path.substring(0,path.lastIndexOf("/")+1));
+                }
+            }});
+
+            
+            $('#WaterMarkTop').textbox("setValue",GlobalData.Certfication.Top);
+            $('#WaterMarkTop').textbox({
+                onChange:function(newValue, oldValue){
+                    GlobalData.Certfication.Top=parseInt(newValue) ;
+                    SaveGlobalData();
+                }
+            });
+
+            $('#WaterMarkLeft').textbox("setValue",GlobalData.Certfication.Left);
+            $('#WaterMarkLeft').textbox({
+                onChange:function(newValue, oldValue){
+                    GlobalData.Certfication.Left=parseInt(newValue);
+                    SaveGlobalData();
+                }
+            });
+
+            $('#WaterMarkWidth').textbox("setValue",GlobalData.Certfication.Width);
+            $('#WaterMarkWidth').textbox({
+                onChange:function(newValue, oldValue){
+                    GlobalData.Certfication.Width=parseInt(newValue);
+                    SaveGlobalData();
+                }
+            });
+
+            $('#WaterMarkHeight').textbox("setValue",GlobalData.Certfication.Height);
+            $('#WaterMarkHeight').textbox({
+                onChange:function(newValue, oldValue){
+                    GlobalData.Certfication.Height=parseInt(newValue);
+                    SaveGlobalData();
+                }
+            });
+         
+            $('#projectstab').datagrid({
+                data:  GlobalData.Certfication.Data, remoteSort: false
+            });
+           
+            setTimeout(function(){
+                $('#projectstab').datagrid('selectRow',0);
+            },300);
+
+            $('#saveDir').textbox("setValue",GlobalData.Certfication.SavePath);
+            $("#saveDir").textbox({onClickButton:function(){
+                var dir=SelectSaveDir();
+                if(dir!=null)
+                {
+                    GlobalData.Certfication.SavePath=dir;
+                    SaveGlobalData();
+                }
+            }});
+
+            $('#IsClearBeforeCreate').checkbox(GlobalData.Certfication.IsClearBeforeCreate?"check":"uncheck");
+            $('#IsClearBeforeCreate').checkbox({
+                onChange:function(checked){
+                    GlobalData.Certfication.IsClearBeforeCreate=checked;
+                    SaveGlobalData();
+                }
+            });
+
+            $('#IsCreateNewContract').checkbox(GlobalData.Certfication.IsCreateNewContract?"check":"uncheck");
+            $('#IsCreateNewContract').checkbox({
+                onChange:function(checked){
+                    GlobalData.Certfication.IsCreateNewContract=checked;
+                    SaveGlobalData();
+                }
+            });
+           
+
+            $('#IsBold').checkbox(GlobalData.Certfication.IsBold?"check":"uncheck");
+            $('#IsBold').checkbox({
+                onChange:function(checked){
+                    GlobalData.Certfication.IsBold=checked;
+                    SaveGlobalData();
+                }
+            });
+            
+            $('#FontSize').combobox({
+                    onChange:function(text){
+                        GlobalData.Certfication.FontSize=parseInt($("#FontSize").combobox("getText"));
+                        SaveGlobalData();
+                    }
+            });
+            $('#FontName').combobox({
+                onChange:function(text){
+                    GlobalData.Certfication.FontName=$("#FontName").combobox("getText");
+                    SaveGlobalData();
+                }
+            });
+
+            setTimeout(() => {
+                $('#FontSize').combobox("select",GlobalData.Certfication.FontSize);
+                $('#FontName').combobox("select",GlobalData.Certfication.FontName);
+            }, 200);
+            
+           
+        });
+
+        //处理创建文档
+        function CreateDocument(mode,showresult=false)
+        {
+            switch(mode)
+            {
+                case 0:
+                case 1:
+                {
+                    //是否新建文档
+                    if($("#IsCreateNewContract").checkbox("options").checked)
+                    {
+                        OfficeObject.Documents.Add();
+                    }else{
+                        //是否清空文档
+                        if($("#IsClearBeforeCreate").checkbox("options").checked)
+                        {
+                            if(!ClearDocument())
+                            {
+                                return;
+                            }
+                        }
+                    }
+                    if(mode==0)
+                    {
+                        var row = $('#projectstab').datagrid('getSelected');
+                        if (row)
+                        {
+                            CombineFile(row.FilePath.concat(row.CertificationFileName));
+                            CreateDocument(2);
+                            CreateDocument(3);
+                        }else
+                        {
+                            ShowMessage("请先选中要添加的数据");
+                        }
+                    }else if(mode==1){
+                        var rows = $("#projectstab").datagrid("getRows");
+                        if(rows.length==0)
+                        {
+                            ShowMessage("数据不能为空");
+                            return;
+                        }
+                        for(var i=0;i<rows.length;i++)
+                        {
+                            var row =rows[i];
+                            CombineFile(row.FilePath.concat(row.CertificationFileName));
+                            CreateDocument(2);
+                            CreateDocument(3);
+                        }
+                    }
+                    break;
+                }
+                case 2:
+                {
+                    var watermark= $('#WaterMark1').textbox("getText")+"  "+$('#WaterMark2').textbox("getText")+"  "+$('#WaterMark3').textbox("getText")+$('#WaterMark4').textbox("getText");
+                    var pagecount=OfficeObject.Selection.Information(4);
+                    for(var i=1;i<=pagecount;i++)
+                    {
+                        
+                        OfficeObject.Selection.GoTo(1,1,i);
+                        AddTextbox(watermark,parseInt($('#WaterMarkLeft').textbox("getText")),parseInt($('#WaterMarkTop').textbox("getText")),parseInt($('#WaterMarkWidth').textbox("getText")),parseInt($('#WaterMarkHeight').textbox("getText")),$("#FontName").combobox("getText"),parseInt($("#FontSize").combobox("getText")),$("#IsBold").checkbox("options").checked);
+                    }
+                    break;
+                }
+                case 3:
+                {
+                    var savedir=$('#saveDir').textbox("getText");
+                    if(!wps.FileSystem.Exists(savedir))
+                    {
+                        wps.FileSystem.Mkdir(savedir);
+                    }
+                    var savepath=savedir+"资质_"+$("#WaterMark2").textbox("getText")+new Date().format("yyyyMMdd")+".pdf";
+                    var re=OfficeObject.ActiveDocument.ExportAsFixedFormat(savepath,17);
+                    if(showresult)
+                    {
+                        if(!wps.FileSystem.Exists(savepath))
+                        {
+                            ShowMessage("保存为PDF失败!");
+                        }else{
+                            ShowMessage("保存成功!");
+                        }
+                    }
+                    break;
+                }case 4:
+                {
+                    OfficeObject.ScreenUpdating=false;
+                    var shapes=OfficeObject.ActiveDocument.Shapes;
+                    for(var i=shapes.Count;i>=1;i--)
+                    {
+                        var shape=shapes.Item(i);
+                        if(shape.Type==17)
+                        {
+                            shape.Delete();
+                        }
+                    }
+                    OfficeObject.ScreenUpdating=true;
+                }
+
+            }
+        }
+
+        function NewProject(){
+            type="new";
+            $('#dlg').dialog('open').dialog('center').dialog('setTitle','新建资质');
+		}
+		function EditProject(){
+            type="edit";
+            var row = $('#projectstab').datagrid('getSelected');
+			if (row){
+				$('#dlg').dialog('open').dialog('center').dialog('setTitle','编辑资质');
+				$('#dlg #fm').form('load',row);
+				
+			}else{
+                ShowMessage("请先选中要修改的数据");
+            }
+		}
+
+        
+		function DestroyProject(){
+			var row = $('#projectstab').datagrid('getSelected');
+			if (row){
+				$.messager.confirm('请确认','是否确定要删除该数据？',function(r){
+                    if(r)
+                    {
+                        var index = $('#projectstab').datagrid('getRowIndex',row);
+					    $('#projectstab').datagrid('deleteRow',index); //通过行号移除该行
+                        GlobalData.Certfication.Data=$("#projectstab").datagrid("getRows");
+                        SaveGlobalData();
+                    }
+				});
+                
+			}else{
+                ShowMessage("请先选中要删除的数据");
+            }
+        }
+
+
+		function SaveProject(){
+           if( $('#dlg #fm').form('validate')){
+                var index=0;
+                var row=GetFormJson();
+                if(type=="new")
+                {
+                    var rows = $("#projectstab").datagrid("getRows");  
+                    index=rows.length+1;
+                    $('#projectstab').datagrid('appendRow', row);
+
+                }else if(type=="edit")
+                {
+                    var rows = $('#projectstab').datagrid('getSelected');
+                    index = $('#projectstab').datagrid('getRowIndex',rows);
+                    $('#projectstab').datagrid('updateRow', 
+                    {
+                        index: index,
+                        row: row
+                    }); 
+                }
+                GlobalData.Certfication.Data=$("#projectstab").datagrid("getRows");
+                SaveGlobalData();
+                $('#dlg').dialog('close');		 
+           }else{
+               ShowMessage("请检查所有输入项是否都合法！");
+           }
+           
+        }
+
+       function GetFormJson()
+        {
+            var row={
+                    CertificationName :$('#fm #CertificationName').textbox("getText"),
+                    CertificationFileName : $('#fm #CertificationFileName').textbox("getText"),
+                    CertificationInfo : $('#fm #CertificationInfo').textbox("getText"),
+                    FilePath : $('#fm #FilePath').textbox("getText"),
+                };
+            return row;
+        }
+    </script>
+    
+  
+</body>
+</html>
