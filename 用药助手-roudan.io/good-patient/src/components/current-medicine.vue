@@ -33,7 +33,7 @@ function doDismiss() {
 </script>
 
 <template lang="pug">
-.current-medicine.fixed.left-4.right-4.bottom-4.flex.shadow-lg.p-4.pr-2.border.border-solid.border-gray-200.rounded.bg-white
+.current-medicine.flex.shadow-lg.p-4.pr-2.border-t.border-solid.border-gray-200.bg-white
   .text-5xl.mr-4 ⏰
   .flex-1 {{medicine.name}}
     br

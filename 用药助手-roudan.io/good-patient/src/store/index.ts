@@ -84,6 +84,7 @@ export const useMedicineStore = defineStore('medicine', () => {
       }
       // 找出1.5小时内最后提醒的药
       return !!meals.find((meal) => {
+        if (!meals) return false;
         const diff = diffMinutes(hour, minute, meal);
         return diff > 0 && diff < 90;
       });

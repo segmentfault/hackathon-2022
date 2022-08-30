@@ -1,6 +1,6 @@
 {
   "name": "good-patient",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "scripts": {
     "dev:vite": "vite",
     "dev:sw": "esbuild sw/count-down.ts --outfile=public/count-down.js --watch --tsconfig=tsconfig.sw.json",
