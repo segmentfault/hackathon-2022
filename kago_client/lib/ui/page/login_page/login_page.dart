@@ -1,6 +1,7 @@
 import 'package:kago_client/base/get/get_common_view.dart';
 import 'package:kago_client/res/button_style.dart';
 import 'package:kago_client/res/colors.dart';
+import 'package:kago_client/res/decoration_style.dart';
 import 'package:kago_client/res/r.dart';
 import 'package:kago_client/res/strings.dart';
 import 'package:kago_client/res/style.dart';
@@ -27,19 +28,7 @@ class LoginPage extends GetCommonView<LoginController> {
         body: Container(
           width: double.infinity,
           height: double.infinity,
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                  colors: [
-                Color(0xFF6FB0F4),
-                Color(0xFFA7D0FC),
-              ],
-                  stops: [
-                0.0,
-                1.0
-              ],
-                  begin: FractionalOffset.topCenter,
-                  end: FractionalOffset.bottomCenter,
-                  tileMode: TileMode.repeated)),
+          decoration: DecorationStyle.fullPageGradient(),
           child: Column(
             children: [
               ToolBar(

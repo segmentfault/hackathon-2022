@@ -22,10 +22,10 @@ class LogoNameWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SvgPicture.asset(
+          Image.asset(
             R.assetsImagesApplicationTransparent,
-            color: Colors.white,
-            width: 80,
+            // color: Colors.white,
+            // width: 80,
           ),
           Text(
             StringStyles.appName.tr,

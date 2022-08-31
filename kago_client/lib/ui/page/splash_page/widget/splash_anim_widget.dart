@@ -29,18 +29,22 @@ class SplashAnimWidget extends GetCommonView<SplashController> {
           margin: const EdgeInsets.only(top: 120),
           alignment: Alignment.center,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Image.asset(
                 R.assetsImagesApplication,
                 fit: BoxFit.fitWidth,
-                width: 110,
-                height: 110,
+                width: 248,
+                // height: 110,
               ),
-              Container(
-                margin: const EdgeInsets.only(top: 16),
-                child:  Text(
-                  StringStyles.appName.tr,
-                  style: Styles.style_black_36,
+              SafeArea(
+                bottom: true,
+                child: Container(
+                  margin: const EdgeInsets.only(top: 16),
+                  child: Text(
+                    "RTE 2022",
+                    style: Styles.style_white_10,
+                  ),
                 ),
               ),
             ],

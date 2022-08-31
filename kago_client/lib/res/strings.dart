@@ -133,7 +133,7 @@ class Messages extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         'zh_CN': {
-          StringStyles.appName: '博时',
+          StringStyles.appName: '',
           StringStyles.loading: '加载中...',
           StringStyles.loginAccountNameHint: '请输入账号名',
           StringStyles.loginAccountPwdHint: '请输入密码',
