@@ -11,6 +11,14 @@ Mui 用药助手
 我希望在这个产品中，能够帮助患者计时，并且在超过特定时间后，再提醒一次。
 
 
+体验
+--------
+
+[https://meathill-hackathon-2022.vercel.app/](https://meathill-hackathon-2022.vercel.app/)
+
+![设计稿（未实施）](./good-patient/assets/design.png)
+
+
 技术选型
 --------
 
@@ -25,11 +33,21 @@ Mui 用药助手
 
 ### 潜在问题
 
-* 存储使用 LocalStorage，容量有限（5MB）
+* 存储使用 LocalStorage
+    * 容量有限（5MB）
+    * Service worker 无法直接使用 localStorage
 
 
-环境配置
--------
+开发
+--------
+
+### 基本需求
+
+1. Node.js >= 16
+2. pnpm >= 7
+3. 支持 Service worker 的现代浏览器
+
+### 环境配置
 
 1. Clone this repo to `/path/to/good-patient`
 2. Install dependencies via `pnpm i`
@@ -40,17 +58,16 @@ Mui 用药助手
 团队
 --------
 
-团队名称：roudan.io
+团队名称：[roudan.io](https://roudan.io/)
 
 ### 团队成员
 
-* [Meathill](https://blog.meathill.com/)
+* [Meathill](https://blog.meathill.com/) 主创+开发
     * 微信 wakabanga 
     * [邮箱](mailto:meathill@gmail.com)
     * [GitHub](https://github.com/meathill)
     * [微博](https://weibo.com/meathill)
-* Eggeast
-  * 
+* Eggeast 设计师
 
 
 LICENSE

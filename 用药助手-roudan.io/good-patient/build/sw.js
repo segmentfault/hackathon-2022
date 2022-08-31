@@ -11,6 +11,7 @@ const {resolve} = require('path');
       outfile: resolve(__dirname, '../public/count-down.js'),
       tsconfig: resolve(__dirname, '../tsconfig.json'),
     });
+    console.log('count-down.js built');
   } catch (e) {
     console.error(e);
     process.exit(1);
