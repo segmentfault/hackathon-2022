@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 const kPrimaryColor = Color(0xff171616);
@@ -18,4 +17,11 @@ ThemeData get appThemeData => ThemeData(
     appBarTheme: appBarTheme,
     textTheme: const TextTheme());
 
-AppBarTheme get appBarTheme => const AppBarTheme();
+AppBarTheme get appBarTheme => const AppBarTheme(
+    color: Colors.white,
+    elevation: 1,
+    iconTheme: IconThemeData(color: Color.fromRGBO(153, 199, 247, 1)),
+    titleTextStyle: TextStyle(
+        color: Color.fromRGBO(153, 199, 247, 1),
+        fontSize: 20,
+        fontWeight: FontWeight.bold));

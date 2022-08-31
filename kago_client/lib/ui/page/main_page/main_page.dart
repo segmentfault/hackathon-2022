@@ -63,35 +63,31 @@ class HomeTabOptionsState extends State<MainPage>
         decoration: ShadowStyle.white12TopSpread4Blur10(radius: 0),
         child: TabBar(
           indicator: const BoxDecoration(),
-          labelColor: ColorStyle.color_24CF5F,
+          labelColor: Color.fromRGBO(0, 0, 0, 1),
           unselectedLabelColor: ColorStyle.color_B8C0D4,
           controller: tabController,
           tabs: [
-            Image.asset(
-              "assets/images/Group 1968.png",
-              height: 44,
+            TabTitleIcon(
+              title: StringStyles.homeComplex.tr,
+              icon: Image.asset(
+                "assets/images/Group 2065.png",
+                height: 25,
+              ),
             ),
-            Image.asset(
-              "assets/images/Group 1970.png",
-              height: 44,
+            TabTitleIcon(
+              title: StringStyles.homeProject.tr,
+              icon: Image.asset(
+                "assets/images/Group 2060.png",
+                height: 25,
+              ),
             ),
-            Image.asset(
-              "assets/images/Group 1972.png",
-              height: 44,
+            TabTitleIcon(
+              title: StringStyles.homeMy.tr,
+              icon: Image.asset(
+                "assets/images/Group 2062.png",
+                height: 25,
+              ),
             ),
-
-            // TabTitleIcon(
-            //   title: StringStyles.homeComplex.tr,
-            //   icon: Icons.turned_in,
-            // ),
-            // TabTitleIcon(
-            //   title: StringStyles.homeProject.tr,
-            //   icon: Icons.square,
-            // ),
-            // TabTitleIcon(
-            //   title: StringStyles.homeMy.tr,
-            //   icon: Icons.person,
-            // ),
           ],
         ),
       ),

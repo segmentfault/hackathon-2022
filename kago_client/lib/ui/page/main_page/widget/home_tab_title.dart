@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 /// @description :文字加图标的Tab
 class TabTitleIcon extends StatelessWidget {
   String title = "";
-  IconData? icon;
+  Image? icon;
 
   TabTitleIcon({
     Key? key,
@@ -21,9 +21,7 @@ class TabTitleIcon extends StatelessWidget {
     return Tab(
       text: title,
       iconMargin: const EdgeInsets.all(4),
-      icon: Icon(
-        icon,
-      ),
+      icon: icon,
     );
   }
 }

@@ -4,6 +4,7 @@ import 'package:kago_client/ui/dialog/dialog_common_style.dart';
 import 'package:kago_client/ui/page/home_page/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kago_client/widget/logo_title.dart';
 
 /// @class : HomePage
 /// @date : 2022/08/26
@@ -16,11 +17,12 @@ class HomePage extends GetSaveView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(
-            title: const Text(
-              "KAGo",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
+        appBar: AppBar(leading: LogoTitleWidget(), leadingWidth: 250,
+            // title: LogoTitleWidget(),
+            // const Text(
+            //   "KAGo",
+            //   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            // ),
             actions: [
               IconButton(
                   onPressed: () {
@@ -39,62 +41,88 @@ class HomePage extends GetSaveView<HomeController> {
                     //   );
                     //     });
                   },
-                  icon: const Icon(
-                    Icons.more_horiz,
-                    size: 30,
+                  icon: Padding(
+                    padding: const EdgeInsets.only(right: 12),
+                    child: const Icon(
+                      Icons.add,
+                      size: 35,
+                    ),
                   ))
             ]),
         body: SafeArea(
           top: true,
           child: ListView.builder(
-            padding: EdgeInsets.zero,
-            shrinkWrap: true,
-            itemCount: 10,
-            itemBuilder: (BuildContext context, int index) {
-              return Card(
-                margin: const EdgeInsets.all(12),
-                child: Container(
-                  padding: const EdgeInsets.all(10),
-                  child: Row(
-                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              padding: EdgeInsets.zero,
+              shrinkWrap: true,
+              itemCount: 10,
+              itemBuilder: (BuildContext context, int index) {
+                return HomeRoomItem(index);
+              }),
+        ));
+  }
+}
 
+class HomeRoomItem extends StatelessWidget {
+  final int index;
+  const HomeRoomItem(this.index, {Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(12),
+      child: Row(
+        children: [
+          Container(
+            height: 88,
+            width: 88,
+            child: Image.asset(
+              "assets/images/home_group_cover.png",
+              // height: 34,
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        height: 88,
-                        width: 88,
-                        color: Colors.blue,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Text(
-                              "打开全名称$index",
-                              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              "打卡描述$index",
-                              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                            )
-                          ],
-                        ),
+                      Text(
+                        "考研小分队$index",
+                        style: const TextStyle(
+                            color: Color.fromRGBO(10, 14, 47, 1),
+                            fontSize: 21,
+                            fontWeight: FontWeight.bold),
                       ),
                       const Spacer(),
                       Text(
-                        "时间",
-                        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                        "09:58",
+                        style: const TextStyle(
+                            color: Color.fromRGBO(10, 14, 47, 0.3),
+                            fontSize: 14,
+                            fontWeight: FontWeight.normal),
                       ),
                     ],
                   ),
-                ),
-              );
-            },
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "[16条]小衫：我刚打完卡，放松一下哈哈哈$index",
+                    style: const TextStyle(
+                        color: Color.fromRGBO(10, 14, 47, 0.5),
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal),
+                  )
+                ],
+              ),
+            ),
           ),
-        ));
+        ],
+      ),
+    );
   }
 }

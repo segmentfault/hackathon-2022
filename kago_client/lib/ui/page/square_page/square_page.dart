@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kago_client/base/get/get_save_state_view.dart';
 import 'package:kago_client/ui/page/square_page/square_controller.dart';
+import 'package:kago_client/widget/logo_title.dart';
 import 'package:kago_client/widget/ripple_widget.dart';
 
 /// @class : SquarePage
@@ -15,21 +16,22 @@ class SquarePage extends GetSaveView<SquareController> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Kago"),
+        leading: LogoTitleWidget(),
+        leadingWidth: 250,
       ),
       body: SafeArea(
-        top: true,
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: ListView(
-            children: [
-              TitleSection(text: "选择一个房间加入吧",),
-              GridGetView(),
-            ],
-          ),
-        )
-        
-      ),
+          top: true,
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: ListView(
+              children: [
+                TitleSection(
+                  text: "选择一个房间加入吧",
+                ),
+                GridGetView(),
+              ],
+            ),
+          )),
     );
   }
 }
@@ -52,15 +54,38 @@ class _SquareItemState extends State<SquareItem> {
   }
 }
 
-
 class GridGetView extends StatelessWidget {
   List listData = [
-    {"title": "标题1", "author": "内容1", "image": "https://www.itying.com/images/flutter/1.png"},
-    {"title": "标题2", "author": "内容2", "image": "https://www.itying.com/images/flutter/2.png"},
-    {"title": "标题3", "author": "内容3", "image": "https://www.itying.com/images/flutter/3.png"},
-    {"title": "标题4", "author": "内容4", "image": "https://www.itying.com/images/flutter/4.png"},
-    {"title": "标题5", "author": "内容5", "image": "https://www.itying.com/images/flutter/5.png"},
-    {"title": "标题6", "author": "内容6", "image": "https://www.itying.com/images/flutter/6.png"},
+    {
+      "title": "标题1",
+      "author": "内容1",
+      "image": "https://www.itying.com/images/flutter/1.png"
+    },
+    {
+      "title": "标题2",
+      "author": "内容2",
+      "image": "https://www.itying.com/images/flutter/2.png"
+    },
+    {
+      "title": "标题3",
+      "author": "内容3",
+      "image": "https://www.itying.com/images/flutter/3.png"
+    },
+    {
+      "title": "标题4",
+      "author": "内容4",
+      "image": "https://www.itying.com/images/flutter/4.png"
+    },
+    {
+      "title": "标题5",
+      "author": "内容5",
+      "image": "https://www.itying.com/images/flutter/5.png"
+    },
+    {
+      "title": "标题6",
+      "author": "内容6",
+      "image": "https://www.itying.com/images/flutter/6.png"
+    },
   ];
 
   @override
@@ -80,14 +105,13 @@ class GridGetView extends StatelessWidget {
       shrinkWrap: true,
       itemBuilder: (context, index) {
         return Image.asset(
-          "assets/images/Frame ${277+index}.png",
+          "assets/images/Frame ${277 + index}.png",
           fit: BoxFit.cover,
         );
       },
     );
   }
 }
-
 
 class TitleSection extends StatelessWidget {
   final String text;
