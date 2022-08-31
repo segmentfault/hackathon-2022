@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:padding="6dp"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+        <!--时间-->
+        <TextView
+                android:id="@+id/tv_sendtime"
+                style="@style/chat_text_date_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" >
+        <!--头像-->
+        <ImageView
+                android:id="@+id/iv_userhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/head_3"
+                android:focusable="false" />
+
+        <TextView
+                android:id="@+id/tv_chatcontent"
+                style="@style/chat_content_date_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="#00ffffff"
+                android:textColor="#000"
+                android:layout_toLeftOf="@id/iv_userhead"
+        />
+
+        <TextView
+                android:id="@+id/tv_username"
+                style="@style/chat_text_name_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/iv_userhead"
+                android:layout_toRightOf="@id/tv_chatcontent" />
+    </RelativeLayout>
+
+</LinearLayout>

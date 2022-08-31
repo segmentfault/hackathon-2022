@@ -1,0 +1,28 @@
+{
+    "name": "__MSG_name__",
+    "description": "__MSG_pluginDesc__",
+    "version": "0.0.2",
+    "manifest_version": 3,
+    "action": 
+    {
+        "default_icon":"Timer.png",
+        "default_popup":"main.html"
+    },
+    "icons":
+    {
+        "256":"Timer.png"
+    },
+    "background": {
+        "service_worker": "Service/service.js"
+    },
+    "permissions":
+    [
+        "alarms",
+        "notifications",
+        "storage",
+        "background",
+        "contextMenus"
+    ],
+    "default_locale": "zh_CN"
+    
+}

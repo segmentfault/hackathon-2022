@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+<!--    <item-->
+<!--        android:id="@+id/action_settings"-->
+<!--        android:orderInCategory="100"-->
+<!--        android:showAsAction="never"-->
+<!--        android:title="@string/action_settings"/>-->
+<!--    <item-->
+<!--        android:id="@+id/action_peson"-->
+<!--        android:orderInCategory="100"-->
+<!--        android:showAsAction="never"-->
+<!--        android:title="我发布的"/>-->
+<!--      <item-->
+<!--        android:id="@+id/action_app"-->
+<!--        android:icon="@drawable/ic_navi_intro"-->
+<!--        android:showAsAction="always"-->
+<!--        android:title="推卷"/>-->
+
+<!--    <item-->
+<!--        android:id="@+id/action_plus"-->
+<!--        android:icon="@drawable/actionbar_add_icon"-->
+<!--        android:showAsAction="always"-->
+<!--        android:title="tianjia"/>-->
+<!--    -->
+</menu>
+

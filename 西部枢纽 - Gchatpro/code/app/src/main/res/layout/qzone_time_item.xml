@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="75dp">
+
+    <!--线条部分-->
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingLeft="30dp">
+
+        <View
+                android:layout_width="3dp"
+                android:layout_height="20dp"
+                android:background="@color/colorPrimary" />
+
+        <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:background="@drawable/timeicon" />
+
+        <View
+                android:layout_width="3dp"
+                android:layout_height="40dp"
+                android:background="@color/colorPrimary" />
+    </LinearLayout>
+
+
+    <!--文字部分-->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingTop="20dp">
+
+        <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2016-05-03 00:22:36"
+                android:textColor="#ABABAB" />
+
+        <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="~~~OO空间，说点什么吧......"
+                android:layout_below="@id/tv_time"
+                android:textColor="#FF2C4250" />
+    </LinearLayout>
+
+
+</LinearLayout>

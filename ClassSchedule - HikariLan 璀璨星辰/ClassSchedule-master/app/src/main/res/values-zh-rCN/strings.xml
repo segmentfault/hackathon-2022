@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">课程表</string>
+    <string name="settings">设置</string>
+    <string name="settings.setMaxClassNumber">设置一天的最大课节数</string>
+    <string name="settings.setEnableWeekend">设置是否启用周末课表</string>
+    <string name="week.1">星期一</string>
+    <string name="week.2">星期二</string>
+    <string name="week.3">星期三</string>
+    <string name="week.4">星期四</string>
+    <string name="week.5">星期五</string>
+    <string name="week.6">星期六</string>
+    <string name="week.7">星期日</string>
+    <string name="currentWeek">第 {0} 周</string>
+    <string name="settings.setCurrentWeekInThisSemester">设置当前的周数</string>
+    <string name="settings.setMaxWeekInThisSemester">设置本学期总周数</string>
+    <string name="dialogEditingClass.title">" 编辑课程"</string>
+    <string name="dialogEditingClass.setClassName">设置课程名称</string>
+    <string name="dialogEditingClass.setAvailableWeeks">设置上课周数</string>
+    <string name="dialogEditingClass.setAvailableWeeks.oddNumberOnly">单周</string>
+    <string name="dialogEditingClass.setAvailableWeeks.evenNumberOnly">双周</string>
+    <string name="dialogEditingClass.setAvailableWeeks.all">全选</string>
+    <string name="dialogEditingClass.setTeacher">设置教师名称</string>
+    <string name="dialogEditingClass.setLocation">设置地点</string>
+    <string name="toast.successfullyClear">清除成功</string>
+    <string name="settings.resetAllData">重置所有数据（包括课程表数据和偏好设置）</string>
+    <string name="settings.importDataFromClipboard" translatable="false">从剪贴板导入课程表数据</string>
+    <string name="settings.exportDataToClipboard">导出课程表（JSON）数据到剪贴板</string>
+    <string name="toast.successfulllyImport">导入成功！</string>
+    <string name="toast.successfulllyExport">导出成功！</string>
+    <string name="toast.failedToImport">数据导入失败，请检查剪贴板中的 JSON 数据是否正确!</string>
+    <string name="classTimeSettings">课表时间设置</string>
+</resources>

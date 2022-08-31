@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="122dp"
+            android:text="添加好友"
+
+            android:textSize="26sp" />
+
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/friends_id"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center_vertical"
+                android:hint="请输入好友账号"
+
+                android:maxLines="1"
+                android:paddingLeft="87dp"
+                android:textColor="@color/black"
+
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="好友账号"
+
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/search_friendbutton"
+                android:layout_width="99dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+
+
+                android:gravity="center"
+                android:text="搜索"
+
+                android:textSize="12sp" />
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/add_friendbutton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
+
+            android:text="立即添加"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

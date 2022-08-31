@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+        <title>欢迎使用超级时间管理器</title>
+        <link rel="stylesheet" href="main.css">
+        <link rel="icon" href="Timer.png" type="image">
+    </head>
+    <body>
+        <div class="title">
+            <ul>
+                <li class="selected" id="countdown">倒计时</li>
+                <li class="unselected" id="alarm">闹钟</li>
+                <li class="unselected" id="timer">计时器</li>
+            </ul>
+        </div>
+        <div id="countDowniFrame"  >
+            <div contenteditable id="countdownName" class="clockTitles">提醒一下</div>
+            <div class="setting">
+                    
+                <div class="num" id="hourGroup">
+                    <div class="up upCountdown" id="plusHour"><img src="up.png"></div>
+                    <div id="countdownHours" class="numpad">00</div>
+                    <div class="down downCountdown" id="minusHour"><img src="up.png"></div>
+                </div>
+                <div class="timedot">:</div>
+                <div class="num" id="minGroup">
+                    <div class="up upCountdown" id="plusMin"><img src="up.png"></div>
+                    <div id="countdownMins" class="numpad">00</div>
+                    <div class="down downCountdown" id="minusMin"><img src="up.png"></div>
+                </div>
+                <div class="timedot">:</div>
+                <div class="num" id="secGroup">
+                    <div class="up upCountdown" id="plusSec"><img src="up.png"></div>
+                    <div id="countdownSeconds" class="numpad">00</div>
+                    <div class="down downCountdown" id="minusSec"><img src="up.png"></div>
+                </div>
+            </div>
+            <div class="startoption">
+                <div class="buttons" id="start">开始</div>
+                <div class="buttons" id="startPotatoClock">番茄钟</div>
+                <div class="buttons" id="continue">继续</div>
+                <div class="buttons" id="pause">暂停</div>
+                <div class="buttons" id="stop">停止</div>
+                
+              </div>
+        </div>
+        <div id="alarmiFrame" hidden>
+            <div contenteditable class="clockTitles" id="alarmName">提醒一下</div>
+            <div class="setting">
+                    
+                <div class="num" id="hourAlarmGroup">
+                    <div class="up upAlarms" id="plusAlarmHour"><img src="up.png"></div>
+                    <div id="alarmHours" class="numpad">00</div>
+                    <div class="down downAlarms" id="minusAlarmHour"><img src="up.png"></div>
+                </div>
+                <div class="timedot">:</div>
+                <div class="num" id="minAlarmGroup">
+                    <div class="up upAlarms" id="plusAlarmMin"><img src="up.png"></div>
+                    <div id="alarmMins" class="numpad">00</div>
+                    <div class="down downAlarms" id="minusAlarmMin"><img src="up.png"></div>
+                </div>
+            </div>
+            <div class="startoption">
+                <div class="buttons" id="startAlarm">开启</div>
+                <div class="buttons" id="stopAlarm">关闭</div>
+            </div>
+            *闹钟仅进行一次。期间如果发生Chrome异常退出或关闭的事件，闹钟可能会取消。
+        </div>
+        <div id="timeriFrame" hidden>
+            <div class="timerTimes" id="timerTimes">
+                    0:00:00.00
+            </div>
+            <div class="startoption">
+                <div class="buttons" id="startTimer">开始</div>
+                <div class="buttons" id="pauseTimer">暂停</div>
+                <div class="buttons" id="continueTimer">继续</div>
+                <div class="buttons" id="stopTimer">停止</div>
+                <div class="buttons" id="clearTimer">重置</div>
+            </div>
+            
+        </div>
+        <script src="popup/popup.js"></script>
+    </body>
+</html>

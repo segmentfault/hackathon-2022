@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+        <!--CoordinatorLayout从名字上可以看出，就是帮我们协调子View的。-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:fab="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context="com.example.gchat.MainActivity">
+
+    <!--首页导航条区域-->
+    <com.google.android.material.appbar.AppBarLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+        <!--Toolbar首页顶部的工具栏-->
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#FF6633"
+                app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <!--首页内容区域 包含content_main-->
+    <include layout="@layout/content_main"/>
+
+    <!--右下角浮动按钮-->
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:id="@+id/multiple_actions_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="10dp"
+            android:layout_gravity="bottom|end"
+            fab:fab_addButtonColorNormal="@color/colorPrimary"
+            fab:fab_labelStyle="@style/menu_labels_style"
+            fab:fab_addButtonColorPressed="#86e7c2"
+            fab:fab_addButtonPlusIconColor="#fff"
+            fab:fab_addButtonSize="normal"
+            fab:fab_expandDirection="up"
+    >
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ffffff"
+            fab:fab_colorNormal="#CC0000"
+            fab:fab_colorPressed="#990000"
+            fab:fab_size="normal"
+            fab:fab_title="阅后即焚" />
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ffffff"
+            fab:fab_colorNormal="#0099FF"
+            fab:fab_colorPressed="#0000FF"
+            fab:fab_size="normal"
+            fab:fab_title="加好友" />
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_mood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ffffff"
+            fab:fab_colorNormal="#eca698"
+            fab:fab_colorPressed="#4ccea0"
+            fab:fab_size="normal"
+            fab:fab_title="写说说" />
+        <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/button_qzone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00ffffff"
+                fab:fab_colorNormal="#f1f09e"
+                fab:fab_colorPressed="#f1aeae"
+                fab:fab_size="normal"
+                fab:fab_title="看动态" />
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

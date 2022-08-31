@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              tools:context=".utils.MessageActivity"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#fff"
+            android:background="@color/colorPrimary"
+            android:text="\n输入短信接收者，群发以,分隔\n"
+            android:id="@+id/textView2"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <AutoCompleteTextView
+                android:id="@+id/sharePerson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#89cae2"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:singleLine="true"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    <Button
+            android:id="@+id/shareContent"
+            style="?android:textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#89cae2"
+            android:textColor="#fff"
+            android:text="\n\n内容:Hi,我正在使用Gchatpro，一起来聊天吧~~\n\n\n\n\n\n\n\n"
+            android:textStyle="bold"/>
+
+    <Button
+            android:id="@+id/sendMSM"
+            style="?android:textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"
+            android:text="点击分享"
+            android:textStyle="bold"/>
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>

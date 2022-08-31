@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/dialog/dialog.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ids/all_dict.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ids/source.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ids/target.txt" charset="GBK" />
+  </component>
+</project>

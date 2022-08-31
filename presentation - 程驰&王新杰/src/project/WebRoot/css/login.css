@@ -1,0 +1,32 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	font-size:24px;
+	margin:0 auto;
+	background:url(../images/user_all_bg.gif);
+}
+table{
+	font-size:18px;
+	color:white;
+	margin:0 auto;
+	
+	background:url(../images/user_all_bg.gif);
+}
+div{
+		line-height:40px!important;
+	}
+a{
+	text-decoration: none;
+	color:white;
+	
+}
+#userPart{
+    background:url(../images/login.jpg) no-repeat;
+	width:570px;
+	height:372px;
+	margin-left:300px;
+	margin-top:100px;
+	
+}

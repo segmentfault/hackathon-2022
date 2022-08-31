@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+
+
+    <!--放字符的条目-->
+
+        <TextView
+                android:id="@+id/tv_word"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="#edecec"
+                android:textColor="#b6b4b4"
+                android:gravity="center_vertical"
+                android:paddingLeft="?android:attr/listPreferredItemPaddingLeft" />
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" >
+        <!--联系人头像-->
+        <ImageView
+                android:id="@+id/tv_headImg"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:focusable="false"
+                android:background="@drawable/head_2"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"/>
+
+        <!--联系人名字-->
+        <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:gravity="center_vertical"
+                android:minHeight="?android:attr/listPreferredItemHeightSmall"
+                android:paddingLeft="?android:attr/listPreferredItemPaddingLeft"
+                android:paddingRight="?android:attr/listPreferredItemPaddingRight"
+                android:textAppearance="?android:attr/textAppearanceListItemSmall" />
+    </LinearLayout>
+</LinearLayout>

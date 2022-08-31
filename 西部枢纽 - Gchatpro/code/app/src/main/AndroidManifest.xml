@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.gchat">
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="28" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" /> <!-- 相机使用申明 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 允许程序设置内置sd卡的写权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 短信使用申明 -->
+    <uses-permission android:name="android.permission.SEND_SMS" /> <!-- 使用网络功能申明 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 允许程序获取网络状态 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 允许程序打开网络套接字 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 允许程序访问WiFi网络信息 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 允许程序访问CellID或WiFi热点来获取粗略的位置 -->
+    <!-- 获取设置信息 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 允许程序读写手机状态和身份 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="任意字符"
+        android:icon="@mipmap/ic_launche"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:appComponentFactory">
+        <service
+            android:name=".Service.NotiFicationService"
+            android:enabled="true"
+            android:exported="true"></service>
+        <!-- 欢迎界面 -->
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- 主界面 -->
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/top_lable_name"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name=".AddFriendActivity" />
+        <activity android:name=".ApplyFriend" />
+        <activity android:name=".PhoneLoginActivity"/>
+        <activity android:name=".Closeread"/>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".viewUI.RegistActivity"
+            android:label="@string/title_activity_regist" />
+        <activity
+            android:name=".viewUI.SettingsActivity"
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name=".utils.MessageActivity"
+            android:label="分享软件" />
+        <activity
+            android:name=".utils.CameraActivity"
+            android:label="保存图片" />
+        <activity
+            android:name=".viewUI.QQmoodActivity"
+            android:label="发布说说" />
+        <activity
+            android:name=".viewUI.QzoneActivity"
+            android:label="QQ空间" />
+        <activity
+            android:name=".utils.MapActivity"
+            android:label="地理位置" />
+        <activity
+            android:name=".viewUI.ChatMainActivity"
+            android:label="好友聊天" /> <!-- 注册高德Key使用的SHA1值 -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="a98946bc058e61281da8f5c25bd91ba8">
+            //开发者申请的key
+        </meta-data> <!-- com.amap.api.v2.apikey -->
+        <!-- 实现定位 -->
+        <service android:name="com.amap.api.location.APSService"></service>
+    </application>
+
+</manifest>

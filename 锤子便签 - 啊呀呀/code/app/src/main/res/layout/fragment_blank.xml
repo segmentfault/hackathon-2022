@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BlankFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <Button
+
+            android:id="@+id/button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="#776559"
+            android:text="Button"
+            app:icon="@drawable/ic_baseline_edit_24"
+            app:iconSize="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/searView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="#55443A"
+            app:strokeColor="#040302"
+            />
+
+        <Button
+            android:id="@+id/clearbutton9"
+            android:layout_width="65dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="#B12828"
+            android:text="清空"
+            android:textSize="14sp"
+            android:visibility="invisible"
+            app:iconSize="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/searView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="#55443A"
+            app:strokeColor="#040302" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="541dp"
+            android:layout_height="734dp"
+            android:src="@drawable/woodenbag"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searView" />
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/SeachView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:id="@+id/SearchBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/searchbar"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_baseline_search_24"
+                        app:layout_constraintBottom_toBottomOf="@+id/SearchBar"
+                        app:layout_constraintStart_toStartOf="@+id/SearchBar"
+                        app:layout_constraintTop_toTopOf="@+id/SearchBar" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycleview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <View
+            android:id="@+id/searView"
+            android:layout_width="wrap_content"
+            android:layout_height="108dp"
+            android:background="#776559"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全部便签"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+            app:layout_constraintEnd_toEndOf="@+id/searView"
+            app:layout_constraintStart_toStartOf="@+id/searView"
+            app:layout_constraintTop_toTopOf="@+id/searView"
+            app:layout_constraintVertical_bias="0.654" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

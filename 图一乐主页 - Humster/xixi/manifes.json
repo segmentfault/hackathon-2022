@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "TuYiLe_NeymarTab",
+    "author": "hati",
+    "description": "一个由hati制作的标签页。",
+    "version": "1.0",
+    "action":{
+        "default_popup" : "happy.html"
+        
+    },
+    "icons": {
+        "1080": "./game.png"
+    },
+
+    "chrome_url_overrides": {
+        "newtab": "personalWeb1.html"
+    },
+    "permissions": [
+        "tabs",
+        "storage"
+    ]
+
+}

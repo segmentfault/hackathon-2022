@@ -1,0 +1,22 @@
+
+table{
+	margin-top:10px;
+	width:70%;
+	font-family:arial;
+	border-collapse:collapse;
+	border-top:none;
+	BORDER: #95b4d9 1px solid;
+}
+
+
+td{
+	padding:1px 4px 1px 4px;
+	font-size:12px;
+	FONT-COLOR:#003279;
+	LINE-HEIGHT:16pt;
+	BORDER-RIGHT: #95b4d9 1px solid;
+	BORDER-TOP: #95b4d9 1px solid;
+	BORDER-LEFT: #95b4d9 1px solid;
+	BORDER-BOTTOM: #95b4d9 1px solid; 
+	font-size: 9pt; white-space:normal;	  
+}

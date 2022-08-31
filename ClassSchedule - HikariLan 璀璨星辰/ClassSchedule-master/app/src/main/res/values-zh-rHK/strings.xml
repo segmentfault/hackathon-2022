@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">課程表</string>
+    <string name="settings">設置</string>
+    <string name="settings.setMaxClassNumber">設置一天最大課節數</string>
+    <string name="settings.setEnableWeekend">設置是否啓用課表</string>
+    <string name="week.1">星期一</string>
+    <string name="week.7">星期日</string>
+    <string name="week.6">星期六</string>
+    <string name="week.5">星期五</string>
+    <string name="week.4">星期四</string>
+    <string name="week.3">星期三</string>
+    <string name="week.2">星期二</string>
+    <string name="currentWeek">第 {0} 周</string>
+    <string name="settings.setCurrentWeekInThisSemester">設置當前的周數</string>
+    <string name="settings.setMaxWeekInThisSemester">設置本學期縂周數</string>
+    <string name="dialogEditingClass.title">" 編輯課程"</string>
+    <string name="dialogEditingClass.setClassName">設置課程名稱</string>
+    <string name="dialogEditingClass.setAvailableWeeks">設置上課周數</string>
+    <string name="dialogEditingClass.setAvailableWeeks.oddNumberOnly">單周</string>
+    <string name="dialogEditingClass.setAvailableWeeks.evenNumberOnly">雙周</string>
+    <string name="dialogEditingClass.setAvailableWeeks.all">全選</string>
+    <string name="dialogEditingClass.setTeacher">設置教師名稱</string>
+    <string name="dialogEditingClass.setLocation">設置地點</string>
+    <string name="toast.successfullyClear">清除成功</string>
+    <string name="settings.resetAllData">重置所有數據（包括課程表數據和偏好設置）</string>
+    <string name="settings.importDataFromClipboard">從剪貼板導入課程表數據</string>
+    <string name="settings.exportDataToClipboard">導出課程表（JSON）數據到剪貼板</string>
+    <string name="toast.successfulllyImport">導入成功！</string>
+    <string name="toast.successfulllyExport">導出成功！</string>
+    <string name="toast.failedToImport">數據導入失敗，請檢查剪貼板中的 JSON 數據是否正確！</string>
+    <string name="classTimeSettings">課表時間設置</string>
+</resources>

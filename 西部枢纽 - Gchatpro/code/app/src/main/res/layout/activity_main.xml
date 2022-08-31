@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    抽屉视图控件DrawerLayout。使用这个控件，可以生成通过在屏幕上水平滑动打开或者关闭菜单，
+    能给用户一个不错的体验效果。
+-->
+
+<androidx.drawerlayout.widget.DrawerLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start">
+
+    <!--包含 首页导航 内容 浮动按钮区域-->
+    <include
+            layout="@layout/app_bar_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+    <!--申明左侧导航-->
+    <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/nav_header_main"
+            app:menu="@menu/activity_main_drawer"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>
+
+
+ <!--
+    fitSystemWindows属性让系统帮我们自动适配不同情况下的status bar,让我们的view的paddingTop获取到一个合理的值。
+    layout_gravity， 该属性用于设置控件相对于容器的对齐方式，可选项有：top、bottom、left、right、center_vertical、fill_vertical 、 center、fill等等。
+     start 表示控件置于容器的起始处,不改变控件的大小。
+ -->

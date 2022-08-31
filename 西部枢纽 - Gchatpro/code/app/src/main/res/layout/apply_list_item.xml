@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp" >
+        <!--联系人名字-->
+        <TextView
+            android:id="@+id/applyy_name"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:gravity="center_vertical"
+            android:minHeight="?android:attr/listPreferredItemHeightSmall"
+            android:paddingLeft="?android:attr/listPreferredItemPaddingLeft"
+            android:paddingRight="?android:attr/listPreferredItemPaddingRight"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall" />
+
+        <Button
+            android:id="@+id/btn_agree"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+
+            android:text="同意"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/btn_refuse"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="拒绝"
+            android:textSize="10dp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

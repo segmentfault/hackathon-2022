@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/drawable-v21/ic_info_black_24dp.xml" value="0.1955" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/drawable-v21/ic_menu_camera.xml" value="0.1775" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/drawable-v21/ic_menu_gallery.xml" value="0.1775" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/drawable-v21/ic_menu_manage.xml" value="0.1775" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/drawable-v21/ic_menu_send.xml" value="0.1775" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/drawable-v21/ic_menu_share.xml" value="0.1775" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/drawable-v21/ic_notifications_black_24dp.xml" value="0.1775" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/drawable-v21/ic_sync_black_24dp.xml" value="0.1775" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/drawable/btn_selector.xml" value="0.1665" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/drawable/frame_grey_white_edge.xml" value="0.179" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1955" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/drawable/side_nav_bar.xml" value="0.1955" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/aceshi.xml" value="0.146875" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/activity_applyfriend.xml" value="0.25" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/activity_applyview.xml" value="0.2" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/activity_camera.xml" value="0.1875" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/activity_chatmain.xml" value="0.25" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/activity_login.xml" value="0.18" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/activity_map.xml" value="0.1875" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/activity_message.xml" value="0.1875" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/activity_phoneregist.xml" value="0.33" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/activity_qqmood.xml" value="0.1875" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/activity_qzone.xml" value="0.1875" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/activity_regist.xml" value="0.25" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/activity_welcome.xml" value="0.1875" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/addfriendactivity.xml" value="0.25" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/app_bar_main.xml" value="0.1875" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/apply_list.xml" value="0.33" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/apply_list_item.xml" value="0.25" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/apply_list_wait.xml" value="0.2" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/avtivity_closeread.xml" value="0.303125" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/chatting_item_msg_text_left.xml" value="0.20625" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/chatting_item_msg_text_right.xml" value="0.20625" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/content_apply.xml" value="0.16145833333333334" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/content_main.xml" value="0.20625" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/dialog_microphone.xml" value="0.25" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/nav_header_main.xml" value="0.25" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/person_list.xml" value="0.2" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/person_list_item.xml" value="0.20625" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/qzone_time_item.xml" value="0.20625" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/layout/selector_btn_click_text_color.xml" value="0.15729166666666666" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/menu/activity_main_drawer.xml" value="0.22" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/menu/main.xml" value="0.3619791666666667" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/mipmap-anydpi-v26/ic_launche.xml" value="0.1955" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1955" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1775" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/xml/pref_data_sync.xml" value="0.18177083333333333" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/xml/pref_general.xml" value="0.33" />
+        <entry key="..\:/android/AndroidStudioProjects/gchat/app/src/main/res/xml/pref_notification.xml" value="0.18177083333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

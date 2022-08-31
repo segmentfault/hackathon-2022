@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    >
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="苏州园林 "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center|left"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:id="@+id/item_gp_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center|left"
+            android:text="aqq"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/item_gp_content"
+            android:text="qqqq"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center|left"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+</LinearLayout>

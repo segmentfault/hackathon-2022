@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.home.Home_List2Activity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/img_back"
+            android:id="@+id/Home_list2_back"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="景点详情"
+            android:gravity="center"
+            />
+    </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/sz2"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="拙政林景区。"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="         位于江苏省苏州市，始建于明正德初年（16世纪初），是江南古典园林的代表作品。距今（2022年）已有500多年的历史。拙政园几度分合，或为“私人”宅园，或做“金屋”藏娇，或是“王府”治所，留下了许多诱人探寻的遗迹和典故。[1] 拙政园与北京颐和园、承德避暑山庄、苏州留园一起被誉为中国四大名园。"
+            android:textColor="#333333"
+            />
+</LinearLayout>

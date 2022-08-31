@@ -1,0 +1,147 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.gchat.LoginActivity">
+
+    <!-- Login progress  进度条： progressBarStyleLarge （大圆形）-->
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"/>
+
+    <!--ScrollView滚动视图是指当拥有很多内容，屏幕显示不完时，需要通过滚动跳来显示的视图。ScrollView只支持垂直滚动。-->
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/email_login_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="122dp"
+                    android:text="账号密码登录"
+                    android:textColor="@color/black"
+                    android:textSize="26sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <AutoCompleteTextView
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="25dp"
+                    android:inputType="textEmailAddress"
+
+
+                    android:gravity="center_vertical"
+                    android:hint="Gchat号/手机/邮箱"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+
+                    android:textSize="15sp" />
+
+                <!--
+                android:imeActionId 设置IME动作ID，在onEditorAction中捕获判断进行逻辑操作。
+                android:imeActionLabel  设置IME动作标签。但是不能保证一定会使用，猜想在输入法扩展的时候应该有用。
+                android:imeOptions  设置软键盘的Enter键。
+                -->
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+
+
+
+                android:inputType="textPassword"
+                tools:ignore="InvalidImeActionId"
+
+
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center_vertical"
+                android:hint="请输入密码"
+                android:maxLines="1"
+                android:textColor="@color/black"
+
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/email_sign_in_button"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_selector"
+                android:text="@string/action_sign_in"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/register"
+                android:layout_width="match_parent"
+                android:layout_height="23dp"
+                android:layout_marginTop="15dp"
+                android:textColor="#454343"
+                android:gravity="right"
+                android:background="#00ffffff"
+                android:text="注册新账号"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/phoneregister"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_marginTop="10dp"
+                android:background="#00ffffff"
+                android:gravity="right"
+                android:text="手机快速登录"
+                android:textColor="#454343"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+
+
+
+    <!--
+        控件AutoCompleteTextView 客户端保存搜索历史自动提示
+        AutoCompleteTextView常用属性
+
+        android:completionHint	            设置出现在下拉菜单中的提示标题
+        android:completionThreshold	        设置用户至少输入多少个字符才会显示提示
+        android:dropDownHorizontalOffset	下拉菜单于文本框之间的水平偏移。默认与文本框左对齐
+        android:dropDownHeight	            下拉菜单的高度
+        android:dropDownWidth	            下拉菜单的宽度
+        android:singleLine	                单行显示
+        android:dropDownVerticalOffset	    垂直偏移量
+    -->

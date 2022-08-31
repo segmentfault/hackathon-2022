@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--主页的右上角设置-->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_regist"
+          android:title="立即注册"
+          android:icon="@android:drawable/ic_lock_power_off"/>
+
+
+    <item android:id="@+id/action_settings"
+          android:title="@string/action_settings"
+          android:icon="@android:drawable/ic_lock_power_off"
+          app:showAsAction="never"/>
+
+
+</menu>
+
+

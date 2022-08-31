@@ -1,0 +1,450 @@
+
+<style>
+   @font-face {
+			        font-family: 'FontAwesome';
+			        src: url('./fontawesome-webfont.eot');
+			        src: url('./fontawesome-webfont.eot') format('embedded-opentype'),
+			            url('./fontawesome-webfont.woff2') format('woff2'), url('.fontawesome-webfont.woff') format('woff'),
+			            url('./fontawesome-webfont.ttf') format('truetype'),
+			            url('./fontawesome-webfont.svg') format('svg');
+			        font-weight: normal;
+			        font-style: normal;
+			    }
+			
+			    .search-box {
+			        font-family: FontAwesome;
+			        position: absolute;
+			        top: 80%;
+			        left: 45%;
+			        transform: translate(-50%, -50%);
+			        background: #ffffff;
+			        height: 40px;
+			        border: 10px;
+			        border-radius: 40px;
+			        padding: 10px;
+			        opacity: 0;
+			        transition-delay: 99999999s;
+			        transition-duration: 1s;
+			    }
+			
+			    .search-box:hover>.search-txt {
+			        width: 240px;
+			        padding: 0 6px;
+			    }
+			
+			    .search-box:hover>.search-btn {
+			        color: white;
+			        background: black;
+			    }
+			
+			    .search-btn {
+			        transition: 0.5s;
+			        font-family: FontAwesome;
+			        font-size: 25px;
+			        color: black;
+			        float: right;
+			        width: 40px;
+			        height: 40px;	
+			        border: 10px;
+			        border-radius: 50%;
+			        background: #ffffff;
+			        display: flex;
+			        justify-content: center;
+			        align-items: center;
+			        text-decoration: none;
+			    }
+			
+			    .search-txt {
+			        border: none;
+			        background: none;
+			        outline: none;
+			        float: left;
+			        padding: 0;
+			        color: rgb(51, 159, 150);
+			        font-size: 16px;
+			        transition: 0.6s;
+			        line-height: 50px;
+			        width: 0px;
+			    }
+			   
+			    @keyframes flash {
+			        50% {
+			            transform: scale(1.5);
+			        }
+			
+			        80% {
+			            transform: rotate(-60deg);
+			        }
+			
+			        100% {
+			            transform: rotate(30deg);
+			        }
+			        
+			        
+			    }
+			    html:hover .search-box {
+			        opacity: 1;
+			        transition-delay: 0s;
+			        transition-duration: 0s;
+			    }
+				
+  * {
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul {
+				list-style-type: none;
+			}
+			
+			.top {
+				position: fixed;
+				left: 0;
+				right: 0;
+				top: 0;
+				z-index: 999;
+				height: 50px;
+				background-color: rgba(0, 0, 0, 0.6);
+			}
+			
+			.menu {
+				width: 1000px;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			
+			.logo {
+				float: left;
+				margin-top: 9px;
+			}
+			
+			.logo a {
+				display: inline-block;
+				width: 32px;
+				height: 32px;
+				background-image: url("HOME.png");
+				background-size: 32px 32px;
+			}
+			
+			.nav {
+				float: right;
+				margin-top: 10px;
+				font-size: 0;
+			}
+			
+			.nav li {
+				display: inline-block;
+				margin-left: 40px;
+			}
+			
+			.nav a {
+				display: inline-block;
+				height: 30px;
+				line-height: 30px;
+				font-size: 12px;
+				color: #fff;
+				text-decoration: none;
+			}
+			
+			.nav a:hover {
+				color: #83c3f3;
+			}
+
+  :root {
+    --penguin-size: 300px;
+    --penguin-skin: gray;
+    --penguin-belly: white;
+    --penguin-beak: orange;
+  }
+
+  @media (max-width: 350px) {
+    :root {
+      /* 只修改这一行下面的代码 */
+      --penguin-size: 200px;
+      --penguin-skin: black;
+      /* 只修改这一行上面的代码 */
+    }
+  }
+
+  .penguin {
+    position: relative;
+    margin: auto;
+    display: block;
+    margin-top: 5%;
+    width: var(--penguin-size, 300px);
+    height: var(--penguin-size, 300px);
+  }
+
+  .right-cheek {
+    top: 15%;
+    left: 35%;
+    background: var(--penguin-belly, white);
+    width: 60%;
+    height: 70%;
+    border-radius: 70% 70% 60% 60%;
+  }
+
+  .left-cheek {
+    top: 15%;
+    left: 5%;
+    background: var(--penguin-belly, white);
+    width: 60%;
+    height: 70%;
+    border-radius: 70% 70% 60% 60%;
+  }
+
+  .belly {
+    top: 60%;
+    left: 2.5%;
+    background: var(--penguin-belly, white);
+    width: 95%;
+    height: 100%;
+    border-radius: 120% 120% 100% 100%;
+  }
+
+  .penguin-top {
+    top: 10%;
+    left: 25%;
+    background: var(--penguin-skin, gray);
+    width: 50%;
+    height: 45%;
+    border-radius: 70% 70% 60% 60%;
+  }
+
+  .penguin-bottom {
+    top: 40%;
+    left: 23.5%;
+    background: var(--penguin-skin, gray);
+    width: 53%;
+    height: 45%;
+    border-radius: 70% 70% 100% 100%;
+  }
+
+  .right-hand {
+    top: 5%;
+    left: 25%;
+    background: var(--penguin-skin, black);
+    width: 30%;
+    height: 60%;
+    border-radius: 30% 30% 120% 30%;
+    transform: rotate(130deg);
+    z-index: -1;
+    animation-duration: 3s;
+    animation-name: wave;
+    animation-iteration-count: infinite;
+    transform-origin:0% 0%;
+    animation-timing-function: linear;
+  }
+
+  @keyframes wave {
+      10% {
+        transform: rotate(110deg);
+      }
+      20% {
+        transform: rotate(130deg);
+      }
+      30% {
+        transform: rotate(110deg);
+      }
+      40% {
+        transform: rotate(130deg);
+      }
+    }
+
+  .left-hand {
+    top: 0%;
+    left: 75%;
+    background: var(--penguin-skin, gray);
+    width: 30%;
+    height: 60%;
+    border-radius: 30% 30% 30% 120%;
+    transform: rotate(-45deg);
+    z-index: -1;
+  }
+
+  .right-feet {
+    top: 85%;
+    left: 60%;
+    background: var(--penguin-beak, orange);
+    width: 15%;
+    height: 30%;
+    border-radius: 50% 50% 50% 50%;
+    transform: rotate(-80deg);
+    z-index: -2222;
+  }
+
+  .left-feet {
+    top: 85%;
+    left: 25%;
+    background: var(--penguin-beak, orange);
+    width: 15%;
+    height: 30%;
+    border-radius: 50% 50% 50% 50%;
+    transform: rotate(80deg);
+    z-index: -2222;
+  }
+
+  .right-eye {
+    top: 45%;
+    left: 60%;
+    background: black;
+    width: 15%;
+    height: 17%;
+    border-radius: 50%;
+  }
+
+  .left-eye {
+    top: 45%;
+    left: 25%;
+    background: black;
+    width: 15%;
+    height: 17%;
+    border-radius: 50%;
+  }
+
+  .sparkle {
+    top: 25%;
+    left:-23%;
+    background: white;
+    width: 150%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .blush-right {
+    top: 65%;
+    left: 15%;
+    background: pink;
+    width: 15%;
+    height: 10%;
+    border-radius: 50%;
+  }
+
+  .blush-left {
+    top: 65%;
+    left: 70%;
+    background: pink;
+    width: 15%;
+    height: 10%;
+    border-radius: 50%;
+  }
+
+  .beak-top {
+    top: 60%;
+    left: 40%;
+    background: var(--penguin-beak, orange);
+    width: 20%;
+    height: 10%;
+    border-radius: 50%;
+  }
+
+  .beak-bottom {
+    top: 65%;
+    left: 42%;
+    background: var(--penguin-beak, orange);
+    width: 16%;
+    height: 10%;
+    border-radius: 50%;
+  }
+
+  body {
+    background: linear-gradient(35deg,#CCFFFF,#FFCCCC);
+  }
+
+  .penguin * {
+    position: absolute;
+  }
+  p:hover {
+transform: scale(2.1);
+}
+
+  body{width: 90%!important; padding: 0px!important; margin:0px!important; min-width:350px!important;}
+
+</style>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  
+  <div class="top">
+    <div class="menu">
+      <h1 class="logo"><a href="https://www.qlstudyroom.cn/"></a></h1>
+      <ul class="nav">
+        <li>
+          <a href="https://www.huya.com/11948626?ptag=gouzai">LCK</a>
+        </li>
+        <li>
+          <a href="https://www.douyu.com/1691127/">直播</a>
+        </li>
+        <li>
+          <a href="https://www.douyu.com/4352369">OB</a>
+        </li>
+        <li>
+          <a href="https://weibo.com/SKTT1LOL?sudaref=www.baidu.com">对线</a>
+        </li>
+        <li>
+          <a href=" chrome://dino/">恐龙</a>
+        </li>
+        <li>
+          <a href="https://www.bilibili.com/">B站</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  
+    
+
+<div>
+
+</div>
+<div class="penguin">
+  <div class="penguin-bottom">
+    <div class="right-hand"></div>
+    <div class="left-hand"></div>
+    <div class="right-feet"></div>
+    <div class="left-feet"></div>
+  </div>
+  <div class="penguin-top">
+    <div class="right-cheek"></div>
+    <div class="left-cheek"></div>
+    <div class="belly"></div>
+    <div class="right-eye">
+      <div class="sparkle"></div>
+    </div>
+    <div class="left-eye">
+      <div class="sparkle"></div>
+    </div>
+    <div class="blush-right"></div>
+    <div class="blush-left"></div>
+    <div class="beak-top"></div>
+    <div class="beak-bottom"></div>
+  </div>
+</div>
+<div id="div1" style = "text-align:center ;font-size:66px;color:#ffcccc" ></div>
+<script>
+    function time() {
+        var date = new Date();
+        var hour = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+        var str = hour + ":" + minutes + ":" + seconds;
+        var div1 = document.getElementById("div1");
+        div1.innerHTML = str;
+    }
+    setInterval(time,1000);
+</script>
+<div class="search-box">
+  <input class="search-txt" type='text' id='inp' placeholder="What are you looking for?"/>
+  <input class="search-btn" type='button' id='btn' value='&#xf002' />
+</div>
+<div>			
+</div>
+<body>
+  
+
+</html>

@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Class Schedule</string>
+    <string name="settings">Settings</string>
+    <string name="settings.setMaxClassNumber">Set Max Class Number</string>
+    <string name="settings.setEnableWeekend">Set Enable Weekend Or Not</string>
+    <string name="week.1">Week 1</string>
+    <string name="week.2">Week 2</string>
+    <string name="week.3">Week 3</string>
+    <string name="week.4">Week 5</string>
+    <string name="week.5">Week 5</string>
+    <string name="week.6">Week 6</string>
+    <string name="week.7">Week 7</string>
+    <string name="currentWeek">Week {0}</string>
+    <string name="settings.setCurrentWeekInThisSemester">Set Current Week In This Semester</string>
+    <string name="settings.setMaxWeekInThisSemester">Set Max Week In This Semester</string>
+    <string name="dialogEditingClass.title">Edit Class</string>
+    <string name="dialogEditingClass.setClassName">Set Class Name</string>
+    <string name="dialogEditingClass.setAvailableWeeks">Set Available Weeks</string>
+    <string name="dialogEditingClass.setAvailableWeeks.oddNumberOnly">Odd Number Only</string>
+    <string name="dialogEditingClass.setAvailableWeeks.evenNumberOnly">Even Number Only</string>
+    <string name="dialogEditingClass.setAvailableWeeks.all">All</string>
+    <string name="dialogEditingClass.setTeacher">Set Teacher Name</string>
+    <string name="dialogEditingClass.setLocation">Set Location</string>
+    <string name="toast.successfullyClear">Successful Clear</string>
+    <string name="settings.resetAllData">Reset All Data (Include Class Schedule Data And Preference Settings)</string>
+    <string name="settings.importDataFromClipboard">Import Class Schedule Data From Clipboard</string>
+    <string name="settings.exportDataToClipboard">Export Class Schedule Data (JSON) to Clipboard</string>
+    <string name="toast.successfulllyImport">Successfully Import</string>
+    <string name="toast.successfulllyExport">Successfully Export</string>
+    <string name="toast.failedToImport">Failed To Import Data,Please Check the currection of your JSON in your Clipboard!</string>
+    <string name="classTimeSettings">Class Time Settings</string>
+</resources>
