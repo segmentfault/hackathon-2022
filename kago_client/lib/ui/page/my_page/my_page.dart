@@ -7,6 +7,7 @@ import 'package:kago_client/ui/page/my_page/my_controller.dart';
 import 'package:kago_client/ui/page/my_page/widget/head_circle_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kago_client/util/save/sp_util.dart';
 import 'package:kago_client/util/toast_util.dart';
 
 /// @class : MyPage
@@ -25,11 +26,11 @@ class MyPage extends GetSaveView<MyController> {
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const UserInfoWidget(),
-            
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: Column(children: [
-                const SizedBox(
+              child: Column(
+                children: [
+                  const SizedBox(
                     height: 20,
                   ),
                   const TitleSection(text: "荣誉勋章"),
@@ -41,13 +42,16 @@ class MyPage extends GetSaveView<MyController> {
                   ),
                   LogoutButton(
                     onTap: () {
-                      ToastUtils.show("退出登录1");
+                      ToastUtils.show("退出登录");
+                      SpUtil.deleteUserInfo();
+                      Get.offAllNamed(Routes.loginPage);
                     },
                   ),
                   const SizedBox(
                     height: 20,
                   ),
-              ],),
+                ],
+              ),
             )
           ],
         ),
@@ -80,18 +84,21 @@ class LogoutButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 44,
-      child: const Center(
-          child: Text("退出登录",
-              style: TextStyle(
-                color: Colors.white,
-              ))),
-      decoration: const ShapeDecoration(
-        color: Colors.redAccent,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(22.0),
+    return GestureDetector(
+      onTap: this.onTap,
+      child: Container(
+        height: 44,
+        child: const Center(
+            child: Text("退出登录",
+                style: TextStyle(
+                  color: Colors.white,
+                ))),
+        decoration: const ShapeDecoration(
+          color: Colors.redAccent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(22.0),
+            ),
           ),
         ),
       ),
@@ -108,7 +115,6 @@ class GridGetView extends StatelessWidget {
     {"title": "标题5", "author": "内容5", "image": "assets/images/Group 2039.png"},
     {"title": "标题6", "author": "内容6", "image": "assets/images/Group 2040.png"},
   ];
-
 
   @override
   Widget build(BuildContext context) {
@@ -140,12 +146,36 @@ class GridGetView extends StatelessWidget {
 
 class TodoListView extends StatelessWidget {
   List listData = [
-    {"title": "考研小分队", "type": "视频打卡", "image": "https://www.itying.com/images/flutter/1.png"},
-    {"title": "每天5公里", "type": "直播打卡", "image": "https://www.itying.com/images/flutter/2.png"},
-    {"title": "每天5公里", "type": "视频打卡", "image": "https://www.itying.com/images/flutter/3.png"},
-    {"title": "考研小分队", "type": "直播打卡", "image": "https://www.itying.com/images/flutter/4.png"},
-    {"title": "每天5公里", "type": "视频打卡", "image": "https://www.itying.com/images/flutter/5.png"},
-    {"title": "考研小分队", "type": "直播打卡", "image": "https://www.itying.com/images/flutter/6.png"},
+    {
+      "title": "考研小分队",
+      "type": "视频打卡",
+      "image": "https://www.itying.com/images/flutter/1.png"
+    },
+    {
+      "title": "每天5公里",
+      "type": "直播打卡",
+      "image": "https://www.itying.com/images/flutter/2.png"
+    },
+    {
+      "title": "每天5公里",
+      "type": "视频打卡",
+      "image": "https://www.itying.com/images/flutter/3.png"
+    },
+    {
+      "title": "考研小分队",
+      "type": "直播打卡",
+      "image": "https://www.itying.com/images/flutter/4.png"
+    },
+    {
+      "title": "每天5公里",
+      "type": "视频打卡",
+      "image": "https://www.itying.com/images/flutter/5.png"
+    },
+    {
+      "title": "考研小分队",
+      "type": "直播打卡",
+      "image": "https://www.itying.com/images/flutter/6.png"
+    },
   ];
 
   @override
@@ -163,7 +193,8 @@ class TodoListView extends StatelessWidget {
             children: [
               Text(
                 listData[index]["title"],
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               Column(
                 // mainAxisAlignment: MainAxisAlignment.end,
@@ -176,13 +207,15 @@ class TodoListView extends StatelessWidget {
                       Icon(Icons.video_call_rounded),
                       Text(
                         listData[index]["type"],
-                        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                        style: const TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
                   Text(
                     DateTime.now().toString().substring(0, 18),
-                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                 ],
               )
@@ -237,31 +270,30 @@ class UserInfoWidget extends StatelessWidget {
               Container(
                   // margin: const EdgeInsets.only(left: 16),
                   child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      DoubleCountText(
-                        title: "完成打卡",
-                        desc: "87",
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      DoubleCountText(
-                        title: "打卡群",
-                        desc: "3",
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      DoubleCountText(
-                        title: "等级",
-                        desc: "3",
-                      ),
-                    ],
-                  )),
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  DoubleCountText(
+                    title: "完成打卡",
+                    desc: "87",
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  DoubleCountText(
+                    title: "打卡群",
+                    desc: "3",
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  DoubleCountText(
+                    title: "等级",
+                    desc: "3",
+                  ),
+                ],
+              )),
             ],
           ),
-
 
           ///占位
           const Expanded(
@@ -278,7 +310,8 @@ class UserInfoWidget extends StatelessWidget {
               ),
               child: Container(
                 color: ColorStyle.color_F3F3F3,
-                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                 child: const Icon(Icons.settings),
               ),
             ),
@@ -292,7 +325,8 @@ class UserInfoWidget extends StatelessWidget {
 class DoubleCountText extends StatelessWidget {
   final String title;
   final String desc;
-  const DoubleCountText({Key? key, required this.title, required this.desc}) : super(key: key);
+  const DoubleCountText({Key? key, required this.title, required this.desc})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
