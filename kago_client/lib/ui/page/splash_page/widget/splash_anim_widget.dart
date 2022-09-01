@@ -42,7 +42,7 @@ class SplashAnimWidget extends GetCommonView<SplashController> {
                 child: Container(
                   margin: const EdgeInsets.only(top: 16),
                   child: Text(
-                    "RTE 2022",
+                    StringStyles.appName.tr,
                     style: Styles.style_white_10,
                   ),
                 ),

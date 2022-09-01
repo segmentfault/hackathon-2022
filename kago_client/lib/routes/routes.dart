@@ -1,3 +1,5 @@
+import 'package:kago_client/ui/page/chat_page/chat_binding.dart';
+import 'package:kago_client/ui/page/chat_page/chat_page.dart';
 import 'package:kago_client/ui/page/home_page/home_binding.dart';
 import 'package:kago_client/ui/page/home_page/home_page.dart';
 import 'package:kago_client/ui/page/login_page/login_binding.dart';
@@ -28,6 +30,9 @@ abstract class Routes {
   ///主页
   static const String homePage = '/home';
 
+  /// 聊天页面
+  static const String chatPage = '/chat';
+
   /// 新建打卡群
   static const String roomTemplatePage = '/roomTemplatePage';
 
@@ -42,10 +47,25 @@ abstract class Routes {
 
   ///页面合集
   static final routePage = [
-    GetPage(name: splashPage, page: () => const SplashPage(), binding: SplashBinding()),
-    GetPage(name: registerPage, page: () => const RegisterPage(), binding: RegisterBinding()),
-    GetPage(name: homePage, page: () => const MainPage(), binding: MainBinding()),
-    GetPage(name: roomTemplatePage, page: () => const TemplatePage(), binding: TemplateBinding()),
-    GetPage(name: loginPage, page: () => const LoginPage(), binding: LoginBinding()),
+    GetPage(
+        name: splashPage,
+        page: () => const SplashPage(),
+        binding: SplashBinding()),
+    GetPage(
+        name: registerPage,
+        page: () => const RegisterPage(),
+        binding: RegisterBinding()),
+    GetPage(
+        name: homePage, page: () => const MainPage(), binding: MainBinding()),
+    GetPage(
+        name: roomTemplatePage,
+        page: () => const TemplatePage(),
+        binding: TemplateBinding()),
+    GetPage(
+        name: loginPage,
+        page: () => const LoginPage(),
+        binding: LoginBinding()),
+    GetPage(
+        name: chatPage, page: () => const ChatPage(), binding: ChatBinding()),
   ];
 }
