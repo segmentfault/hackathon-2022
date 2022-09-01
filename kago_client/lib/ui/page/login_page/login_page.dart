@@ -97,6 +97,29 @@ class LoginPage extends GetCommonView<LoginController> {
                     style: ButtonStyles.getButtonStyle(),
                     onPressed: () {
                       KeyboardUtils.hideKeyboard(context);
+                      // Get.toNamed(Routes.registerPage);
+                      controller.googleLogin();
+                    },
+                    child: Text(
+                      StringStyles.googleButton.tr,
+                      style: Styles.style_white_18,
+                    )),
+                decoration: BoxDecoration(
+                  color: Colors.black12,
+                  borderRadius: const BorderRadius.all(Radius.circular(30)),
+                  border: Border.all(color: Colors.white, width: 1),
+                ),
+              ),
+
+              ///注册按钮
+              Container(
+                width: double.infinity,
+                height: 50,
+                margin: const EdgeInsets.only(top: 16, left: 25, right: 25),
+                child: TextButton(
+                    style: ButtonStyles.getButtonStyle(),
+                    onPressed: () {
+                      KeyboardUtils.hideKeyboard(context);
                       Get.toNamed(Routes.registerPage);
                     },
                     child: Text(

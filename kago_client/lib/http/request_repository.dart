@@ -59,4 +59,31 @@ class RequestRepository {
       }
     });
   }
+
+  googlLogin(
+    String openId,
+    String email,
+    String nickName, {
+    Success<UserEntity>? success,
+    Fail? fail,
+  }) {
+    Request.post<dynamic>(RequestApi.apiLogin, {
+      "account": email,
+      "openId": openId,
+      "email": email,
+      "nickName": nickName,
+      "biz": "google_login",
+    }, success: (data) {
+      var loginInfo = UserEntity.fromJson(data);
+      // loginInfo.password = password;
+      SpUtil.putUserInfo(loginInfo);
+      if (success != null) {
+        success(loginInfo);
+      }
+    }, fail: (code, msg) {
+      if (fail != null) {
+        fail(code, msg);
+      }
+    });
+  }
 }

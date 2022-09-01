@@ -73,6 +73,8 @@ dev_dependencies:
   image_gallery_saver: ^1.7.1
   #权限申请框架 https://pub.flutter-io.cn/packages/permission_handler
   permission_handler: ^8.1.6
+  #Google 登录
+  google_sign_in: 5.3.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

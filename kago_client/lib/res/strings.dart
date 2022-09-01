@@ -11,6 +11,8 @@ class StringStyles {
   static const String loginAccountPwdHint = 'loginAccountPwdHint';
   static const String loginAccountRePwdHint = 'loginAccountRePwdHint';
   static const String loginButton = 'loginButton';
+  static const String googleButton = 'GoogleButton';
+
   static const String loginSuccess = 'loginSuccess';
 
   static const String registerButton = 'registerButton';
@@ -125,6 +127,8 @@ class StringStyles {
   static const String collectQuit = "collectQuit";
 
   static const String notSupportLikes = "notSupportLikes";
+
+  static const String loginFail = "loginFail";
 }
 
 ///使用Get配置语言环境
@@ -139,6 +143,8 @@ class Messages extends Translations {
           StringStyles.loginAccountPwdHint: '请输入密码',
           StringStyles.loginAccountRePwdHint: '请再次输入密码',
           StringStyles.loginButton: '登录',
+          StringStyles.googleButton: 'Google授权登录',
+          StringStyles.loginFail: '授权失败,请重试',
           StringStyles.loginSuccess: '登录成功',
           StringStyles.registerButton: '注册',
           StringStyles.registerServiceTerms: '已阅读并同意服务条款',
@@ -228,6 +234,7 @@ class Messages extends Translations {
           StringStyles.loginButton: 'Login',
           StringStyles.loginSuccess: 'login successful',
           StringStyles.registerButton: 'Register',
+          StringStyles.loginFail: "Authorization failed. Please try again.",
           StringStyles.registerServiceTerms:
               'I have read and agreed to the terms of service',
           StringStyles.registerAccountEmpty: 'Please enter user name～',
