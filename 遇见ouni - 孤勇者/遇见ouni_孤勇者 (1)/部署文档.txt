@@ -1,0 +1,4 @@
+java_code: java后台代码，需修改配置文件
+js_code : 需部署在有域名的服务器，google map需要挂vpn才可正常启用
+wx_code : 小程序端代码，需使用微信开发者工具
+1.sql ： 数据库文件

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>图片批量下载</title>
+    <style type="text/css">
+        *{margin:0;padding:0}
+    </style>
+    <link rel="stylesheet" type="text/css" href="./styles/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/popup.css" />
+</head>
+<body>
+
+    <div class="wrap">
+        
+        <!-- 筛选输入框 -->
+        <header class="filter-header container">
+            <div class="row row-radio">
+                <div class="col-xs-9">
+                    <b>请筛选资源类型：</b>
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="img" checked> 图片
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="video" >  视频
+                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="link" >  链接
+                </div>
+                <div class="col-xs-3">
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="row-box">
+                    <input type="text" class="form-control folder-name" placeholder="请输入文件夹名称" />
+                </div>
+                <div class="row-box">
+                   <!--  <button type="button" class="btn btn-primary search-filter">筛选资源</button> -->
+                </div>
+            </div>
+            <div class="row row-check">
+                 <input type="checkbox" id="checkAll" value="false" /> <span class="allSelectText">全选</span>
+            </div>
+            
+        </header>
+        
+        <!-- 滚动盒子 -->
+        <div class="img-wrap-box">
+
+            <span class="label label-info label-extension-info">无资源数据</span>
+
+            <!-- 显示所有图片框 -->
+            <section class="img-wrap" id="img-wrap">
+                
+                <!--每一项-->
+                <dl class="img-item">
+                    <dt class="img-item-dt">
+                        <img src="./images/img.jpg" class="dt-img"/>
+                    </dt>
+                    <dd class="img-item-dd">
+                        <input type="checkbox" name="img-check" class="checkBoxItem" value="" />
+                        <span class="item-name">img-item</span>
+                    </dd>
+                </dl>
+
+            </section>
+        </div>
+
+
+        <!-- 下载操作 -->
+        <div class="downBox">
+            <button type="button" class="btn btn-primary btn-down">下载资源</button>
+            <button type="button" class="btn btn-info btn-links">复制链接</button>
+        </div>
+        
+
+        <textarea id="textPanle"></textarea>
+        
+    </div>
+
+    <script type="text/javascript" src="./scripts/jquery.js"></script>
+    <script type="text/javascript" src="./scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./scripts/popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+<!--********************登录界面*********************-->
+
+<!--以下为输入账号模块-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="700px"
+        android:orientation="horizontal"
+        android:padding="50px"
+
+        >
+        <!-- 账户：-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/username_text"
+            android:textColor="@color/black"
+            android:textSize="42px" />
+        <!--输入框-->
+        <EditText
+            android:id="@+id/username_et"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit_background"
+            android:hint="@string/username_text_hint"
+            android:maxLength="16"
+            android:textColor="@color/black"
+            android:textSize="40px" />
+
+    </LinearLayout>
+
+
+<!--    以下为密码模块-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="50px">
+<!--        密码:-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="42px"
+            android:text="密码：    "/>
+<!--    密码的输入框-->
+        <EditText
+            android:id="@+id/password_et"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit_background"
+            android:textColor="@color/black"
+            android:textSize="42px"
+            android:hint="@string/password_text_hint"
+            android:maxLength="16"
+            android:inputType="textPassword"/>
+
+    </LinearLayout>
+<!--忘记密码和注册-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="30px">
+<!--忘记密码-->
+        <TextView
+            android:id="@+id/forgot_password_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:padding="15px"
+            android:text="@string/login_btn_text"
+            android:textColor="@color/dimgray"
+            android:textSize="30px" />
+<!--注册-->
+        <TextView
+            android:id="@+id/register_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="30px"
+            android:gravity="right"
+            android:padding="15px"
+            android:text="@string/register_btn_text"
+            android:textColor="@color/dimgray"
+            android:textSize="30px" />
+
+    </LinearLayout>
+<!--登录-->
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="2dp"
+        android:background="@color/royalblue"
+        android:gravity="center"
+        android:text="登录"
+        android:textSize="54px" />
+
+
+</LinearLayout>

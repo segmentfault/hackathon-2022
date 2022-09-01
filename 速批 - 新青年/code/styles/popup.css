@@ -1,0 +1,44 @@
+.wrap { width: 600px;min-height:500px; box-sizing: border-box;padding: 0 20px; }
+.filter-header{ width: 100%; height: 120px; margin:0;padding: 0;}
+.filter-header .bs-example-form{ width: 100%; height: 50px;  }
+.filter-header .row{ margin:0; padding: 0; width:100%; height: 50px;  }
+.filter-header .row .row-box{ width:50%; height:50px; padding:0;margin:0;  float: left; padding-top: 10px;}
+/*.filter-header .row .row-box:nth-of-type(2){ float:right;  }*/
+.filter-header .row .row-box .search-filter{position: relative;left:20px;}
+.filter-header .row-check{box-sizing: border-box;height:30px;line-height: 30px;}
+.filter-header .row-radio{height: 30px;line-height: 30px;padding-left: 0;padding-top: 10px;}
+.filter-header .row .col-xs-9{padding:0;}
+.filter-header .row-check .allSelectText{ position: relative; top: -4px; }
+
+/* 滚动条样式 */
+.img-wrap-box{ width:100%;height:300px;overflow-y: auto;  }
+.img-wrap-box::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 6px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+.img-wrap-box::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 6px;
+     -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: #535353;
+}
+.img-wrap-box::-webkit-scrollbar-track {/*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 6px;
+    background: #EDEDED;
+}
+
+.img-wrap{ width:100%; min-height: 300px; /* background-color: #ddd; */ }
+.img-wrap .img-item{ width:20%; height:102px; box-sizing: border-box; border:1px solid #ddd; transform: scale(0.9);display: block;-webkit-margin-before: 0em;-webkit-margin-after: 0em;-webkit-margin-start: 0px;-webkit-margin-end: 0px;margin-bottom:0;float: left;}
+.img-wrap .img-item .img-item-dt{ width: 100%; height:80px; background-color: purple; }
+.img-wrap .img-item .img-item-dt img{width:100%;height:100%;}
+.img-wrap .img-item .img-item-dd{ width: 100%; height:20px; background-color: #fff; line-height: 20px; font-size: 12px; box-sizing: border-box;padding: 0 5px; }
+.img-wrap .img-item .img-item-dd .item-name{ position: relative; top: -3px; }
+
+/* 下载 */
+.wrap .downBox{ width:100%;height: 50px;border-top:1px solid #ddd;margin-top: 20px; }
+.wrap .downBox .btn-down{float:right;position: relative;top:10px;right:10px;}
+.wrap .downBox .btn-links{ float:right;position: relative;top:10px;right:20px; }
+
+#textPanle{opacity: 0;display: fixed;left:0;top:0;width:1px;height:1px;}
+
+.label-extension-info{display: none;}

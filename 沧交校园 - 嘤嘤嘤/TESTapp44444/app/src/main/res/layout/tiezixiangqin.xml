@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="64dp"
+        android:layout_height="76dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="5dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="306dp"
+        android:layout_height="143dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@id/imageView2"
+        android:gravity="top"
+        android:maxLength="230"
+        android:text="帖子内容"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="195dp"
+        android:layout_height="18dp"
+        android:layout_below="@id/textView4"
+        android:layout_alignRight="@id/textView4"
+        android:layout_marginLeft="50dp"
+        android:gravity="center_vertical|end"
+        android:layout_toRightOf="@id/imageView2"
+        android:text="2021-08-09 13:01:03" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toLeftOf="@+id/textView4"
+        android:text="用户名用户名用户名"
+        android:textSize="8sp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/textView4"
+        android:layout_marginLeft="23dp"
+        android:layout_toRightOf="@+id/textView7"
+        app:srcCompat="@mipmap/pinglun" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/textView4"
+        android:layout_toRightOf="@id/imageView3"
+        android:text="996" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imageView4"
+        android:layout_alignBottom="@id/textView4"
+        android:text="857" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/textView4"
+        android:layout_alignLeft="@id/textView4"
+        app:srcCompat="@mipmap/zan1" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="204dp"
+        android:layout_height="163dp"
+        android:layout_below="@id/textView12"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="1dp"
+        android:alpha="100"
+        app:srcCompat="@drawable/common_btn_bg" />
+
+    <LinearLayout
+        android:id="@+id/content_ed"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/imageView6"
+        android:layout_above="@id/editText5"
+        android:background="@color/white">
+
+        <ListView
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="23dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:maxLength="50"
+        android:hint="吾有一计"
+         />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="35dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toRightOf="@id/editText5"
+        android:text="言出法随" />
+
+</RelativeLayout>

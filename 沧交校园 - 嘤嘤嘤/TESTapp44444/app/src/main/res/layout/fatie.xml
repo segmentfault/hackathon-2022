@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:text="遵纪守法、谨言慎行" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView6"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="发布内容" />
+
+
+    <EditText
+        android:id="@+id/textView9"
+        android:layout_width="327dp"
+        android:layout_height="216dp"
+        android:layout_below="@id/textView6"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@id/textView8"
+        android:background="@drawable/shap"
+        android:gravity="top"
+        android:maxLength="145"
+        android:text="请输入内容"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/textView9"
+        android:layout_alignBottom="@id/textView9"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@id/textView8"
+        android:text="剩余字数：140" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView9"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="上传图片" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="108dp"
+        android:layout_height="138dp"
+        android:layout_below="@id/textView13"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        app:srcCompat="@mipmap/tianjia" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="108dp"
+        android:layout_height="138dp"
+        android:layout_below="@id/textView13"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@id/imageButton"
+        android:alpha="100" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="153dp"
+        android:layout_height="66dp"
+        android:layout_below="@id/imageButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="发布" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/imageView"
+        android:layout_alignRight="@id/imageView"
+        android:enabled="false"
+        android:alpha="0"
+        app:srcCompat="@android:drawable/btn_dialog" />
+
+
+
+
+
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="71dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="5dp"
+            app:srcCompat="@mipmap/shouye" />
+
+
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="71dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="5dp"
+            app:srcCompat="@mipmap/grzx" />
+
+
+
+</RelativeLayout>

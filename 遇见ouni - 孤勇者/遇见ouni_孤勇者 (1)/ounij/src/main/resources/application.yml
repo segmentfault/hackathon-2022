@@ -1,0 +1,36 @@
+spring:
+  redis:
+    database: 0
+    host: host
+    port: 6379
+    password: password
+  lettuce:
+    pool:
+      #最大连接数
+      max-active: 8
+      #最大连接阻塞等待时间
+      max-wait: 10000ms
+      #最大空闲连接
+      max-idle: 200
+      #最小空闲连接，默认为0
+      min-idle: 5
+
+  application:
+    name: ouni
+  datasource:
+    url: jdbc:mysql://IP:3306/ouni?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: username
+    password: password
+    type: com.alibaba.druid.pool.DruidDataSource
+server:
+  port: 7777
+
+
+qiniu:
+  accessKey: I9gh34HYyozmHOM1wjP_JchmIpUv9-SugoxcJqsS
+  secretKey: IHjxyu9Lgn3rAE-y-S3kVcseGlcRvOuVv9CnygpH
+  bucket: ounn
+  path: rh4009sdh.bkt.gdipper.com
+
+

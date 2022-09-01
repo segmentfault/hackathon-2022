@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="order">
+        <item>板块一</item>
+        <item>板块二</item>
+    </string-array>
+</resources>

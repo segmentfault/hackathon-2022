@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">沧交之家</string>
+    <string name="app_intro">学校，不仅仅是学习</string>
+    <string name="app_right">love-cookies\nCopyright © 2016 XIEKUN .All Rights Reserved</string>
+
+    <string name="exit_tip">再按一次退出</string>
+
+    <string name="wait_text">请稍后...</string>
+
+    <string name="MYusername">沧交学子</string>
+
+    <string name="login_title">登录</string>
+    <string name="register_title">注册</string>
+    <string name="username_text">用户名：</string>
+    <string name="username_text_hint">请输入用户名</string>
+    <string name="password_text">密码：  </string>
+    <string name="password_text_hint">请输入密码</string>
+    <string name="nickname_text">昵称：</string>
+    <string name="nickname_text_hint">请输入昵称</string>
+    <string name="login_btn_text">忘记密码</string>
+    <string name="register_btn_text">注册</string>
+    <string name="register_success_text">注册成功，现在你可以登录啦</string>
+    <string name="register_failed_text">注册失败</string>
+    <string name="login_failed_text">登录失败</string>
+    <string name="logout_btn_text">登出</string>
+    <string name="forgot_password_btn">忘记密码</string>
+    <string name="notification_btn">消息通知</string>
+    <string name="change_password_btn">修改密码</string>
+    <string name="about_us_btn">关于我们</string>
+    <string name="good_comment_btn">给个好评</string>
+    <string name="software_version_btn">软件版本</string>
+    <string name="sign_out_btn">退出登录</string>
+
+
+</resources>

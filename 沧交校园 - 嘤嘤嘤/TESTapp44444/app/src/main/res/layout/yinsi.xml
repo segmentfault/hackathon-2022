@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10pt"
+        android:text="    您确认发帖、评论，以及其他使用本应用的任何操作，都视为您已阅读并同意以下约定。 "
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10pt"
+        android:layout_marginTop="5pt"
+        android:layout_marginRight="10pt"
+        android:layout_marginBottom="5pt"
+        android:text="1.您知晓并理解，您所做的任何操作，都是出自您的独立意愿，并与我方无关。 "
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10pt"
+        android:layout_marginRight="10pt"
+        android:layout_marginBottom="5pt"
+        android:text="2.您知晓并理解，您保证不在本应用中发布、谈论以及其他任何违背法律的内容，并愿意为此独自承担责任。 "
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10pt"
+        android:layout_marginRight="10pt"
+        android:layout_marginBottom="5pt"
+        android:text="3.您知晓并理解，您不应做违背道德的事情，包括但不限于发令人不适的帖子、攻击谩骂他人、恶意骚扰等等。 "
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10pt"
+        android:layout_marginRight="10pt"
+        android:layout_marginBottom="5pt"
+        android:text="4.我方保证，您的任何个人信息都不会在您未同意的情况下被作用于本应用以外的任何用途，但国家机关合法要求或其他不可抗力出现时除外。"
+        android:textSize="18sp" />
+
+</LinearLayout>

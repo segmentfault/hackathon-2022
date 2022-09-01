@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10pt"
+        android:layout_marginTop="5pt"
+        android:layout_marginRight="10pt"
+        android:layout_marginBottom="5pt"
+        android:text="1.更换头像、修改密码、我的帖子功能需要先登录；用户名暂不支持修改;密码区分大小写 "
+        android:textSize="18sp" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10pt"
+        android:layout_marginTop="5pt"
+        android:layout_marginRight="10pt"
+        android:layout_marginBottom="5pt"
+        android:text="2.从帖子详情返回时，屏幕会有短暂的空白，是正常现象 "
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10pt"
+        android:layout_marginRight="10pt"
+        android:layout_marginBottom="5pt"
+        android:text="3.主页下方的帖子可以无限滑动，出现重复是因为你已经获取了所有贴子，是正常现象 "
+        android:textSize="18sp" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10pt"
+        android:layout_marginRight="10pt"
+        android:layout_marginBottom="5pt"
+        android:text="4.点“我的帖子”后出现白屏，不要慌，那是你压根没发过帖子。 "
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10pt"
+        android:layout_marginRight="10pt"
+        android:layout_marginBottom="5pt"
+        android:text="5.出于运营压力考虑，暂时不提供视频上传与展示功能，并且图片只能发一张。后期酌情改进 "
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10pt"
+        android:layout_marginRight="10pt"
+        android:layout_marginBottom="5pt"
+        android:text="6.如有其他问题或建议，请发邮件到GongZuoLianXi2021@163.com"
+        android:textSize="18sp" />
+
+</LinearLayout>

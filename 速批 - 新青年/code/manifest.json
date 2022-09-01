@@ -1,0 +1,9 @@
+{
+  "name": "批量下载当前页面所有图片素材",
+  "description": "下载当前网页的所有图片素材，解放你的双手双眼，不用再点击右键另存为啦，在某些网站上更不用发愁找不到图片保存的链接啦！",
+  "version": "0.0.1",
+  "minimum_chrome_version": "16.0.883",
+  "permissions": ["downloads", "<all_urls>","tabs"],
+  "browser_action": {"default_popup": "popup.html"},
+  "manifest_version": 2
+}

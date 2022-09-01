@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20pt"
+        android:layout_marginTop="20pt"
+        android:layout_marginRight="20pt"
+        android:text="    此APP编写初衷为契合我校知行杯比赛，并结合我校缺少门户类信息综合APP的实际情况进行的。
+从立项到建立框架到初步完成，我小组四名成员通力合作，最终将“沧交之家”呈现于大家面前。
+至此，感谢以下老师和同学们的帮助和支持！"
+        android:textSize="60px" />
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="20pt"
+        android:layout_marginTop="350dp"
+        android:layout_marginRight="20pt"
+        android:stretchColumns="1"
+        android:textSize="60px">
+
+        <TableRow>
+
+            <TextView
+                android:layout_height="30dp"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="开发组" />
+
+            <TextView
+                android:layout_height="30dp"
+                android:gravity="right"
+                android:padding="3dip"
+
+                android:text="张华卿，张哲，李昊，张昊" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_height="30dp"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="指导老师" />
+
+            <TextView
+                android:layout_height="30dp"
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="周子程，付婷婷" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_height="30dp"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="提供支持" />
+
+            <TextView
+                android:layout_height="30dp"
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="毛紫萱，汤冬江" />
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>
