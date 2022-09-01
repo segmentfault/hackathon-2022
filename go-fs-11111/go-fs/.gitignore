@@ -1,0 +1,6 @@
+.idea
+go.mod
+go.sum
+example.txt
+fromserver.txt
+go-fs

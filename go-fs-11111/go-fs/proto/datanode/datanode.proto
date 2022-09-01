@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package datanode;
+option go_package = "go-fs/proto/datanode";
+
+service DataNode {
+  rpc Ping(PingRequest) returns (PingResponse);
+  rpc HeartBeat(HeartBeatRequest) returns (HeartBeatResponse);
+  rpc Put(PutRequest) returns (PutResponse);
+  rpc ForwardForReplication(ForwardForReplicationRequest) returns (PutResponse);
+  rpc Get(GetRequest) returns (GetResponse);
+}
+
+message DataNodeInstance {
+  string host = 1;
+  string servicePort = 2;
+}
+
+message PingRequest {
+  string host = 1;
+  uint32 port = 2;
+}
+
+message PingResponse {
+  bool ack = 1;
+}
+
+message HeartBeatRequest {
+  bool request = 1;
+}
+
+message HeartBeatResponse{
+  bool success = 1;
+}
+
+message PutRequest {
+  string filePath = 1;
+  string blockId = 2;
+  string Data = 3;
+  repeated DataNodeInstance replicationNodes = 4;
+}
+
+message PutResponse {
+  bool success = 1;
+}
+
+message GetRequest {
+  string filePath = 1;
+  string blockId = 2;
+
+}
+
+message GetResponse {
+  string data = 1;
+}
+
+message ForwardForReplicationRequest {
+    PutRequest putRequest = 1;
+    PutResponse putResponse = 2;
+}
