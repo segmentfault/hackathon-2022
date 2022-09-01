@@ -1,0 +1,167 @@
+kind: DaemonSet
+apiVersion: apps/v1
+metadata:
+  name: {{ include "cinder-metal-csi.name" . }}-nodeplugin
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ include "cinder-metal-csi.name" . }}
+    chart: {{ include "cinder-metal-csi.chart" . }}
+    component: {{ .Values.nodePlugin.name }}
+    release: {{ .Release.Name }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ include "cinder-metal-csi.name" . }}
+      component: {{ .Values.nodePlugin.name }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "cinder-metal-csi.name" . }}
+        component: {{ .Values.nodePlugin.name }}
+        release: {{ .Release.Name }}
+    spec:
+      serviceAccount:  {{ .Values.nodePlugin.serviceAccountName }}
+      hostNetwork: true
+      dnsPolicy: ClusterFirstWithHostNet
+      containers:
+        - name: node-driver-registrar
+          image: "{{ .Values.image.nodeDriverRegistrar.repository }}:{{ .Values.image.nodeDriverRegistrar.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args:
+            - "-v={{ .Values.logVerbosityLevel }}"
+            - "--csi-address=$(ADDRESS)"
+            - "--kubelet-registration-path=$(DRIVER_REG_SOCK_PATH)"
+          env:
+            - name: ADDRESS
+              value: /csi/csi.sock
+            - name: DRIVER_REG_SOCK_PATH
+              value: /var/lib/kubelet/plugins/cinder.metal.csi/csi.sock
+          volumeMounts:
+            - name: socket-dir
+              mountPath: /csi
+            - name: registration-dir
+              mountPath: /registration
+        - name: liveness-probe
+          image: "{{ .Values.image.livenessprobe.repository }}:{{ .Values.image.livenessprobe.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args:
+            - "-v={{ .Values.logVerbosityLevel }}"
+            - --csi-address=/csi/csi.sock
+          volumeMounts:
+            - name: socket-dir
+              mountPath: /csi
+        {{- if .Values.backend.lvm }}
+        - name: iscsid
+          securityContext:
+            privileged: true
+            capabilities:
+              add: [ "SYS_ADMIN" ]
+            allowPrivilegeEscalation: true
+          image: "{{ .Values.image.iscsid.repository }}:{{ .Values.image.iscsid.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: KOLLA_CONFIG_STRATEGY
+              value: "COPY_ALWAYS"
+          volumeMounts:
+            - mountPath: /sys
+              name: host-sys
+            - mountPath: /lib/modules
+              name: lib-modules
+            - mountPath: /run
+              name: run-dir
+            - mountPath: /dev
+              name: dev-dir
+            - name: cloud-config
+              subPath: iscsi.json
+              mountPath: /var/lib/kolla/config_files/config.json
+        {{- end }}
+        - name: cinder-metal-csi
+          securityContext:
+            privileged: true
+            capabilities:
+              add: ["SYS_ADMIN"]
+            allowPrivilegeEscalation: true
+          image: "{{ .Values.image.cinderMetalCSI.repository }}:{{ .Values.image.cinderMetalCSI.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args:
+            - /bin/cinder-metal-csi
+            - "--endpoint=$(CSI_ENDPOINT)"
+            - "--cloud-conf=$(CLOUD_CONFIG)"
+            - "--node-id=$(NODE_ID)"
+            - "--v=3"
+          env:
+            - name: NODE_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.hostIP
+            - name: CSI_ENDPOINT
+              value: unix:///csi/csi.sock
+            - name: CLOUD_CONFIG
+              value: /etc/cloud/cloud.conf
+          volumeMounts:
+            - mountPath: /sys
+              name: host-sys
+            - mountPath: /lib/modules
+              name: lib-modules
+              readOnly: true
+            - mountPath: /run/mount
+              name: run-dir
+            - name: socket-dir
+              mountPath: /csi
+            - name: kubelet-dir
+              mountPath: /var/lib/kubelet
+              mountPropagation: "Bidirectional"
+            - name: dev-dir
+              mountPath: /dev
+              mountPropagation: "HostToContainer"
+            {{- if .Values.backend.ceph }}
+            - mountPath: /etc/ceph/ceph.conf
+              name: cloud-config
+              subPath: ceph.conf
+            - mountPath: /etc/ceph/keyring
+              name: ceph-keyring
+              subPath: key
+            {{- end }}
+            - name: cloud-config
+              mountPath: /etc/cloud/cloud.conf
+              subPath: cloud.conf
+      volumes:
+        - name: socket-dir
+          hostPath:
+            path: /var/lib/kubelet/plugins/cinder.metal.csi
+            type: DirectoryOrCreate
+        - name: registration-dir
+          hostPath:
+            path: /var/lib/kubelet/plugins_registry
+            type: Directory
+        - name: kubelet-dir
+          hostPath:
+            path: /var/lib/kubelet
+            type: Directory
+        - name: dev-dir
+          hostPath:
+            path: /dev
+            type: Directory
+        - name: cloud-config
+          configMap:
+            name: {{ .Release.Name }}-configmap
+            defaultMode: 0755
+        - hostPath:
+            path: /sys
+            type: ""
+          name: host-sys
+        - hostPath:
+            path: /lib/modules
+            type: ""
+          name: lib-modules
+        - hostPath:
+            path: /run
+            type: ""
+          name: run-dir
+        {{- if .Values.backend.ceph }}
+        - name: ceph-keyring
+          secret:
+            defaultMode: 420
+            secretName: {{ .Values.ceph.keyringName }}
+        {{- end }}

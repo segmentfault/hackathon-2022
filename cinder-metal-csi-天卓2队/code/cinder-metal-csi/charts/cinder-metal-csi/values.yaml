@@ -1,0 +1,90 @@
+## @skip image
+image:
+  attacher:
+    repository: k8s.gcr.io/sig-storage/csi-attacher
+    tag: v3.3.0
+  provisioner:
+    repository: k8s.gcr.io/sig-storage/csi-provisioner
+    tag: v3.0.0
+  snapshotter:
+    repository: k8s.gcr.io/sig-storage/csi-snapshotter
+    tag: v4.2.0
+  resizer:
+    repository: k8s.gcr.io/sig-storage/csi-resizer
+    tag: v1.3.0
+  livenessprobe:
+    repository: k8s.gcr.io/sig-storage/livenessprobe
+    tag: v2.5.0
+  nodeDriverRegistrar:
+    repository: k8s.gcr.io/sig-storage/csi-node-driver-registrar
+    tag: v2.3.0
+  kubernetesEntrypoint:
+    repository: quay.io/airshipit/kubernetes-entrypoint
+    tag: v1.0.0
+  cinderMetalCSI:
+    repository: kungze/cinder-metal-csi
+    tag: main
+  iscsid:
+    repository: kolla/centos-binary-iscsid
+    tag: yoga
+  pullPolicy: IfNotPresent
+
+## @skip controllerPlugin
+controllerPlugin:
+  name: controllerplugin
+  replicas: 1
+  serviceAccountName: csi-controller-sa
+
+## @skip nodePlugin
+nodePlugin:
+  name: nodeplugin
+  serviceAccountName: csi-node-sa
+
+## @skip logVerbosityLevel
+# Log verbosity level.
+# See https://github.com/kubernetes/community/blob/master/contributors/devel/sig-instrumentation/logging.md
+# for description of individual verbosity levels.
+logVerbosityLevel: 2
+
+## @section Cloud configuration
+## @param cloud.authStrategy [t#Cloud AuthStrategy] The strategy to use for authentication
+## @param cloud.username [t# Cloud Username] Keystone authentication username
+## @param cloud.userPassword [t#Cloud userPassword] Keystone authentication password
+## @param cloud.tenantName [t#Cloud TenantName] Keystone authentication tenantName
+## @param cloud.authUrl [t#Cloud AuthURL] Keystone authentication authUrl
+## @param cloud.cinderListenAddr [t#Cloud Cinder Listen Addr] Cinder api listen addr
+cloud:
+  authStrategy: keystone
+  username: admin
+  userPassword: o2DkgbcwDZ
+  tenantName: admin
+  authUrl: http://keystone-api.default.svc.cluster.local:5000/v3
+  cinderListenAddr: ""
+
+## @section backend configuration
+## @param backend.lvm [t#Enable LVM Backend] Enable lvm storage backend
+## @param backend.local [t#Enable Local Backend] Enable local storage backend
+## @param backend.ceph [t#Enable Ceph Backend] Enable ceph storage backend
+backend:
+  lvm: true
+  local: true
+  ceph: true
+
+## @section Ceph Related Configuration
+## @param ceph.keyringName [t#Ceph Secrets Name] The cinder-metal-csi mount ceph secrets name
+## @param ceph.keyring [t#Ceph Secrets Data] The user keyring using the Ceph pool
+## @param ceph.monAddr [t#Ceph Monitors Address] The ceph cluster monitors service address
+ceph:
+  keyringName: cinder-volume-rbd-keyring
+  keyring: W2NsaWVudC5hZG1pbl0Ka2V5ID0gQVFBc3hjOWlwVTFFTGhBQWY5elpLWnZ5VlBMTmV2MVhrRVdlS2c9PQo=
+  monAddr: 10.111.43.63:6789
+
+## @section Storage Class Configuration
+## @param storageClass.enabled [t#Create StorageClass] Whether to create storageClass
+## @param storageClass.allowVolumeExpansion [t#StorageClass allowVolumeExpansion]  Set up the storageClass allowVolumeExpansion
+storageClass:
+  enabled: true
+  allowVolumeExpansion: true
+
+## @skip priorityClassName
+priorityClassName: ""

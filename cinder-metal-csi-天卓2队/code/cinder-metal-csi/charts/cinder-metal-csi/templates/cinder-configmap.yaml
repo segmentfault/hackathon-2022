@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+  namespace: {{ .Release.Namespace }}
+data:
+  cloud.conf: |-
+    {{- if eq .Values.cloud.authStrategy "keystone" }}
+    [Global]
+    username = {{ .Values.cloud.username }}
+    password = {{ .Values.cloud.userPassword }}
+    user-domain-name = default
+    project-domain-name = default
+    project-name = admin
+    tenant-name = {{ .Values.cloud.tenantName }}
+    auth-url = {{ .Values.cloud.authUrl }}
+    region = RegionOne
+    endpoint-type = internal
+    [BlockStorage]
+    auth-strategy = keystone
+    node-volume-attach-limit = 110
+    lvm-volume-type = lvm
+    ceph-volume-type = rbd
+    local-volume-type = local
+    {{- else if eq .Values.cloud.authStrategy "noauth" }}
+    [Global]
+    [BlockStorage]
+    auth-strategy = noauth
+    node-volume-attach-limit = 110
+    lvm-volume-type = lvm
+    ceph-volume-type = rbd
+    local-volume-type = local
+    {{- if not (empty .Values.cloud.cinderListenAddr )}}
+    cinder-listen-addr = {{ .Values.cloud.cinderListenAddr }}
+    {{- else}}
+    cinder-listen-addr = http://{{ .Release.Name }}-noauth-cinder:8776/v3/
+    {{- end }}
+    {{- end }}
+  {{- if .Values.backend.lvm }}
+  iscsi.json: |
+    {
+      "command": "iscsid -d 8 -f",
+      "config_files": []
+    }
+  {{- end }}
+  {{- if .Values.backend.ceph }}
+  ceph.conf: |
+    [global]
+      mon_host = {{ .Values.ceph.monAddr }}
+    [client.admin]
+    keyring = /etc/ceph/keyring
+  {{- end }}

@@ -1,0 +1,33 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: cinder-pvc-rbd
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+  storageClassName: cinder-metal-csi-rbd
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-rbd
+spec:
+  containers:
+    - image: nginx
+      imagePullPolicy: IfNotPresent
+      name: nginx
+      ports:
+        - containerPort: 80
+          protocol: TCP
+      volumeMounts:
+        - mountPath: /var/lib/www/html
+          name: data
+  volumes:
+    - name: data
+      persistentVolumeClaim:
+        claimName: cinder-pvc-rbd
+        readOnly: false

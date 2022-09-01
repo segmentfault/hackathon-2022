@@ -1,0 +1,7 @@
+apiVersion: v2
+description: Cinder metal csi driver
+home: https://github.com/kungze/cinder-metal-csi
+maintainers:
+- name: Kungze
+name: cinder-metal-csi
+version: 1.0.0

@@ -1,0 +1,60 @@
+name: Install cinder-metal-csi chart
+
+on:
+  pull_request:
+    paths:
+      - 'charts/cinder-metal-csi/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Fetch history
+        run: git fetch --prune --unshallow
+
+      - name: Set up chart-testing
+        uses: fightdou/chart-testing-action@v2.2.2
+
+      - name: Create kind cluster
+        uses: helm/kind-action@v1.2.0
+
+      - name: use local disk
+        run: tests/scripts/github-action-helper.sh use_local_disk_for_integration_test
+
+      - name: Delply rook ceph
+        run: |
+          git clone --single-branch --branch v1.9.3 https://github.com/rook/rook.git
+          kubectl apply -f rook/deploy/examples/crds.yaml
+          kubectl apply -f rook/deploy/examples/common.yaml
+          kubectl apply -f rook/deploy/examples/operator.yaml
+          kubectl apply -f rook/deploy/examples/cluster-test.yaml
+
+      - name: Create k8s namespace
+        run:
+          kubectl create namespace test-cinder
+
+      - name: Install password chart
+        run: |
+          helm repo add kolla-helm https://kungze.github.io/kolla-helm
+          helm install openstack-password kolla-helm/password --namespace test-cinder
+
+      - name: Install openstack-dep chart
+        run: |
+          helm install openstack-dependency kolla-helm/openstack-dep --namespace test-cinder --wait --timeout 600s
+
+      - name: Install keystone chart
+        run: |
+          helm install openstack-keystone kolla-helm/keystone --namespace test-cinder --wait --timeout 600s
+
+      - name: Install cinder chart
+        run: |
+          helm install openstack-cinder kolla-helm/cinder --namespace test-cinder --wait --timeout 600s
+
+      - name: Get keystone admin password
+        run: echo user_password=`echo $(kubectl get secrets openstack-password -o yaml --namespace test-cinder | grep keystone-admin-password | awk -F ':' '{print $2}') | base64 -d` >> $GITHUB_ENV
+
+      - name: Run chart-testing (install)
+        run: ct install --debug --namespace test-cinder --target-branch main --charts charts/cinder-metal-csi --debug --helm-extra-args "--timeout 120s" --helm-extra-set-args "--set=cloud.authUrl=http://keystone-api.test-cinder.svc.cluster.local:5000/v3 --set=cloud.userPassword=${{ env.user_password }}"
