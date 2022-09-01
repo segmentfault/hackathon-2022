@@ -16,7 +16,7 @@ export default {
     :to="{name: 'about'}"
   )
     figure
-      img.w-44.h-44.rounded-full.drop-shadow(src="../assets/icons/icon-512x512.png")
+      img.w-44.h-44.rounded-full.drop-shadow(src="/icons/icon-512x512.png")
       figcaption.text-center.text-lg.font-light.mt-4.mb-12 姆伊用药助手
 
   router-link.w-44.h-12.leading-12.bg-blue-500.text-white.rounded.mb-3.text-center(

@@ -48,7 +48,7 @@ header.flex.border-b.items-center.px-4.py-2.bg-gray-100.shadow-md.sticky.w-full.
     i.bi.bi-chevron-left
 
   .flex-1.flex.items-center.justify-center
-    img.w-8.h-8.mr-2(src="../assets/icons/icon-512x512.png")
+    img.w-8.h-8.mr-2(src="/icons/icon-512x512.png")
     h2.text-lg {{title}}
 
   .w-8

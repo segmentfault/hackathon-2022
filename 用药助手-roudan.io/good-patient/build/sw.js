@@ -3,6 +3,7 @@
 const esbuild = require('esbuild');
 const {resolve} = require('path');
 
+console.log('count-down.js started');
 (async () => {
   try {
     await esbuild.build({
@@ -10,6 +11,7 @@ const {resolve} = require('path');
       bundle: true,
       outfile: resolve(__dirname, '../public/count-down.js'),
       tsconfig: resolve(__dirname, '../tsconfig.json'),
+      minify: true,
     });
     console.log('count-down.js built');
   } catch (e) {

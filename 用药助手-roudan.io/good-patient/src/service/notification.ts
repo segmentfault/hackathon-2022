@@ -8,17 +8,14 @@ export async function checkPermission(): Promise<boolean> {
   return permission === "granted";
 }
 
-let registration: ServiceWorkerRegistration | undefined;
 export async function registerServiceWorker(): Promise<void> {
   try {
-    registration = await navigator.serviceWorker.register("/count-down.js", {
+    await navigator.serviceWorker.register("/count-down.js", {
       scope: "/",
     });
     navigator.serviceWorker.addEventListener('message', event => {
       console.log('from worker:', event.data);
     });
-
-    registration = await navigator.serviceWorker.ready;
   } catch (error) {
     console.error(`Registration failed with ${error}`);
   }
