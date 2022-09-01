@@ -4,7 +4,7 @@ import 'package:kago_client/res/strings.dart';
 import 'package:kago_client/routes/routes.dart';
 import 'package:kago_client/util/toast_util.dart';
 import 'package:get/get.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+// import 'package:google_sign_in/google_sign_in.dart';
 
 /// @class : SplashController
 /// @date : 2021/08/15
@@ -52,30 +52,33 @@ class LoginController extends BaseGetController {
 
   googleLogin() async {
     {
-      GoogleSignIn _googleSignIn = GoogleSignIn(
-        scopes: [
-          'openid',
-          'profile',
-          'email',
-        ],
-      );
-      GoogleSignInAccount? account = await _googleSignIn.signIn();
-      debugPrint('account:$account');
-      if (account != null) {
-        request.googlLogin(
-          account.id,
-          account.email,
-          account.displayName ?? 'Google User',
-          success: (data) {
-            ToastUtils.show(StringStyles.loginSuccess.tr);
-            Get.offAllNamed(Routes.homePage);
-          },
-          fail: (code, msg) {
-            ToastUtils.show(msg);
-          },
-        );
-      } else {
-        ToastUtils.show(StringStyles.loginFail.tr);
+      bool isAndroid = false;
+      if (isAndroid) {
+        //   GoogleSignIn _googleSignIn = GoogleSignIn(
+        //     scopes: [
+        //       'openid',
+        //       'profile',
+        //       'email',
+        //     ],
+        //   );
+        //   GoogleSignInAccount? account = await _googleSignIn.signIn();
+        //   debugPrint('account:$account');
+        //   if (account != null) {
+        //     request.googlLogin(
+        //       account.id,
+        //       account.email,
+        //       account.displayName ?? 'Google User',
+        //       success: (data) {
+        //         ToastUtils.show(StringStyles.loginSuccess.tr);
+        //         Get.offAllNamed(Routes.homePage);
+        //       },
+        //       fail: (code, msg) {
+        //         ToastUtils.show(msg);
+        //       },
+        //     );
+        //   } else {
+        //     ToastUtils.show(StringStyles.loginFail.tr);
+        //   }
       }
     }
   }

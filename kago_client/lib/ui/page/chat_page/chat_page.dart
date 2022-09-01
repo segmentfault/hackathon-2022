@@ -37,7 +37,7 @@ class ChatPage extends GetSaveView<ChatController> {
       body: Stack(
         children: [
           Image.asset(
-            "assets/Rmages/classroom_bg_1.png",
+            "assets/images/classroom_bg_1.png",
             fit: BoxFit.fitHeight,
             height: Get.height,
           ),
