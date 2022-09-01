@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:kago_client/base/get/get_save_state_view.dart';
+import 'package:kago_client/routes/routes.dart';
 import 'package:kago_client/ui/page/square_page/square_controller.dart';
 import 'package:kago_client/widget/logo_title.dart';
-import 'package:kago_client/widget/ripple_widget.dart';
+import 'package:get/get.dart';
 
 /// @class : SquarePage
 /// @date : 2021/9/9
@@ -104,9 +105,14 @@ class GridGetView extends StatelessWidget {
       itemCount: listData.length,
       shrinkWrap: true,
       itemBuilder: (context, index) {
-        return Image.asset(
-          "assets/images/Frame ${277 + index}.png",
-          fit: BoxFit.cover,
+        return GestureDetector(
+          onTap: () {
+            Get.toNamed(Routes.chatPage);
+          },
+          child: Image.asset(
+            "assets/images/Frame ${277 + index}.png",
+            fit: BoxFit.cover,
+          ),
         );
       },
     );
