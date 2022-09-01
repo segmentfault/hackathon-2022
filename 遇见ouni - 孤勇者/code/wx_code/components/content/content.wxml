@@ -1,0 +1,20 @@
+<view class="container">
+    <view class="title-wrap">{{title}}</view>
+    <view class="main-message-wrap">
+        <text class="username-wrap">{{username}}</text>
+        <text class="posted-time-wrap">{{time}}</text>
+    </view>
+    <view class="content-wrap">
+        <text>{{content}}</text>
+    </view>
+    <view class="like-comment-num">
+        <view class="like-wrap">
+            <image src="../../static/images/likeCancel.png" class="like-logo logo-same"></image>
+            <text class="like-num text-same">{{like}}</text>
+        </view>
+        <view class="comment-wrap">
+            <image src="../../static/images/comment.png" class="comment-logo logo-same"></image>
+            <text class="comment-num text-same">{{comment}}</text>
+        </view>
+    </view>
+</view>

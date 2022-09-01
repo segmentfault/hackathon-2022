@@ -1,0 +1,5 @@
+<view>
+    <view class="map-wrap">
+        <web-view src="{{path}}"></web-view>
+    </view>
+</view>

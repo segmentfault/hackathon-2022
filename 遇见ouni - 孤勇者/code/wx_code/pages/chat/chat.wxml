@@ -1,0 +1,20 @@
+<view class="container" >
+    <view id="viewCommunicationBody" class="viewCommunicationBody">
+        <view class="chat-wrap"  wx:for="{{chatRecords}}" wx:key="index" wx:for-index="index" wx:for-item='item'>
+        <image src="{{item.toUserId == userId ? toUserImage : myUserImage}}" class="{{item.toUserId == userId ? 'head-left-portrait' : 'head-right-portrait'}}"></image>
+        <view class="{{item.toUserId == userId ? 'content-left-wrap' : 'content-right-wrap'}}">
+            <text wx:if="{{item.message != '' && item.message != null}}" class="{{item.toUserId == userId ? 'content-left-text' : 'content-right-text'}}">{{item.message}}</text>
+            <image wx:if="{{item.imgUrl != null && item.imgUrl != ''}}" class="content-image" src="{{'http://'+item.imgUrl}}"></image>
+        </view>
+    </view>
+    </view>
+    <view class="send-message-wrap">
+        <view class="input-container">
+            <textarea class="input-wrap" style="{{sendOrChose ? 'width: 76%;' : ''}}" value="{{content}}" type="text" bindinput="_bindinput"/>
+            <view bindtap="sendMessage" wx:if="{{sendOrChose}}" class="seng-button-wrap">发送</view>
+            <view wx:if="{{!sendOrChose}}" bindtap="choseImage" class="open-send-image">
+                <image class="updataLogo-wrap" src="../static/img/updataLogo.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,13 @@
+<view class="parent">
+  <block>
+    <view wx:for="{{charMessageArr}}" wx:key="index" wx:for-index="index" wx:for-item='item' data-fromUserId="{{item.fromUserId}}" bindtap="openChatDetails" class="son">
+      <view class="head-bank">
+        <image src="{{item.imgUrl}}" class="head-img" mode="aspectFill"></image>
+      </view>
+      <view class="body-bank">
+        <text class="nickname">{{item.nickname}}</text>
+        <text class="msg">{{item.content}}</text>
+      </view>
+    </view>
+  </block>
+</view>

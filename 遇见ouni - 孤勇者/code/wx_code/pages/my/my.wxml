@@ -1,0 +1,29 @@
+<view class="container">
+  <!-- 搜索栏 -->
+  <!-- <view class="weui-search-bar"> -->
+    <!-- <view class="weui-search-bar__form"> -->
+      <!-- 搜索框 -->
+      <!-- <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="请输入想要淘的东西" focus="auto" />
+      </view> -->
+    <!-- </view> -->
+    <!-- 搜索按钮,调用搜索查询方法 -->
+    <!-- <view class="weui-search-bar__cancel-btn" bindtap='方法名a'>搜索</view> -->
+  <!-- </view> -->
+  <!-- 热点展示 -->
+  <view class="hot-bank">
+    <view bindtap="gotoDetails" class="shopper-bank" wx:for="{{tableLi}}" wx:key="index" wx:for-index="index" wx:for-item='item' data-commodityDetails="{{item}}">
+      <view class="shopper-img-box">
+        <image class="shopper-img" src="{{'http://'+item.goodsUrl[0]}}"></image>
+      </view>
+      <text class="shooper-detail">{{item.goodsDetail}}</text>
+      <text class="shopper-price"><text class="price-logo">￥</text>{{item.goodsPrice}}</text>
+      <!-- <text class="master-address">{{item.goodsAdd}}</text> -->
+      <view class="master">
+        <image src="{{userTable.imgUrl}}" class="master-img">{{item.userId}}</image>
+        <text class="master-name">{{userTable.nickname}}</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,47 @@
+<view class="container">
+    <view class="top-wrap">
+        <image class="user-header" src="../../static/images/nuomici.png"></image>
+        <view class="user-right-wrap">
+            <view class="username-wrap">username</view>
+            <view class="upload-time-wrap">2060-3-52</view>
+        </view>
+    </view>
+    <view class="mian-wrap">
+        <rich-text nodes="{{html}}"></rich-text>
+    </view>
+    <view class="bottom-wrap">
+        <input class="comment-input" type="text" name="" id="" />
+        <view class="like-comment-num">
+            <view bindtap="likeAndnoLike" class="like-wrap">
+                <image src="{{isLike ? '../../static/images/likeChose.png' :'../../static/images/likeCancel.png'}}" class="like-logo logo-same"></image>
+                <text class="like-num text-same">{{mainContent.VomitSlotVo.views}}</text>
+            </view>
+            <view class="comment-wrap">
+                <image src="../../static/images/comment.png" class="comment-logo logo-same"></image>
+                <text class="comment-num text-same">200</text>
+            </view>
+        </view>
+    </view>
+    <view class="all-comment-wrap">
+        <block wx:for="{{mainContent.comments}}" wx:for-item="item" wx:for-index="index" wx:key="item">
+            <view class="every-commentp-wrap">
+                <view class="one-comment-wrap">
+                    <view>{{item.user.userName}}</view>
+                    <view class="one-comment-content-wrap">{{item.content}}</view>
+                </view>
+
+                <view class="two-comment-wrap">
+                    <block wx:for="{{item.children}}" wx:for-item="item1" wx:for-index="index1" wx:key="item1">
+                        <view class="two-comment">
+                            <text class="replier-wrap">{{item1.user.userName}}</text>
+                            <text>回复了</text>
+                            <text class="by-reply-wrap">{{item1.toUser.userName}}</text>
+                            <text class="replier-content-wrap">{{item1.content}}</text>
+                        </view>
+                    </block>
+                    <view data-partantId="{{item.id}}" bindtap="getContentDelites" class="show-all-wrap">查看全部回复></view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

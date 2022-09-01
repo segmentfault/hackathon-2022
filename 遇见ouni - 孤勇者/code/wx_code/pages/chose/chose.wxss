@@ -1,0 +1,238 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('data:font/ttf;charset=utf-8;base64,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') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  .container {
+    width: 100%;
+  }
+  
+  .top-banner {
+    width: 100%;
+    height: 80rpx;
+    position: relative;
+    /* background-color:blueviolet; */
+  }
+  .quxiao {
+    position: absolute;
+    font-size: 30rpx;
+    margin-top: 20rpx;
+    margin-left: 20rpx;
+    /* background-color: coral; */
+  }
+  .top-banner .pub_btn {
+    position: absolute;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-weight: 500;
+    margin-left: 82%;
+    margin-top: 10rpx;
+    background-color: pink;
+  }
+  
+  .content {
+    position: relative;
+    /* background-color: aquamarine; */
+    width: 100%;
+  }
+  .up_text_content {
+    
+  }
+  .up_text {
+    position: relative;
+    height: 200rpx;
+    overflow: scroll;
+    padding-left: 15px;
+  }
+  
+  .tu1 {
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* background-color: brown; */
+  }
+  .tu{
+    border-radius: 10rpx;
+    margin-left: 20rpx;
+    width: 200rpx;
+    height: 200rpx;
+    background-color: rgba(214, 214, 214, 0.938);
+  }
+  
+  .logoinfo {
+    width: 200rpx;
+    height: 200rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+  }
+  
+  
+  .addImv {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 5rpx;
+  }
+   
+  .upImv {
+    background-color: white;
+    width: 100%;
+    margin-top: 5rpx;
+  }
+   
+  .upImv_text {
+    font-size: 30rpx;
+    margin-left: 20rpx;
+    padding-top: 20rpx;
+  }
+   
+  /*添加图片*/
+   
+  .addImv .chooseView {
+    width: 180rpx;
+    height: 180rpx;
+    margin: 20rpx 20rpx;
+    background-color: #f2f6f9;
+    border: 1px dashed lightgray;
+    text-align: center;
+    line-height: 180rpx;
+    /* padding: 0rpx 7rpx; */
+    border-radius: 5px;
+    margin-left: 40rpx;
+  }
+   
+  .addImv .chooseImv {
+    width: 50rpx;
+    height: 50rpx;
+  }
+   
+  .u_text {
+    margin-top: 50rpx;
+    text-align: center;
+    display: block;
+    font-size: 25rpx;
+    color: gray;
+  }
+  
+  .chose_add {
+    /* position: relative;
+    width: 100%; */
+    /* background-color: rgb(184, 205, 92); */
+    /* height: 80rpx; */
+    height: 300rpx;
+  }
+  
+  
+  /* 下拉框 */
+  .top-selected{
+    margin-top: 10rpx;
+    margin-left: 10rpx;
+    position: relative;
+    display: flex;
+    float: left;
+    align-items: center;
+    background-color:rgb(255, 255, 255,0.5);
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    padding: 0 10rpx;
+    font-size: 30rpx;
+  }
+  /* 下拉内容 */
+  .select_box {
+    background-color: rgb(255,255, 255,0.5);
+    padding: 0 20rpx;
+    width: 50%;
+    /* float: right; */
+    position: relative;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+    text-align: left;
+    animation: myfirst 0.2s;
+    font-size: 25rpx;
+  }
+  .select_one {
+    padding-left: 20rpx;
+    width: 100%;
+    height: 60rpx;
+    position: relative;
+    line-height: 60rpx;
+    border-bottom: 1px solid #ccc;
+  }
+  /* 下拉过度效果 */
+  @keyframes myfirst {
+    from {
+        height: 0rpx;
+    }
+    to {
+        height: 210rpx;
+    }
+  }
+  /* 下拉图标 */
+  .top-selected image{
+  height:50rpx;
+  width:50rpx;
+  position: absolute;
+  right: 0rpx;
+  top: 20rpx;
+  }
+  
+  .input_price {
+    font-size: 40rpx;
+    color: #b95378;
+    float: right;
+  }
+  
+  /* icon */
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-jiage:before {
+    content: "\e66a";
+  }
+  
+  .icon-ditu:before {
+    content: "\e8ad";
+  }
+  
+  .icon-Chevron-down:before {
+    content: "\e610";
+  }
+  .section{
+    padding-left: 20rpx;
+  }
+  .con-price{
+    padding-left: 20rpx;
+  }
+  .input-price-wrap{
+    width: 80%;
+    border: 1rpx solid #A7B6C4;
+    /* padding: 5rpx 10rpx; */
+    padding-left: 20rpx;
+    border-radius: 10rpx;
+    margin-left: 20rpx;
+    float: left;
+    box-sizing: border-box;
+    font-size: 30rpx;
+  }
+  .input-price-title-wrap{
+    float: left;
+    color: pink;
+  }
+  .input-price-container{
+    margin-top: 20rpx;
+  }
+  

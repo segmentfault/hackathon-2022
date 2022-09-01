@@ -1,0 +1,91 @@
+.parent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .son {
+    margin: 10rpx;
+    display: inline-flex;
+    height: 120rpx;
+    background-color: rgba(255, 255, 255, 0.836);
+  }
+  .head-bank {
+    
+  }
+  
+  .head-img {
+    margin-top: 10rpx;
+    margin-left: 10rpx;
+    position: relative;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50rpx;
+  }
+  
+  .body-bank {
+    width: 100%;
+    margin-top: 20rpx;
+    margin-left: 20rpx;
+  }
+  
+  .nickname {
+    font-weight: 550;
+    font-size: 35rpx;
+    display: block;
+  }
+  
+  .msg {
+    color: rgb(165, 161, 161);
+    font-size: 30rpx;
+    display: block;
+  }
+  
+  .bottom-caidan {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    position:fixed;
+    bottom: 0;
+    height: 100rpx;
+    width: 100%;
+    background-color:rgba(243, 109, 132, 0.719);
+  }
+  .dangaojuan , .hanbao , .tiantianquan , .nuomici{
+  
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    width: 70rpx;
+    height: 70rpx;
+  }
+  
+  .dangaojuan {
+    background-size: cover;
+    background-image: url("http://47.97.66.165/img/xianzhi/dangaojuan.png");
+  }
+  .hanbao {
+    background-size: cover;
+    background-image: url("http://47.97.66.165/img/xianzhi/hanbao.png");
+  }
+  .tiantianquan {
+    background-size: cover;
+    background-image: url("http://47.97.66.165/img/xianzhi/tiantianquan.png");
+  }
+  
+  .nuomici {
+    background-size: cover;
+    background-image: url("http://47.97.66.165/img/xianzhi/nuomici.png");
+  }
+  
+  .caidan-text {
+    font-size: 30rpx;
+    position: fixed;
+    bottom: -5rpx;
+    margin-left: 10rpx;
+  }
+  .distance-wrap{
+      position: relative;
+      right: -370rpx;
+      top: -45rpx;
+      font-size: 30rpx;
+  }

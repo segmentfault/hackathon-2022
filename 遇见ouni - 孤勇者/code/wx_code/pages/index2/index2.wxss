@@ -1,0 +1,113 @@
+/* pages/index2/index2.wxss */
+
+.container{
+  
+}
+swiper {
+  display: block;
+  height: 400rpx;
+  width: 100%;
+}
+swiper-item {
+  height: 100%;
+  width: 100%;
+}
+.slide-image{
+   height: 100%;
+  width: 100%;
+}
+.caidan {
+  padding: 2rpx;
+  display: flex;
+  margin-top: 10rpx;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.iconn1,.iconn2,.iconn3,.iconn4,.iconn5 {
+  width: 18%;
+  height: 130rpx;
+  margin: 2rpx;
+  position: relative;
+}
+.iconn1 {
+  background-size: cover;
+  background-image: url("http://47.97.66.165/img/xianzhi/xianzhi.PNG");
+}
+.iconn2 {
+  background-size: cover;
+  background-image: url("http://47.97.66.165/img/bangbang/bangbang.PNG");
+}
+
+.iconn3 {
+  background-size: cover;
+  background-image: url("http://47.97.66.165/img/tucao/tucao.PNG");
+}
+
+.iconn4 {
+  background-size: cover;
+  background-image: url("http://47.97.66.165/img/lianai/love.PNG");
+}
+
+.iconn5 {
+  background-size: cover;
+  background-image: url("http://47.97.66.165/img/jianyi/tousu.PNG");
+}
+.tex {
+  position: absolute;
+  margin-top: 130rpx;
+  margin-left: 40rpx;
+  color:rgb(194, 100, 163);
+}
+.hot-contain {
+  background-image: url("http://47.97.66.165/img/beijing.jpg");
+  margin-top: 45rpx;
+  width: 100%;
+  position: flex;
+  flex-direction: column;
+}
+.hot {
+  background: rgba(250, 250, 250, 0.5);
+  position: relative;
+  margin-top: 20rpx;
+  width: 100%;
+}
+.up {
+  display: flex;
+  align-content: center;
+  padding-left: 10rpx;
+  width: 100%;
+}
+.touxiang {
+  width: 50rpx;
+  height: 50rpx;
+}
+.nicheng {
+  color: rgb(68, 60, 60);
+  margin-top: 5rpx;
+  margin-left: 10rpx;
+}
+.content {
+  margin-left: 30rpx;
+  margin-right: 20rpx;
+}
+text {
+  color: rgb(121, 116, 116);
+}
+
+.img-box {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  margin: auto;
+  width: 80%;
+  height: 120rpx;
+}
+
+.hot-img {
+  margin-left: 20rpx;
+  width: 100rpx;
+  height: 100%;
+}
+

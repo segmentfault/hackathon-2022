@@ -1,0 +1,55 @@
+<!--index2.wxml-->
+<view class="container">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="imgUrls">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="caidan">
+    <view class="iconn1" bindtap="gotoXianzhi"><text class="tex">闲置</text></view>
+    <view class="iconn2"><text class="tex">帮帮</text></view>
+    <view bindtap="goSignIn" class="iconn3"><text class="tex">吐槽</text></view>
+    <view bindtap="gotoNear" class="iconn4"><text class="tex">恋爱</text></view>
+    <view class="iconn5"><text class="tex">建议</text></view>
+  </view>
+  <view class="hot-contain">
+    <text style="color: rgb(194, 100, 163);font-size: 40rpx;">今日话题</text>
+    <view class="hot">
+      <view class="up">
+        <image src="../static/img/love.PNG" class="touxiang"></image><text class="nicheng">一个小可爱</text>
+      </view>
+      <view class="content"><text>lalalla我就说一个测试的号lalalalalallalalla今天是个好日子，好运来好运来啊...</text></view>
+    </view>
+    <view class="hot">
+      <view class="up">
+        <image src="../static/img/love.PNG" class="touxiang"></image><text class="nicheng">一个小可爱</text>
+      </view>
+      <view class="content"><text>lalalla我就说一个测试的号lalalalalallalalla今天是个好日子，好运来好运来啊...</text></view>
+    </view>
+    <view class="hot">
+      <view class="up">
+        <image src="../static/img/love.PNG" class="touxiang"></image><text class="nicheng">一个小可爱</text>
+      </view>
+      <view class="content"><text>lalalla我就说一个测试的号lalalalalallalalla今天是个好日子，好运来好运来啊...</text></view>
+    </view>
+    <view class="hot">
+      <view class="up">
+        <image src="../static/img/love.PNG" class="touxiang"></image><text class="nicheng">一个小可爱</text>
+      </view>
+      <view class="content"><text>lalalla我就说一个测试的号lalalalalallalalla今天是个好日子，好运来好运来啊...</text></view>
+    </view>
+    <view class="hot">
+      <view class="up">
+        <image src="../static/img/love.PNG" class="touxiang"></image><text class="nicheng">一个小可爱</text>
+      </view>
+      <view class="content"><text>lalalla我就说一个测试的号lalalalalallalalla今天是个好日子，好运来好运来啊...</text></view>
+      <view class="img-box">
+        <image class="hot-img" src="/pages/static/img/tousu.PNG" mode="aspectFill"></image>
+        <image class="hot-img" src="/pages/static/img/tousu.PNG" mode="aspectFill"></image>
+      </view>
+    </view>
+  </view>
+</view>

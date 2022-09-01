@@ -1,0 +1,24 @@
+/**index.wxss**/
+.container {
+
+}
+.bg-image {
+  margin-top: 55rpx;
+  margin-left: 55rpx;
+  position: relative;
+  width: 600rpx;
+  height: 550rpx;
+  /* background-color: springgreen; */
+  background-image: url("http://47.97.66.165/img/bank.png");
+  background-size: 100% 100%;
+}
+.texx{
+  font-size: 50rpx;
+  position: relative;
+  margin-top: 200rpx;
+  z-index: 999;
+}
+.btn {
+  background-color: pink;
+  color: dimgrey;
+}

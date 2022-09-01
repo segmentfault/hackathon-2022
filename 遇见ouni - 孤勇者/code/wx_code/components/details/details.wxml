@@ -1,0 +1,9 @@
+<view>
+    <image></image>
+    <view></view>
+    <view></view>
+    <view>
+        <image></image>
+        <text></text>
+    </view>
+</view>

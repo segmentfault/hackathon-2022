@@ -1,0 +1,3 @@
+<!-- WXML页面 -->
+<!-- <editor bind:myevent="onGetCode" class="editor"></editor> -->
+<editor></editor>

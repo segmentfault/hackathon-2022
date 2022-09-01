@@ -1,0 +1,14 @@
+<view class="parent">
+  <block>
+    <view wx:for="{{charMessageArr}}" wx:key="index" wx:for-index="index" wx:for-item='item' data-fromUserId="{{item.userId}}" bindtap="openChatDetails" class="son">
+      <view class="head-bank">
+        <image src="{{item.imgUrl}}" class="head-img" mode="aspectFill"></image>
+      </view>
+      <view class="body-bank">
+        <text class="nickname">{{item.nickname}}</text>
+        <!-- <text class="msg">{{item.content}}</text> -->
+        <text class="distance-wrap">距离 ：{{item.distance}} km</text>
+      </view>
+    </view>
+  </block>
+</view>

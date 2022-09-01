@@ -1,0 +1,57 @@
+.container{
+    padding: 15px;
+    box-sizing: border-box;
+    padding-bottom: 300rpx;
+}
+.top-main{
+    overflow: hidden;
+}
+.heard-image{
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 25rpx;
+    float: left;
+}
+.user-name-wrap{
+    float: left;
+    line-height: 50rpx;
+    font-size: 30rpx;
+    margin-left: 10rpx;
+}
+.image-wrap{
+    width: 100%;
+    margin-top: 20rpx;
+    border-radius: 20rpx;
+}
+.main-text{
+    line-height: 60rpx;
+}
+.consult-wrap{
+    text-align: center;
+    background-color: #339900;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    color: white;
+    position: fixed;
+    bottom: 20rpx;
+    width: 91%;
+    border-radius: 20rpx;
+}
+.delete-button{
+    float: right;
+    cursor: pointer;
+    background-color: #339900;
+    border-radius: 40rpx;
+    color: white;
+    padding: 10rpx 20rpx;
+    font-size: 25rpx;
+    margin-right: 10rpx;
+}
+.shopImages{
+    border-radius: 20rpx;
+    width: 100%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10rpx;
+}

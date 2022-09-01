@@ -1,0 +1,94 @@
+.container{
+    padding: 20rpx;
+}
+.top-wrap{
+    overflow: hidden;
+}
+.user-header{
+    width: 80rpx;
+    height: 80rpx;
+    float: left;
+    border-radius: 40rpx;
+}
+.user-right-wrap{
+float: left;
+}
+.username-wrap{
+    font-size: 35rpx;
+
+}
+.upload-time-wrap{
+    font-size: 30rpx;
+    color: #8a919f;
+}
+.bottom-wrap{
+    position: fixed;
+    bottom: 0rpx;
+    background-color: white;
+}
+.comment-input{
+    border-radius: 10rpx;
+    float: left;
+    background-color: #eff2f5;
+    height: 80rpx;
+    padding-left: 20rpx ;
+}
+.logo-same{
+    width: 30rpx;
+    height: 30rpx;
+}
+.text-same{
+    font-size: 30rpx;
+    color: #707070;
+    margin-left: 10rpx;
+    position: relative;
+    top: -5rpx;
+}
+.like-comment-num{
+    float: left;
+    overflow: hidden;
+    margin-top: 20rpx;
+    margin-left: 40rpx;
+}
+.like-wrap{
+    float: right;
+}
+.comment-wrap{
+    float: right;
+    margin-right: 30rpx;
+}
+.mian-wrap{
+    padding-bottom: 300rpx;
+}
+.all-comment-wrap{
+    padding-bottom: 300rpx;
+}
+.one-comment-content-wrap{
+    font-size: 30rpx;
+}
+.one-comment-wrap{
+
+}
+.two-comment-wrap{
+    background-color: #f7f8fa;
+    font-size: 30rpx;
+    padding-left: 50rpx;
+    padding: 10rpx 20rpx;
+    
+}
+.two-comment{
+    margin-top: 10rpx;
+}
+.show-all-wrap{
+    margin-top: 10rpx;
+    color: #025eb2;
+}
+.replier-wrap{
+    color: #025eb2;
+    padding-right: 10rpx;
+}
+.by-reply-wrap{
+    color: #025eb2;
+    padding-right: 10rpx;
+    padding-left: 10rpx;
+}

@@ -1,0 +1,35 @@
+<view class="container">
+  <!-- 顶部bannner -->
+  <view class="top-banner">
+    <!-- <text class="quxiao" bindtap="cancel_btn">取消</text> -->
+    <button class="pub_btn" style="width: 110rpx;height: 60rpx;border-radius: 40rpx;color: white;" bindtap="formSubmit">发布</button>
+  </view>
+  <view class="content">
+    <textarea bindblur="setText" value="{{text}}" class="up_text" placeholder="买家都关心品牌型号、入手渠道、转手原因..." maxlength="1000"></textarea>
+    <view class='tu1'>
+      <block wx:for="{{img_arr}}" wx:key="index">
+        <view class='logoinfo'>
+          <image class='logoinfo' mode="aspectFill" src='{{item}}' data-index="{{index}}" bindtap="previewImg" bindlongpress="deleteImg" name="headimage"></image>
+        </view>
+      </block>
+      <view bindtap='upimg' class='tu'><text class="u_text">点击
+          添加1-3张图片
+          长按删除</text>
+      </view>
+    </view>
+
+    <view class="section">
+      <picker bindchange="bindPickerChange" value="{{address}}" range="{{array}}">
+        <view class="picker">
+          点击选择地址：{{address}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="con-price">
+    <view class="input-price-container">
+    <text class="input-price-title-wrap">价格 :</text>
+      <input class="input-price-wrap" bindblur="setPrice" value="{{price}}" placeholder="请输入价格" type="digit" />
+    </view>
+  </view>
+</view>

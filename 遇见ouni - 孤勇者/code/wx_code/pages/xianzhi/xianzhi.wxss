@@ -1,0 +1,172 @@
+/* pages/xianzhi/idx.wxss */
+
+.container {
+  background-repeat:repeat;
+  background-size: cover;
+  background-image: url("http://47.97.66.165/img/beijing.jpg");
+}
+
+.upload{
+  z-index: 99;
+  position: fixed;
+  bottom: 10px;
+  text-align: center;
+  color: #b95378;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-size: cover;
+  background-position: center;
+  background-image: url('http://47.97.66.165/img/xianzhi/xianzhi_btn.png');
+}
+
+.weui-search-bar {
+  position: relative;
+  padding: 8px 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  box-sizing: border-box;
+  background-color: pink;
+  border-top: 1rpx solid #D7D6DC;
+  border-bottom: 1rpx solid #D7D6DC;
+}
+.weui-icon-search_in-box {
+  position: absolute;
+  left: 10px;
+  top: 7px;
+}
+.weui-search-bar__form {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: auto;
+          flex: auto;
+  border-radius: 10px;
+  background: #FFFFFF;
+  border: 1rpx solid #E6E6EA;
+}
+.weui-search-bar__box {
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+.weui-search-bar__input {
+  height: 30px;
+  line-height: 28px;
+  font-size: 15px;
+}
+.weui-search-bar__cancel-btn {
+  margin-left: 10px;
+  line-height: 28px;
+  font-size: 30rpx;
+  color: #b95378;
+  white-space: nowrap;
+}
+
+.history-record-father {
+  position: relative;
+  width: 100%;
+  height: 50rpx;
+  padding-left: 30rpx;
+  padding-top: 10rpx;
+}
+
+.history-record-son {
+  display: inline-block;
+  margin-left: 15rpx;
+  background-color: rgb(172, 167, 167,0.4);
+  border-radius: 10px;
+  color: rgb(56, 55, 56);
+  border: 1rpx solid #E6E6EA;
+  font-size: 30rpx;
+}
+.hot-bank {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  /* width: 100%;
+  position: relative;
+  margin-top: 10rpx;
+  padding: 10rpx;
+  height: 1200rpx;
+  overflow: scroll; */
+  /* height: 1000rpx;
+  width: 900rpx;
+  overflow: scroll; */
+  /* width: 600rpx; */
+  /* display: flex;
+  justify-content: space-between; */
+}
+.shopper-bank:nth-child(odd){
+  float: left;
+}
+.shopper-bank:nth-child(even){
+  float: right;
+}
+.shopper-bank {
+  margin-top: 20rpx;
+  /* background-color: #ededed; */
+  padding-bottom: 20rpx;
+  border-radius: 20rpx;
+  /* height: 580rpx; */
+  /* border-radius: 10px;
+  position: relative;
+  background-color: rgb(255, 255, 255,0.6);
+  margin: 2%;
+  height: 580rpx;
+  display: inline-flex;
+  flex-direction: row;
+  width: 45%;
+  flex-wrap: wrap; */
+  width: 330rpx;
+}
+.shopper-img {
+  border-radius: 20rpx;
+  width: 330rpx;
+  height: 330rpx;
+}
+
+
+.shooper-detail {
+  height: 40rpx;
+  overflow: hidden;
+  display: block;
+  /* width: 100%; */
+  font-size: 30rpx;
+  padding-left: 20rpx;
+  padding-right: 30rpx;
+}
+.price-logo{
+  font-size: 25rpx;
+  color: #ff4444;
+}
+.shopper-price {
+  padding-left: 20rpx;
+  color: #ff4444;
+  width: 70%;
+  font-size: 30rpx;
+}
+.master-address {
+  margin-top: 10rpx;
+  color: rgb(68, 60, 60);
+}
+.master {
+  padding-left: 20rpx;
+}
+.master-img {
+  background-color: sienna;
+  width: 50rpx;
+  height: 50rpx;
+  float: left;
+  border-radius: 25rpx;
+}
+.master-name{
+  color: rgb(68, 60, 60);
+  line-height: 50rpx;
+  margin-left: 10rpx;
+}
+
+
+

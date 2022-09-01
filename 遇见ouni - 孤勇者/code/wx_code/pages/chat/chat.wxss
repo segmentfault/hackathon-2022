@@ -1,0 +1,111 @@
+page{
+    background-color: #ededed;
+}
+.chat-wrap{
+    overflow: hidden;
+    margin-top: 10px;
+}
+.head-left-portrait{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 10rpx;
+    float: left;
+}
+.content-left-wrap{
+    max-width: 60%;
+    float: left;
+    margin-left: 10px;
+}
+.content-left-text{
+    display: block;
+    background-color: white;
+    padding: 10rpx;
+    border-radius: 10rpx;
+}
+.content-right-text{
+    display: block;
+    background-color: #95ec69;
+    padding: 10rpx;
+    border-radius: 10rpx;
+}
+.content-image{
+    width: 400rpx;
+    height: 400rpx;
+    border-radius: 10rpx;
+}
+.content-right-wrap{
+    max-width: 60%;
+    float: right;
+    margin-right: 10px;
+}
+.head-right-portrait{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 10rpx;
+    float: right;
+}
+.send-message-wrap{
+    position: fixed;
+    bottom: 0rpx;
+    width: 100%;
+    background-color: #EDEDED;
+    padding-bottom: 30rpx;    
+    padding-top: 10px;
+}
+.chose-icon{
+    width: 60rpx;
+    height: 60rpx;
+}
+.input-container{
+    overflow: hidden;
+    padding-left: 40rpx;
+    padding-right: 30rpx;
+    padding-bottom: 60rpx;
+}
+.input-wrap{
+    width: 87%;
+    float: left;
+    background-color: white;
+    height: 70rpx;
+    line-height: 29px;
+}
+.seng-button-wrap{
+    width: 150rpx;
+    float: left;
+    background-color: #07c160;
+    color: white;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: center;
+    border-radius: 10rpx;
+    float: right;
+}
+.open-send-image{
+    box-sizing: border-box;
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 10rpx;
+    background-color: white;
+    float: right;
+    position: relative;
+}
+.updataLogo-wrap{
+    position: absolute;
+    width: 50rpx;
+    height: 50rpx;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.already-choser-image-wrap{
+    background-color: white;
+}
+.already-choser-image{
+    width: 150rpx;
+    height: 150rpx;
+}
+.viewCommunicationBody{
+    padding-bottom: 300rpx;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+}

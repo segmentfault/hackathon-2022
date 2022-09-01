@@ -1,0 +1,7 @@
+<view class="container">
+    <button bin>发布文章</button>
+    <block wx:for="{{contentData}}" wx:for-item="item" wx:for-index="index" data-contentId="{{item.vomitSlot.id}}" wx:key="item">
+        <content data-contentId="{{item.vomitSlot.id}}" bindtap="gotoDelites" username="{{item.userName}}" time="{{item.vomitSlot.uploadTime}}" content="{{item.vomitSlot.content}}" like="{{item.likes}}" comment="{{item.commentsNum}}">
+        </content>
+    </block>
+</view>

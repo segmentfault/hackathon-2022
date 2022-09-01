@@ -1,0 +1,25 @@
+<view class="container">
+    <view class="top-main">
+        <image class="heard-image" src="http://re0vamb9g.hn-bkt.clouddn.com/TYK4omG1xbli878557f70ebe7b2365861db4571999f7_568e9487-4937-4a39-ba24-396a030245f7.jpg"></image>
+        <text class="user-name-wrap">{{commoditydetails.userId}}</text>
+        <view bindtap="deleteShop" data-deleteId="{{commoditydetails.goodsId}}" wx:if="{{userId == commoditydetails.userId}}" class="delete-button">删除商品</view>
+        <view data-choseShop="{{commoditydetails}}" bindtap="choseShop" wx:if="{{userId == commoditydetails.userId}}" class="delete-button">修改商品</view>
+    </view>
+    <view class="main-price">
+        <text>￥</text>
+        <text>{{commoditydetails.goodsPrice}}</text>
+    </view>
+    <view class="main-text">
+        {{commoditydetails.goodsDetail}}
+    </view>
+    <view class="main-wrapper">
+        <image class="shopImages" src="{{'http://'+commoditydetails.goodsUrl[0]}}"></image>
+        <image class="shopImages" wx:if="{{commoditydetails.goodsUrl[1] != null}}" src="{{'http://'+commoditydetails.goodsUrl[1]}}"></image>
+        <image class="shopImages" wx:if="{{commoditydetails.goodsUrl[2] != null}}" src="{{'http://'+commoditydetails.goodsUrl[2]}}"></image>
+    </view>
+    <view>
+        <text>地址：</text>
+        <text>AZ2</text>
+    </view>
+    <view bindtap="goToChat" data-goToChatUser="{{commoditydetails.userId}}" class="consult-wrap">点击了解更多</view>
+</view>

@@ -1,0 +1,60 @@
+{
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于小程序位置接口的效果展示"
+        }
+    },
+    "pages": [
+        "pages/index/index",
+        "pages/index2/index2",
+        "pages/sign_in/sing_in",
+        "pages/editor/editor",
+        "pages/content/content",
+        
+        "pages/xianzhi/xianzhi",
+        "pages/my/my",
+        "pages/chat_List/chat_List",
+        "pages/chat/chat",
+        "pages/home/home",
+        "pages/uploadpage/uploadpage",
+        "pages/chose/chose",
+        "pages/near_char/near_char",
+        "pages/map/map"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "一个可爱的小程序",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/xianzhi/xianzhi",
+                "text": "首页",
+                "iconPath": "./static/images/dangaojuan.png",
+                "selectedIconPath": "./static/images/dangaojuan.png"
+            },
+            {
+                "pagePath": "pages/uploadpage/uploadpage",
+                "text": "发布",
+                "iconPath": "./static/images/hanbao.png",
+                "selectedIconPath": "./static/images/hanbao.png"
+            },
+            {
+                "pagePath": "pages/chat_List/chat_List",
+                "text": "消息",
+                "iconPath": "./static/images/nuomici.png",
+                "selectedIconPath": "./static/images/nuomici.png"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "text": "我的",
+                "iconPath": "./static/images/tiantianquan.png",
+                "selectedIconPath": "./static/images/tiantianquan.png"
+            }
+        ]
+    }
+}

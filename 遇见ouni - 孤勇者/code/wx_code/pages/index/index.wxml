@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+  <!--背景图片-->
+  <view class="bg-image"></view>
+  <view  class="texx"><button class="btn" bindtap="StartclickMe">我来啦！</button></view>
+  
+</view>
