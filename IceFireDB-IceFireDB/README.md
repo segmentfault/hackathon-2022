@@ -24,7 +24,7 @@ IceFireDB 项目组成：
 
 # 视频讲解
 
-[项目讲解视频](https://res.cloudinary.com/malloc/video/upload/v1654959861/Hackathon_2022/%E9%A1%B9%E7%9B%AE%E8%AE%B2%E8%A7%A3_tappbv.mp4)
+[IceFireDB项目-视频讲解](https://res.cloudinary.com/malloc/video/upload/v1654959861/Hackathon_2022/%E9%A1%B9%E7%9B%AE%E8%AE%B2%E8%A7%A3_tappbv.mp4)
 
 # 项目组成
 ## 一、IceFireDB-Decentralization-Pubsub
