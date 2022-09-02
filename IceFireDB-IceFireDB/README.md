@@ -105,3 +105,7 @@ IceFireDB-Decentralization-SQLProxy是去中心化SQL数据库组网系统，帮
 <img 
     src="./team.png" >
 </p>
+
+# 免责声明
+
+当您使用本软件时，您已同意并声明本软件的作者、维护者和贡献者不对您遇到的任何风险、费用或问题负责。如果发现软件缺陷或BUG，请提交补丁帮助改进！
