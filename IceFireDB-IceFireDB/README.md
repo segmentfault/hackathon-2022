@@ -22,7 +22,7 @@ IceFireDB 项目组成：
 1. google开源的golang语言
 2. IPFS生态的libp2p
 
-# 黑客马拉松-讲解视频
+# 视频讲解
 
 [项目讲解视频](https://res.cloudinary.com/malloc/video/upload/v1654959861/Hackathon_2022/%E9%A1%B9%E7%9B%AE%E8%AE%B2%E8%A7%A3_tappbv.mp4)
 
