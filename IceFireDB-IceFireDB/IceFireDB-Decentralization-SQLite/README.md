@@ -12,7 +12,6 @@ IceFireDB SQLite数据库是一种去中心化SQLite数据库。提供一套方�
 
 ### 安装
 ```shell
-git clone https://github.com/IceFireDB/IceFireDB-SQLite
 cd IceFireDB-SQLite
 make
 ```

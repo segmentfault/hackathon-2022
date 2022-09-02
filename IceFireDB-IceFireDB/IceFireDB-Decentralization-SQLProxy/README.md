@@ -14,7 +14,6 @@ IceFireDB去中心化SQL数据库代理，帮助传统SQL数据库数据去中�
 ### 安装
 
 ```shell
-git clone https://github.com/IceFireDB/IceFireDB-SQLProxy
 cd IceFireDB-SQLProxy
 make
 ```
