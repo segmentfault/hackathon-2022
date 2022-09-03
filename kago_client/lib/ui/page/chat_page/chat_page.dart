@@ -1,10 +1,6 @@
-import 'package:kago_client/base/get/get_no_binding_view.dart';
 import 'package:kago_client/base/get/get_save_state_view.dart';
 import 'package:kago_client/model/chat_message_model.dart';
 import 'package:kago_client/res/decoration_style.dart';
-import 'package:kago_client/res/shadow_style.dart';
-import 'package:kago_client/routes/routes.dart';
-import 'package:kago_client/ui/dialog/dialog_common_style.dart';
 import 'package:kago_client/ui/page/chat_page/chat_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,7 +10,7 @@ import 'package:chat_bubbles/chat_bubbles.dart';
 /// @class : ChatPage
 /// @date : 2022/08/26
 /// @name : liaoyp
-/// @description :我的 View层
+/// @description :聊天 View层
 
 class ChatPage extends GetSaveView<ChatController> {
   // ChatPage({Key? key}) : super(key: key);
