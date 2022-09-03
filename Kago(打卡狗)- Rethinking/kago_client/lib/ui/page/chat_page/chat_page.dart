@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:kago_client/base/get/get_save_state_view.dart';
 import 'package:kago_client/model/chat_message_model.dart';
 import 'package:kago_client/res/decoration_style.dart';
@@ -30,6 +32,7 @@ class ChatPage extends GetSaveView<ChatController> {
       appBar: AppBar(
         title: const Text("考研打卡群"),
       ),
+      // backgroundColor: Colors.red,
       body: Stack(
         children: [
           Image.asset(
@@ -58,34 +61,45 @@ class ChatPage extends GetSaveView<ChatController> {
                 );
               }),
           SafeArea(
-            child: MessageBar(
-              onSend: (text) {
-                if (text.isNotEmpty) {
-                  controller.addSendMessage(text);
-                }
-              },
-              actions: const [
-                InkWell(
-                  child: Icon(
-                    Icons.add,
-                    color: Colors.black,
-                    size: 24,
+            child: controller.isSign
+                ? MessageBar(
+                    onSend: (text) {
+                      if (text.isNotEmpty) {
+                        controller.addSendMessage(text);
+                      }
+                    },
+                    actions: const [
+                      InkWell(
+                        child: Icon(
+                          Icons.add,
+                          color: Colors.black,
+                          size: 24,
+                        ),
+                        // onTap: () {},
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 8, right: 8),
+                        child: InkWell(
+                          child: Icon(
+                            Icons.camera_alt,
+                            color: Colors.green,
+                            size: 24,
+                          ),
+                          // onTap: () {},
+                        ),
+                      ),
+                    ],
+                  )
+                : NotSignBar(
+                    onTap: () {
+                     
+                      controller.addSendMessage("汪！");
+                    },
+                    onLongPress: () {
+                       controller.addSendSignMessage("图片打卡");
+                      controller.updateSign();
+                    },
                   ),
-                  // onTap: () {},
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 8, right: 8),
-                  child: InkWell(
-                    child: Icon(
-                      Icons.camera_alt,
-                      color: Colors.green,
-                      size: 24,
-                    ),
-                    // onTap: () {},
-                  ),
-                ),
-              ],
-            ),
           ),
         ],
       ),
@@ -201,5 +215,39 @@ class ChatItem extends StatelessWidget {
         ],
       );
     }
+  }
+}
+
+class NotSignBar extends StatelessWidget {
+  final VoidCallback? onTap;
+  final VoidCallback? onLongPress;
+  const NotSignBar({Key? key, this.onTap, this.onLongPress}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      // onDoubleTap: onDoubleTap,
+      onLongPress: onLongPress,
+      onTap: onTap,
+      child: Align(
+        alignment: Alignment.bottomCenter,
+        child: Container(
+            color: Colors.white,
+            height: 44,
+            width: double.infinity,
+            child: Center(
+              child: Container(
+                  height: 35,
+                  width: Get.width * 0.618,
+                  decoration:
+                      DecorationStyle.colorShadowRadius30().copyWith(color: Colors.blueAccent),
+                  child: Center(
+                      child: Text(
+                    "长按打卡",
+                    style: TextStyle(color: Colors.white),
+                  ))),
+            )),
+      ),
+    );
   }
 }

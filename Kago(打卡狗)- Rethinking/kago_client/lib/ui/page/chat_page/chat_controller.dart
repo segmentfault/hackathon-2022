@@ -14,11 +14,10 @@ class ChatController extends BaseGetController {
   ///用户信息
   late UserEntity userInfo;
 
-  ///浏览历史长度
+  ///学习长度
   RxInt browseHistory = 0.obs;
 
-  ///分享的长度
-  RxInt share = 0.obs;
+  bool isSign = false;
 
   List<ChatMessage> chatMessageList = [];
 
@@ -35,53 +34,37 @@ class ChatController extends BaseGetController {
 
   initData() {
     {
-      final now = new DateTime.now();
+      final now = DateTime.now();
 
-      ChatMessage chatMessage = new ChatMessage(
-          avatar: randAssetsAvatar,
-          text: "汪！",
-          isSender: false,
-          type: MessageType.Text,
-          date: now);
+      ChatMessage chatMessage = ChatMessage(
+          avatar: randAssetsAvatar, text: "汪！", isSender: false, type: MessageType.Text, date: now);
       chatMessageList.add(chatMessage);
     }
     {
-      final now = new DateTime.now();
+      final now = DateTime.now();
 
-      ChatMessage chatMessage = new ChatMessage(
-          avatar: randAssetsAvatar,
-          text: "汪！",
-          isSender: false,
-          type: MessageType.Text,
-          date: now);
+      ChatMessage chatMessage = ChatMessage(
+          avatar: randAssetsAvatar, text: "汪！", isSender: false, type: MessageType.Text, date: now);
       chatMessageList.add(chatMessage);
     }
     {
-      final now = new DateTime.now();
+      final now = DateTime.now();
 
-      ChatMessage chatMessage = new ChatMessage(
-          avatar: randAssetsAvatar,
-          text: "汪！",
-          isSender: false,
-          type: MessageType.Text,
-          date: now);
+      ChatMessage chatMessage = ChatMessage(
+          avatar: randAssetsAvatar, text: "汪！", isSender: false, type: MessageType.Text, date: now);
       chatMessageList.add(chatMessage);
     }
     {
-      final now = new DateTime.now();
+      final now = DateTime.now();
 
-      ChatMessage chatMessage = new ChatMessage(
-          avatar: randAssetsAvatar,
-          text: "汪！",
-          isSender: false,
-          type: MessageType.Text,
-          date: now);
+      ChatMessage chatMessage = ChatMessage(
+          avatar: randAssetsAvatar, text: "汪！", isSender: false, type: MessageType.Text, date: now);
       chatMessageList.add(chatMessage);
     }
     {
-      final now = new DateTime.now();
+      final now = DateTime.now();
 
-      ChatMessage chatMessage = new ChatMessage(
+      ChatMessage chatMessage = ChatMessage(
           avatar: randAssetsAvatar,
           text: "大家好",
           isSender: false,
@@ -90,9 +73,9 @@ class ChatController extends BaseGetController {
       chatMessageList.add(chatMessage);
     }
     {
-      final now = new DateTime.now();
+      final now = DateTime.now();
 
-      ChatMessage chatMessage = new ChatMessage(
+      ChatMessage chatMessage = ChatMessage(
           avatar: randAssetsAvatar,
           text: "大家好",
           isSender: false,
@@ -103,21 +86,35 @@ class ChatController extends BaseGetController {
   }
 
   addSendMessage(String text) {
-    final now = new DateTime.now();
+    final now = DateTime.now();
 
-    ChatMessage chatMessage =
-        new ChatMessage(text: text, type: MessageType.Text, date: now);
+    ChatMessage chatMessage = ChatMessage(text: text, type: MessageType.Text, date: now);
 
-    if (chatMessageList.length == 0 || chatMessageList.length % 4 == 0) {
-      ChatMessage chatMessage =
-          new ChatMessage(text: "", type: MessageType.Time, date: now);
+    if (chatMessageList.isEmpty || chatMessageList.length % 4 == 0) {
+      ChatMessage chatMessage = ChatMessage(text: "", type: MessageType.Time, date: now);
       chatMessageList.add(chatMessage);
     }
-    if (chatMessageList.length % 3 == 0) {
-      chatMessage.isSender = false;
-    }
+    // if (chatMessageList.length % 3 == 0) {
+    //   chatMessage.isSender = false;
+    // }
     chatMessageList.add(chatMessage);
 
+    update();
+  }
+
+  addSendSignMessage(String text) {
+    final now = DateTime.now();
+
+    ChatMessage chatMessage = ChatMessage(
+        avatar: randAssetsAvatar, text: "大家好，完成今天打卡", isSender: true, type: MessageType.Sign, date: now);
+    chatMessageList.add(chatMessage);
+
+    update();
+  }
+
+  // 更新打卡情况
+  updateSign() {
+    isSign = true;
     update();
   }
 
