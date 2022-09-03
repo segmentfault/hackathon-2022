@@ -49,7 +49,7 @@ class CrateRoomPage extends GetNoView<TemplateController> {
               ),
               RowSection(
                 text: "群押金",
-                desc: "10元",
+                desc: "🧧 10元",
               ),
               SizedBox(height: 40),
 

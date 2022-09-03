@@ -15,6 +15,11 @@ class TemplatePage extends GetSaveView<TemplateController> {
       appBar: AppBar(
         title: const Text("新建群打卡"),
       ),
+      bottomNavigationBar: BottomCustomAddBar(
+        onTap: () {
+          Get.to(const CrateRoomPage());
+        },
+      ),
       body: SafeArea(
           top: true,
           child: Padding(
@@ -27,8 +32,7 @@ class TemplatePage extends GetSaveView<TemplateController> {
                 ),
                 GridGetView(
                   onTap: () {
-                    print("CrateRoomPage>>");
-                    Get.to(CrateRoomPage());
+                    Get.to(const CrateRoomPage());
                   },
                 ),
               ],
@@ -105,6 +109,38 @@ class TitleSection extends StatelessWidget {
             height: 15,
           ),
         ],
+      ),
+    );
+  }
+}
+
+class BottomCustomAddBar extends StatelessWidget {
+  final VoidCallback? onTap;
+  const BottomCustomAddBar({Key? key, this.onTap}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: SafeArea(
+        child: Container(
+          height: 44,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Icon(
+                Icons.add,
+                color: Colors.blueAccent,
+              ),
+              Text(
+                "自定义打卡群",
+                style:
+                    TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.blueAccent),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
