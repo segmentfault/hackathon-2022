@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kago_client/ui/page/my_page/widget/head_circle_widget.dart';
 import 'package:chat_bubbles/chat_bubbles.dart';
+import 'package:kago_client/util/toast_util.dart';
 
 /// @class : ChatPage
 /// @date : 2022/08/26
@@ -41,7 +42,9 @@ class ChatPage extends GetSaveView<ChatController> {
             height: Get.height,
           ),
           ListView.builder(
-              padding: const EdgeInsets.only(left: 12, top: 12, right: 12, bottom: 144),
+              controller: controller.listViewController,
+              padding: EdgeInsets.only(
+                  left: 12, top: 12, right: 12, bottom: (Get.bottomBarHeight + 60).toDouble()),
               itemCount: controller.chatMessageList.length,
               itemBuilder: (BuildContext context, int index) {
                 ChatMessage item = controller.chatMessageList[index];
@@ -92,11 +95,11 @@ class ChatPage extends GetSaveView<ChatController> {
                   )
                 : NotSignBar(
                     onTap: () {
-                     
                       controller.addSendMessage("汪！");
+                      ToastUtils.showBottom("没完成打卡前，你只是一条狗");
                     },
                     onLongPress: () {
-                       controller.addSendSignMessage("图片打卡");
+                      controller.addSendSignMessage("图片打卡");
                       controller.updateSign();
                     },
                   ),
@@ -238,10 +241,10 @@ class NotSignBar extends StatelessWidget {
             child: Center(
               child: Container(
                   height: 35,
-                  width: Get.width * 0.618,
+                  width: Get.width * 0.818,
                   decoration:
                       DecorationStyle.colorShadowRadius30().copyWith(color: Colors.blueAccent),
-                  child: Center(
+                  child: const Center(
                       child: Text(
                     "长按打卡",
                     style: TextStyle(color: Colors.white),

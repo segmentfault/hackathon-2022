@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:flutter/material.dart';
 import 'package:kago_client/base/get/getx_controller_inject.dart';
 import 'package:kago_client/model/chat_message_model.dart';
 import 'package:kago_client/model/request_register.dart';
@@ -11,6 +12,8 @@ import 'package:get/get.dart';
 /// @name : liaoyp
 /// @description 聊天控制器
 class ChatController extends BaseGetController {
+  ScrollController listViewController = ScrollController();
+
   ///用户信息
   late UserEntity userInfo;
 
@@ -25,6 +28,11 @@ class ChatController extends BaseGetController {
   void onInit() {
     super.onInit();
     initData();
+  }
+
+  @override
+  void onClose() {
+    listViewController.dispose();
   }
 
   String get randAssetsAvatar {
@@ -100,16 +108,23 @@ class ChatController extends BaseGetController {
     chatMessageList.add(chatMessage);
 
     update();
+    listViewController.jumpTo(listViewController.position.maxScrollExtent);
   }
 
   addSendSignMessage(String text) {
     final now = DateTime.now();
 
     ChatMessage chatMessage = ChatMessage(
-        avatar: randAssetsAvatar, text: "大家好，完成今天打卡", isSender: true, type: MessageType.Sign, date: now);
+        avatar: randAssetsAvatar,
+        text: "大家好，完成今天打卡",
+        isSender: true,
+        type: MessageType.Sign,
+        date: now);
     chatMessageList.add(chatMessage);
 
     update();
+
+    listViewController.jumpTo(listViewController.position.maxScrollExtent);
   }
 
   // 更新打卡情况

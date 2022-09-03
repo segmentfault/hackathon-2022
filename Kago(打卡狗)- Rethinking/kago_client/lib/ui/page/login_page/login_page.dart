@@ -97,29 +97,6 @@ class LoginPage extends GetCommonView<LoginController> {
                     style: ButtonStyles.getButtonStyle(),
                     onPressed: () {
                       KeyboardUtils.hideKeyboard(context);
-                      // Get.toNamed(Routes.registerPage);
-                      controller.googleLogin();
-                    },
-                    child: Text(
-                      StringStyles.googleButton.tr,
-                      style: Styles.style_white_18,
-                    )),
-                decoration: BoxDecoration(
-                  color: Colors.black12,
-                  borderRadius: const BorderRadius.all(Radius.circular(30)),
-                  border: Border.all(color: Colors.white, width: 1),
-                ),
-              ),
-
-              ///注册按钮
-              Container(
-                width: double.infinity,
-                height: 50,
-                margin: const EdgeInsets.only(top: 16, left: 25, right: 25),
-                child: TextButton(
-                    style: ButtonStyles.getButtonStyle(),
-                    onPressed: () {
-                      KeyboardUtils.hideKeyboard(context);
                       Get.toNamed(Routes.registerPage);
                     },
                     child: Text(
@@ -131,7 +108,41 @@ class LoginPage extends GetCommonView<LoginController> {
                   borderRadius: const BorderRadius.all(Radius.circular(30)),
                   border: Border.all(color: Colors.white, width: 1),
                 ),
-              )
+              ),
+              const Spacer(),
+
+              ///注册按钮
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 116,
+                        height: 1,
+                        color: Colors.white,
+                      ),
+                      const Text(
+                        "  第三方登录  ",
+                        style: Styles.style_white_14,
+                      ),
+                      Container(
+                        width: 116,
+                        height: 1,
+                        color: Colors.white,
+                      ),
+                    ],
+                  ),
+                  IconButton(onPressed: () {
+                        controller.googleLogin();
+                  }, icon: Image.asset("assets/images/google_auth_icon.png")),
+                 
+                ],
+              ),
+
+             const SizedBox(
+                height: 118,
+              ),
             ],
           ),
         ));
