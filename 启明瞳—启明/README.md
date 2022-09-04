@@ -10,7 +10,7 @@
 ## 安装说明
   盲人使用智能手机需要 在手机设置 找到无障碍配置开启 屏幕阅读的功能更
 [开启屏幕阅读（读屏软件）的百科教程](https://jingyan.baidu.com/article/48206aeac78044606ad6b39e.html)
-- - -
+  
 ### 启明瞳APP 
 [最新版启明APP](./files/qmt_android.apk)
 
