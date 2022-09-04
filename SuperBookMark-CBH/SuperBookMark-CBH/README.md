@@ -67,14 +67,3 @@ https://source.unsplash.com/1920x1080/?nature,water,art
    6. - [x] 多个搜索引擎快速切换
 2. 待开发功能
    1. - [ ] 云端同步配置
-
-
-## 大赛相关地址
-- 大赛官网：https://pages.segmentfault.com/hackathon-2022
-- 作品提交地址GitHub：https://github.com/segmentfault/hackathon-2022
-
-
-## License
-All for [MIT]()
-Copyright (c) 2022 CBH
-
