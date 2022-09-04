@@ -1,8 +1,8 @@
 # SuperBookMark
-> SuperBookMark 书签智能整理 
-基于技术 `Vue3`, `Typescript`, `Vite`
+> SuperBookMark 
+基于技术 `Vue3`, `Typescript`, `Vite`等 Google Chrome 插件开发技术
 
-## 快速开始
+## 安装、编译指南-快速开始
 > 推荐用pnpm
 ```bash
 npm install -g pnpm
@@ -14,13 +14,26 @@ pnpm run dev
 pnpm run build:crx
 
 ```
-## 产品背景
+
+## Google 技术
+Google Chrome 插件：基于技术 `Vue3`, `Typescript`, `Vite`等 Google Chrome 插件开发技术
+
+
+## 团队介绍：
+### 团队成员 
+- 蔡俊锋：腾讯8年全栈开发工程师，荣获 腾讯第一届云开发大赛一等奖 ，全国职业技能大赛物联网应用技术 二等奖，国家奖学金等。
+- 田家明：毕业于悉尼大学MIT&MITM 负责产品功能设计
+- 张岩平：UI 设计师
+### 联系方式
+- 微信/手机：18316541022 
+
+## 作品背景
 ![主页](./src/assets/images/4.png)
 
-## 整体产品操作介绍
-![整体产品操作介绍](./src/assets/images/demo.gif)
+## 整体作品操作介绍
+![整体作品操作介绍](./src/assets/images/demo.gif)
 
-## 产品介绍
+## 作品介绍
 ### 首页
 ![首页](./src/assets/images/6.png)
 
