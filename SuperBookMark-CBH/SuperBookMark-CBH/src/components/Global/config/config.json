@@ -1,0 +1,516 @@
+{
+  "hiddenWarnLockTips": "1",
+  "list": [
+    {
+      "position": 1,
+      "affixInfo": {
+        "mode": 1,
+        "x": 10,
+        "y": 10
+      },
+      "w": 12,
+      "h": 4,
+      "background": "transparent",
+      "backgroundFilter": "brightness(0.9)",
+      "material": "Clock",
+      "borderRadius": 4,
+      "boxShadow": "",
+      "i": "u78487thj",
+      "componentSetting": {
+        "duration": 5000,
+        "position": 5,
+        "textFontSize": 140,
+        "textColor": "#FFFFFF",
+        "textShadow": "0 0 1px #464646",
+        "fontFamily": "",
+        "padding": 10
+      },
+      "x": 0,
+      "y": 2,
+      "moved": false,
+      "zIndex": 10
+    },
+    {
+      "position": 1,
+      "affixInfo": {
+        "mode": 1,
+        "x": 10,
+        "y": 10
+      },
+      "w": 12,
+      "h": 8,
+      "background": "transparent",
+      "backgroundFilter": "brightness(0.9)",
+      "material": "Collection",
+      "borderRadius": 4,
+      "boxShadow": "",
+      "i": "m0f6mlv2hio",
+      "componentSetting": {
+        "userSettingKeyMap": {
+          "Q": {
+            "url": "https://google.com",
+            "remark": "Google"
+          },
+          "B": {
+            "url": "https://baidu.com",
+            "remark": "Baidu"
+          },
+          "G": {
+            "url": "https://github.com",
+            "remark": "Github",
+            "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABQ5JREFUWEetl11sU2UYx//POV23sq18jHN61nY4xoQ4EjAqEC+UmZgI8TN6YaIRMV44MGpiYtAYZYgYNcavIBIuMH7EG2JiiIqJJMwYNAN3IcYNtcIYpT09ZYN0KzK69m9O6Zbu9HTtZOeiF32fj9/zvM/zvs8rqPLr6OjwXjh//g4C94HsABCkSNBWFzIGIAaRfgEOLly8+Eh/f/+VakxLJaFWTTMui2wn+QgAfyX5wnpKRL6sI3cMJpPmTDplAdrb22vHUqmXATxPsr5Kx9PERCQN4N0Gv39XJBIZd7PhClCI+muS6/6PY6eOiPTWkQ+4ZaMEIKzrqybIbwmE58L5pA0Boh6Ru6OWdaLY7jSAfOTA8bl2XgxRB6wpzsQUQGHPfyxOuwADAE5A5E6STbPMyEUBfgCwjMBNUxAivQ1+//rJmpgCMHT9NZKvFDtRRJ6KW9a+zs5Oz8DAwCaQu0AaEBkDcFrICwBIkYUgrwMwX0RGQG5fpGn77FZs1vUHc+RX09IustO0rFfzLWz/FIou4qx2UdW1pmken1Tu0LSGEVVd0tXVdbK7uztXbJSkhMPh61VVTQ4NDdlg+S8QCCxFLnfKAZCuI9vtrcgDGLr+MckuZ4oVj+eWeDzeN8vUTxMPBoNLspnMGZfO2Gta1haxT7jhZDLpdsgoIpvilvX5tQAYhrGR2ex3LjZSTZqmSbOu35Ujv3chTIuqrozH4yX0swEKhUJN2UzmJMnFJRkW2SCGrn9EcqsLwDbTst6ejbNysoamPUFgv4uPPWJo2hECnc7Fmtra5dFo9O+5AGhtbV3wbzo9VZhF50KPDfAngeXOKo0nEo0iwrkAKBT6GZJLpvkB/pKAro+CbHAAnDYtq22unOcBNO0YgTXTbIqM2TWQJjnP4Ww0kUxWe/VWxWno+imSSx2BXrIBSlKTF1KUQCKRsKqyXkGotbW17vKlSxdJ1joAztgAvSTXurTIY3HL+mIuAGZo9V5p1rQPcsCzJS0CHI9b1rq5KERD1w+R3FASJPChfRCVXBZTbSLygmlZ71xLFgxN20zgEzcbishDsmLFisaLIyPnADS6CFFEXg+1tOzs6+vLzAaku7tb2btnjz3OvQlAddEdbQKCk5fRbpJP54VE3lNFfs2S20Cuyv8FnIXIfgU4qni9fdFodMQNpq2tbX46nb5ZAW7NkZtBtpeDFkXZbSYSz+QBwprWPiHyB0mvABcUkYcXkL8Mi/wE8kZH7x7dsnXr7c7ruNDrrqdqSX2JjNcAK89a1j/FA8kOkvkhAUDK4/WuFBHfxJUrPxdfJKqi3B9LJA66RWYYRiez2SOVtkpEdpiW1V3I7lVxeyQbTaWOFaV9v5lMPlkYVh4l2aKI9Nf7/Z+WG7HD4fCizPj48IwAIica/f61JSOZrRQMBluymUwvgGYAWVHVe03TPFQpouL1gKbZxeopoxNXa2rWxWKxs1Od5hQM6frqCdJ2ehVC5DCAwwKMEgjctn79rgMHDmTLQQU0baJM1cc9IhvPWdZvxbquD5NQKBSeyGS+Abna6ahJ02pnevcFNM2GUxyF+7vq8dwTi8WGSgqyXCSFMf0lAC8Wn+G++nrf4ODg5RkyYA+r+cBExH6gvlU3b94b5XQqPk5bdH1ZRuQ55nKPQ0S5oaNjYU9Pj51m18/Q9WECdjt/5vF636801FQEmPRij+RjPl9N8cjtRmBvn8/nS0UikVQ1xfsf2SAgrsH3JlQAAAAASUVORK5CYII="
+          },
+          "J": {
+            "url": "https://juejin.cn",
+            "remark": "掘金",
+            "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAA4tJREFUWEftlk9oFVcUxn9n+kxLjLWEECJEKUWkqJQugqtSCroQkSLhGSSEIlEsSAi2pmm0yZvMS+qfmLoIwYVEKRJKSIO4COJKRLoKWRX6FhJcqEgRKSJRNCZzZK7XZJK8eZmZCN14lvfP+b453znfHVFV4X8MeU8gbQWklTIqGTTq/UeLDjCTRslUEshxalnHGLDDgCqTzFGvvTxISiIxAfvlfwNbloBNUeALHeVFEhKJCQTJpZ3NlHMV2G7BCqYCPdxJAm5ype6BQ1SwkcuAw30O6iWmk4KvikAasGJ3SlZActTh0Mk0rdrPvSSg0skmMgzik9c8k1F3IwnIL+xhjen0j4DHKAfU42YcEuKyCxhBqAReoGTV43qiCshPlLPWaNxgR80HOtSjvxQJcWkHTiE49twIzzis53ieiMDbw+LyI9AXSjjGfZqXNp38TAUf8jsO9fbuLHN0aA/nSxKOMwXi8g0wilBVbOykiy04XEP43O4/wqdB89xeSTLTA+LSiE9NKbbSSS2ZkPvBU5TvzBjCFYQKK9UE02T1t2hXlC7acPhXPYYFV8+C0S2IUZ7RHKnXgv8ftmBvbi086BeZoFWvF38XZME7shavX8jpToQRsOVVCvjs0x6mIkfHJSAwiFBmiQQP0VH1TNMWDSPTB8Y9t9o7j4MGfyNBG5uoMOWts5tPgSb1GI9MGHiEcBXBxydbctZdvkW4Anxs888/XvM+YB+ZC0DzfHmFXrbRrfsJRnBZyEmqAgPWAYKvWb7/Jw7/kEc5GZJpKPx8LzMicTmCMAC2vD43eEWjnubJSh0d3pcWKqliGNgdkqlFPYYWnSs2hpJjB46RpNYevotPveYJnuEVQ07wJWVGnk8t+APjhnkmll6OtuJjVLPezP7X9tJzlCPq8UcpBuLSBFxEjIWDzy1madBTETKVMiKpI8Ne+oBjIdABxmnTSWYXlfJ7MmwwrtcSWj9PgXYdLd5DwblY/wPicgAYQii3Jf2LWbL6K49Mkh+oMdWCr+x+4PvN6pm1khGLgAHJsR3HzPFmm/FhMH7GCYUxhBoLPoWyT/MUVgKPXYG3ieQon1Bt5nmvXZtBDYGM1XucGZr0DIGPxIrYFVikt0sO6A7Nto/SrR69sVBDh1IRMKVz2YMwjJpsjepxIyl4YgmWAkgXn/EStI+7acBXTSAt6CI54/yQvAugqBype+BdkXoNCntru+TiLscAAAAASUVORK5CYII="
+          }
+        },
+        "position": 5,
+        "useKeyboardEvent": true,
+        "keyboardMaxWidth": 840,
+        "keyGutter": 8,
+        "keyBorderRadius": 4,
+        "keyBackground": "rgba(255, 255, 255, 0.85)",
+        "padding": 10
+      },
+      "x": 0,
+      "y": 8,
+      "moved": false,
+      "zIndex": 10
+    },
+    {
+      "position": 1,
+      "affixInfo": {
+        "mode": 1,
+        "x": 10,
+        "y": 10
+      },
+      "w": 12,
+      "h": 2,
+      "background": "transparent",
+      "backgroundFilter": "brightness(0.8)",
+      "material": "Search",
+      "borderRadius": 4,
+      "boxShadow": "",
+      "zIndex": 20,
+      "customId": "",
+      "i": "330gg6bg79",
+      "componentSetting": {
+        "engineList": [
+          {
+            "name": "Google",
+            "link": "https://www.google.com/search?q=",
+            "iconType": "local",
+            "iconPath": "https://s.kongfandong.cn/img/icons/google.svg"
+          },
+          {
+            "name": "百度",
+            "link": "https://www.baidu.com/s?wd=",
+            "iconType": "local",
+            "iconPath": "https://s.kongfandong.cn/img/icons/baidu.svg"
+          },
+          {
+            "name": "Bing-CN",
+            "link": "https://cn.bing.com/search?q=",
+            "iconType": "local",
+            "iconPath": "https://s.kongfandong.cn/img/icons/bing.svg"
+          },
+          {
+            "name": "Bing-EN",
+            "link": "https://cn.bing.com/search?ensearch=1&q=",
+            "iconType": "local",
+            "iconPath": "https://s.kongfandong.cn/img/icons/bing-en.svg"
+          },
+          {
+            "name": "搜狗",
+            "link": "https://www.sogou.com/tx?query=",
+            "iconType": "local",
+            "iconPath": "https://s.kongfandong.cn/img/icons/sougou.svg"
+          },
+          {
+            "name": "Bilibili",
+            "link": "https://search.bilibili.com/all?keyword=",
+            "iconType": "local",
+            "iconPath": "https://s.kongfandong.cn/img/icons/bilibili.svg"
+          },
+          {
+            "name": "淘宝",
+            "link": "https://s.taobao.com/search?q=",
+            "iconType": "local",
+            "iconPath": "https://s.kongfandong.cn/img/icons/taobao.svg"
+          },
+          {
+            "name": "有道词典",
+            "link": "http://dict.youdao.com/w/",
+            "iconType": "local",
+            "iconPath": "https://s.kongfandong.cn/img/icons/youdao.svg"
+          }
+        ],
+        "backupEngineList": [
+          {
+            "name": "Google",
+            "link": "https://www.google.com/search?q=",
+            "iconType": "local",
+            "iconPath": "https://s.kongfandong.cn/img/icons/google.svg"
+          },
+          {
+            "name": "搜狗",
+            "link": "https://www.sogou.com/tx?query=",
+            "iconType": "local",
+            "iconPath": "https://s.kongfandong.cn/img/icons/sougou.svg"
+          },
+          {
+            "name": "Bilibili",
+            "link": "https://search.bilibili.com/all?keyword=",
+            "iconType": "local",
+            "iconPath": "https://s.kongfandong.cn/img/icons/bilibili.svg"
+          },
+          {
+            "name": "淘宝",
+            "link": "https://s.taobao.com/search?q=",
+            "iconType": "local",
+            "iconPath": "https://s.kongfandong.cn/img/icons/taobao.svg"
+          }
+        ],
+        "showTabTips": true,
+        "jumpType": 1,
+        "keywordLink": true,
+        "rememberHistory": false,
+        "rememberHistoryList": [],
+        "position": 5,
+        "boxShadow": "0 1px 6px #484848",
+        "boxBackground": "rgba(255,255,255,0.9)",
+        "boxRadius": 2,
+        "maxWidth": 500,
+        "focusBgAnimation": false,
+        "padding": 10
+      },
+      "x": 0,
+      "y": 6,
+      "moved": false
+    },
+    {
+      "position": 1,
+      "affixInfo": {
+        "mode": 1,
+        "x": 10,
+        "y": 10
+      },
+      "w": 1.6,
+      "h": 2,
+      "background": "transparent",
+      "backgroundFilter": "brightness(0.8)",
+      "material": "Weather",
+      "borderRadius": 4,
+      "boxShadow": "",
+      "zIndex": 10,
+      "customId": "",
+      "componentSetting": {
+        "weatherMode": 2,
+        "cityName": "北京",
+        "animationIcon": true,
+        "duration": 15,
+        "position": 5,
+        "baseFontSize": 12,
+        "textColor": "#d8d8d8",
+        "textShadow": "0 0 1px #464646",
+        "iconShadow": "0 0 1px #464646",
+        "fontFamily": "PingFang SC",
+        "padding": 7
+      },
+      "i": "1fbc610a31199",
+      "x": 10.4,
+      "y": 0,
+      "moved": false
+    }
+  ],
+  "affix": [
+    {
+      "position": 2,
+      "affixInfo": {
+        "mode": 3,
+        "x": 103,
+        "y": 14
+      },
+      "w": 70.984375,
+      "h": 27.796875,
+      "background": "transparent",
+      "backgroundFilter": "brightness(0.9)",
+      "material": "Empty",
+      "borderRadius": 0,
+      "boxShadow": "",
+      "zIndex": 10,
+      "i": "eparmovasao",
+      "componentSetting": {
+        "customText": "Todo",
+        "position": 5,
+        "textFontSize": 16,
+        "textColor": "#FFFFFF",
+        "textShadow": "0 0 1px #464646",
+        "padding": 10,
+        "fontFamily": ""
+      },
+      "actionSetting": {
+        "actionType": 1,
+        "actionClickType": 1,
+        "actionClickValue": {
+          "url": "",
+          "material": "TodoList",
+          "w": 320,
+          "h": 520,
+          "background": "rgba(255, 255, 255, 0.9)",
+          "backgroundFilter": "brightness(0.9)",
+          "direction": 1,
+          "boxShadow": "0 0 4px #89909c",
+          "borderRadius": 4,
+          "componentSetting": {
+            "todo": {},
+            "themeColor": "#643a7a",
+            "baseFontSize": 16,
+            "padding": 10
+          }
+        }
+      }
+    },
+    {
+      "position": 2,
+      "affixInfo": {
+        "mode": 1,
+        "x": 13.9296875,
+        "y": 13.984375
+      },
+      "w": 85.9765625,
+      "h": 41.984375,
+      "background": "transparent",
+      "backgroundFilter": "brightness(0.9)",
+      "material": "Empty",
+      "borderRadius": 4,
+      "boxShadow": "",
+      "zIndex": 10,
+      "i": "t9rase2kkj8",
+      "componentSetting": {
+        "customText": "掘金",
+        "position": 5,
+        "textFontSize": 16,
+        "textColor": "#FFFFFF",
+        "textShadow": "0 0 1px #464646",
+        "padding": 10,
+        "fontFamily": ""
+      },
+      "actionSetting": {
+        "actionType": 1,
+        "actionClickType": 1,
+        "actionClickValue": {
+          "url": "",
+          "material": "JuejinList",
+          "w": 360,
+          "h": 300,
+          "background": "#CBCFF3 url(https://cn.bing.com//th?id=OHR.TheBroads_ZH-CN0485661191_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp) center center / cover",
+          "backgroundFilter": "brightness(0.65)",
+          "direction": 9,
+          "boxShadow": "0 0 4px #464646",
+          "borderRadius": 4,
+          "componentSetting": {
+            "limit": 10,
+            "duration": 5,
+            "position": 5,
+            "textFontSize": 16,
+            "textColor": "#FFFFFF",
+            "textShadow": "0 0 1px #464646",
+            "iconShadow": "0 0 1px #464646",
+            "fontFamily": "",
+            "padding": 10
+          }
+        }
+      }
+    },
+    {
+      "position": 2,
+      "affixInfo": {
+        "mode": 1,
+        "x": 105.96875,
+        "y": 13.984375
+      },
+      "w": 88.9765625,
+      "h": 40,
+      "background": "transparent",
+      "backgroundFilter": "brightness(0.9)",
+      "material": "Empty",
+      "borderRadius": 4,
+      "boxShadow": "",
+      "zIndex": 10,
+      "i": "er8jmok6u6",
+      "componentSetting": {
+        "customText": "微博",
+        "position": 5,
+        "textFontSize": 16,
+        "textColor": "#FFFFFF",
+        "textShadow": "0 0 1px #464646",
+        "padding": 10,
+        "fontFamily": ""
+      },
+      "actionSetting": {
+        "actionType": 1,
+        "actionClickType": 1,
+        "actionClickValue": {
+          "url": "",
+          "material": "WeiboList",
+          "w": 320,
+          "h": 300,
+          "background": "#CBCFF3 url(https://cn.bing.com//th?id=OHR.MackenzieRiver_ZH-CN0214805768_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp) center center / cover",
+          "backgroundFilter": "brightness(0.6)",
+          "direction": 9,
+          "boxShadow": "0 0 4px #464646",
+          "borderRadius": 4,
+          "componentSetting": {
+            "limit": 10,
+            "duration": 5,
+            "position": 5,
+            "textFontSize": 16,
+            "textColor": "#FFFFFF",
+            "textShadow": "0 0 1px #464646",
+            "iconShadow": "0 0 1px #464646",
+            "fontFamily": "",
+            "padding": 10
+          }
+        }
+      }
+    },
+    {
+      "position": 2,
+      "affixInfo": {
+        "mode": 1,
+        "x": 200.984375,
+        "y": 12.984375
+      },
+      "w": 174.984375,
+      "h": 40,
+      "background": "transparent",
+      "backgroundFilter": "brightness(0.9)",
+      "material": "Empty",
+      "borderRadius": 4,
+      "boxShadow": "",
+      "zIndex": 10,
+      "i": "t4q661l418",
+      "componentSetting": {
+        "customText": "Github Trending",
+        "position": 5,
+        "textFontSize": 16,
+        "textColor": "#FFFFFF",
+        "textShadow": "0 0 1px #464646",
+        "padding": 10,
+        "fontFamily": ""
+      },
+      "actionSetting": {
+        "actionType": 1,
+        "actionClickType": 1,
+        "actionClickValue": {
+          "url": "",
+          "material": "GithubTrending",
+          "w": 375,
+          "h": 600,
+          "background": "#CBCFF3 url(https://cn.bing.com//th?id=OHR.BrilliantBlue_ZH-CN1727875801_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp) center center / cover",
+          "backgroundFilter": "brightness(0.65)",
+          "direction": 8,
+          "boxShadow": "0 0 4px #464646",
+          "borderRadius": 4,
+          "componentSetting": {
+            "limit": 10,
+            "duration": 5,
+            "position": 5,
+            "textFontSize": 16,
+            "textColor": "#FFFFFF",
+            "textShadow": "0 0 1px #464646",
+            "iconShadow": "0 0 1px #464646",
+            "fontFamily": "",
+            "padding": 10
+          }
+        }
+      }
+    },
+    {
+      "position": 2,
+      "affixInfo": {
+        "mode": 3,
+        "x": 181,
+        "y": 13.5625
+      },
+      "w": 75,
+      "h": 28,
+      "background": "transparent",
+      "backgroundFilter": "brightness(0.8)",
+      "material": "Empty",
+      "borderRadius": 4,
+      "boxShadow": "",
+      "zIndex": 10,
+      "customId": "",
+      "i": "haiik89aa58",
+      "componentSetting": {
+        "customText": "记事本",
+        "position": 5,
+        "textFontSize": 16,
+        "textColor": "#FFFFFF",
+        "textShadow": "0 0 1px #464646",
+        "padding": 10,
+        "fontFamily": ""
+      },
+      "actionSetting": {
+        "actionType": 1,
+        "actionClickType": 1,
+        "actionClickValue": {
+          "url": "",
+          "material": "Editor",
+          "w": 880,
+          "h": 600,
+          "background": "rgba(255, 255, 255, 0.95)",
+          "backgroundFilter": "brightness(0.8)",
+          "direction": 0,
+          "boxShadow": "0 0 4px #89909c",
+          "borderRadius": 4,
+          "componentSetting": {
+            "textFontSize": 16,
+            "textColor": "#494e59",
+            "padding": 10,
+            "enableTooltip": true,
+            "enableSlash": true,
+            "enableHistory": false,
+            "enableClipboard": false,
+            "enablePrism": false,
+            "showTitle": true,
+            "markdown": "",
+            "fontFamily": ""
+          }
+        }
+      }
+    }
+  ],
+  "fontFamilyList": [
+    {
+      "cn": "苹方",
+      "en": "PingFang SC"
+    },
+    {
+      "cn": "华文宋体",
+      "en": "STSong"
+    },
+    {
+      "cn": "冬青黑体简",
+      "en": "Hiragino Sans GB"
+    },
+    {
+      "cn": "宋体-简",
+      "en": "Songti SC"
+    },
+    {
+      "cn": "华文宋体",
+      "en": "STSong"
+    }
+  ],
+  "showBackgroundEffect": false,
+  "showRefreshBtn": true,
+  "tabList": [],
+  "showTabSwitchBtn": true,
+  "enableKeydownSwitchTab": true,
+  "wallpaperCollectionList": []
+}
