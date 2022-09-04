@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "SuperBookMark 书签智能整理",
   "author": {
-    "name": "leon-kfd",
-    "email": "kfd_personal@163.com"
+    "name": "CBH",
+    "email": "18316541022@qq.com"
   },
   "keywords": [
     "javascript",
@@ -30,7 +30,7 @@
   },
   "main": "src/electron.js",
   "build": {
-    "appId": "kfd_personal@163.com",
+    "appId": "18316541022@qq.com",
     "files": [
       "!dist/*"
     ],
@@ -135,6 +135,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/leon-kfd/dashboard"
+    "url": "https://github.com/SuperBookMark/SuperBookMark"
   }
 }

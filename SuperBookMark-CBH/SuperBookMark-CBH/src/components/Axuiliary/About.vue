@@ -26,10 +26,10 @@
 </template>
 
 <script lang="ts" setup>
-const MIT = 'https://github.com/leon-kfd/Dashboard/blob/main/LICENSE'
+const MIT = 'https://github.com/leon-kfd/dashboard/blob/main/LICENSE'
 const AUTHOR_BLOG = 'https://kongfandong.cn'
-const GITHUB = 'https://github.com/leon-kfd/Dashboard'
-const ISSUE = 'https://github.com/leon-kfd/Dashboard/issues'
+const GITHUB = 'https://github.com/leon-kfd/dashboard'
+const ISSUE = 'https://github.com/leon-kfd/dashboard/issues'
 const VIDEO = 'https://www.bilibili.com/video/BV1Vu411Z7i1?share_source=copy_web'
 const INTRODUCTION = 'https://howdz.vercel.app'
 const isWebify = location?.host === 's.kongfandong.cn'
