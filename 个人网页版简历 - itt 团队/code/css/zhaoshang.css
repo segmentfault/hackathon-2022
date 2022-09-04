@@ -1,0 +1,29 @@
+aside{
+	border: solid 1px #CCCCCC;
+	}
+aside ul li{
+	padding: 10px 10px;
+}
+.content{
+	border: solid 1px #CCCCCC;
+}
+section{
+	padding: 10px 10px;
+}
+footer{
+	background-color: #F8F8F8;
+	border-color: #E7E7E7;
+	height: 50px;
+	border: 1px solid #E7E7E7;
+	border-radius: 4px;
+	margin-top:20px ;
+	padding: 15px 0px;
+}
+h5{
+	font-weight: bold;
+	font-size: 15px;
+	}
+	
+li{
+	font-size: 10px;
+}

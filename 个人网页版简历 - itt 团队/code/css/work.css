@@ -1,0 +1,170 @@
+body{
+	font: 400 15px Lato,sans-serif;
+	line-height: 1.8;
+	color: #080808;
+}
+
+.jumbotron{
+	font-family: Montserrat,sans-serif;
+}
+
+#portfolio{
+	padding: 0 0;
+	margin: auto;
+}
+
+.carousel-inner img {
+      width: 100%;
+      height: 100%;
+      padding: 0 0;
+  }
+
+.navbar{
+	margin-bottom: 0;
+	background-color:#EBEBEB ;
+	z-index: 9999;
+	border: 0;
+	font-size: 12xpx !important;
+	line-height: 1.42857143!important;
+	letter-spacing: 4px;
+	border-radius:0 ;
+}
+
+.navbar li,a navbar .navbar-brand{
+	color: #fff!important;
+}
+
+
+.navbar-nav li a:hover, .navbar-nav li.active a{
+	color:#F0AD4E !important;
+}
+
+.navbar-default .navbar-toggle{
+	border-color:transparent ;
+	color: #fff !important;
+}
+
+
+.jumbotron{
+	background-color:#f4511e ;
+	color:#FFFFFF;
+	padding: 100px 25px;
+}
+
+.bg-grey{
+	background-color: #f6f6f6;
+}
+
+.container-fluid{
+	padding: 60px 50px;
+}
+
+.logo{
+	color:#F0AD4E;
+	font-size: 200px;
+}
+
+
+.logo-small{
+	color:#f451le;
+	font-size: 50px;
+}
+
+.thumbnail{
+	padding: 0 0 15px 0;
+	border: none;
+	border-radius: 0 ;
+}
+
+.thumbnail img{
+	width: 100%;
+	height: 100%;
+	margin-bottom: 10px;
+}
+
+.carousel-control.right .carousel-control.left{
+	background-image:none ;
+	color:#F9F2F4;
+}
+
+
+.carousel-indicators li.active{
+	background-color: #F7E1B5 ;
+}
+
+
+
+.carousel-indicators li{
+	background-color:#286090;
+}
+
+
+.item h4{
+	font-size:19px ;
+	line-height: 1.375em;
+	font-weight:400 ;
+	font-style:italic ;
+	margin: 70px 0;
+}
+
+
+.item span{
+	font-size:normal;
+}
+
+.panel{
+	border: 1px solid #f451le;
+	border-radius:0 ;
+	transition: box-shadow 0.5s;
+}
+
+.panel:hover{
+	box-shadow: 5px 0px 40px rgba(0,0, .2);
+}
+
+
+.panel-footer .btn:hover{
+	border: 1px solid #F9F2F4;
+	background-color:#fff !important;
+	color: #F0AD4E;
+}
+
+.panel-heading{
+	color: #fff !important;
+	background-color:#F7ECB5 !important;
+	padding: 25px;
+	border-bottom: 1px solid transparent;
+	border-top-left-radius:0px ;
+	border-top-right-radius:0px ;
+	border-bottom-left-radius:0px ;
+	border-bottom-right-radius:0px ;	
+}
+
+
+.panel-footer{
+	background-color:#fff !important ;
+}
+
+
+.panel-footer h3{
+	font-size:32px ;
+}
+
+.panel-footer h4{
+	color: #aaa;
+	font-size:14px ;
+}
+
+.panel-footer .btn{
+	margin: 15px 0;
+	background-color:#F7ECB5 ;
+	color: #fff;
+}
+
+.footer .glyphicon{
+	font-size: 20px;
+	margin-bottom: 20px;
+	color: #F0AD4E;
+}
+
+

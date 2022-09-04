@@ -1,0 +1,7 @@
+tensorflow版本>=2.4.0
+matplotlib
+os
+imutils
+Image
+numpy
+opencv

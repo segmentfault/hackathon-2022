@@ -1,0 +1,25 @@
+{
+	"manifest_version": 2,
+	"name": "暂存网页/快捷翻译",
+	"version": "1.0.0",
+	"description": "欢迎使用暂存网页/快捷翻译插件，该插件的功能有：1. 暂存网页：点击右键菜单，选择暂存网页，即可暂存；点击插件图标即可查看暂存的网页，适用于你不想保存的网页，想暂时缓存一下，可以使用该插件。 2.快捷翻译：首先选中需要翻译的文字，右键选择该插件的快捷翻译选项，即可快速跳转到百度翻译进行翻译。 ",
+	"icons": {
+		"16": "img/logo.png",
+		"48": "img/logo.png",
+		"128": "img/logo.png"
+	},
+	"browser_action": {
+		"default_icon": "img/logo.png",
+		"default_title": "暂存网页记录",
+		"default_popup": "popup.html"
+	},
+	"background": {
+		"scripts": [
+			"js/background.js"
+		]
+	},
+	"permissions": [
+		"contextMenus",
+		"storage"
+	]
+}

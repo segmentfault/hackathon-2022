@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/blackswan/Desktop/simple-bookkeeping-master/simple-bookkeeping-master/app/src/main/res/layout/activity_about.xml" value="0.12588652482269502" />
+        <entry key="..\:/Users/blackswan/Desktop/simple-bookkeeping-master/simple-bookkeeping-master/app/src/main/res/layout/activity_history.xml" value="0.12588652482269502" />
+        <entry key="..\:/Users/blackswan/Desktop/simple-bookkeeping-master/simple-bookkeeping-master/app/src/main/res/layout/activity_main.xml" value="0.12588652482269502" />
+        <entry key="..\:/Users/blackswan/Desktop/simple-bookkeeping-master/simple-bookkeeping-master/app/src/main/res/layout/activity_month_chart.xml" value="0.12588652482269502" />
+        <entry key="..\:/Users/blackswan/Desktop/simple-bookkeeping-master/simple-bookkeeping-master/app/src/main/res/layout/activity_record.xml" value="0.264" />
+        <entry key="..\:/Users/blackswan/Desktop/simple-bookkeeping-master/simple-bookkeeping-master/app/src/main/res/layout/activity_search.xml" value="0.264" />
+        <entry key="..\:/Users/blackswan/Desktop/simple-bookkeeping-master/simple-bookkeeping-master/app/src/main/res/layout/activity_setting.xml" value="0.264" />
+        <entry key="..\:/Users/blackswan/Desktop/simple-bookkeeping-master/simple-bookkeeping-master/app/src/main/res/layout/dialog_beizhu.xml" value="0.264" />
+        <entry key="..\:/Users/blackswan/Desktop/simple-bookkeeping-master/simple-bookkeeping-master/app/src/main/res/layout/dialog_budget.xml" value="0.264" />
+        <entry key="..\:/Users/blackswan/Desktop/simple-bookkeeping-master/simple-bookkeeping-master/app/src/main/res/layout/dialog_calendar.xml" value="0.264" />
+        <entry key="..\:/Users/blackswan/Desktop/simple-bookkeeping-master/simple-bookkeeping-master/app/src/main/res/layout/dialog_more.xml" value="0.264" />
+        <entry key="..\:/Users/blackswan/Desktop/simple-bookkeeping-master/simple-bookkeeping-master/app/src/main/res/layout/dialog_time.xml" value="0.264" />
+        <entry key="..\:/Users/blackswan/Desktop/simple-bookkeeping-master/simple-bookkeeping-master/app/src/main/res/layout/fragment_incom_chart.xml" value="0.264" />
+        <entry key="..\:/Users/blackswan/Desktop/simple-bookkeeping-master/simple-bookkeeping-master/app/src/main/res/layout/fragment_outcome.xml" value="0.4" />
+        <entry key="..\:/Users/blackswan/Desktop/simple-bookkeeping-master/simple-bookkeeping-master/app/src/main/res/layout/item_chartfrag_lv.xml" value="0.264" />
+        <entry key="..\:/Users/blackswan/Desktop/simple-bookkeeping-master/simple-bookkeeping-master/app/src/main/res/layout/item_chartfrag_top.xml" value="0.4" />
+        <entry key="..\:/Users/blackswan/Desktop/simple-bookkeeping-master/simple-bookkeeping-master/app/src/main/res/layout/item_dialogcal_gv.xml" value="0.264" />
+        <entry key="..\:/Users/blackswan/Desktop/simple-bookkeeping-master/simple-bookkeeping-master/app/src/main/res/layout/item_dialogcal_hsv.xml" value="0.1" />
+        <entry key="..\:/Users/blackswan/Desktop/simple-bookkeeping-master/simple-bookkeeping-master/app/src/main/res/layout/item_mainlv.xml" value="0.264" />
+        <entry key="..\:/Users/blackswan/Desktop/simple-bookkeeping-master/simple-bookkeeping-master/app/src/main/res/layout/item_mainlv_top.xml" value="0.264" />
+        <entry key="..\:/Users/blackswan/Desktop/simple-bookkeeping-master/simple-bookkeeping-master/app/src/main/res/layout/item_recordfrag_gv.xml" value="0.264" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

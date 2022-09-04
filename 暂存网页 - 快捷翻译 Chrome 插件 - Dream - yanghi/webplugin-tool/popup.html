@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>popup页</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style>
+		body {
+			background-color: #F4F5F7;
+		}
+
+		.list {
+			padding: 5px;
+			padding-right: 20px;
+			width: 240px;
+			height: 500px;
+			overflow-y: auto;
+			overflow-x: hidden;
+			margin-right: 10px;
+		}
+
+		.list::-webkit-scrollbar {
+			/* 对应纵向滚动条的宽度 */
+			width: 5px;
+			/* 对应横向滚动条的宽度 */
+			height: 5px;
+		}
+
+		/* 滚动条上的滚动滑块 */
+		.list::-webkit-scrollbar-thumb {
+			background-color: #c4c5c8;
+			border-radius: 32px;
+		}
+
+		/* 滚动条轨道 */
+		.list::-webkit-scrollbar-track {
+			background-color: #ededed;
+			border-radius: 32px;
+		}
+
+
+		.list li {
+			width: 220px;
+			height: 40px;
+			line-height: 40px;
+			padding: 0 10px;
+			overflow: hidden;
+			margin: auto;
+			margin-bottom: 10px;
+			cursor: pointer;
+			list-style: none;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			background-color: #ffffff;
+			border-radius: 4px;
+			box-shadow: 0px 10px 25px 0px rgba(138, 149, 158, 0.2);
+		}
+
+		.icon {
+			padding: 10px;
+			margin-right: 20px;
+		}
+
+		.icon:hover{
+			color: #F56C6C;
+		}
+
+		.empty{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+		}
+
+		.empty img{
+			width: 220px;
+			height: 220px;
+		}
+
+		.empty p {
+			line-height: 1.5;
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+		.hide{
+			display: none;
+		}
+
+		span:hover{
+			color: #409EFF;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="empty hide" id="empty">
+		<img src="./img/empty-data.png" alt="没有暂存的网页，请在需要暂存的网页处，右键选择菜单的暂存网页即可">
+		<p>没有暂存的网页，请在需要暂存的网页处，右键选择菜单的暂存网页即可</p>
+	</div>
+	<ul class="list">
+	</ul>
+	<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+	<script type="text/javascript" src="js/popup.js"></script>
+</body>
+
+</html>

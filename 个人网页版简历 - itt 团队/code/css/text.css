@@ -1,0 +1,45 @@
+body{
+	font-family: 'microsoft yahei',Arial,sans-serif;
+}
+.cvheader{
+	border-bottom:1px solid #DFDFDF ;
+	padding-top:30px ;
+	padding-bottom:20px ;
+}
+.cvheader h1{
+	margin: 0;
+}
+.address{
+	background: #EFB73E;
+	color: #fff;
+	padding: 10px 0;
+}
+.cvbody{
+	padding-top: 50px;
+}
+.cbox{
+	margin-bottom: 30px;
+	color: #FFF;
+	padding: 50px;
+}
+.green{
+	background: #1B6D85;
+}
+.orange{
+	background: orange;
+}
+.red{
+	background: #dd4814;
+}
+.bbox{
+	border: 1px solid #DFDFDF;
+	border-radius:5px ;
+	margin-bottom:30px ;
+	padding: 50px;
+}
+.footer{
+	margin: 30px 0 30px;
+	padding: 50px;
+	background: #CCC;
+	color: #FFF;
+}
