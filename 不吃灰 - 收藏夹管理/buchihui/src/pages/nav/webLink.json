@@ -1,0 +1,206 @@
+[
+  {
+    "category": "search",
+    "categoryName": "搜索",
+    "list": [
+      {
+        "name": "百度",
+        "icon": "baidu",
+        "Alt": "百度",
+        "description": "百度，最大的搜索引擎",
+        "queryUrl": "http://www.baidu.com/s?wd="
+      },
+      {
+        "name": "知乎",
+        "icon": "zhihu",
+        "Alt": "知乎Alt",
+        "description": "知乎，分享你的知识",
+        "queryUrl": "https://www.zhihu.com/search?type=content&q="
+      },
+      {
+        "name": "谷歌",
+        "icon": "Google",
+        "Alt": "谷歌",
+        "description": "知乎，分享你的知识",
+        "queryUrl": "http://www.google.com/search?q="
+      },
+      {
+        "name": "必应",
+        "icon": "必应",
+        "Alt": "必应",
+        "description": "必应搜索",
+        "queryUrl": "http://www.bing.com/search?q="
+      },
+      {
+        "name": "搜狗",
+        "icon": "搜狗",
+        "Alt": "搜狗",
+        "description": "搜狗",
+        "queryUrl": "https://www.sogou.com/sogou?query="
+      },
+      {
+        "name": "duckduckgo",
+        "icon": "duckduckgo",
+        "Alt": "duckduckgo",
+        "description": "duckduckgo",
+        "queryUrl": "https://duckduckgo.com/?q="
+      }
+    ]
+  },
+  {
+    "category": "codeing",
+    "categoryName": "编程",
+    "list": [
+      {
+        "name": "掘金",
+        "icon": "juejin",
+        "Alt": "juejin",
+        "description": "juejin",
+        "queryUrl": "https://juejin.im/search?query="
+      },
+      {
+        "name": "Stackoverflow",
+        "icon": "stackoverflow",
+        "Alt": "stackoverflow ",
+        "description": "stackoverflow ",
+        "queryUrl": "https://stackoverflow.com/search?q="
+      },
+      {
+        "name": "GitHub",
+        "icon": "GitHub",
+        "Alt": "GitHub ",
+        "description": "GitHub ",
+        "queryUrl": "https://github.com/search?q="
+      },
+      {
+        "name": "SegmentFault",
+        "icon": "SegmentFault",
+        "Alt": "SegmentFault",
+        "description": "SegmentFault  ",
+        "queryUrl": "https://segmentfault.com/search?q="
+      },
+      {
+        "name": "语雀",
+        "icon": "yuque",
+        "Alt": "yuque",
+        "description": "yuque  ",
+        "queryUrl": "https://www.yuque.com/search?type=content&scope=%2F&tab=public&p=1&q="
+      }
+    ]
+  },
+  {
+    "category": "social",
+    "categoryName": "社区",
+    "list": [
+      {
+        "name": "搜狗知乎",
+        "icon": "baidu",
+        "Alt": "百度",
+        "description": "juejin",
+        "queryUrl": "https://zhihu.sogou.com/zhihu?query="
+      },
+      {
+        "name": "豆瓣",
+        "icon": "zhihu",
+        "Alt": "搜狗知乎Alt",
+        "description": "搜狗知乎",
+        "queryUrl": "https://www.douban.com/search?q="
+      },
+      {
+        "name": "微博搜索",
+        "icon": "zhihu",
+        "Alt": "搜狗知乎Alt",
+        "description": "搜狗知乎",
+        "queryUrl": "http://s.weibo.com/weibo/="
+      },
+      {
+        "name": "Quora",
+        "icon": "Quora",
+        "Alt": "Quora",
+        "description": "Quora",
+        "queryUrl": "https://www.quora.com/search?q="
+      }
+    ]
+  },
+  {
+    "category": "video",
+    "categoryName": "视频",
+    "list": [
+      {
+        "name": "YouTube",
+        "icon": "YouTube",
+        "Alt": "YouTube",
+        "description": "YouTube",
+        "queryUrl": "http://youtube.com/results?q="
+      },
+      {
+        "name": "哔哩哔哩",
+        "icon": "bilibili",
+        "Alt": "bilibili",
+        "description": "bilibili",
+        "queryUrl": "https://search.bilibili.com/all?keyword="
+      },
+      {
+        "name": "爱奇艺",
+        "icon": "iqiyi",
+        "Alt": "iqiyi",
+        "description": "iqiyi",
+        "queryUrl": "https://so.iqiyi.com/so/q_"
+      }
+    ]
+  },
+  {
+    "category": "english",
+    "categoryName": "词典",
+    "list": [
+      {
+        "name": "科林斯词典",
+        "icon": "科林斯词典",
+        "Alt": "科林斯词典",
+        "description": "科林斯词典",
+        "queryUrl": "https://www.collinsdictionary.com/zh/dictionary/english/"
+      },
+      {
+        "name": "海词词典",
+        "icon": "海词词典",
+        "Alt": "海词词典",
+        "description": "海词词典",
+        "queryUrl": "https://dict.cn/search?q="
+      }
+    ]
+  },
+  {
+    "category": "course",
+    "categoryName": "课程",
+    "list": [
+      {
+        "name": "coursera",
+        "icon": "coursera",
+        "Alt": "coursera",
+        "description": "coursera",
+        "queryUrl": "https://www.coursera.org/search?query=react"
+      },
+      {
+        "name": "edx",
+        "icon": "edx",
+        "Alt": "edx",
+        "description": "coursera",
+        "queryUrl": "https://www.edx.org/course?search_query="
+      },
+      {
+        "name": "网易公开课",
+        "icon": "网易公开课",
+        "Alt": "网易公开课",
+        "description": "网易公开课",
+        "queryUrl": "https://open.163.com/newview/search/Ted?query="
+      },
+      {
+        "name": "网易云课堂",
+        "icon": "网易云课堂",
+        "Alt": "网易云课堂",
+        "description": "网易云课堂",
+        "queryUrl": "https://study.163.com/courses-search?keyword="
+      }
+    ]
+  }
+]
