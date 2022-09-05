@@ -1,0 +1,24 @@
+.bi
+  background-color currentColor
+  display inline-block
+  mask-size 1em 1em
+  mask-repeat no-repeat
+  mask-position center
+
+  &::before
+    display inline-block
+    content ''
+    width 1em
+
+for icon in pencil plus-lg trash chevron-left plus-circle inbox x-lg
+  $icon-path = '../../node_modules/bootstrap-icons/icons/' + icon + '.svg'
+
+  .bi-{icon}
+    mask-image url($icon-path)
+
+.bi-fw
+  font-size: 1rem
+  mask-size: 1.513333em
+
+  &::before
+    width: 1.513333em

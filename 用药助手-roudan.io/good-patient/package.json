@@ -1,0 +1,31 @@
+{
+  "name": "good-patient",
+  "version": "0.1.4",
+  "scripts": {
+    "dev:vite": "vite",
+    "dev:sw": "esbuild sw/count-down.ts --outfile=public/count-down.js --watch --tsconfig=tsconfig.sw.json",
+    "build": "vite build && build/sw.js",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "bootstrap-icons": "^1.9.1",
+    "esbuild": "^0.15.6",
+    "lodash": "^4.17.21",
+    "pinia": "^2.0.21",
+    "tailwindcss": "^3.1.8",
+    "vue": "^3.2.38",
+    "vue-router": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.184",
+    "@vitejs/plugin-vue": "^3.0.3",
+    "autoprefixer": "^10.4.8",
+    "postcss": "^8.4.16",
+    "pug": "^3.0.2",
+    "stylus": "^0.59.0",
+    "typescript": "^4.8.2",
+    "vite": "^3.0.9",
+    "vite-plugin-pwa": "^0.12.4",
+    "workbox-window": "^6.5.4"
+  }
+}
