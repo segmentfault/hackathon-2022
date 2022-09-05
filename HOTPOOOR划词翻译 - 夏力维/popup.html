@@ -1,0 +1,54 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>文档·HOTPOOR划词翻译Beta</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 320px;
+            height: 480px;
+        }
+        img{
+            height: 60px;
+        }
+        .doc{
+            font-size: 12px;
+        }
+        .doc_show{
+            width: 100%;
+            height: 400px;
+            overflow-y: auto;
+        }
+        .doc_main{
+            padding: 10px;
+            outline: none;
+        }
+        .section{
+            min-height: 14px;
+            line-height: 16px;
+            outline: none;
+            padding: 5px;
+        }
+        .current_here{
+            box-shadow: -3px 0px 0px #000;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <img src="http://www.hotpoor.com/static/img/translate.png">
+    <script src="js/doc.js"></script>
+    <div class="doc_list" style="display: none;"></div>
+    <div class="doc_show" style="">
+        <div class="doc_top">
+            <div class="doc_home"></div>
+            <div class="doc_title"></div>
+            <div class="doc_setting"></div>
+        </div>
+        <div class="doc_main" contenteditable="true"></div>
+    </div>
+</body>
+</html>
