@@ -1,0 +1,34 @@
+{{- if .Values.storageClass.enabled }}
+{{- if .Values.backend.lvm }}
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: cinder-csi-lvm
+provisioner: cinder.metal.csi
+allowVolumeExpansion: {{ .Values.storageClass.allowVolumeExpansion }}
+parameters:
+  type: lvm
+{{- end }}
+{{- if .Values.backend.local }}
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: cinder-csi-local
+provisioner: cinder.metal.csi
+allowVolumeExpansion: {{ .Values.storageClass.allowVolumeExpansion }}
+parameters:
+  type: local
+{{- end }}
+{{- if .Values.backend.ceph }}
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: cinder-csi-rbd
+provisioner: cinder.metal.csi
+allowVolumeExpansion: {{ .Values.storageClass.allowVolumeExpansion }}
+parameters:
+  type: rbd
+{{- end }}
+{{- end }}

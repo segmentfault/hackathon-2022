@@ -1,0 +1,10 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: cinder-metal-csi-rbd
+  namespace: kube-system
+provisioner: cinder.metal.csi
+parameters:
+  cinderVolumeType: rbd
+  csi.storage.k8s.io/node-stage-secret-name: cinder-metal-csi-rbd
+  csi.storage.k8s.io/node-stage-secret-namespace: kube-system

@@ -1,0 +1,64 @@
+name: Generate Chart Readme
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'charts/**/values.yaml'
+env:
+  RUN_README: 1
+
+jobs:
+  generate-chart-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout kungze/readme-generator-for-helm
+        uses: actions/checkout@v2
+        with:
+          repository: 'kungze/readme-generator-for-helm'
+          ref: 'kungze'
+          path: readme-generator-for-helm
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('readme-generator-for-helm/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+      - name: Install readme-generator-for-helm dependencies
+        run: cd readme-generator-for-helm && npm install
+
+      - name: Checkout cinder-metal-csi/charts
+        uses: actions/checkout@v2
+        with:
+          path: charts
+
+      - name: Get list of files with changes in Pull Request
+        id: pr-file-changes
+        uses: trilom/file-changes-action@v1.2.4
+        with:
+          fileOutput: ' '
+
+      - name: Prepare readme-generator-for-helm inputs
+        run: |
+          cat $HOME/files.txt | tr " " "\n" | grep \/values\\.yaml > raw-inputs
+          cat raw-inputs | sed 's/values.yaml/README.md/' >> raw-inputs
+          cat raw-inputs | sed 's/charts/charts\/charts/' > prepared-inputs
+          echo `cat prepared-inputs |grep README | wc -l` >> $RUN_README
+      - name: Execute readme-generator-for-helm
+        if: ${{ env.RUN_README == 1 }}
+        run: readme-generator-for-helm/bin/index.js -v $(cat prepared-inputs | grep values) -r $(cat prepared-inputs | grep README) -s values.schema.json
+
+      - name: Output generated README.md
+        if: ${{ env.RUN_README == 1 }}
+        run: cat $(cat prepared-inputs | grep README)
+
+      - name: Output gererated values.schema.json
+        if: ${{ env.RUN_README == 1 }}
+        run: cat values.schema.json

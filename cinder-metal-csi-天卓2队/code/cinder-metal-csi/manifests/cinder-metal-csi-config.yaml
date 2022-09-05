@@ -1,0 +1,25 @@
+kind: Secret
+apiVersion: v1
+metadata:
+  name: cinder-metal-csi-config
+  namespace: kube-system
+stringData:
+  cloud.conf: |
+    [Global]
+    username = kubernetes
+    password = ChangeMe
+    user-domain-name = default
+    project-domain-name = default
+    project-name = kubernetes
+    tenant-name = kubernetes
+    # Replace this value with correct keystone url
+    auth-url = http://keystone-api.test-glance.svc.cluster.local:5000/v3
+    region = RegionOne
+    endpoint-type = internal
+
+    [BlockStorage]
+    # The value is same with cinder's configuration
+    auth-strategy = keystone
+    # Replace this value with correct cinder api url
+    cinder-listen-addr = http://cinder-api.test-glance.svc.cluster.local:8776/v3
+    node-volume-attach-limit = 110

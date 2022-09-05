@@ -1,0 +1,124 @@
+{
+    "title": "Chart Values",
+    "type": "object",
+    "properties": {
+        "cloud": {
+            "type": "object",
+            "properties": {
+                "authStrategy": {
+                    "form": true,
+                    "type": "string",
+                    "description": "The strategy to use for authentication",
+                    "title": "Cloud AuthStrategy",
+                    "default": "keystone"
+                },
+                "username": {
+                    "form": true,
+                    "type": "string",
+                    "description": "Keystone authentication username",
+                    "title": " Cloud Username",
+                    "default": "admin"
+                },
+                "password": {
+                    "form": true,
+                    "type": "string",
+                    "description": "Keystone authentication password",
+                    "title": "Cloud Password",
+                    "default": "o2DkgbcwDZ"
+                },
+                "tenantName": {
+                    "form": true,
+                    "type": "string",
+                    "description": "Keystone authentication tenantName",
+                    "title": "Cloud TenantName",
+                    "default": "admin"
+                },
+                "authUrl": {
+                    "form": true,
+                    "type": "string",
+                    "description": "Keystone authentication authUrl",
+                    "title": "Cloud AuthURL",
+                    "default": "http://keystone-api.default.svc.cluster.local:5000/v3"
+                },
+                "cinderListenAddr": {
+                    "form": true,
+                    "type": "string",
+                    "description": "Cinder api listen addr",
+                    "title": "Cloud Cinder Listen Addr",
+                    "default": ""
+                }
+            }
+        },
+        "backend": {
+            "type": "object",
+            "properties": {
+                "lvm": {
+                    "form": true,
+                    "type": "boolean",
+                    "description": "Enable lvm storage backend",
+                    "title": "Enable LVM Backend",
+                    "default": true
+                },
+                "local": {
+                    "form": true,
+                    "type": "boolean",
+                    "description": "Enable local storage backend",
+                    "title": "Enable Local Backend",
+                    "default": true
+                },
+                "ceph": {
+                    "form": true,
+                    "type": "boolean",
+                    "description": "Enable ceph storage backend",
+                    "title": "Enable Ceph Backend",
+                    "default": true
+                }
+            }
+        },
+        "ceph": {
+            "type": "object",
+            "properties": {
+                "keyringName": {
+                    "form": true,
+                    "type": "string",
+                    "description": "The cinder-metal-csi mount ceph secrets name",
+                    "title": "Ceph Secrets Name",
+                    "default": "cinder-volume-rbd-keyring"
+                },
+                "keyring": {
+                    "form": true,
+                    "type": "string",
+                    "description": "The user keyring using the Ceph pool",
+                    "title": "Ceph Secrets Data",
+                    "default": "W2NsaWVudC5hZG1pbl0Ka2V5ID0gQVFBc3hjOWlwVTFFTGhBQWY5elpLWnZ5VlBMTmV2MVhrRVdlS2c9PQo="
+                },
+                "monAddr": {
+                    "form": true,
+                    "type": "string",
+                    "description": "The ceph cluster monitors service address",
+                    "title": "Ceph Monitors Address",
+                    "default": "10.111.43.63:6789"
+                }
+            }
+        },
+        "storageClass": {
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "form": true,
+                    "type": "boolean",
+                    "description": "Whether to create storageClass",
+                    "title": "Create StorageClass",
+                    "default": true
+                },
+                "allowVolumeExpansion": {
+                    "form": true,
+                    "type": "boolean",
+                    "description": "Set up the storageClass allowVolumeExpansion",
+                    "title": "StorageClass allowVolumeExpansion",
+                    "default": true
+                }
+            }
+        }
+    }
+}
