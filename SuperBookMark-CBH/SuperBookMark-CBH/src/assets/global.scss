@@ -1,0 +1,352 @@
+@import '@/assets/variables.scss';
+@import '@/assets/custom-animate.scss';
+
+/* reset default */
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+ul,
+li,
+ol,
+dl,
+dd,
+dt,
+nav,
+main,
+title,
+aside,
+footer,
+section {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    '微软雅黑', Arial, sans-serif;
+  background: #262636;
+}
+textarea {
+  font-family: Roboto, sans-serif, 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+}
+
+/* 浮动 */
+.clear {
+  zoom: 1;
+}
+.clear:after {
+  content: '';
+  clear: both;
+  display: table;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+
+/* 溢出省略号 */
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn {
+  position: relative;
+  padding: 8px 16px;
+  font-family: Roboto, sans-serif, 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  color: $color-dark;
+  background: $color-white;
+  border: 1px solid $color-grey4;
+  outline: none;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  margin: 0 8px;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.1s;
+  user-select: none;
+  &:hover {
+    filter: drop-shadow(0 2px 8px rgba($color-grey4, 0.48));
+  }
+  &.btn-small {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  &.btn-large {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px;
+  }
+  &.btn-radius {
+    border-radius: 4px;
+  }
+  &.btn-text {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #787992;
+    &:hover {
+      background: #e8e8ee;
+      filter: none;
+    }
+  }
+
+  $colors: (
+    primary: $color-primary,
+    success: $color-success,
+    warning: $color-warning,
+    danger: $color-danger,
+    info: $color-grey3
+  );
+  @each $key, $theme in $colors {
+    &.btn-#{$key} {
+      color: $color-white;
+      background: $theme;
+      border: none;
+      &:hover {
+        filter: drop-shadow(0 2px 8px rgba($theme, 0.32));
+      }
+    }
+    &:disabled,
+    &[disabled='true'] &[loading='true'] {
+      &.btn-#{$key} {
+        color: $color-white;
+        background: lighten($theme, 20);
+        border: none;
+      }
+      &:hover {
+        cursor: not-allowed;
+        filter: none;
+      }
+    }
+    &[loading='true'] {
+      pointer-events: none !important;
+      &:after {
+        content: ' ';
+        display: block;
+        width: 1em;
+        height: 1em;
+        box-sizing: border-box;
+        border-radius: 50%;
+        border: 0.2em solid currentColor;
+        border-left-color: transparent;
+        margin-left: 0.3em;
+        animation: spin-loading 1s infinite linear;
+      }
+    }
+  }
+}
+
+@keyframes spin-loading {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  min-width: 320px;
+}
+
+.flex-center-y {
+  @include flex-center-y;
+}
+
+.flex-center-x {
+  @include flex-center-x;
+}
+
+.flex-center {
+  @include flex-center;
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+// reset element
+.el-form-item--small.el-form-item {
+  margin-bottom: 20px;
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(10px);
+}
+
+/* Chrome滚动条 */
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  background: rgb(209, 204, 204);
+  background-clip: padding-box;
+}
+
+.scrollbar1 {
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #ddd;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #666;
+    border: none;
+    border-radius: none;
+  }
+}
+
+.form-row-control {
+  display: flex;
+  margin-bottom: 10px;
+  .label {
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-right: 8px;
+    width: 84px;
+    text-align: right;
+    line-height: 32px;
+  }
+  .content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.__menu__wrapper {
+  .__menu__item {
+    border-radius: 6px;
+    &:not(.title):hover {
+      color: rgb(31, 54, 128) !important;
+      background: rgba(31, 54, 128, 0.2) !important;
+    }
+    &.delete {
+      &:hover {
+        color: $color-danger !important;
+        background: rgba($color-danger, 0.2) !important;
+      }
+    }
+    &.title {
+      background: none;
+      cursor: default;
+      .__menu__item-icon {
+        display: none;
+      }
+      .__menu__item-label {
+        font-size: 12px !important;
+        color: $color-grey4 !important;
+        text-transform: uppercase;
+      }
+    }
+    .__menu__item-icon {
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+}
+
+.bookmark-config-dialog {
+  .el-radio {
+    margin-right: 12px;
+    margin-bottom: 2px !important;
+    line-height: 32px;
+  }
+}
+
+.milkdown .editor {
+  padding: 0.5rem !important;
+}
+
+.el-radio-group {
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+  font-size: 0;
+}
+
+.el-radio {
+  height: 32px;
+  margin-bottom: 0;
+}
+
+.el-color-dropdown__value {
+  width: 170px;
+}
+
+.auxiliary-tab {
+  .el-tabs__item {
+    user-select: none;
+  }
+}
+
+.standard-form {
+  .el-form-item__label {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+.tools-tips {
+  max-width: 320px;
+}
+
+.el-notification__content {
+  text-align: left;
+}
+
+.el-input__inner:focus,
+.el-textarea__inner:focus {
+  box-shadow: 0 0 0 2px rgba($color-primary, 0.2);
+}
+.el-color-picker__trigger {
+  border-radius: 0;
+}
+
+.vue-grid-item {
+  transition: none !important;
+}

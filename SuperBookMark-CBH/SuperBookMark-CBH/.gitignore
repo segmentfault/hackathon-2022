@@ -1,0 +1,12 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+crx
+install
+electron
+yarn-error.log
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
