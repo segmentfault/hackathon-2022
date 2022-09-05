@@ -1,0 +1,26 @@
+# quic-tun-client config
+
+# Client
+listen-on: "tcp:127.0.0.1:6500" # (default "tcp:127.0.0.1:6500")
+server-endpoint: "192.168.110.116:7501" # The address to connect to the QUIC-TUN server. (eg 192.168.xxx.xxx:7500)
+token-source-plugin: "Fixed" # (default "Fixed")
+token-source: "tcp:192.168.110.116:22" # (eg tcp:192.168.110.116:22)
+
+# TLS
+cert-file: "" # x509 certificate
+key-file: "" # TLS private key
+verify-remote-endpoint: false # (default false)
+ca-file: ""
+
+# RestfulAPI
+httpd-listen-on: "0.0.0.0:8086" # (default 0.0.0.0:8086)
+
+# LOG
+log-name: quictun-client # Logger's name
+log-development: false # Is it in development mode. If it is in development mode, it will DPanicLevel for stack traces.
+log-level: info # Log level, the priority from low to high is：debug, info, warn, error, dpanic, panic, fatal。
+log-format: console # The supported log output formats currently support console and json. console is actually text format.
+log-disable-caller: false # Whether to enable caller, if enabled, the file, function and line number where the call log is located will be displayed in the log
+log-disable-stacktrace: false # Whether to disable printing stack information at panic and above levels
+log-output-paths: ./quictun-client.log,stdout # Supports output to multiple outputs, separated by commas. Supports output to standard output (stdout) and files.
+log-error-output-paths: ./quictun-client.error.log # Zap internal (non business) error log output path, multiple outputs, separated by commas
