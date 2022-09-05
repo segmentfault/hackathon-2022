@@ -1,0 +1,100 @@
+.fl,
+.float-left {
+  float: left;
+}
+
+.fr,
+.float-right {
+  float: right;
+}
+
+.float-hidden {
+  overflow: hidden;
+}
+
+.clear {
+  clear: both;
+}
+
+.rel {
+  position: relative !important;
+}
+
+.abs {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed !important;
+  z-index: 3;
+}
+
+.sticky {
+  position: sticky !important;
+  z-index: 3;
+}
+
+.top {
+  top: 0;
+}
+
+.top50 {
+  top: 50%;
+}
+
+.left50 {
+  left: 50%;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+/* Vertical Align Helpers */
+.va-t {
+  vertical-align: top !important;
+}
+
+.va-m {
+  vertical-align: middle !important;
+}
+
+.va-tt {
+  vertical-align: text-top !important;
+}
+
+.va-tb {
+  vertical-align: text-bottom !important;
+}
+
+.va-b {
+  vertical-align: bottom !important;
+}
+
+.va-s {
+  vertical-align: super !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-justify {
+  text-align: justify;
+}

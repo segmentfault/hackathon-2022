@@ -1,0 +1,9 @@
+{
+  "triggers": [
+      {
+          "name": "endActivity",
+          "type": "timer",
+          "config": "0 00 01 * * * *"
+      }
+  ]
+}

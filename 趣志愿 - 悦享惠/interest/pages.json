@@ -1,0 +1,246 @@
+{
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [
+		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/change/change", 
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/tabbar/find/find", //首页
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/tabbar/tabbar-4/tabbar-4",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/tabbar/tabbar-5/tabbar-5",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "white"
+			}
+		}
+	],
+	"subPackages": [
+		{
+		  "root": "pagesA",
+		  "pages": [
+			{
+				"path": "signUp/success",
+				"style": {
+					"navigationStyle": "custom"
+				}
+			},
+			{
+				"path": "signUp/saveSccess",
+				"style": {
+					"navigationStyle": "custom"
+				}
+			},
+			{
+				"path": "signUp/release",
+				"style": {
+					"navigationStyle": "custom"
+				}
+			},
+			{
+				"path": "sign/sign",
+				"style": {
+					"navigationStyle": "custom"
+				}
+			},
+			{
+				"path": "data-center/data-center",
+				"style": {
+					"navigationStyle": "custom"
+				}
+			}, {
+				"path": "volunteer-demeanour/volunteer-demeanour",
+				"style": {
+					"navigationStyle": "custom"
+				}
+			}, {
+				"path": "vo-task/vo-task",
+				"style": {
+					"navigationStyle": "custom"
+				}
+	
+			}, {
+				"path": "list/list",
+				"style": {
+					"navigationStyle": "custom"
+				}
+	
+			}, {
+				"path": "achievement/achievement",
+				"style": {
+					"navigationStyle": "custom"
+				}
+	
+			},
+			{
+				"path": "signUp/active-success",
+				"style": {
+					"navigationStyle": "custom"
+				}
+			},
+			{
+				"path": "volunteer-demeanour/releaseVolunteer",
+				"style": {
+					"navigationStyle": "custom"
+				}
+			},
+			{
+				"path": "voTest/start",
+				"style": {
+					"navigationStyle": "custom"
+				}
+			},
+			{
+				"path": "voTest/testResults",
+				"style": {
+					"navigationStyle": "custom"
+				}
+			},
+			{
+				"path": "voTest/topic",
+				"style": {
+					"navigationStyle": "custom"
+				}
+			},
+			{
+				"path": "joinDetail/acList",
+				"style": {
+					"navigationStyle": "custom"
+				}
+			}, 
+			{
+				"path": "joinDetail/orList",
+				"style": {
+					"navigationStyle": "custom"
+				}
+			}
+		  ]
+		},
+		{
+			"root": "pagesB",
+			"pages":[
+				{
+					"path": "detail/or-detail",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				}
+				,  {
+					"path": "detail/volunteering/volunteering",
+					"style": {
+						"navigationStyle": "custom"
+					}
+		
+				}, {
+					"path": "or-home/or-home",
+					"style": {
+						"navigationStyle": "custom"
+					}
+		
+				}, {
+					"path": "f-active/f-active",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "detail/ac-detail",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "Editdata/Editdata",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},  {
+					"path": "service-time/service-time",
+					"style": {
+						"navigationStyle": "custom"
+					}
+		
+				}, {
+					"path": "mail-reply/mail-reply",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "detail/allMembers",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "detail/text",
+					"style": {
+						"navigationBarTextStyle": "black"
+					}
+				}
+			]
+		}
+	  ],
+	  "permission": {
+		"scope.userLocation": {
+		  "desc": "你的位置信息将用于小程序位置接口的效果展示"
+		}
+	  },
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"borderStyle": "white",
+		"backgroundColor": "#FFFFFF",
+		"color": "#828590",
+		"selectedColor": "#4575F6",
+		"list": [{
+				"pagePath": "pages/tabbar/find/find",
+				"iconPath": "static/img/bar/find2.png",
+				"selectedIconPath": "static/img/bar/find1.png",
+				"text": "发现"
+			},
+			{
+				"pagePath": "pages/tabbar/tabbar-4/tabbar-4",
+				"iconPath": "static/img/bar/2.png",
+				"selectedIconPath": "static/img/bar/map.png",
+				"text": "公益地图"
+			},
+			{
+				"pagePath": "pages/tabbar/tabbar-5/tabbar-5",
+				"iconPath": "static/img/bar/my2.png",
+				"selectedIconPath": "static/img/bar/my1.png",
+				"text": "我的"
+			}
+
+		]
+	},
+	"condition": {
+		//模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [{
+			"name": "test", //模式名称
+			"path": "pagesA/sign/sign", //启动页面，必选
+			"query": "" //启动参数，在页面的onLoad函数里面得到
+		}]
+	}
+
+}
