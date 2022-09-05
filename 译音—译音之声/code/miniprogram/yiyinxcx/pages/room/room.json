@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "视频人工翻译客服",
-  "usingComponents": {
-    "trtc-room": "/components/trtc-room/trtc-room"
-  },
-  "disableScroll": true
-}
