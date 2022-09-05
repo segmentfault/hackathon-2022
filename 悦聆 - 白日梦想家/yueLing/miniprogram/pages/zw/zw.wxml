@@ -1,0 +1,6 @@
+<!--pages/zw/zw.wxml-->
+<view>
+<button class="btn" type="primary" bindtap="onTap">
+  按钮文本
+</button>
+</view>

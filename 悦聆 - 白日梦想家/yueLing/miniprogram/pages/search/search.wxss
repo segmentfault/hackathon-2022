@@ -1,0 +1,29 @@
+.search{
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+.search-input {
+	box-sizing: border-box;
+	width: 690rpx;
+	height: 88rpx;
+	font-size: 28rpx;
+	margin: 30rpx;
+	background: #ffffff;
+	border-radius: 44rpx;
+	padding: 0 30rpx 0 66rpx;
+}
+.search-icon {
+	position: absolute;
+	width: 30rpx;
+	height: 30rpx;
+	left: 56rpx;
+	top: 60rpx;
+}
+.no-data {
+	color: #999;
+	text-align: center;
+  line-height: 400rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC, PingFangSC-Semibold;
+  font-weight: 600;
+}

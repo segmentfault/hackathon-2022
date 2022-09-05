@@ -1,0 +1,14 @@
+<view
+    class="record"
+    style="{{recordStyle}}"
+    bindtouchstart="recordSoundStart"
+    bindtouchend="recordSoundEnd"
+>
+  <image class="record__img"  src="../../images/record.png" style="{{recordImgStyle}}"/>
+  <view wx:if="{{underway}}">
+    <view class="record__ripple" style="{{recordRippleStyle}}"/>
+    <view class="record__ripple record__ripple-1" style="{{recordRippleStyle}}"/>
+    <view class="record__ripple record__ripple-2" style="{{recordRippleStyle}}"/>
+    <view class="record__ripple record__ripple-3" style="{{recordRippleStyle}}"/>
+  </view>
+</view>

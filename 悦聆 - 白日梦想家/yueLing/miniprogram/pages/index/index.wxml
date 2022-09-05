@@ -1,0 +1,30 @@
+<view class="index">
+	<view class="title">您是为谁设置提醒？</view>
+	<view  bindtap="onGetUserInfo">
+		 <button
+				 data-key="2"
+				 class="row {{curIndex === '2' ? 'active':''}}"
+				 hover-class="none"
+				
+		 >
+				<image class="avatar" src="../../images/myself.png"></image>
+				<view class="identity">
+					 自己
+				</view>
+		 </button>
+		 <view 	bindtap="onGetUserInfo">
+	<button
+			data-key="1"
+			class="row {{curIndex === '1' ? 'active':''}}"
+			hover-class="none"
+		
+		>
+			<image class="avatar" src="../../images/myself.png"></image>
+			<view class="identity">
+				他人
+			</view>
+		</button>
+		 </view>
+	
+	</view>
+</view>

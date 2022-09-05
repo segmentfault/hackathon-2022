@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "axios": "^0.27.2",
+    "axios-miniprogram-adapter": "^0.3.4"
+  }
+}

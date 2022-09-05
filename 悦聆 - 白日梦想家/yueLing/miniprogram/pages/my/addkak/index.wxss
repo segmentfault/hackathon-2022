@@ -1,0 +1,124 @@
+.addkak {
+	background: #f5f5f5;
+	min-height: 100vh;
+}
+.form {
+	margin: 30rpx;
+	background: #fff;
+	font-size: 36rpx;
+	padding: 0 30rpx;
+	border-radius: 16rpx;
+}
+.item {
+	position: relative;
+	height: 144rpx;
+	line-height: 144rpx;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	border-bottom: 1px solid #f2f2f2;
+}
+.item:last-child {
+	border-bottom-color: transparent;
+}
+.item__title {
+	color: #666;
+	float: left;
+	width: 160rpx;
+}
+
+.item__input {
+	position: absolute;
+	right: 100rpx;
+	height: 80rpx;
+	text-align: left;
+	font-weight: bold;
+	width: 350rpx;
+}
+.van-icon {
+	position: absolute !important;
+	right: 60rpx;
+	margin-top: -3rpx;
+	color: #000000;
+	font-weight: bold;
+}
+.picker {
+	position: absolute;
+	top: -36rpx;
+	width: 100rpx;
+	right: 250rpx;
+	text-align: left;
+	font-weight: bold;
+}
+.arrow{
+	position: absolute;
+	right: -100rpx;
+	top: 20rpx;
+	width: 36rpx;
+	height: 36rpx;
+}
+.btn-box {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100vw;
+	height: 100rpx;
+	position: fixed;
+	bottom: 32rpx;
+}
+.btn1 {
+	width: 280rpx;
+	height: 100rpx;
+	background: #002661;
+	font-size: 36rpx;
+	color: #fff;
+	text-align: center;
+	line-height: 100rpx;
+	border-radius: 50rpx;
+}
+.btn2 {
+	width: 280rpx;
+	height: 100rpx;
+	background: #00c7bd;
+	font-size: 36rpx;
+	color: #fff;
+	text-align: center;
+	line-height: 100rpx;
+	border-radius: 50rpx;
+}
+.pb10 {
+	padding-bottom: 10rpx;
+}
+.box {
+	display: flex;
+	height: 100rpx;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 40rpx;
+	font-weight: bold;
+}
+.box image {
+	width: 36rpx;
+	height: 36rpx;
+}
+.test {
+	display: flex;
+	align-items: center;
+	height: 48rpx;
+	color: #00c7bd;
+	font-size: 28rpx;
+	font-weight: bold;
+}
+.test image{
+	width: 48rpx;
+	height: 48rpx;
+	margin-right: 10rpx;
+}
+.address{
+	position: absolute;
+	right: 0;
+	top: 48rpx;
+	z-index: 10;
+	width: 78rpx;
+	height: 48rpx;
+}

@@ -1,0 +1,15 @@
+<view class="nav" style="padding-bottom: {{homeIndicatorHeight}}px">
+    <view class="nav__item" bindtap="jump" data-type="homeMenu">
+        <image
+            class="nav__img"
+            src="{{selected === 'home' ? '../../images/selected.png' : '../../images/unselect.png'}}"/>
+        <view class="nav__text {{selected === 'home' ?'active':''}}">首页</view>
+    </view>
+    <image bindtap="addMemo" class="nav__add" src="../../images/addIcon.png"/>
+    <view class="nav__item" bindtap="jump" data-type="myMenu">
+        <image
+            class="nav__img"
+            src="{{selected === 'my' ? '../../images/myselected.png' : '../../images/myunselect.png'}}"/>
+        <view class="nav__text {{selected === 'my' ?'active':''}}">我的</view>
+    </view>
+</view>

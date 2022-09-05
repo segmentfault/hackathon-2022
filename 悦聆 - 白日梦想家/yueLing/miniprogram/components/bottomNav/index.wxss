@@ -1,0 +1,43 @@
+.nav {
+	position: fixed;
+	bottom: 0;
+	background: #fff;
+	width: 100vw;
+	box-sizing: border-box;
+	display: flex;
+	min-height: 120rpx;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 100rpx;
+	padding-right: 100rpx;
+}
+.nav__item {
+	position: relative;
+	width: 100rpx;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	height: 80rpx;
+}
+.nav__item .active {
+	color: #00c7bd;
+}
+.nav__img {
+	width: 60rpx;
+	height: 60rpx;
+}
+.nav__add {
+	width: 112rpx;
+	height: 112rpx;
+	position: relative;
+	margin-top: -40rpx;
+	border-radius: 50%;
+	border: 10rpx solid #fff;
+}
+.nav__text {
+	font-size: 20rpx;
+	color: #333333;
+	width: 100rpx;
+	text-align: center;
+}

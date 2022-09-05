@@ -1,0 +1,22 @@
+<view class="wrap">
+    <view class="title">输入{{roleName}}的姓名？</view>
+    <input
+        value="{{name}}"
+        class="inputName"
+        bindinput="onInput"
+        placeholder="{{text}}"
+    />
+    <view class="errorTips" wx:if="{{showTip}}">{{text}}</view>
+    <!--如果是给他人设置提醒-->
+    <image wx:if="{{ roleType === '1' }}" class="next" bindtap="handleNext" src="../../images/next.png"/>
+    <!--如果是给自己设置提醒-->
+    <button
+        wx:else
+        class="next"
+        hover-class="none"
+        open-type="getPhoneNumber"
+        bindgetphonenumber="getPhoneNumber"
+    >
+      <image class="next__img" bindtap="handleNext" src="../../images/next.png"/>
+    </button>
+</view>

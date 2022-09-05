@@ -1,0 +1,40 @@
+<view class="index">
+	<scroll-view scroll-y="true" class="family-list">
+		<view 
+		bindtap="edit"
+		data-item="{{userInfo}}"
+		class="item">
+				<view class="left">
+					 <image class="head-icon" wx:if="{{item.wxAvatarUrl}}" src="{{item.wxAvatarUrl}}"></image>
+					<image src="../../../images/myself.png" />
+					<view class="left__info">
+						<view class="title">{{userInfo.nickName}}(本人)</view>
+						<view class="tel">{{userInfo.phone}}</view>
+					</view>
+				</view>
+				<view class="right">编辑</view>
+			</view>
+		<view
+				bindtap="edit"
+				data-item="{{item}}"
+				wx:for="{{familyList}}" wx:key="index">
+			<view class="item">
+				<view class="left">
+<!--					 如果有微信头像则用微信头像-->
+					 <image class="head-icon" wx:if="{{item.wxAvatarUrl}}" src="{{item.wxAvatarUrl}}"></image>
+					<image wx:elif="{{item.role === '妈妈' || item.role === '老妈'}}" src="../../../images/mother.png" />
+					<image wx:elif="{{item.role === '父亲'}}" src="../../../images/father.png" />
+					<image wx:else="{{item.role === 'myself'}}" src="../../../images/myself.png" />
+					<view class="left__info">
+						<view class="title">{{item.name}}  <view wx:if="{{item.role}}"> ({{item.role}})</view></view>
+						<view class="tel">{{item.phone}}</view>
+					</view>
+				</view>
+				<view class="right">编辑</view>
+			</view>
+		</view>
+		<view class="add-btn" bindtap='createFamily'>新增亲友</view>
+	</scroll-view>
+	 <image  bindtap="goOut" class="advice" src="../../../images/advice.png" />
+	<bottom-nav selected="my"></bottom-nav>
+</view>

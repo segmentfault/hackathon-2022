@@ -1,0 +1,176 @@
+/* miniprogram/pages/recordSound/recordSound.wxss */
+
+.wrap {
+  padding: 30rpx;
+  height: 100vh;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 114rpx;
+  border-bottom: 1px solid #f2f2f2;
+  color: #666666;
+}
+.picker {
+  display: flex;
+  align-items: center;
+  font-size: 36rpx;
+}
+.split{
+  width: 100%;
+  height: 1px;
+  opacity: 1;
+  background: #f2f2f2;
+}
+.reminder{
+  width: 690rpx;
+  opacity: 1;
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+.header,.middle{
+  height: 104rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.middle{
+  height: 144rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.text{
+  height: 36rpx;
+  opacity: 1;
+  font-size: 36rpx;
+  font-family: PingFangSC, PingFangSC-Medium;
+  font-weight: 500;
+  color: #222222;
+  line-height: 36rpx;
+}
+.label{
+  text-align: left;
+  color: #666666;
+}
+
+.value{
+  text-align: right;
+  color: #222222;
+}
+.content {
+  padding-bottom: 100rpx;
+}
+.content .label{
+  margin-top: 54rpx;
+  margin-bottom: 30rpx;
+}
+.contentText{
+  height: 304rpx;
+  opacity: 1;
+  font-size: 32rpx;
+  font-family: PingFangSC, PingFangSC-Semibold;
+  font-weight: 600;
+  text-align: left;
+  color: #999999;
+  line-height: 45rpx;
+  letter-spacing: 0px;
+  overflow: scroll;
+}
+.space{
+  margin-top: 30rpx;
+}
+.btn-list{
+  position: absolute;
+  width: 600rpx;
+  bottom: 40rpx;
+  right: 75rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn{
+  width: 280rpx;
+  height: 100rpx;
+  opacity: 0.4;
+  background: #00c7bd;
+  border-radius: 50rpx;
+
+  height: 100rpx;
+  opacity: 1;
+  font-size: 36rpx;
+  font-family: PingFangSC, PingFangSC-Medium;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff;
+  line-height: 100rpx;
+}
+.btn-list .btn-delete {
+  background: #002661;
+}
+.btn-list .wide {
+  width: 600rpx;
+}
+.tip {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #00c7bd;
+  font-weight: bold;
+  text-align: right;
+  position: absolute;
+  right: 70rpx;
+}
+.tip image {
+  width: 80rpx;
+  height: 80rpx;
+}
+.shadow {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  background: rgba(0,0,0,.5);
+}
+.dialog {
+  padding: 80rpx 0 120rpx 0;
+  position: fixed;
+  z-index: 4;
+  bottom: -540rpx;
+  width: 100vw;
+  left: 0;
+  background: rgba(255,255,255,0.80);
+  border-radius: 36px 36px 0px 0px;
+  backdrop-filter: blur(30px);
+}
+.dialog__text {
+  font-size: 36rpx;
+  text-align: center;
+  color: #222222;
+  line-height: 36rpx;
+  margin-top: 20rpx;
+}
+.textarea {
+  font-weight: bold;
+  font-size: 36rpx;
+}
+.placeholder-class {
+  font-weight: normal;
+}

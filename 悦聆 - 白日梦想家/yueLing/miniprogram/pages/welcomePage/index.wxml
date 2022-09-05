@@ -1,0 +1,12 @@
+<view class="memo">
+	 <image class="bg" src="../../images/welcome.png"></image>
+	 <!-- <button
+	 		open-type="getPhoneNumber"
+			 bindgetphonenumber="getPhoneNumber"
+			 class="btn"
+	 >开始体验</button> -->
+	 <button
+	 		bindtap="start"
+			 class="btn"
+	 >开始体验</button>
+</view>

@@ -1,0 +1,12 @@
+<view class="index">
+	 <view class="card">
+			<image src="../../../images/myself.png" />
+			<view>张三</view>
+	 </view>
+	 <view class="list">
+			<view class="list__item">
+				 <text>我的声音</text>
+				 <image src="../../../images/arrow.png" />
+			</view>
+	 </view>
+</view>

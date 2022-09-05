@@ -1,0 +1,9 @@
+{
+  "triggers": [
+      {
+          "name": "deleteID",
+          "type": "timer",
+          "config": "0 59 23 * * * *"
+      }
+  ]
+}

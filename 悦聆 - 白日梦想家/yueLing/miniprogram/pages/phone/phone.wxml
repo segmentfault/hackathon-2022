@@ -1,0 +1,10 @@
+<view class="wrap">
+	<view class="title">{{nickName}}的电话号码是？</view>
+	<input class="inputName" bindinput="onInput" placeholder="请输入或选择电话号码"
+		value="{{phone}}" />
+	<image bindtap="choose" class="address" src="../../images/addresslist.png"></image>
+	<view class="errorTips" wx:if="{{showTip}}">请输入正确11位手机号码</view>
+	<button class="next-btn" hover-class="none" bindtap="handleNext">
+		<image class="next" src="../../images/next.png"></image>
+	</button>
+</view>

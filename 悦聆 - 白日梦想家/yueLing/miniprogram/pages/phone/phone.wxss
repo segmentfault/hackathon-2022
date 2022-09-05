@@ -1,0 +1,57 @@
+/* miniprogram/pages/phone/phone.wxss *//* miniprogram/pages/appellation/appellation.wxss */
+.wrap{
+  padding: 36rpx;
+}
+.title{
+  height: 40rpx;
+  opacity: 1;
+  font-size: 40rpx;
+  font-family: PingFangSC, PingFangSC-Semibold;
+  font-weight: 600;
+  text-align: left;
+  color: #222222;
+  line-height: 40rpx;
+  margin-bottom: 60rpx;
+}
+.inputName{
+  font-weight: bold;
+  height: 128rpx;
+  opacity: 1;
+  color: #222222;
+  background: #f5f5f5;
+  border-radius: 90rpx;
+  padding:0 80rpx;
+  text-align: center;
+  caret-color: #00c7bd;
+}
+.next-btn {
+  width: 280rpx;
+  height: 280rpx;
+  position: absolute;
+  bottom: 88rpx;
+  right: 235rpx;
+  padding: 0;
+}
+.next{
+  width: 280rpx;
+  height: 280rpx;
+}
+.errorTips{
+  height: 28rpx;
+  opacity: 1;
+  font-size: 28rpx;
+  font-family: PingFangSC, PingFangSC-Medium;
+  font-weight: 500;
+  text-align: center;
+  color: #ff0000;
+  line-height: 28rpx;
+  margin-top: 30rpx;
+}
+.address{
+  position: absolute;
+  right: 70rpx;
+  top: 176rpx;
+  z-index: 10;
+  width: 78rpx;
+  height: 48rpx;
+}

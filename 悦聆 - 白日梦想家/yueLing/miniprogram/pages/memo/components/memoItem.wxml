@@ -1,0 +1,30 @@
+<view class="item" bindtap="onTap">
+  <view class="item_title">
+    <view>
+      <text class="item__type {{item.isfinish ? 'c-ccc' : ''}}">{{item.title}}</text>
+    </view>
+    <view>
+      <image wx:if="{{ item.isfinish }}" class="jt" src="../../../images/tz.png" />
+      <image wx:else class="jt" src="../../../images/arrow.png" />
+    </view>
+  </view>
+  <view bindtap="jump0" class="item__content {{item.isfinish ? 'c-ccc' : ''}}">{{item.content}}</view>
+  <view class="item__info">
+    <view class="box" bindtap="jump0">
+      <view>
+        <text class="{{item.isfinish ? 'c-ccc' : ''}}">设置者：</text>
+        <text class="{{item.isfinish ? 'c-ccc' : ''}}">{{item.initiator?item.initiator:'本人'}}</text>
+      </view>
+      <view>
+        <text class="{{item.isfinish ? 'c-ccc' : ''}}" wx:if="{{item.needRemind}}">提醒时间：</text>
+        <text class="{{item.isfinish ? 'c-ccc' : ''}}" wx:if="{{item.needRemind}}">{{item.remindTimeDate}}</text>
+      </view>
+    </view>
+    <image bindtap="text" class="audio_icon" src="../../../images/audio.png" />
+  </view>
+     <audio src="{{src}}" id="1" ></audio>
+  <!-- <view class="item__finish" wx:if="{{ item.isfinish }}">
+    <image class="item__finish-img" src="../../../images/wc.png"></image>
+    <text>已完成</text>
+  </view> -->
+</view>

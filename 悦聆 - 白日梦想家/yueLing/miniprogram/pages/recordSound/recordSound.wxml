@@ -1,0 +1,11 @@
+<view class="wrap">
+  <view class="title top">录入亲人声音</view>
+  <view class="title">TA将听到亲人的来电</view>
+  <input-voice bind:change="change" bind:setAudio="getAudio" size="400"></input-voice>
+  <view class="recordText">长按录音</view>
+  <view class="imgWrap topClass" >
+    <textarea cols="30" rows="3" placeholder="请录音，比如“爸，你的降压药该吃了，一次两片”。" value='{{soundMessage}}'
+     data-value='{{soundMessage}}' bindinput="bindSoundMessage" style='height:80px'></textarea>
+  </view>
+  <image class="next" bindtap="handleNext" src="../../images/next.png"></image>
+</view>

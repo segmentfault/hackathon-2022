@@ -1,0 +1,100 @@
+<view class="wrap">
+  <view class="reminder">
+    <view class="header">
+      <view class="text label">标题</view>
+      <view class="text value">
+        <input value='{{memo.title}}' disabled='{{changeState}}' bindinput="bindTitle"  placeholder='请输入标题'/></view>
+    </view>
+    <view class="split"></view>
+    <view class="content">
+      <view class="text label">内容</view>
+      <textarea
+          value="{{memo.content}}"
+          class="textarea"
+          disabled="{{changeState}}"
+          placeholder-class="placeholder-class"
+          name="" id="" cols="30" rows="10" placeholder="请输入内容，比如“爸，你的降压药该吃了，一次两片”。" style='height:80px' bindinput="bindContent"></textarea>
+      <view class="tip"  bindtap="openDailog">
+        <image src="../../images/record.png"></image>
+        语音输入？
+      </view>
+    </view>
+  </view>
+  <view class="reminder">
+    <view class='item space'>
+      <view class="text label">设置提醒</view>
+      <view>
+        <van-switch
+            disabled="{{changeState}}"
+            checked="{{ memo.needRemind }}"
+            active-color="#00C7BD"
+            size="22px"
+            bindchange="onChange"
+        />
+      </view>
+    </view>
+    <view class="item" wx:if="{{memo.needRemind}}">
+      <text>被提醒人</text>
+      <view class="row">
+        <picker
+            disabled="{{changeState}}"
+            range="{{family}}"
+            bindchange="bindRemindPersonChange"
+            value="{{memberIndex}}"
+            range-key="name"
+            class="picker"
+        >
+          <text class="picker">{{memberIndex === null ? memo.remindPerson?memo.remindPerson:'请选择' : family[memberIndex].name}}</text>
+        </picker>
+        <van-icon name="arrow" size="18px" />
+      </view>
+    </view>
+  
+    <view class="item" wx:if="{{memo.needRemind}}">
+      <view>提醒时间</view>
+      <view class="row">
+        <picker
+            disabled="{{changeState}}"
+            bindtap="clickSelectTime"
+            mode="multiSelector"
+            bindchange="bindMultiPickerChange"
+            bindcolumnchange="bindMultiPickerColumnChange"
+            value="{{multiIndex}}"
+            range="{{multiArray}}"
+        >
+          {{time}}
+          <view class="triangle_border_down"> </view>
+        </picker>
+        <van-icon name="arrow" size="18px" />
+        <!--        <view class="text value">3月26日 9:00</view>-->
+        <!-- <van-icon name="arrow" size="18px" /> -->
+      </view>
+    </view>
+  </view>
+  <view class="btn-list" style="bottom: {{18 + homeIndicatorHeight}}px">
+    <view bindtap="handleDelete" class="btn btn-delete wide" wx:if="{{type === 'edit'}}">删除</view>
+ <view  
+        wx:if="{{!(type === 'edit')}}"
+        bindtap="jump"
+        class="btn {{type === 'create'?'wide':''}}"
+    >新建备忘录</view>
+    <!-- 
+      保存，新建按钮
+      <view
+        bindtap="jump"
+        class="btn {{type === 'create'?'wide':''}}"
+    >{{type === 'edit'? '保存': '新建备忘录'}}</view> -->
+  </view>
+  <hint-dialog
+    wx:if="{{showDialog}}"
+    title="确认删除该备忘录？"
+    bind:cancel="handleCancel"
+    bind:confirm="handleConfirm"
+  />
+  <view wx:if="{{showShadow}}" class="shadow" id="shadow" bindtap="closeDialog">
+  </view>
+  <view class="dialog" id="dialog">
+    <input-voice  bind:setAudio="getAudio" bind:change="change" size="280" bind:stop="stop"></input-voice>
+    <view class="dialog__text">请开始说话</view>
+  </view>
+</view>

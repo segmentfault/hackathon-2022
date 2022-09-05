@@ -1,0 +1,71 @@
+.index {
+	background: #f5f5f5;
+	min-height: 100vh;
+}
+.box {
+	background: #fff;
+	height: 145rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 40rpx;
+	color: #666666;
+	box-sizing: border-box;
+	margin: 30rpx;
+	border-radius: 16rpx;
+	font-size: 36rpx;
+	font-weight: bold;
+}
+.box .text {
+	color: #333;
+}
+.body {
+	background: #ffffff;
+	box-sizing: border-box;
+	margin: 30rpx;
+	border-radius: 16rpx;
+	padding: 40rpx;
+}
+.body .text1 {
+	font-size: 36rpx;
+	font-weight: bold;
+	color: #666666;
+}
+.body .image1{
+	margin-left: 105rpx;
+	width: 400rpx;
+	height: 400rpx;
+}
+.body .text2 {
+	text-align: center;
+	font-size: 36rpx;
+	font-weight: bold;
+}
+.body .text3 {
+	box-sizing: border-box;
+	width: 400rpx;
+	margin-left: 105rpx;
+	font-weight: bold;
+	opacity: 1;
+	font-size: 28rpx;
+	color: #999999;
+	text-align: center;
+	border: 2rpx solid #cccccc;
+	border-radius: 42rpx;
+	padding: 20rpx 20rpx;
+	margin-top: 50rpx;
+}
+.add-btn {
+	width: 600rpx;
+	height: 100rpx;
+	opacity: 1;
+	background: #00c7bd;
+	font-size: 36rpx;
+	color: #fff;
+	text-align: center;
+	line-height: 100rpx;
+	border-radius: 50rpx;
+	margin-left: 75rpx;
+	position: fixed;
+	bottom: 100rpx;
+}

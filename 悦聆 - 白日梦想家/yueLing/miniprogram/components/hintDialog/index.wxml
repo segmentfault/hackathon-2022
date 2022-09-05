@@ -1,0 +1,10 @@
+<view bindtap="clickMask" class="dialog-mask">
+<view class="dialogBox" >
+<text class="dialog-title">提示</text>
+<text class="dialog-content">{{title}}</text>
+<view class="dialog-bottom">
+  <view class="dialog-bottom-btn cancel" bindtap="cancel">取消</view>
+  <view class="dialog-bottom-btn confirm" bindtap="confirm">确认</view>
+</view>
+</view>
+</view>

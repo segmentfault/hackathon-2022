@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/login/index",
+    "pages/memo/index",
+    "pages/welcomePage/index",
+    "pages/reminder/reminder",
+    "pages/phone/phone",
+    "pages/recordSound/recordSound",
+    "pages/point/point",
+    "pages/recordReco/recordReco",
+    "pages/index/index",
+    "pages/my/myVoice/index",
+    "pages/my/addkak/index",
+    "pages/my/kithAndKin/index",
+    "pages/my/index/index",
+    "pages/sendTlsVoice/sendTlsVoice",
+    "pages/appellation/appellation",
+    "pages/search/search",
+    "pages/zw/zw",
+    "pages/out/out"
+  ],
+  "tabBar": {
+    "custom": true,
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/memo/index"
+      },
+      {
+        "pagePath": "pages/my/kithAndKin/index"
+      }
+    ]
+  },
+  "window": {
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "关怀备忘录",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "input-voice": "components/inputVoice/index",
+    "bottom-nav": "components/bottomNav/index",
+    "hint-dialog": "components/hintDialog/index"
+  },
+  "sitemapLocation": "sitemap.json",
+  "plugins": {
+    "WechatSI": {
+      "version": "0.3.1",
+      "provider": "wx069ba97219f66d99"
+    },
+    "QCloudAIVoice": {
+      "version": "1.3.0",
+      "provider": "wx3e17776051baf153"
+    }
+  }
+}

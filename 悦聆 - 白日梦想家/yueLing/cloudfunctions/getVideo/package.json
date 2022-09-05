@@ -1,0 +1,17 @@
+{
+  "name": "notifiaction",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "crypto-js": "^4.0.0",
+    "tencentcloud-sdk-nodejs": "^4.0.84",
+    "wx-server-sdk": "~2.3.2"
+  }
+}

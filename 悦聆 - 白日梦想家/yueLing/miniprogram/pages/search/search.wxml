@@ -1,0 +1,17 @@
+<!--miniprogram/pages/search.wxml-->
+<view class="search">
+  <view>
+    <image class="search-icon" src="../../images/search.png"></image>
+    <input class="search-input" type="text" placeholder="请输入关键词" confirm-type="search" bindconfirm="search" />
+  </view>
+  <scroll-view scroll-y="true"
+  bindscrolltolower="handleGetMore" class="memo-list">
+    <memoItem item="{{item}}" bindonTap="jump1" wx:for="{{memoList}}" data-item="{{item}}" wx:key="index"></memoItem>
+    <view wx:if="{{!memoList.length}}" class="no-data">
+      暂无日程，快去添加吧～
+    </view>
+    <view class="loading" wx:if="{{showLoading}}">
+      <van-loading />
+    </view>
+  </scroll-view>
+</view>

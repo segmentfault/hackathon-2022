@@ -1,0 +1,8 @@
+<!--手语舞.wxml-->
+<view class="index">
+    <view class="icon-box">
+        <button bindtap="doSendTlsVoice">
+            语音识别
+        </button>
+    </view>
+</view>

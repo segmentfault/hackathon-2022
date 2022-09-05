@@ -1,0 +1,14 @@
+<view class="index">
+	 <view class="box">
+			<text>谁的声音</text>
+			<text class="text">张三的声音</text>
+	 </view>
+	 <view class="body">
+			<view class="text1">录入音频</view>
+			<image wx:if="{{type === 'def'}}" bindtap="modifyType" class="image1" src="../../../images/record.png"></image>
+			<image wx:else class="image1"  src="../../../images/recording.png"></image>
+			<view class="text2">长按录音</view>
+	 		<view class="text3">家人不在身边？直接上传</view>
+	 </view>
+	 <view bindtap="jump" class="add-btn">保存</view>
+</view>

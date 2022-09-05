@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "memoItem": "../memo/components/memoItem"
+  }
+}

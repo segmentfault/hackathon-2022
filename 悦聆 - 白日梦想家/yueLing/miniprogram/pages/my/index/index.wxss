@@ -1,0 +1,33 @@
+.index {
+	background: #f5f5f5;
+	min-height: 100vh;
+}
+.card {
+	width: 690rpx;
+	height: 370rpx;
+	opacity: 1;
+	background: #28cdc5;
+	border-radius: 24rpx;
+	margin: 30rpx;
+	text-align: center;
+	font-size: 36rpx;
+	color: #fff;
+}
+.card image {
+	width: 130rpx;
+	height: 130rpx;
+	margin-top: 100rpx;
+}
+.list {
+	padding: 30rpx;
+	margin: 30rpx;
+	width: 690rpx;
+	border-radius: 16rpx;
+	background: #fff;
+}
+.list__item{
+
+}
+.list__item:last-child{
+	border-bottom: 1px solid #e5e5e5;
+}

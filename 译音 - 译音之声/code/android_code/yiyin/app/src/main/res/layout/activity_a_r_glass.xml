@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".arglass.ARGlassActivity">
+
+    <EditText
+        android:id="@+id/et_stt"
+        android:layout_width="fill_parent"
+        android:layout_height="26dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/bg_edittext"
+        android:hint="识别声音..."
+        android:padding="2dp"
+        android:singleLine="true"
+        android:textColorHint="#AAAAAA"
+        android:textColor="@color/color_orange"
+        android:textSize="20dip" />
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/cameraxPreviewView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="80dp"
+        android:paddingBottom="36dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="2dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_speak"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="2dp"
+            android:layout_weight="9"
+            android:background="@drawable/bg_edittext"
+            android:hint="请输入你想说的话..."
+            android:paddingLeft="10dp"
+            android:singleLine="true"
+            android:textColorHint="#AAAAAA"
+            android:textSize="10dip" />
+
+        <ImageButton
+            android:id="@+id/ibtn_speak"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@mipmap/speak" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "memoItem": "./components/memoItem",
+    "van-loading": "@vant/weapp/loading/index"
+  },
+  "navigationBarTitleText": "关怀备忘录"
+}

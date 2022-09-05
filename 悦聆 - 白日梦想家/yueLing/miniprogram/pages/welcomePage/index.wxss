@@ -1,0 +1,19 @@
+.bg {
+	width: 750rpx;
+	height: 824rpx;
+	margin-top: 94rpx;
+}
+.btn {
+	width: 332rpx;
+	height: 100rpx;
+	line-height: 100rpx;
+	border: 3rpx solid rgba(0,0,0,0.05);
+	border-radius: 53rpx;
+	text-align: center;
+	color: #222222;
+	position: fixed;
+	bottom: 8vh;
+	left: calc(50% - 166rpx);
+	font-size: 36rpx;
+	font-weight: 600;
+}

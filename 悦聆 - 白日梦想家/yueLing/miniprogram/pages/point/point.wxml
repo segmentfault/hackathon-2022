@@ -1,0 +1,12 @@
+
+<view class="btns">
+  <view class="button delete" >
+    <button bindtap="delete" plain="true">删除</button>
+  </view>
+</view>
+<hint-dialog
+    wx:if="{{showDialog}}"
+    title="尚未保存，是否退出？"
+    bind:cancel="handleCancel"
+    bind:confirm="handleConfirm"
+/>

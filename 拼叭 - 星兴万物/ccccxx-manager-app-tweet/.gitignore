@@ -1,0 +1,8 @@
+unpackage/
+*/unpackage/*
+.idea/
+node_modules
+package-lock.json
+.hbuilderx
+**/.DS_Store
+.history

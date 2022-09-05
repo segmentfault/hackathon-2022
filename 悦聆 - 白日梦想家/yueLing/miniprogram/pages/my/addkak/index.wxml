@@ -1,0 +1,36 @@
+<view class="addkak">
+	<view class="form" >
+		 <view class="item">
+				<text class="item__title">{{myself?'修改昵称':'亲友昵称'}}</text>
+				<input class="item__input" bindinput="bindName" type="text" value="{{family.name}}" placeholder="请输入亲友昵称" />
+		 </view>
+		 <view class="item">
+				<text class="item__title" bindtap="choose">联系电话</text>
+				<input class="item__input" bindinput="bindTel" type="tel" value="{{family.phone}}" placeholder="请输入联系电话" />
+				<image bindtap="choose" class="address" src="../../../images/addresslist.png"></image>
+		 </view>
+		 <view wx:if="{{ !myself }}" class="item">
+				<text class="item__title" bindtap="choose">关系</text>
+				<input class="item__input" bindinput="bindRole" type="tel" value="{{family.role}}" placeholder="请输入TA与您的关系" />
+				<!-- <van-icon class="item_icon" name="arrow" size="18px" /> -->
+				
+<!--				<input class="item__input" type="tel" placeholder="请输入联系电话" />-->
+		 </view>
+	</view>
+	
+<!--	 <view class="form pb10" bindtap="jump">-->
+<!--			<view class="box">-->
+<!--				 <text>张三的声音</text>-->
+<!--				 <image src="../../../images/arrow.png" />-->
+<!--			</view>-->
+<!--			<view class="test">-->
+<!--				 <image src="../../../images/audio.png" />-->
+<!--				 <text>试听</text>-->
+<!--			</view>-->
+<!--	 </view>-->
+	 
+	 <view class="btn-box" style="bottom: {{18 + homeIndicatorHeight}}px">
+			<view class="btn1" wx:if="{{type === 'edit'&&!myself}}" bindtap="delete">删除</view>
+			<view bindtap="save" class="btn2">保存</view>
+	 </view>
+</view>

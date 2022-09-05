@@ -1,0 +1,6 @@
+<view class="container">
+    <view>ai 111test</view>
+    <view wx:for="{{labels}}" wx:key="Name">
+        <text>{{item}}</text>
+    </view>
+</view>

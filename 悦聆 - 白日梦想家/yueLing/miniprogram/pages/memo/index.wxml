@@ -1,0 +1,95 @@
+<view class="memo">
+	<van-tabs color="{{mainColor}}" active="{{active}}" bind:change="onChange" title-active-color="{{mainColor}}">
+		<van-tab title="今日日程" name="today">
+			<scroll-view scroll-y="true" :refresher-enabled refresher-triggered="{{refreshTody}}"
+				bindrefresherrefresh="handleRefresh" bindscrolltolower="handleGetMore" class="memo-list">
+				<view class="todey-info">
+					<image class="background" src="../../images/background.jpg"></image>
+					<view class="today-data">
+						<view class="data-m">{{month}}月</view>
+						<view class="data-d"><text class="data-b">{{day}}</text>日 {{week}} {{lunarDay}}</view>
+						<view class="data-e">{{monEn}} {{day}} {{dayEn}}</view>
+					</view>
+				</view>
+				<view wx:for="{{todayMemoList}}" >
+					<view class="item" bindtap="onTap">
+  <view class="item_title" bindtap="jump1" data-item="{{item}}">
+    <view>
+      <text class="item__type {{item.isfinish ? 'c-ccc' : ''}}">{{item.title}}</text>
+    </view>
+    <view>
+      <image wx:if="{{ item.isfinish }}" class="jt" src="../../images/tz.png" />
+      <image wx:else class="jt" src="../../images/arrow.png" />
+    </view>
+  </view>
+  <view bindtap="jump1" data-item="{{item}}" class="item__content {{item.isfinish ? 'c-ccc' : ''}}">{{item.content}}</view>
+  <view class="item__info">
+    <view class="box" bindtap="jump1" data-item="{{item}}">
+      <view>
+        <text class="{{item.isfinish ? 'c-ccc' : ''}}">设置者：</text>
+        <text class="{{item.isfinish ? 'c-ccc' : ''}}">{{item.initiator?item.initiator:'本人'}}</text>
+      </view>
+      <view>
+        <text class="{{item.isfinish ? 'c-ccc' : ''}}" wx:if="{{item.needRemind}}">提醒时间：</text>
+        <text class="{{item.isfinish ? 'c-ccc' : ''}}" wx:if="{{item.needRemind}}">{{item.remindTimeDate}}</text>
+      </view>
+    </view>
+    <image data-smile='{{item}}' bindtap="text" class="audio_icon" src="../../images/audio.png" />
+  </view>
+ 
+</view>
+				</view>
+				<!-- <memoItem item="{{item}}" wx:for="{{todayMemoList}}" data-item="{{item}}" wx:key="index">
+				</memoItem> -->
+				<view wx:if="{{!todayMemoList.length}}" class="no-data">
+					今日得闲无事，心中甚是快乐
+				</view>
+				<view class="loading" wx:if="{{showLoading}}">
+					<van-loading />
+				</view>
+			</scroll-view>
+		</van-tab>
+		<van-tab title="全部备忘录" name="allM">
+			<scroll-view scroll-y="true" :refresher-enabled refresher-triggered="{{refreshTody}}"
+				bindrefresherrefresh="handleRefresh" bindscrolltolower="handleGetMore" class="memo-list">
+							<view wx:for="{{memoList}}" >
+					<view class="item" bindtap="onTap">
+  <view class="item_title" bindtap="jump1" data-item="{{item}}">
+    <view>
+      <text class="item__type {{item.isfinish ? 'c-ccc' : ''}}">{{item.title}}</text>
+    </view>
+    <view>
+      <image wx:if="{{ item.isfinish }}" class="jt" src="../../images/tz.png" />
+      <image wx:else class="jt" src="../../images/arrow.png" />
+    </view>
+  </view>
+  <view bindtap="jump1"  data-item="{{item}}" class="item__content {{item.isfinish ? 'c-ccc' : ''}}">{{item.content}}</view>
+  <view class="item__info">
+    <view class="box" bindtap="jump1" data-item="{{item}}">
+      <view>
+        <text class="{{item.isfinish ? 'c-ccc' : ''}}">设置者：</text>
+        <text class="{{item.isfinish ? 'c-ccc' : ''}}">{{item.initiator?item.initiator:'本人'}}</text>
+      </view>
+      <view>
+        <text class="{{item.isfinish ? 'c-ccc' : ''}}" wx:if="{{item.needRemind}}">提醒时间：</text>
+        <text class="{{item.isfinish ? 'c-ccc' : ''}}" wx:if="{{item.needRemind}}">{{item.remindTimeDate}}</text>
+      </view>
+    </view>
+    <image data-smile='{{item}}' bindtap="text" class="audio_icon" src="../../images/audio.png" />
+  </view>
+ 
+</view>
+				</view>
+				<view wx:if="{{!memoList.length}}" class="no-data">
+					暂无数据
+				</view>
+				<view class="loading" wx:if="{{showLoading}}">
+					<van-loading />
+				</view>
+			</scroll-view>
+		</van-tab>
+	</van-tabs>
+
+	<bottom-nav selected="home"></bottom-nav>
+ <audio src="{{'data:audio/mp3;base64,'+src}}" id="myAudio" ></audio>
+</view>

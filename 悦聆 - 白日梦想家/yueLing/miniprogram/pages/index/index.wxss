@@ -1,0 +1,33 @@
+.index{
+	padding: 36rpx;
+}
+.title{
+	height: 40rpx;
+	opacity: 1;
+	font-size: 40rpx;
+	font-family: PingFangSC, PingFangSC-Semibold;
+	font-weight: 600;
+	text-align: left;
+	color: #222222;
+	line-height: 40rpx;
+	margin-bottom: 60rpx;
+}
+.row{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	margin-bottom: 30rpx;
+	padding: 0 12rpx;
+	background: #ffffff;
+	border-radius: 16rpx;
+	box-shadow: 0px 4px 80px rgba(0,0,0,0.04); 
+}
+.avatar{
+	width: 156rpx;
+	height: 156rpx;
+	margin-right: 22rpx;
+}
+.active{
+	background-color: rgba(0,199,189,0.20);
+}

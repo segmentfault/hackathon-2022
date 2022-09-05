@@ -1,0 +1,9 @@
+/* Pages/point/point.wxss */
+
+.btns{
+  padding: 25rpx 60rpx;
+  border-radius: 999px;
+  box-sizing: 80px 60px;
+  margin-top: 40px;
+ padding-top: 350px;
+}
