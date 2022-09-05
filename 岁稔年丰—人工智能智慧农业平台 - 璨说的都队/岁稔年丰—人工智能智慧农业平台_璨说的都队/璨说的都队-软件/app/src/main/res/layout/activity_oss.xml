@@ -1,0 +1,154 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="-10dp"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:outlineAmbientShadowColor="@color/white"
+        android:outlineSpotShadowColor="@color/white"
+        app:cardCornerRadius="10dp"
+        >
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:background="@drawable/background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/oss_back"
+                android:layout_width="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="15dp"
+                android:layout_height="30dp"
+                android:src="@drawable/agritainment_back"
+                ></ImageView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发表动态"
+                android:textColor="@color/white"
+                android:textSize="20.5dp"
+                android:layout_marginTop="40dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                ></TextView>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/camerabutton"
+            android:layout_width="75dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="46dp"
+            android:background="@drawable/button_green"
+            android:outlineAmbientShadowColor="@color/green"
+            android:outlineSpotShadowColor="@color/green"
+            android:text="发布"
+            android:textSize="18.1sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_gravity="right"
+            ></Button>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="5dp"
+        android:outlineSpotShadowColor="@color/white"
+        android:outlineAmbientShadowColor="@color/white"
+        android:layout_marginRight="5dp"
+        android:layout_height="300dp"
+        android:orientation="vertical"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <EditText
+                    android:id="@+id/sq_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="写下你的故事"
+                    ></EditText>
+                <androidx.cardview.widget.CardView
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="66.5dp"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:outlineAmbientShadowColor="@color/white"
+                    android:outlineSpotShadowColor="@color/white"
+                    >
+                    <ImageView
+                        android:id="@+id/button1"
+                        android:onClick="select"
+                        android:layout_width="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/add_drawable"
+                        ></ImageView>
+                    <ProgressBar
+                        android:id="@+id/progressBar1"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="1.5dp"
+                        android:layout_gravity="bottom"
+                        android:max="100"
+                        android:progress="0" />
+                </androidx.cardview.widget.CardView>
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+<!--    <Button-->
+<!--        android:id="@+id/camerabutton"-->
+<!--        android:layout_width="100dip"-->
+<!--        android:layout_height="50dip"-->
+<!--        android:layout_marginTop="80dip"-->
+<!--        android:text="上传" />-->
+<!--    <Button-->
+<!--        android:id="@+id/button1"-->
+<!--        android:layout_width="150dip"-->
+<!--        android:layout_height="50dip"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:onClick="select"-->
+<!--        android:text="点击选择上传文件" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/text"-->
+<!--        android:layout_width="fill_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="text" />-->
+
+
+
+</LinearLayout>

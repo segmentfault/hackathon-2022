@@ -1,0 +1,61 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/icons": "^4.6.2",
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "@craco/craco": "^6.2.0",
+    "ali-img-upload": "^1.1.9",
+    "ali-oss": "^6.16.0",
+    "antd": "^4.16.8",
+    "base-64": "^1.0.0",
+    "cra-template": "1.1.2",
+    "craco": "^0.0.3",
+    "craco-less": "^1.18.0",
+    "crypto1": "^1.0.0",
+    "echarts": "^5.1.2",
+    "hydrogen-js-sdk": "^2.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-highlight-words": "^0.17.0",
+    "react-hot-loader": "^4.5.3",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^2.0.0-beta.2"
+  },
+  "scripts": {
+    "start": "craco  start",
+    "build": "craco  build",
+    "test": "craco  test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost:3000",
+  "devDependencies": {
+    "@ant-design/charts": "^1.2.5",
+    "@antv/data-set": "^0.11.8",
+    "@antv/g2": "^4.1.23",
+    "@antv/g2plot": "^2.3.29",
+    "bizcharts": "^4.1.11",
+    "prop-types": "^15.7.2"
+  }
+}

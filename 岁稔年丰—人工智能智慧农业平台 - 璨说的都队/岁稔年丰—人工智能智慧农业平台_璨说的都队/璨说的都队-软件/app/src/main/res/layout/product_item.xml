@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="290dp"
+    android:background="#F5F8F8"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/product_card"
+        app:cardCornerRadius="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:outlineAmbientShadowColor="#F5F8F8"
+        android:outlineSpotShadowColor="#F5F8F8"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        android:layout_marginRight="5dp"
+       >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:outlineSpotShadowColor="@color/white"
+
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="10dp"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:outlineAmbientShadowColor="@color/white"
+                android:outlineSpotShadowColor="@color/white"
+                android:layout_height="160dp"
+                android:layout_gravity="center_horizontal"
+                >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp"
+            android:id="@+id/product_images"
+            android:src="@mipmap/niurou1"
+            android:scaleType="fitXY"
+            ></ImageView>
+            </androidx.cardview.widget.CardView>
+        <LinearLayout
+            android:layout_marginTop="150dp"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/product_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="山西热销忻州牛肉 现宰割真空包装"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="5dp"
+                ></TextView>
+
+
+
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_marginTop="86dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥"
+                    android:textSize="25sp"
+                    android:layout_marginLeft="12dp"
+                    android:textColor="#28CDB4"
+                    ></TextView>
+                <TextView
+                    android:id="@+id/product_price_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="50."
+                    android:textSize="25sp"
+                    android:layout_marginLeft="12dp"
+                    android:textColor="#28CDB4"
+                    ></TextView>
+                <TextView
+                    android:id="@+id/product_price_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="26"
+                    android:layout_marginTop="2dp"
+                    android:textSize="19sp"
+                    android:textColor="#28CDB4"
+                    ></TextView>
+
+            </LinearLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+            <Button
+                android:layout_width="35dp"
+                android:layout_marginLeft="12dp"
+                android:layout_height="23dp"
+                android:background="@drawable/button_line"
+                android:outlineAmbientShadowColor="#28CDB4"
+                android:outlineSpotShadowColor="#28CDB4"
+                android:text="包邮"
+                android:textSize="12sp"
+                android:layout_marginTop="242dp"
+                android:textColor="#28CDB4"
+                ></Button>
+            </FrameLayout>
+        <ImageView
+            android:layout_marginTop="228dp"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/gouwuche"
+            ></ImageView>
+    </FrameLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+</LinearLayout>

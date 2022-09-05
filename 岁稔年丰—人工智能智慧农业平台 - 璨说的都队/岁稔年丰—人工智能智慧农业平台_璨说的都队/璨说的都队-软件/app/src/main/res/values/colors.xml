@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="border_icon_fourth_color">#FF2EE2C9</color>
+    <color name="border_icon_fourth_two">#FFD9D9D9</color>
+    <color name="White">#FFF</color>
+    <color name="Black">#000</color>
+    <color name="Grey">#7F7F7F</color>
+    <color name="doubleSpeedBackground">#BAB6B6</color>
+    <color name="DarkGrey">#4F4F4F</color>
+    <color name="Green">#0F0</color>
+    <color name="TransparentGrey">#7F000000</color>
+    <color name="AccommodationSelectCityBorder">#888888</color>
+    <color name="grey_deep">#8c8c8c</color>
+    <color name="grey_light">#888888</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="green">#2fecbe</color>
+    <color name="green_button">#8df2d3</color>
+    <color name="teal_200">#d2d2d2</color>
+    <color name="black">#0f0f0f</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="trans">#00000000</color>
+    <color name="line_color">#e7e7e7</color>
+    <color name="content_background">#f2f2f2</color>
+    <color name="solar_background">#009988</color>
+</resources>

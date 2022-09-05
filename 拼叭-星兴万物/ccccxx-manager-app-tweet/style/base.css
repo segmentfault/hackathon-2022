@@ -1,0 +1,84 @@
+view,textarea,input{
+	box-sizing: border-box;
+}
+
+/*每个页面公共css */
+.smallTip .top{
+	width: 200upx;
+	height: 200upx;
+	margin: 120upx auto 80upx;
+}
+.smallTip .top image{
+	width: 100%;
+	height: 100%;
+}
+.smallTip .bottom{
+	text-align: center;
+	color: #999;
+	font-size:24upx;
+}
+
+.shadow{
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(0,0,0,.5);
+	z-index: 999;
+}
+.shadow-body{
+	background: #fff;
+	border-radius: 6px;
+	width:80%;
+}
+
+.oneOmit{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+
+.multiOmit{
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+
+.shadow	.close{
+		background: #000;
+		color:#fff;
+		border-radius: 30px;
+		width:80%;
+		margin-left: 10%;
+		margin-top: 30upx;
+		height:80upx;
+		line-height: 80upx;
+	}
+.shadow	.help-icon{
+	width:70upx;
+	height:70upx;
+}
+.u-icon-plus, .u-icon-minus { 
+	border-radius: 100% !important;
+	background: rgba(219,41,41) !important;
+}
+.uicon-plus, .uicon-minus { 
+	color: #fff !important;
+	font-weight: bold;
+}
+.u-number-input { 
+	background: #fff !important;
+	color: #000000 !important;
+	font-weight: bold;
+}
+.u-icon-plus{
+	width: 50upx !important;
+}
+.u-icon-minus{
+	width: 50upx !important;
+}

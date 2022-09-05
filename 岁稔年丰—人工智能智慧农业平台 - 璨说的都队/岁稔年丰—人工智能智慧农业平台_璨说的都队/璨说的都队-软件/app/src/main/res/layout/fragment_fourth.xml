@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/frg4_backgroound">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+    <LinearLayout
+        android:id="@+id/login_in"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_weight="0.35"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:src="@drawable/taosu"
+            ></de.hdodenhof.circleimageview.CircleImageView>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="-5dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/is_login"
+                android:layout_marginTop="13dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点击登录"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                ></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="0.1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:id="@+id/setting"
+                android:layout_marginTop="10dp"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/frg_4_head_top"
+                ></ImageView>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:baselineAligned="false" android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="365"
+                android:textSize="22sp"
+                ></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="粉丝"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                ></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="365"
+                android:textSize="22sp"
+                ></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="关注"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                ></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="365"
+                android:textSize="22sp"
+                ></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="动态"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                ></TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="346dp"
+        android:layout_height="134dp"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="10dp"
+        android:outlineSpotShadowColor="@color/white"
+        android:outlineAmbientShadowColor="@color/white"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            >
+
+            <TextView
+                android:layout_weight="4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的订单"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="26dp"
+                android:textSize="18sp"
+                ></TextView>
+
+            <TextView
+                android:layout_marginTop="-2dp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_height="wrap_content"
+                android:text="全部订单"
+                ></TextView>
+        </LinearLayout>
+
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:baselineAligned="false" android:orientation="horizontal"
+                >
+                <LinearLayout
+                    android:id="@+id/shopping_frg4"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35sp"
+                        android:src="@drawable/gwc4"
+                        ></ImageView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="购买记录"
+                        android:textSize="14sp"
+                        ></TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/refund"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35sp"
+                        android:src="@drawable/tk4"  ></ImageView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="退款售后"
+                        android:textSize="14sp"
+                        ></TextView>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    
+    <androidx.cardview.widget.CardView
+        android:layout_width="346dp"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center_horizontal"
+        android:outlineSpotShadowColor="@color/white"
+        android:outlineAmbientShadowColor="@color/white"
+        android:layout_height="235dp"
+        >
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:id="@+id/dongtai_up"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                >
+
+                <ImageView
+                    android:layout_weight="1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/frg_4_4"
+                    ></ImageView>
+
+                <TextView
+                    android:layout_weight="5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="动态上传"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    ></TextView>
+
+                <ImageView
+                    android:layout_weight="1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/fragment_4_right"
+                    ></ImageView>
+            </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_weight="1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/frg_4_5"
+                ></ImageView>
+
+            <TextView
+                android:layout_weight="5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的课程"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                ></TextView>
+
+            <ImageView
+                android:layout_weight="1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/fragment_4_right"
+                ></ImageView>
+        </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:layout_weight="1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/frg_4_2"
+                    ></ImageView>
+
+                <TextView
+                    android:layout_weight="5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我的分享"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    ></TextView>
+
+                <ImageView
+                    android:layout_weight="1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/fragment_4_right"></ImageView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:layout_weight="1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/frg_4_3"
+                    ></ImageView>
+
+                <TextView
+                    android:layout_weight="5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我的晋忆"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    ></TextView>
+
+                <ImageView
+                    android:layout_weight="1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/fragment_4_right"
+                    ></ImageView>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <LinearLayout
+        android:layout_marginLeft="42dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        >
+        <LinearLayout
+            android:id="@+id/yinsizhengce"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp"
+            >
+
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/frg4_down_1"
+                ></ImageView>
+
+            <TextView
+                android:layout_marginLeft="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="隐私政策"
+                android:textSize="16sp"
+                ></TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/frg_4_down_2"
+                ></ImageView>
+
+            <TextView
+                android:layout_marginLeft="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="意见与反馈"
+                android:textSize="16sp"
+                ></TextView>
+        </LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
+</ScrollView>

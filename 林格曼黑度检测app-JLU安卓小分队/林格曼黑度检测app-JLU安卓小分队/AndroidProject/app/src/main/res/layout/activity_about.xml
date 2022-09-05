@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About Us"
+        android:layout_toRightOf="@id/logo"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:textSize="29dp"/>
+
+    <com.jude.rollviewpager.RollPagerView
+        android:id="@+id/roll_view_pager"
+        android:layout_width="wrap_content"
+        android:layout_height="260dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@id/logo"
+        app:rollviewpager_play_delay="3000" />
+
+    <TextView
+        android:id="@+id/main1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/roll_view_pager"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:text="为加强环境保护，污染防治，同时提高经济指数，锅炉大气污染物排放标准规定了锅炉大气污染物浓度排放限值、监测和监控要求。但是检测排放物是否符合标准较为危险和困难，且检测周期较长。Smoke Detector主要针对此问题提出解决方案。" />
+
+    <TextView
+        android:id="@+id/main2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main1"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:text="Smoke Detector应用于烟雾污染程度的检测，通过简易的操作获取烟气的林格曼黑度值，并生成分析报告，提供排放建议。" />
+
+</RelativeLayout>

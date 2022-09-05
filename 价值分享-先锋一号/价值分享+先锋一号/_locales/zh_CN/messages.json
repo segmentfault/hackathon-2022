@@ -1,0 +1,29 @@
+{
+   "extDesp": {
+      "message": "通过右键菜单将当前页面地址、选中的文本、链接、图片地址等文本内容生成二维码"
+   },
+   "extName": {
+      "message": "二维码"
+   },
+   "waiting": {
+      "message": "请稍等…"
+   },
+   "generate": {
+      "message": "生成二维码图片"
+   },
+   "decode": {
+      "message": "解析二维码内容"
+   },
+   "showDecodeText": {
+      "message": "二维码中的内容为："
+   },
+   "showQRcodeImg": {
+      "message": "生成二维码图片为："
+   },
+   "copied": {
+      "message": "已复制"
+   },
+   "textToLong": {
+      "message": "生成二维码文字过长 "
+   }
+}

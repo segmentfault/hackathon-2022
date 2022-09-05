@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShowDetailInfor">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="318dp"
+        android:layout_height="288dp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/smoke" />
+
+    <TextView
+        android:id="@+id/txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="20dp"
+        android:text="Smoke level:"
+        android:layout_below="@id/img"
+        android:textSize="26dp" />
+
+    <com.example.smokedetector.CircleProgressBar
+        android:id="@+id/cpb"
+        android:layout_width="139dp"
+        android:layout_height="99dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@id/txt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        app:circle_bg_color="#BFDCDBE4"
+        app:circle_bg_width="10dp"
+        app:circle_width="10dp"
+        app:max_progress="100"
+        app:start_angle="160"
+        app:text_color="@color/black"
+        app:text_size="20dp"
+        app:total_angle="221" />
+
+</RelativeLayout>

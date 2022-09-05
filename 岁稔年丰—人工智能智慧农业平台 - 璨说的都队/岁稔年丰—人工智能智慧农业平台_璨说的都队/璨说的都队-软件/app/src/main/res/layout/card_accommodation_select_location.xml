@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    app:cardBackgroundColor="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewAccommodationCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center"
+                    android:text="忻州"
+                    android:textColor="#040404"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageViewAccommodationSelectCityLeader"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="-5dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/select_city_leader" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0.6dp"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="#E6E6E6"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+
+            <EditText
+                android:layout_weight="1"
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="10dp"
+                android:layout_marginLeft="20dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="狮新村"
+                android:inputType="textPersonName"
+                android:text=""
+                android:textColorHint="#888888"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_weight="0.1"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="55dp"
+                android:background="@drawable/card_background"
+                android:layout_height="50dp">
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="31dp"
+                android:layout_height="31dp"
+                android:layout_gravity="center"
+                android:background="@drawable/accommodation_search_information" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E6E6E6"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/select_riqi"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="bottom|center_horizontal"
+                    android:text="后天入住"
+                    android:textColor="#888888"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="8月1日"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="@color/white"
+                android:outlineSpotShadowColor="@color/white"
+                android:layout_weight="4">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:background="@drawable/accommodation_living_time_border"
+                    android:text="4晚"
+                    android:textColor="#191717" />
+            </androidx.cardview.widget.CardView>
+
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="bottom|center_horizontal"
+                    android:text="周四离店"
+                    android:textColor="#888888"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="8月5日"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:background="#E6E6E6"
+            android:orientation="vertical"></LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        >
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            app:cardCornerRadius="10dp"
+            >
+            <LinearLayout
+                android:background="@drawable/background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/local_back"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/back"
+                    android:layout_gravity="left|center"
+                    android:layout_marginLeft="5dp"
+                    ></ImageView>
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="特色当地"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    ></TextView>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
+                android:baselineAligned="false" android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/button_local_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
+                    <TextView
+                        android:id="@+id/local_text_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:text="TextView"
+                        android:textColor="@color/black"
+                        android:textSize="22dp"
+                       />
+                    <ImageView
+                        android:visibility="visible"
+                        android:id="@+id/local_images_1"
+                        android:layout_width="60dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="60dp"
+                        android:background="@drawable/tab"
+                        app:layout_anchorGravity="center" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/button_local_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
+                        <TextView
+                            android:id="@+id/local_text_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_horizontal"
+                            android:text="TextView"
+                            android:textSize="19dp"
+                           />
+                        <ImageView
+                            android:visibility="invisible"
+                            android:id="@+id/local_images_2"
+                            android:layout_width="60dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_height="60dp"
+                            android:background="@drawable/tab"
+                            app:layout_anchorGravity="center" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/button_local_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
+                        <TextView
+                            android:id="@+id/local_text_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_horizontal"
+                            android:text="TextView"
+                            android:textSize="19dp"
+                             />
+                        <ImageView
+                            android:visibility="invisible"
+                            android:id="@+id/local_images_3"
+                            android:layout_width="60dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_height="60dp"
+                            android:background="@drawable/tab"
+                            app:layout_anchorGravity="center" />
+                    </FrameLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/local_Viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            </androidx.viewpager.widget.ViewPager>
+
+
+</LinearLayout>

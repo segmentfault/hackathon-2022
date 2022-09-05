@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/imageButtonCourseDetailVideoBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="5dp"
+        android:elevation="100dp"
+        android:background="@drawable/course_detail_video_left">
+
+    </ImageButton>
+
+    <androidx.core.widget.NestedScrollView
+        android:background="@color/white"
+        android:id="@+id/nestedScrollViewCourseDetailVideo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:background="#BAB6B6"
+                android:id="@+id/frameLayoutCourseDetailPlayerView"
+                android:layout_width="match_parent"
+                android:layout_height="250dp">
+
+                <com.google.android.exoplayer2.ui.PlayerView
+                    android:id="@+id/playerViewCourseDetailVideo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#000000"
+                    app:controller_layout_id="@layout/course_detail_exoplayer">
+
+                </com.google.android.exoplayer2.ui.PlayerView>
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/linerLayoutCourseDetailVideoOther"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.baidu.paddle.lite.demo.image_classification.PartLayout.IntroduceLayout
+                    android:id="@+id/introduceLayoutCourseDetailVideo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:outlineSpotShadowColor="#BAB6B6"
+                    android:outlineAmbientShadowColor="#BAB6B6"
+                    android:layout_marginTop="@dimen/rCourseDetailVideoCardRadius"
+                    android:layout_marginBottom="10dp"
+                    app:cardCornerRadius="@dimen/CourseDetailVideoCardRadius"
+                    app:cardElevation="20dp">
+
+                </com.baidu.paddle.lite.demo.image_classification.PartLayout.IntroduceLayout>
+
+                <com.baidu.paddle.lite.demo.image_classification.PartLayout.AllCourseLayout
+                    android:id="@+id/allCourseLayoutCourseDetailVideo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:outlineSpotShadowColor="#BAB6B6"
+                    android:outlineAmbientShadowColor="#BAB6B6"
+                    android:layout_marginVertical="10dp"
+                    app:cardCornerRadius="@dimen/CourseDetailVideoCardRadius"
+                    app:cardElevation="20dp">
+
+                </com.baidu.paddle.lite.demo.image_classification.PartLayout.AllCourseLayout>
+
+                <com.baidu.paddle.lite.demo.image_classification.PartLayout.OtherLayout
+                    android:id="@+id/otherLayoutCourseDetailVideo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:outlineSpotShadowColor="#BAB6B6"
+                    android:outlineAmbientShadowColor="#BAB6B6"
+                    app:cardCornerRadius="@dimen/CourseDetailVideoCardRadius"
+                    app:cardElevation="20dp">
+
+                </com.baidu.paddle.lite.demo.image_classification.PartLayout.OtherLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

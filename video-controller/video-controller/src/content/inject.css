@@ -1,0 +1,123 @@
+.video-controller-container {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    z-index: 100001;
+}
+.video-controller {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 4px 6px;
+    user-select: none;
+}
+.video-controller .speed-text {
+    min-width: 24px;
+    line-height: 18px;
+    text-align: center;
+    color: #ffffff;
+    user-select: none;
+}
+.video-controller .control-operation {
+    display: flex;
+    gap: 4px;
+}
+.video-controller .control-operation > button {
+    min-height: 18px;
+    min-width: 18px;
+    line-height: 18px;
+    border: 0;
+    background-color: rgba(100,100,100,0.8);
+    color: #ffffff;
+    border-radius: 4px;
+    user-select: none;
+}
+.video-controller .control-operation > button:hover {
+    background-color: rgba(80,80,80,0.8);
+}
+.video-controller .control-operation > button:active {
+    background-color: rgba(60,60,60,0.8);
+}
+.video-controller .video-controller-hide {
+    display: none;
+}
+/* 公共隐藏展示方法 */
+.hide {
+    opacity: 0;
+}
+.show{
+    visibility: visible;
+}
+
+.time-list{
+    color:white;
+    position:absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    list-style: none;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+.time-list li {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    line-height: 26px;
+}
+.time-list li button{
+    font-size: 14px;
+    background-color: transparent;
+    padding: 4px 6px;
+    color:white;
+    border: 0;
+}
+.deletetime{
+    display: none;
+}
+.time-list li:hover .deletetime{
+    display: inline-block;
+    font-size: 18px;
+    display: block;
+}
+
+.speed-list {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+}
+.speed-list-ul {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.speed-list-ul li{
+    display: flex;
+    justify-content: center;
+}
+.speed-list-ul li button {
+    border: 0;
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+    padding: 4px 6px;
+}
+.speed-list-ul li .delete-speed-list {
+    opacity: 0;
+    font-size: 18px;
+}
+.speed-list-ul li:hover .delete-speed-list{
+    opacity: 1;
+}

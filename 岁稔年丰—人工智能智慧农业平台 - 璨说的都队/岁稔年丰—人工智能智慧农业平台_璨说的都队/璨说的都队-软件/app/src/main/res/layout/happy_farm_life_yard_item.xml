@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+    android:layout_margin="30dp">
+    <FrameLayout
+        android:id="@+id/frameLayoutHappyFarmLifeYard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/accommodation_background">
+
+        <TextView
+            android:id="@+id/textViewHappyFarmLifeYardName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="10dp"
+            android:text="TextView"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+
+
+</androidx.cardview.widget.CardView>

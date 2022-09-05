@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+          >
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="215dp">
+
+                    <com.baidu.paddle.lite.demo.image_classification.View.ArcGradualView
+                        android:id="@+id/header_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="155dp"
+                        android:background="@drawable/background_hw_1"
+                        app:color_gradual_end="#51E2C6"
+                        app:color_gradual_start="#51E2C6"
+                        app:color_other_arc="@color/white"
+                        app:gradual_or="vertical"
+                        app:height_arc="40dp" />
+
+                    <ImageView
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/kuangkuang"></ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="40dp"
+                        android:text="文化卡片"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"></TextView>
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-15dp"
+                        android:layout_gravity="right|center_vertical"
+                        android:src="@drawable/denglong"></ImageView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="25dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/heritage_back"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="left|center_vertical"
+                            android:layout_marginLeft="5dp"
+                            android:src="@drawable/back"></ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+                            android:text="手工艺品"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"></TextView>
+
+                    </LinearLayout>
+                </FrameLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cultural_recyclerview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="131dp">
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <ImageView
+                android:layout_width="144dp"
+                android:layout_height="125dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="110dp"
+                android:src="@drawable/kuangkuang"></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="106dp"
+                android:text="文创品"
+                android:textColor="@color/white"
+                android:textStyle="bold"></TextView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    >
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/culture_down_recyclerview"
+                android:layout_width="wrap_content"
+                android:layout_height="330dp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginTop="480dp"></androidx.recyclerview.widget.RecyclerView>
+                </LinearLayout>
+            </FrameLayout>
+
+    </ScrollView>

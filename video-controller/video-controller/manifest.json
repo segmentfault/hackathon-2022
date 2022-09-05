@@ -1,0 +1,40 @@
+{
+    "name": "video-controller",
+    "description": "full rich controller extension for video",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "./src/popup/popup.html",
+        "default_icon": {
+            "16": "./src/assets/images/video-icon-16.png",
+            "32": "./src/assets/images/video-icon-32.png",
+            "48": "./src/assets/images/video-icon-48.png",
+            "128": "./src/assets/images/video-icon-128.png"
+        }
+    },
+    "icons": {
+        "16": "./src/assets/images/video-icon-16.png",
+        "32": "./src/assets/images/video-icon-32.png",
+        "48": "./src/assets/images/video-icon-48.png",
+        "128": "./src/assets/images/video-icon-128.png"
+      },
+    "commands": {
+        "_execute_action": {
+            "suggested_key": {
+                    "default": "Ctrl+Shift+F",
+                    "mac": "MacCtrl+Shift+F"
+                },
+            "description": "show popup"
+        }
+    },
+    "content_scripts": [
+        {
+            "all_frames": true,
+            "matches": ["http://*/*","https://*/*","file:///*"],
+            "js": ["./src/content/modules/drap.js","./src/content/inject.js"],
+            "css": ["./src/content/inject.css"]
+        }
+    ], 
+    "permissions": ["storage","activeTab","scripting"],
+    "options_page": "./src/options/options.html"
+}

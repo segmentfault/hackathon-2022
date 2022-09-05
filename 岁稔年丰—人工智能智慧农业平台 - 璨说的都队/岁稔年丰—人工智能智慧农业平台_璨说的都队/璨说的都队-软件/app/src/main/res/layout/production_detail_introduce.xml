@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:outlineSpotShadowColor="#F3F5F5"
+    android:outlineAmbientShadowColor="#F3F5F5"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="3dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+            <ImageView
+                android:layout_marginLeft="10dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/yen_package_of_parent_content_item" />
+            <TextView
+                android:layout_marginLeft="-3.5dp"
+                android:layout_marginTop="-5dp"
+                android:id="@+id/textViewHeightPriceProductionDetail1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="50"
+                android:textColor="#00DEB5"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewLowPriceProductionDetail1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=".24"
+                android:textColor="#00DEB5"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewDetailIntroduceProductionDetail1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="附近就业附近就业附近就业附近就业附近就业附近就业附近就业"
+            android:textColor="#000000"
+            android:textSize="18.2sp"
+            android:layout_marginBottom="20dp"
+            />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

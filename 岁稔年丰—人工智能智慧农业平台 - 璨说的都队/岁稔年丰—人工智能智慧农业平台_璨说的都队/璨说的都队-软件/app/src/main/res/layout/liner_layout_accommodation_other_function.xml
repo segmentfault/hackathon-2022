@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:baselineAligned="false" android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="4">
+
+    <LinearLayout
+        android:id="@+id/LinerLayoutAccommodationOtherFunctionRank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/AccommodationOtherFunctionItemMarginLeft"
+        android:layout_marginRight="@dimen/AccommodationOtherFunctionItemMarginLeft"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageViewAccommodationOtherFunctionRank"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/AccommodationOtherFunctionItemHeight"
+            android:layout_margin="@dimen/AccommodationOtherFunctionItemMargin"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="5dp"
+
+            android:background="@drawable/accommodation_other_function_rank"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/textViewAccommodationOtherFunctionRank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="1dp"
+            android:text="排行榜"
+            android:textColor="#000000"
+            android:textSize="@dimen/AccommodationOtherFunctionTitleSize"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/LinerLayoutAccommodationOtherFunctionFavorite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginRight="@dimen/AccommodationOtherFunctionItemMarginLeft"
+        android:layout_marginLeft="@dimen/AccommodationOtherFunctionItemMarginLeft"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageViewAccommodationOtherFunctionFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/AccommodationOtherFunctionItemHeight"
+            android:layout_margin="@dimen/AccommodationOtherFunctionItemMargin"
+            android:adjustViewBounds="true"
+            android:background="@drawable/accommodation_other_function_favorite"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/textViewAccommodationOtherFunctionFavorite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="我的收藏"
+            android:textColor="#000000"
+            android:textSize="@dimen/AccommodationOtherFunctionTitleSize"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/LinerLayoutAccommodationOtherFunctionOnlineService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginRight="@dimen/AccommodationOtherFunctionItemMarginLeft"
+        android:layout_marginLeft="@dimen/AccommodationOtherFunctionItemMarginLeft"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageViewAccommodationOtherFunctionOnlineService"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/AccommodationOtherFunctionItemHeight"
+            android:layout_margin="@dimen/AccommodationOtherFunctionItemMargin"
+            android:adjustViewBounds="true"
+            android:background="@drawable/accommodation_other_function_online_service"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/textViewAccommodationOtherFunctionOnlineService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="在线客服"
+            android:textColor="#000000"
+            android:textSize="@dimen/AccommodationOtherFunctionTitleSize"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LinerLayoutAccommodationOtherFunctionOrder"
+        android:layout_weight="1"
+        android:layout_marginRight="@dimen/AccommodationOtherFunctionItemMarginLeft"
+        android:layout_marginLeft="@dimen/AccommodationOtherFunctionItemMarginLeft"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageViewAccommodationOtherFunctionMyAccommodationOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/AccommodationOtherFunctionItemHeight"
+            android:layout_margin="@dimen/AccommodationOtherFunctionItemMargin"
+            android:adjustViewBounds="true"
+            android:background="@drawable/accommodation_other_function_my_order"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/textViewAccommodationOtherFunctionMyAccommodationOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="我的订单"
+            android:textColor="#000000"
+            android:textSize="@dimen/AccommodationOtherFunctionTitleSize"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

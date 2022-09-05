@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.baidu.paddle.lite.demo.image_classification">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!--允许联网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--获取GSM（2g）、WCDMA（联通3g）等网络状态的信息  -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--获取wifi网络状态的信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--保持CPU 运转，屏幕和键盘灯有可能是关闭的,用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!--获取sd卡写的权限，用于文件上传和下载-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--允许读取手机状态 用于创建BmobInstallation-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!--允许访问网络，必选权限-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--允许获取精确位置，精准定位必选-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!--允许获取粗略位置，粗略定位必选-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--允许获取设备和运营商信息，用于问题排查和网络定位（无gps情况下的定位），若需网络定位功能则必选-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--允许获取网络状态，用于网络定位（无gps情况下的定位），若需网络定位功能则必选-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--允许获取wifi网络信息，用于网络定位（无gps情况下的定位），若需网络定位功能则必选-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--允许获取wifi状态改变，用于网络定位（无gps情况下的定位），若需网络定位功能则必选-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!--后台获取位置信息，若需后台定位则必选-->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <!--用于申请调用A-GPS模块,卫星定位加速-->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!--允许写设备缓存，用于问题排查-->
+    <uses-permission android:name="android.permission.WRITE_SETTING" />
+    <!--允许写入扩展存储，用于写入缓存定位数据-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--允许读设备等信息，用于问题排查-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/logo_round"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/logo_round"
+            android:supportsRtl="true"
+            android:name=".Application.BaseApplication"
+            android:networkSecurityConfig="@xml/network_security_config"
+            android:theme="@style/TranslucentTheme">
+        <provider
+            android:name="cn.bmob.v3.util.BmobContentProvider"
+            android:authorities="com.baidu.paddle.lite.demo.image_classification.BmobContentProvider"></provider>
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"/>
+        <!-- AK鉴权 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="AC4s5MEVbVKZQpt15Pd00kAWhhTbq55K" />
+        <activity android:name=".Acitivity.MainActivity"
+            android:exported= "true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".Acitivity.Local_Activity"></activity>
+
+        <activity android:name=".Acitivity.VideoCaptureActivity"></activity>
+        <activity
+                android:name=".SettingsActivity"
+                android:label="Settings"
+            android:exported= "false">
+        </activity>
+        <!--ai-->
+        <activity android:name=".Acitivity.aIActivitya"></activity>
+        <!--传统技艺-->
+        <activity android:name=".Acitivity.Cultural_heritage_Activity"></activity>
+        <!--非遗与手工艺品-->
+        <activity android:name=".Acitivity.Craft_Activity"></activity>
+        <!--选择菜单-->
+        <activity android:name=".Acitivity.ScrollGridActivity"></activity>
+        <!--特色当地-->
+        <activity android:name=".Acitivity.Characteristic_local_Activity"></activity>
+        <!--``特色农产品-->
+        <activity android:name=".Acitivity.Agriculture_Products_Activity"></activity>
+        <!--附近就业-->
+        <activity android:name=".Acitivity.Employment_Activity"></activity>
+        <!--民宿预定-->
+        <activity
+            android:theme="@style/Theme.aaa"
+            android:name=".AccommodationActivity.AccommodationActivity">
+        </activity>
+        <!--特色详情页-->
+        <activity android:name=".PackageOfParent.PackageOfParent"></activity>
+        <!--日期选择-->
+        <activity android:name=".Acitivity.range.RangeActivity"></activity>
+        <!--视频课程-->
+        <activity android:name=".Acitivity.VideosActivity"></activity>
+        <!--直播课程-->
+        <activity android:name=".Acitivity.LiveActivity"></activity>
+        <!--民宿-->
+        <activity android:name=".PackageProductionDetail.StoreDetail.StoreDetailActivity"></activity>
+        <activity android:name=".PackageProductionDetail.MoreComment.MoreCommentActivity" />
+        <!---->
+        <activity android:name=".PackageProductionDetail.PackageProductionDetailActivity" />
+        <activity android:name=".ProductionDetail.ProductionDetailActivity" />
+        <!--农家乐细节-->
+        <activity android:name=".Acitivity.Agritainment_Product_Activity"></activity>
+        <!--农家乐-->
+        <activity android:name=".Acitivity.Agritainment_Activity"></activity>
+        <!--购物车-->
+        <activity android:name=".Acitivity.ShoppingCart_Activity"></activity>
+        <!--退款-->
+        <activity android:name=".Acitivity.refund_Activity"></activity>
+        <!--图文教程-->
+        <activity android:name=".Acitivity.Pic_Word_Activity"></activity>
+        <!--图文教程详情-->
+        <activity android:name=".Acitivity.Pic_Word_Details_Activity"></activity>
+        <!--视频观看-->
+        <activity
+            android:name=".Acitivity.CourseDetailVideoActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+        <!--话题-->
+        <activity android:name=".Acitivity.Topic_Activity"></activity>
+        <activity android:name=".Acitivity.LoginActivity"></activity>
+        <activity android:name=".Acitivity.RegisterActivity"></activity>
+        <!--上传信息-->
+        <activity android:name=".Acitivity.uoload_prod_activity"></activity>
+        <!--隐私政策-->
+        <activity android:name=".Acitivity.helpuse"></activity>
+        <!--验证码-->
+        <activity android:name=".Acitivity.CheckSecurityCodeActivity" />
+        <activity android:name=".Acitivity.PhoneSecurityCodeLoginActivity" />
+        <activity android:name=".Acitivity.live_data"></activity>
+
+        <!--设置-->
+        <activity android:name=".Acitivity.Setting_Activity"></activity>
+        <activity android:name=".Acitivity.add_me"></activity>
+        <activity android:name=".Acitivity.Creat_Person"></activity>
+
+        <!--话题上传-->
+        <activity android:name=".Acitivity.OssActivity"></activity>
+    </application>
+
+</manifest>

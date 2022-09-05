@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="400dp"
+    android:layout_height="200dp"
+    android:layout_gravity="right"
+    android:layout_marginRight="-70dp"
+    android:background="@drawable/shade_style_of_package_of_parent_introduce"
+    app:cardBackgroundColor="#70D9DA">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shade_style_of_package_of_parent_introduce" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="432dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:layout_marginRight="-60dp"
+        app:cardBackgroundColor="#6CDFE0"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="100dp">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <TextView
+                android:layout_width="107dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="套餐简介"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.173"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.094" />
+
+            <ImageButton
+                android:id="@+id/imageButtonShoppingCartOfPackageOfParentIntroduce"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/shopping_card_package_of_parent_introduce"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.458"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.094" />
+
+            <ImageButton
+                android:id="@+id/imageButtonBackOfIntroduceOfPackageOfParent"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/back_button_of_package_of_parent_introduce"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.072"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.094" />
+
+            <TextView
+                android:id="@+id/textViewDetailOfIntroduceOfPackageOfParent"
+                android:layout_width="100dp"
+                android:layout_height="37dp"
+                android:layout_marginBottom="96dp"
+                android:text="****************************************"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.165"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewTitleOfPackageOfParentIntroduceTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="套餐时间:"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.147"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetailOfIntroduceOfPackageOfParent"
+                app:layout_constraintVertical_bias="0.191" />
+
+            <TextView
+                android:id="@+id/textViewNoonTimeOfPackageOfParentOfIntroduce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="textView"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.017"
+                app:layout_constraintStart_toEndOf="@+id/textViewTitleOfPackageOfParentIntroduceTime"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetailOfIntroduceOfPackageOfParent"
+                app:layout_constraintVertical_bias="0.63" />
+
+            <TextView
+                android:id="@+id/textViewAfternoonTimeOfPackageOfParentOfIntroduce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="textView"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.017"
+                app:layout_constraintStart_toEndOf="@+id/textViewTitleOfPackageOfParentIntroduceTime"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetailOfIntroduceOfPackageOfParent"
+                app:layout_constraintVertical_bias="0.191" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewLeadingOfPackageOfParentIntroduce"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="50dp"
+                android:outlineSpotShadowColor="@color/white"
+                android:outlineAmbientShadowColor="@color/white"
+                app:cardBackgroundColor="@color/white"
+                android:layout_marginRight="-100dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.641"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.566">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/leading_icon_of_package_of_parent_introduce" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:gravity="left|center_vertical"
+                        android:text="  导航"
+                        android:textColor="#40C3AB"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </FrameLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.cardview.widget.CardView>

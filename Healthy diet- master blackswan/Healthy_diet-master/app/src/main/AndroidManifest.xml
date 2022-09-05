@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.animee.health">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".guide.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".HomeMenuActivity"></activity>
+        <activity android:name=".food_list.InfoListActivity" />
+        <activity android:name=".food_grid.FoodGridActivity" />
+        <activity android:name=".food_grid.FoodDescActivity" />
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".guide.GuideActivity"></activity>
+    </application>
+
+</manifest>

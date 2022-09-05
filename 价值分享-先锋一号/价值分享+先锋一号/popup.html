@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="lib/popup.css">
+    </head>
+    <body class="chrome-qrcode">
+        <div id="content">
+            <img src="icon/icon_128.png" width="128" height="128" id="qrcode" />
+            <img src="icon/icon_32.png" width="20" height="20" id="favicon" />
+        </div>
+        <div id="short_url_div">
+            <input readOnly="true" id="short_url" value="Waiting for minutes... ^-^!"></input>
+        </div>
+        <script src="lib/jquery.min.js"></script>
+        <script src="lib/qrgen.min.js"></script>
+        <script src="lib/qrcode_option.js"></script>
+        <script src="lib/popup.js"></script>
+    </body>
+</html>

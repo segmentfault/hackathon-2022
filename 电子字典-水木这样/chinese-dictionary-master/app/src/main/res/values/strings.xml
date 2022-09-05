@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name" translatable="false">中华字典</string>
+    <string name="main_et_hint" translatable="false">请输入查询汉字...</string>
+    <string name="chengyu_et_hint" translatable="false">请输入查询成语...</string>
+    <string name="main_tv_pinyin" translatable="false">拼音查询</string>
+    <string name="main_tv_bushou" translatable="false">部首查询</string>
+    <string name="main_tv_chengyu" translatable="false">成语查询</string>
+    <string name="main_tv_tuwen" translatable="false">图文识字</string>
+    <string name="main_tv_yiju" translatable="false">每日一句</string>
+    <string name="word_tv_info" translatable="false">文字详情</string>
+    <string name="word_tv_basicjs" translatable="false">基本释义</string>
+    <string name="word_tv_desjs" translatable="false">详细解释</string>
+    <string name="indetify_img" translatable="false">图片识别</string>
+    <string name="chengyu_tv_history" translatable="false">历史记录</string>
+    <string name="chengyu_tv_info" translatable="false">成语详情</string>
+    <string name="main_tv_yiju2" translatable="false">金钱难买健康，健康大于金钱，金钱难买幸福，幸福必有健康，生命的幸福不在名利在健康，身体的强壮不在金钱在运动！</string>
+    <string name="setting" translatable="false">设置</string>
+    <string name="setting_collect" translatable="false">收藏</string>
+    <string name="setting_feedback" translatable="false">反馈</string>
+    <string name="setting_share" translatable="false">分享</string>
+    <string name="setting_good" translatable="false">好评</string>
+    <string name="setting_about" translatable="false">关于我们</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+</resources>

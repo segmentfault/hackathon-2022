@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Acitivity.MainActivity">
+
+    <!--内容部分-->
+    <RelativeLayout
+        android:id="@+id/container_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ></RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/container_menu"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:baselineAligned="false" android:gravity="center"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        >
+
+        <LinearLayout
+            android:id="@+id/main_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/main_first_view"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/menu_icon_selector_first"></ImageView>
+
+        </LinearLayout>
+        <LinearLayout
+
+            android:id="@+id/main_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/main_second_view"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/menu_icon_selector_second"
+                android:layout_gravity="center"
+                >
+            </ImageView>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/main_third"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:id="@+id/main_third_view"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/menu_icon_selector_third"
+                >
+            </ImageView>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/main_fourth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/main_fourth_view"
+                android:layout_gravity="center"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/fourth_1"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#D9D9D9"/>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

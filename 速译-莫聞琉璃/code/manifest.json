@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+
+  "name": "查词",
+  "description": "查询翻译，自选词典",
+  "version": "1.0",
+  "icons": 
+  { 
+    "16": "word_16px.png",             
+    "48": "word_48px.png",
+	"128": "word_128px.png"
+  },  
+  "permissions": [
+	"contextMenus",
+	"tabs",
+	"storage",
+	"http://*/*",
+	"https://*/*"
+  ],
+  "browser_action": {
+    "default_icon": "word_16px.png",
+	"default_popup": "popup.html"
+  },
+  "background": {
+    "persistent": true,
+    "scripts": ["jquery-1.11.2.min.js", "md5.js", "socket.io.js", "background.js"]
+  }
+}

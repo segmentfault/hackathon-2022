@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/background"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/wzz"></ImageView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="250dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:outlineAmbientShadowColor="#44EAB3"
+                    android:outlineSpotShadowColor="#44EAB3"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="5dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center_vertical"
+                        >
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:src="@drawable/first_search"
+                            ></ImageView>
+                        <EditText
+                            android:background="@null"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:layout_width="210dp"
+                            android:layout_height="wrap_content"
+                            android:hint="国家要复兴，乡村得振兴"
+                            android:layout_marginLeft="6dp"
+                            ></EditText>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <ImageView
+                    android:layout_width="29dp"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/lw"></ImageView>
+
+                <ImageView
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="4.6dp"
+                    android:src="@drawable/add"></ImageView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="12dp"
+                    android:background="@color/white"
+                    android:outlineAmbientShadowColor="#44EAB3"
+                    android:outlineSpotShadowColor="#44EAB3"
+                    app:cardBackgroundColor="#FEF0EF"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginBottom="1dp"
+                            android:src="@drawable/fire"></ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginBottom="1dp"
+                            android:text="狮心村一日游"
+                            android:textColor="#F6541C"></TextView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="#1EDCDA"
+                    android:outlineAmbientShadowColor="#1EDCDA"
+                    android:outlineSpotShadowColor="#1EDCDA"
+                    app:cardBackgroundColor="#0D000000"
+                    app:cardCornerRadius="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:text="烧烤"
+                        android:textColor="#838069"></TextView>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="#0D000000"
+                    android:outlineAmbientShadowColor="#1EDCDA"
+                    android:outlineSpotShadowColor="#1EDCDA"
+                    app:cardBackgroundColor="#0D000000"
+                    app:cardCornerRadius="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:text="龙虾"
+                        android:textColor="#838069"></TextView>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="#1EDCDA"
+                    android:outlineAmbientShadowColor="#1EDCDA"
+                    android:outlineSpotShadowColor="#1EDCDA"
+                    app:cardBackgroundColor="#0D000000"
+                    app:cardCornerRadius="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:text="烩菜"
+                        android:textColor="#838069"></TextView>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="17dp"
+            android:layout_marginTop="150dp"
+            android:background="@color/white"
+            app:cardBackgroundColor="@color/white"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+            <com.baidu.paddle.lite.demo.image_classification.View.FirstFragmentGridView
+                android:id="@+id/gv_first_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="3dp"
+                android:background="#fff"
+                android:gravity="center"
+                android:horizontalSpacing="2dp"
+                android:numColumns="4"
+                android:padding="3dp"
+                android:scrollbars="none"
+                android:verticalSpacing="2dp">
+            </com.baidu.paddle.lite.demo.image_classification.View.FirstFragmentGridView>
+                <com.youth.banner.Banner
+                    android:layout_marginTop="15dp"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/banner"
+                    app:banner_indicator_selected_color="#44EAB3"
+                    app:banner_indicator_selected_width="9dp"
+                    app:banner_indicator_height="4dp"
+                    app:banner_indicator_gravity="center"
+                    app:banner_indicator_margin="15dp"
+                    app:banner_indicator_space="10dp"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginRight="17dp"
+                    app:banner_indicator_normal_width="9dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="142dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:textColor="@color/Black"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:shadowColor="@color/TransparentGrey"
+                    android:shadowDx="20"
+                    android:shadowDy="5"
+                    android:shadowRadius="10"
+                    android:text="每日推荐"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycleView"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:stretchMode="columnWidth"
+                    android:layout_height="1200dp"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" >
+                </androidx.recyclerview.widget.RecyclerView>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,79 @@
+<!doctype html>
+	<html>
+	  <head>
+	    <title>OA auto punch</title>
+		<!-- Bootstrap -->
+
+	    <style>
+	      body {
+	        min-width: 500px;
+	        overflow-x: hidden;
+			padding: 5px;
+	      }
+		  .ifm {
+			overflow-y: auto;
+		  }
+		  .leftField {
+			float: left;
+			width : 60px;
+		  }
+		  input {
+			margin: 2px;
+		  }
+	    </style>
+</head>
+<body>
+	<br/>
+
+	<div class="input-group">
+      <input id="word" type="text" class="form-control" placeholder="Search for..." autofocus="autofocus">
+      <span class="input-group-btn">
+        <button id="queryWord" class="btn btn-primary" type="button">查词</button>
+      </span>
+    </div><!-- /input-group -->
+
+	<!-- <p>查词默认词典:</p> -->
+	<div id="allDic" class="btn-group" style="padding: 5px 2px;">
+	  <!-- <label class="btn btn-primary"> -->
+		<!-- <input type="radio" name="options" id="option2" autocomplete="off"> Radio 2 -->
+	  <!-- </label> -->
+	</div>
+	
+	<div class="panel panel-primary">
+		<div class="panel-heading">临时历史单词</div>
+		<!-- <div class="panel-body"> -->
+			<table id="tempHistory" class="table">
+			  <thead>
+				<tr>
+				  <th>#</th>
+				  <th>单词</th>
+				  <th>翻译</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<!-- <tr class="active"> -->
+				  <!-- <th scope="row">1</th> -->
+				  <!-- <td>Column content</td> -->
+				  <!-- <td>Column content</td> -->
+				  <!-- <td>Column content</td> -->
+				<!-- </tr> -->
+				<!-- <tr> -->
+				  <!-- <th scope="row">2</th> -->
+				  <!-- <td>Column content</td> -->
+				  <!-- <td>Column content</td> -->
+				  <!-- <td>Column content</td> -->
+				<!-- </tr> -->
+			  </tbody>
+			</table>
+		<!-- </div> -->
+	</div>
+
+	<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+   <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script type="text/javascript" src="bootstrap.min.js"></script>
+	<!-- 加载自定义js -->
+	<script type="text/javascript" src="md5.js"></script>
+	<script type="text/javascript" src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="110dp"
+        app:cardCornerRadius="8dp"
+        android:layout_height="100dp"
+        >
+    <ImageView
+        android:id="@+id/typeicon"
+        android:layout_width="110dp"
+        android:layout_height="100dp"
+        android:contentDescription="@null"
+        android:scaleType="center" />
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:text="阿巴阿巴"
+        android:textColor="#000000"
+        android:id="@+id/typename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="14sp" />
+
+</LinearLayout>

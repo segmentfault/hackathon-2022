@@ -1,0 +1,8 @@
+1 circular_farmland
+2 dense_residential
+3 desert
+4 forest
+5 lake
+6 mountain
+7 rectangular_farmland
+8 river

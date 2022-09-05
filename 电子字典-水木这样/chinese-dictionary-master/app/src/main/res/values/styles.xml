@@ -1,0 +1,100 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/grey_f3f3f3</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- 每个页面头布局当中的文字样式-->
+    <style name="titleTvStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
+
+    <!-- 主界面四个模块文字的样式-->
+    <style name="mainTvStyle">
+        <item name="android:layout_height">110dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingBottom">20dp</item>
+        <item name="android:paddingTop">20dp</item>
+        <item name="android:onClick">onClick</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <!-- 文字详情页面部首，五笔，笔画的TextView样式-->
+    <style name="wordTvStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- 文字详情页面基本解释，和详细解释的TextView的样式-->
+    <style name="wordTvJSStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:onClick">onClick</item>
+    </style>
+
+    <!-- 成语界面汉字的样式-->
+    <style name="chengyuTvStyle">
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_width">60dp</item>
+        <item name="android:background">@mipmap/ic_text_bg</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="chengyuTvStyle2">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+    <style name="chengyuTvStyle3">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:background">@drawable/chengyu_tv_bg</item>
+    </style>
+
+    <style name="settingTvStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:background">@color/white</item>
+
+    </style>
+
+    <style name="settingLineStyle">
+        <item name="android:background">@color/grey_f3f3f3</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+</resources>

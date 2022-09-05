@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/PersonRecommendationListSize"
+    android:layout_gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewPersonRecommendation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/PersonRecommendationItemMargin"
+        android:clickable="true"
+
+        app:cardCornerRadius="20dp">
+
+        <ImageView
+            android:id="@+id/imageViewPersonRecommendation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_launcher_background"
+            android:foregroundGravity="center" />
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

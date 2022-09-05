@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Image Classification</string>
+    <string name="CHOOSE_PRE_INSTALLED_MODEL_KEY">CHOOSE_PRE_INSTALLED_MODEL_KEY</string>
+    <string name="ENABLE_CUSTOM_SETTINGS_KEY">ENABLE_CUSTOM_SETTINGS_KEY</string>
+    <string name="MODEL_PATH_KEY">MODEL_PATH_KEY</string>
+    <string name="LABEL_PATH_KEY">LABEL_PATH_KEY</string>
+    <string name="IMAGE_PATH_KEY">IMAGE_PATH_KEY</string>
+    <string name="CPU_THREAD_NUM_KEY">CPU_THREAD_NUM_KEY</string>
+    <string name="CPU_POWER_MODE_KEY">CPU_POWER_MODE_KEY</string>
+    <string name="INPUT_COLOR_FORMAT_KEY">INPUT_COLOR_FORMAT_KEY</string>
+    <string name="INPUT_SHAPE_KEY">INPUT_SHAPE_KEY</string>
+    <string name="INPUT_MEAN_KEY">INPUT_MEAN_KEY</string>
+    <string name="INPUT_STD_KEY">INPUT_STD_KEY</string>
+    <string name="MODEL_PATH_DEFAULT">models/mobilenet_v1_for_cpu</string>
+    <string name="LABEL_PATH_DEFAULT">labels/synset_words.txt</string>
+    <string name="IMAGE_PATH_DEFAULT">images/tabby_cat.png</string>
+    <string name="CPU_THREAD_NUM_DEFAULT">1</string>
+    <string name="CPU_POWER_MODE_DEFAULT">LITE_POWER_HIGH</string>
+    <string name="INPUT_COLOR_FORMAT_DEFAULT">RGB</string>
+    <string name="INPUT_SHAPE_DEFAULT">1,3,224,224</string>
+    <string name="INPUT_MEAN_DEFAULT">0.485,0.456,0.406</string>
+    <string name="INPUT_STD_DEFAULT">0.229,0.224,0.225</string>
+    <string name="checkboxLogin_text"><Data><![CDATA[我已阅读并同意
+    <font color="#8DF2D3">
+    <b>&#060;&#060;数字乡村用户协议&#062;&#062;</b>
+    </font>,
+    <font color="#8DF2D3">
+    <b>&#060;&#060;隐私政策&#062;&#062;</b>
+    </font> 并授予数字乡村账号信息（如昵称、头像）进行统一管理]]>
+    </Data></string>
+    <string name="securityCodeSize">60sp</string>
+    <string name="about_me_up"> &#160; &#160; &#160; &#160;   中北大学（North University of China），位于山西省太原市，是山西省人民政府与工业和信息化部、国家国防科技工业局共建高校，山西省重点建设大学，B8协同创新联盟、中国航天科技教育联盟、联合国教科文组织中国创业教育联盟、丝绸之路大学联盟、全国高等军工院校课程思政联盟单位，入选中西部高校基础能力建设工程、卓越工程师教育培养计划、国家级新工科研究与实践项目、国家级大学生创新创业训练计划、国家大学生文化素质教育基地、深化创新创业教育改革示范高校、山西省1331工程、山西省首批创新创业教育改革示范高校，国家二级保密单位，被誉为“人民兵工第一校"</string>
+
+</resources>
+

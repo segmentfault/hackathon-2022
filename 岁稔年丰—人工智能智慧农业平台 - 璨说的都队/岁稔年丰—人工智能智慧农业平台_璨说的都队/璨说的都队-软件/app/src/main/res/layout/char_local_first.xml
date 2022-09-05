@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <androidx.cardview.widget.CardView
+            android:layout_marginLeft="-10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="75dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#AFE7EB"
+            app:cardBackgroundColor="#AFE7EB"
+            app:cardCornerRadius="10dp"
+            ></androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/local_firts_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/sgyp"
+            ></androidx.recyclerview.widget.RecyclerView>
+    </FrameLayout>
+
+
+    </FrameLayout>
+
+</LinearLayout>

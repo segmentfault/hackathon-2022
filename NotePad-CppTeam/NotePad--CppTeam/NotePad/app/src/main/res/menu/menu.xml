@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/firstFragment"
+        android:icon="@drawable/note"
+        android:title="笔记" />
+    <item
+        android:id="@+id/secondFragment"
+        android:icon="@drawable/folder"
+        android:title="分类" />
+</menu>

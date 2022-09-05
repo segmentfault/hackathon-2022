@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="HotLocationListSize">150dp</dimen>
+
+    <dimen name="HotLocationItemMargin">10dp</dimen>
+
+    <dimen name="AccommodationOtherFunctionItemMarginLeft">15dp</dimen>
+
+    <dimen name="AccommodationOtherFunctionItemMargin">15dp</dimen>
+
+    <dimen name="AccommodationOtherFunctionItemHeight">43dp</dimen>
+
+    <dimen name="AccommodationOtherFunctionTitleSize">16.5sp</dimen>
+    <dimen name="securityCodeSize">60sp</dimen>
+    <dimen name="securityCodeLine">5dp</dimen>
+    <dimen name="PersonRecommendationListSize">200dp</dimen>
+
+    <dimen name="PersonRecommendationItemMargin">10dp</dimen>
+
+    <dimen name="ProductionDetailShufflingHeight">300dp</dimen>
+    <dimen name="rProductionDetailShufflingHeight">-300dp</dimen>
+    <dimen name="ProductionDetailBottomToolHeight">100dp</dimen>
+    <dimen name="rProductionDetailBottomToolHeight">-100dp</dimen>
+    <dimen name="ProductionDetailCardViewElevation">20dp</dimen>
+    <dimen name="ProductionDetailCardViewRadius">10dp</dimen>
+    <dimen name="ProductionDetailCardViewMargin">10dp</dimen>
+    <dimen name="CourseDetailVideoCardRadius">20dp</dimen>
+    <dimen name="rCourseDetailVideoCardRadius">-20dp</dimen>
+    <dimen name="CourseDetailVideoBottomHeight">60dp</dimen>
+    <dimen name="rCourseDetailVideoBottomHeight">-60dp</dimen>
+</resources>

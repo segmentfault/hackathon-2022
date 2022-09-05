@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.NewNoteFragment">
+
+    <data>
+        <variable
+            name="date"
+            type="String" />
+        <variable
+            name="title"
+            type="String" />
+        <variable
+            name="content"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/relative_top"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/arrow_back" />
+
+            <ImageView
+                android:id="@+id/confirm"
+                android:layout_marginEnd="20dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/done_grey"
+                android:layout_centerVertical="true"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/edit_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative_top"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:text="@{title}"
+            android:hint="@string/title"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/text_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_title"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@{date}"
+            android:textSize="20sp" />
+
+        <EditText
+            android:text="@{content}"
+            android:id="@+id/edit_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_date"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:textSize="25sp" />
+
+
+    </RelativeLayout>
+</layout>

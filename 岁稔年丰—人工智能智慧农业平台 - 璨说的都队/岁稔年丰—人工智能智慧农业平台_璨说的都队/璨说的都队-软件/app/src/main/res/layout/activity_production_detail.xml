@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ProductionDetailShufflingHeight">
+
+
+
+        <ImageButton
+            android:id="@+id/imageButtonProductionDetailBack"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:elevation="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:background="@drawable/back_product" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="340dp"
+            android:layout_marginTop="250dp"
+            app:cardCornerRadius="10dp"
+            android:elevation="5dp"
+            app:cardBackgroundColor="#33B6B2B2" >
+
+            <TextView
+                android:id="@+id/textViewProductionDetailShufflingPosition"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="0/0"></TextView>
+        </androidx.cardview.widget.CardView>
+
+        <com.baidu.paddle.lite.demo.image_classification.ProductionDetail.PartLayout.ShufflingViewPager
+            android:id="@+id/ViewPagerProductionDetail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFFFF">
+
+        </com.baidu.paddle.lite.demo.image_classification.ProductionDetail.PartLayout.ShufflingViewPager>
+    </RelativeLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/swipeRefreshLayoutProductionDetail"
+        android:layout_marginTop="@dimen/rProductionDetailShufflingHeight"
+        android:layout_marginBottom="65dp">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ProductionDetailShufflingHeight"
+                android:background="#F3F5F5"
+                android:orientation="vertical">
+
+                <com.baidu.paddle.lite.demo.image_classification.ProductionDetail.PartLayout.IntroduceLayout
+                    android:id="@+id/IntroduceLayoutProductionDetail"
+                    android:outlineSpotShadowColor="#F3F5F5"
+                    android:outlineAmbientShadowColor="#F3F5F5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ProductionDetailCardViewMargin"
+                    app:cardCornerRadius="@dimen/ProductionDetailCardViewRadius"
+                    app:cardElevation="@dimen/ProductionDetailCardViewElevation">
+
+                </com.baidu.paddle.lite.demo.image_classification.ProductionDetail.PartLayout.IntroduceLayout>
+
+                <com.baidu.paddle.lite.demo.image_classification.ProductionDetail.PartLayout.ContentLayout
+                    android:id="@+id/contentLayoutProductionDetail"
+                    android:outlineSpotShadowColor="#F3F5F5"
+                    android:outlineAmbientShadowColor="#F3F5F5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    app:cardCornerRadius="@dimen/ProductionDetailCardViewRadius"
+                    app:cardElevation="@dimen/ProductionDetailCardViewElevation">
+
+                </com.baidu.paddle.lite.demo.image_classification.ProductionDetail.PartLayout.ContentLayout>
+
+                <com.baidu.paddle.lite.demo.image_classification.ProductionDetail.PartLayout.CommentLayout
+                    android:id="@+id/commentLayoutProductionDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:outlineSpotShadowColor="#F3F5F5"
+                    android:outlineAmbientShadowColor="#F3F5F5"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardCornerRadius="@dimen/ProductionDetailCardViewRadius"
+                    app:cardElevation="@dimen/ProductionDetailCardViewElevation">
+
+                </com.baidu.paddle.lite.demo.image_classification.ProductionDetail.PartLayout.CommentLayout>
+
+                <com.baidu.paddle.lite.demo.image_classification.ProductionDetail.PartLayout.MoreDetailLine
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </com.baidu.paddle.lite.demo.image_classification.ProductionDetail.PartLayout.MoreDetailLine>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewProductionDetailMoreDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.baidu.paddle.lite.demo.image_classification.ProductionDetail.PartLayout.BottomToolLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-65dp"
+        android:background="#FFFFFFFF"
+        android:elevation="65dp">
+
+    </com.baidu.paddle.lite.demo.image_classification.ProductionDetail.PartLayout.BottomToolLayout>
+
+
+</LinearLayout>

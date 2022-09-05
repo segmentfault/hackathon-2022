@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShowResult">
+
+    <!-- 展示结果 -->
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="7dp"
+        android:text="Results Detected"
+        android:textColor="#2A6BA3"
+        android:textSize="20dp" />
+
+    <!-- 暂时用图片替一下，src可删 -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="318dp"
+        android:layout_height="288dp"
+        android:layout_below="@id/heading"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp" />
+
+    <TextView
+        android:id="@+id/hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:drawableLeft="@drawable/hint"
+        android:text="Ringelmann smoke chart" />
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hint"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/list_view">
+    </ListView>
+
+    <Button
+        android:id="@+id/creatReport"
+        android:layout_width="222dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp"
+        android:backgroundTint="#2A6BA3"
+        android:text="Create Report"
+        tools:layout_editor_absoluteX="65dp"
+        tools:layout_editor_absoluteY="111dp" />
+
+    <ImageView
+        android:id="@+id/scale"
+        android:layout_width="wrap_content"
+        android:layout_height="260dp"
+        android:layout_above="@id/hint"
+        android:visibility="gone"
+        android:src="@drawable/scale" />
+
+</RelativeLayout>

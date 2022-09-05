@@ -1,0 +1,3 @@
+include ':app', ':ocr_ui'
+rootProject.name='Dict'
+include ':refresh_library'

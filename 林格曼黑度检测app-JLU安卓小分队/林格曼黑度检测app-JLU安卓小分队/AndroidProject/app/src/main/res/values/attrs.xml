@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleProgressBar">
+        <attr name="circle_color" format="color"/>
+        <attr name="circle_bg_color" format="color"/>
+        <attr name="circle_width" format="dimension"/>
+        <attr name="circle_bg_width" format="dimension"/>
+        <attr name="text_color" format="color"/>
+        <attr name="text_size" format="dimension"/>
+        <attr name="total_angle" format="integer"/>
+        <attr name="start_angle" format="integer"/>
+        <attr name="current_progress" format="float"/>
+        <attr name="max_progress" format="float"/>
+    </declare-styleable>
+</resources>

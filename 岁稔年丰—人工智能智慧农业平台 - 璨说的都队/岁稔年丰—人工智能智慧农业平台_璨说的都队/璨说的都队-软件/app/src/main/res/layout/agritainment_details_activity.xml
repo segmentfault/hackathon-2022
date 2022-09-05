@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/nongjiale">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <FrameLayout
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:background="#3E27234D"
+            >
+
+            <LinearLayout
+                android:layout_marginTop="-10dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="163"
+                        android:textSize="33sp"
+                        android:textColor="@color/white"
+                        ></TextView>
+                        <TextView
+                            android:layout_marginTop="-2dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" 人"
+                            android:textSize="23sp"
+                            android:textColor="@color/white"
+                            ></TextView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:gravity="center_horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="好评率"
+                        android:textSize="17.5sp"
+                        android:textColor="@color/white"
+                        ></TextView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="96"
+                            android:textSize="17.5sp"
+                            android:textColor="#FAE425"
+                            ></TextView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="%"
+                            android:textSize="17.5sp"
+                            android:textColor="@color/white"
+                            ></TextView>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:gravity="center_horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="96"
+                            android:textSize="33sp"
+                            android:textColor="@color/white"
+                            ></TextView>
+                        <TextView
+                            android:layout_marginTop="-2dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" 元"
+                            android:textSize="23sp"
+                            android:textColor="@color/white"
+                            ></TextView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:gravity="center_horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="人均消费"
+                            android:textSize="17.5sp"
+                            android:textColor="@color/white"
+                            ></TextView>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_gravity="bottom"
+            android:background="#3E27234D"
+            >
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="vertical"-->
+<!--                >-->
+<!--            <TextView-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="相关套餐"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textSize="16sp"-->
+<!--                android:layout_marginLeft="7dp"-->
+<!--                android:textColor="@color/white"-->
+<!--                ></TextView>-->
+<!--                <androidx.recyclerview.widget.RecyclerView-->
+<!--                    android:id="@+id/agritainment_down_recyclerview"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    ></androidx.recyclerview.widget.RecyclerView>-->
+<!--            </LinearLayout>-->
+        </FrameLayout>
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/agritainment_back"
+        ></ImageView>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <LinearLayout
+                android:layout_marginTop="75dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <LinearLayout
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:layout_marginRight="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.5"
+                        android:textSize="16sp"
+                        android:layout_marginTop="0.5dp"
+                        android:textStyle="bold"
+                        android:textColor="#FAE425"
+                        ></TextView>
+                    <ImageView
+                        android:layout_marginLeft="3dp"
+                        android:src="@drawable/star2"
+                        android:layout_width="20dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_height="20dp"
+                        ></ImageView>
+                </LinearLayout>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="五寨快乐的农家小院"
+                    android:textStyle="bold"
+                    android:textSize="21sp"
+                    android:textColor="@color/white"
+                    ></TextView>
+
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginRight="20dp"
+                    ></TextView>
+
+
+<!--                <LinearLayout-->
+<!--                    android:layout_marginTop="15dp"-->
+<!--                    android:layout_marginRight="20dp"-->
+<!--                    android:gravity="right"-->
+<!--                    android:layout_gravity="right"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    >-->
+<!--                    <Button-->
+<!--                        android:layout_width="110dp"-->
+<!--                        android:layout_height="33dp"-->
+<!--                        android:layout_gravity="right"-->
+<!--                        android:layout_marginRight="10dp"-->
+<!--                        android:layout_marginBottom="10dp"-->
+<!--                        android:text="加入种草清单"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:background="@drawable/button_line_white"-->
+<!--                        ></Button>-->
+<!--                    <Button-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="33dp"-->
+<!--                        android:layout_gravity="right"-->
+<!--                        android:layout_marginRight="10dp"-->
+<!--                        android:layout_marginBottom="10dp"-->
+<!--                        android:text="查看详情"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:background="@drawable/button_line_white"-->
+<!--                        ></Button>-->
+<!--                </LinearLayout>-->
+
+            </LinearLayout>
+        </FrameLayout>
+    </FrameLayout>
+</LinearLayout>

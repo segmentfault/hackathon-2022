@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--半圆弧贝塞斯曲线-->
+    <declare-styleable name="ArcGradualView">
+        <attr name="color_gradual_start" format="color" />
+        <attr name="color_gradual_end" format="color" />
+        <attr name="height_arc" format="dimension" />
+        <attr name="gradual_or">
+            <!--水平方向-->
+            <enum name="orizontal" value="0" />
+            <!--垂直方向-->
+            <enum name="vertical" value="1" />
+            <!--对角线45-->
+            <enum name="angles45" value="2" />
+            <!--对角线135-->
+            <enum name="angles135" value="3" />
+        </attr>
+        <attr name="color_other_arc" format="color" />
+    </declare-styleable>
+
+</resources>

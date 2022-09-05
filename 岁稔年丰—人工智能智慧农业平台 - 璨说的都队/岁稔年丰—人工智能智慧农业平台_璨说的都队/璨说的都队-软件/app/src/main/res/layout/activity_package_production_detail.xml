@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ProductionDetailShufflingHeight">
+
+
+        <ImageButton
+            android:id="@+id/imageButtonPackageProductionDetailBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/production_detail_back"
+            android:elevation="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="340dp"
+            android:layout_marginTop="250dp"
+            android:elevation="5dp"
+            app:cardBackgroundColor="#33B6B2B2"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:id="@+id/textViewPackageProductionDetailShufflingPosition"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="0/0"></TextView>
+        </androidx.cardview.widget.CardView>
+
+        <com.example.xczxpt.ProductionDetail.PartLayout.ShufflingViewPager
+            android:id="@+id/ViewPagerPackageProductionDetail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFFFF">
+
+        </com.example.xczxpt.ProductionDetail.PartLayout.ShufflingViewPager>
+    </RelativeLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/swipeRefreshLayoutPackageProductionDetail"
+
+        android:layout_marginTop="@dimen/rProductionDetailShufflingHeight">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFFFF"
+                android:layout_marginTop="@dimen/ProductionDetailShufflingHeight">
+
+                <com.example.xczxpt.PackageProductionDetail.PartLayout.IntroduceLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/IntroduceLayoutPackageProductionDetail"
+                    app:cardCornerRadius="@dimen/ProductionDetailCardViewRadius"
+                    app:cardElevation="@dimen/ProductionDetailCardViewElevation"
+                    android:layout_margin="@dimen/ProductionDetailCardViewMargin">
+
+                </com.example.xczxpt.PackageProductionDetail.PartLayout.IntroduceLayout>
+
+                <com.example.xczxpt.ProductionDetail.PartLayout.CommentLayout
+                    android:id="@+id/commentLayoutPackageProductionDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="@dimen/ProductionDetailCardViewRadius"
+                    app:cardElevation="@dimen/ProductionDetailCardViewElevation"
+                    android:layout_margin="@dimen/ProductionDetailCardViewMargin">
+
+                </com.example.xczxpt.ProductionDetail.PartLayout.CommentLayout>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginHorizontal="80dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="5"
+                        android:background="#706D6D"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_weight="6"
+                        android:gravity="center"
+                        android:text="我是有底线的"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="5"
+                        android:background="#706D6D"
+                        android:orientation="vertical"></LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>

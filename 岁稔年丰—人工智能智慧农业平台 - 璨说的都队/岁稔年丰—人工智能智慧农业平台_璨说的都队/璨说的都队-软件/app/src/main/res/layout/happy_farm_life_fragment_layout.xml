@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewHappyFarmLifeFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+            </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="370dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="30dp"
+            android:layout_marginLeft="20dp"
+            android:text="农家小院"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewHappyFarmLifeMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginVertical="32dp"
+            android:layout_marginRight="20dp"
+            android:text="全部"
+            android:textColor="#cccccc"
+            android:textSize="16sp" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+    </LinearLayout>
+        <FrameLayout
+            android:layout_marginTop="430dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewHappyFarmLifeYard"
+        android:layout_width="match_parent"
+        android:layout_height="1600dp" />
+        </FrameLayout>
+        </FrameLayout>
+    </ScrollView>
+</LinearLayout>

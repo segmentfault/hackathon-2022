@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="60dp"
+    android:layout_marginLeft="12dp"
+    android:layout_marginRight="12dp"
+    android:orientation="vertical"
+    android:layout_height="85dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#28CDB4">
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="60dp"
+        app:cardCornerRadius="15dp"
+        android:layout_height="60dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardBackgroundColor="#28CDB4">
+
+
+    <ImageView
+        android:layout_gravity="center"
+        android:id="@+id/craft_image"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:src="@drawable/wudao"
+        ></ImageView>
+
+</androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/craft_title"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="民间戏剧"
+        android:textSize="15sp"
+        ></TextView>
+</LinearLayout>

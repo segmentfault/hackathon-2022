@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/SwipeRefreshLayoutAccommodation"
+    android:theme="@android:style/Theme.Holo.Light"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageViewAccommodationBackground"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                android:background="@drawable/accommodation_background"
+
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="-320dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewAccommodationTitle1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="深度游玩，特色民宿"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewAccommodationTitle2"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textStyle="bold"
+                    android:background="@drawable/white_border"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text=" 我 要 报 名"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
+
+            <com.example.xczxpt.AccommodationActivity.PartLayout.CardViewSelectCityLayout
+                android:id="@+id/cardViewSelectCityLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="150dp"
+                android:layout_marginRight="20dp"
+                android:outlineAmbientShadowColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="30dp" />
+
+            <com.example.xczxpt.AccommodationActivity.PartLayout.LinerLayoutOtherFunctionLayout
+                android:layout_width="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content">
+
+            </com.example.xczxpt.AccommodationActivity.PartLayout.LinerLayoutOtherFunctionLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHotLocationTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/HotLocationItemMargin"
+                    android:shadowColor="@android:color/darker_gray"
+                    android:shadowDx="20"
+                    android:shadowDy="5"
+                    android:shadowRadius="10"
+                    android:text="热门地标"
+                    android:textColor="@color/black"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewHotLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewPersonRecommendationTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/HotLocationItemMargin"
+                    android:shadowColor="@android:color/darker_gray"
+                    android:shadowDx="20"
+                    android:shadowDy="5"
+                    android:shadowRadius="10"
+                    android:text="达人推荐"
+                    android:textColor="@color/black"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewPersonRecommendation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

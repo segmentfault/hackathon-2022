@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:padding="10dp">
+    <ImageView
+        android:id="@+id/item_info_iv"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:src="@mipmap/beanmilk"
+        android:scaleType="fitXY"/>
+    <TextView
+        android:id="@+id/item_info_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/item_info_iv"
+        android:layout_marginTop="10dp"
+        android:text="牛奶"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/item_info_tv_notmatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/item_info_tv_title"
+        android:layout_alignBottom="@id/item_info_iv"
+        android:text="钢筋水泥"/>
+    <ImageView
+        android:id="@+id/item_info_iv_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/expand"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"/>
+</RelativeLayout>
